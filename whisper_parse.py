@@ -121,7 +121,7 @@ def group_segments(diary_res:list) -> str:
         gidx += 1
         audio[start:end].export(str(gidx) + '.wav', format='wav')
         print(f"group {gidx}: {start}--{end}")
-    return seg_path
+    return os.path.join(seg_path, diary)
 
 def transcription(segment_path:str) -> None:
     """
@@ -184,7 +184,7 @@ if __name__ == "__main__":
     print("Device: ", device)
     pipeline.to(device)
     # Load the whisper model
-    model = whisper.load_model("large", device=device)
+    model = whisper.load_model("large-v3", device=device)
     
     dir_lst = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith(".")]
     soundtracks = [os.path.join(BASE_DIR, d, "original_soundtrack") for d in dir_lst]
