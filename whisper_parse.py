@@ -14,20 +14,6 @@ import json
 import gc
 from datetime import timedelta
 
-def spacer(audio_dir:str, spacermilli:int) -> None:
-    export_path = os.path.join(os.path.dirname(audio_dir), "spaced")
-    if not os.path.exists(export_path):
-        os.mkdir(export_path)
-    for file in tqdm(os.listdir(audio_dir)):
-        if file.endswith(".mp3"):
-            audio = os.path.join(audio_dir, file)
-            spacer = AudioSegment.silent(duration=spacermilli)
-            audio = AudioSegment.from_mp3(audio) 
-            audio = spacer.append(audio, crossfade=0)  
-            file_name, file_extension = os.path.splitext(file)
-            file_name = file_name + "_spaced" + file_extension
-            audio.export(os.path.join(export_path, file_name), format='mp3')
-    print("Spaced audio files saved to ", export_path)
     
 def diarization(sample_file_path:str) -> list:
     """
