@@ -1,0 +1,3359 @@
+{
+    "text": " Hey listeners, Cory here. Please pardon the interruption, but before we dive deeper into the realm of dividend swaps, I wanna try to provide a bit of intuition. Whenever I'm trying to understand a new and complex topic, I often try to start with the limits. For dividend swaps, the two obvious extremes are an infinitely length perpetual swap and a bullet one-year swap. In the case of the perpetual swap, the floating leg receives all future dividends of the index, which under basic financial theory, the net present value of all those dividends is simply equal to the current index price, which also tells us the value of the fixed leg. Since the index price is equal to the net present value of all future dividends, any increase in index price implies that future dividends had been underestimated, while any decrease in index price implies that they had been overestimated. Therefore, mark-to-market value of the swap over time should simply be equal to the difference between the current and the future dividends. The investor is holding the floating leg is effectively long the index and all its associated risks and would expect to earn the equity risk premium over time. On the opposite end of the spectrum, we have a bullet one-year swap. In this case, the floating leg only bears the risk of the realized dividends accrued over the next year. While the forecast accuracy of realized dividends over a one-year horizon is empirically fairly accurate, investors are only going to be able to see the floating leg over time. Investors willing to bear these risks are compensated with what's called the dividend risk premium. We can use these two extremes to develop a first-order approximation of how we would expect intermediate length dividend swaps to behave. We would expect longer swaps to exhibit more equity sensitivity, while shorter duration swaps would exhibit more sensitivity to uncertainty in short-term dividends. And with that out of the way, back to our regularly scheduled programming. Eric, can you provide some basic intuition around what the dividend risk premium",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 1.42,
+            "text": " Hey listeners, Cory here.",
+            "tokens": [
+                50365,
+                1911,
+                23274,
+                11,
+                41695,
+                510,
+                13,
+                50443
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " Hey",
+                    "start": 0.0,
+                    "end": 0.08,
+                    "probability": 0.9166451096534729
+                },
+                {
+                    "word": " listeners,",
+                    "start": 0.08,
+                    "end": 0.5,
+                    "probability": 0.7346725463867188
+                },
+                {
+                    "word": " Cory",
+                    "start": 0.74,
+                    "end": 1.06,
+                    "probability": 0.5281636714935303
+                },
+                {
+                    "word": " here.",
+                    "start": 1.06,
+                    "end": 1.42,
+                    "probability": 0.9977717995643616
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 1.62,
+            "end": 3.26,
+            "text": " Please pardon the interruption,",
+            "tokens": [
+                50468,
+                2555,
+                22440,
+                264,
+                728,
+                11266,
+                11,
+                50532
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " Please",
+                    "start": 1.62,
+                    "end": 2.14,
+                    "probability": 0.9985582232475281
+                },
+                {
+                    "word": " pardon",
+                    "start": 2.14,
+                    "end": 2.5,
+                    "probability": 0.9883928894996643
+                },
+                {
+                    "word": " the",
+                    "start": 2.5,
+                    "end": 2.7,
+                    "probability": 0.999146580696106
+                },
+                {
+                    "word": " interruption,",
+                    "start": 2.7,
+                    "end": 3.26,
+                    "probability": 0.9982904493808746
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 3.42,
+            "end": 6.28,
+            "text": " but before we dive deeper into the realm of dividend swaps,",
+            "tokens": [
+                50549,
+                457,
+                949,
+                321,
+                9192,
+                7731,
+                666,
+                264,
+                15355,
+                295,
+                29796,
+                1693,
+                2382,
+                11,
+                50684
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " but",
+                    "start": 3.42,
+                    "end": 3.7,
+                    "probability": 0.9992341995239258
+                },
+                {
+                    "word": " before",
+                    "start": 3.7,
+                    "end": 3.94,
+                    "probability": 0.9995278120040894
+                },
+                {
+                    "word": " we",
+                    "start": 3.94,
+                    "end": 4.18,
+                    "probability": 0.9994736313819885
+                },
+                {
+                    "word": " dive",
+                    "start": 4.18,
+                    "end": 4.4,
+                    "probability": 0.9994692206382751
+                },
+                {
+                    "word": " deeper",
+                    "start": 4.4,
+                    "end": 4.82,
+                    "probability": 0.9996153116226196
+                },
+                {
+                    "word": " into",
+                    "start": 4.82,
+                    "end": 5.08,
+                    "probability": 0.9989532232284546
+                },
+                {
+                    "word": " the",
+                    "start": 5.08,
+                    "end": 5.24,
+                    "probability": 0.9993446469306946
+                },
+                {
+                    "word": " realm",
+                    "start": 5.24,
+                    "end": 5.42,
+                    "probability": 0.9994283318519592
+                },
+                {
+                    "word": " of",
+                    "start": 5.42,
+                    "end": 5.52,
+                    "probability": 0.9996905326843262
+                },
+                {
+                    "word": " dividend",
+                    "start": 5.52,
+                    "end": 5.78,
+                    "probability": 0.9545372724533081
+                },
+                {
+                    "word": " swaps,",
+                    "start": 5.78,
+                    "end": 6.28,
+                    "probability": 0.9994453191757202
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 0,
+            "start": 6.42,
+            "end": 8.18,
+            "text": " I wanna try to provide a bit of intuition.",
+            "tokens": [
+                50697,
+                286,
+                1948,
+                853,
+                281,
+                2893,
+                257,
+                857,
+                295,
+                24002,
+                13,
+                50784
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " I",
+                    "start": 6.42,
+                    "end": 6.72,
+                    "probability": 0.9996439218521118
+                },
+                {
+                    "word": " wanna",
+                    "start": 6.72,
+                    "end": 6.92,
+                    "probability": 0.11430422216653824
+                },
+                {
+                    "word": " try",
+                    "start": 6.92,
+                    "end": 7.1,
+                    "probability": 0.9964480400085449
+                },
+                {
+                    "word": " to",
+                    "start": 7.1,
+                    "end": 7.24,
+                    "probability": 0.9960044026374817
+                },
+                {
+                    "word": " provide",
+                    "start": 7.24,
+                    "end": 7.48,
+                    "probability": 0.9993364214897156
+                },
+                {
+                    "word": " a",
+                    "start": 7.48,
+                    "end": 7.68,
+                    "probability": 0.9994211196899414
+                },
+                {
+                    "word": " bit",
+                    "start": 7.68,
+                    "end": 7.8,
+                    "probability": 0.9994925260543823
+                },
+                {
+                    "word": " of",
+                    "start": 7.8,
+                    "end": 7.88,
+                    "probability": 0.999742329120636
+                },
+                {
+                    "word": " intuition.",
+                    "start": 7.88,
+                    "end": 8.18,
+                    "probability": 0.9989026784896851
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 0,
+            "start": 8.58,
+            "end": 11.78,
+            "text": " Whenever I'm trying to understand a new and complex topic,",
+            "tokens": [
+                50817,
+                14159,
+                286,
+                478,
+                1382,
+                281,
+                1223,
+                257,
+                777,
+                293,
+                3997,
+                4829,
+                11,
+                50961
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " Whenever",
+                    "start": 8.58,
+                    "end": 9.1,
+                    "probability": 0.9973241090774536
+                },
+                {
+                    "word": " I'm",
+                    "start": 9.1,
+                    "end": 9.44,
+                    "probability": 0.998541384935379
+                },
+                {
+                    "word": " trying",
+                    "start": 9.44,
+                    "end": 9.66,
+                    "probability": 0.987748920917511
+                },
+                {
+                    "word": " to",
+                    "start": 9.66,
+                    "end": 9.78,
+                    "probability": 0.9985395669937134
+                },
+                {
+                    "word": " understand",
+                    "start": 9.78,
+                    "end": 10.28,
+                    "probability": 0.9991512298583984
+                },
+                {
+                    "word": " a",
+                    "start": 10.28,
+                    "end": 10.58,
+                    "probability": 0.9961962699890137
+                },
+                {
+                    "word": " new",
+                    "start": 10.58,
+                    "end": 10.72,
+                    "probability": 0.9997274279594421
+                },
+                {
+                    "word": " and",
+                    "start": 10.72,
+                    "end": 10.82,
+                    "probability": 0.9977073669433594
+                },
+                {
+                    "word": " complex",
+                    "start": 10.82,
+                    "end": 11.26,
+                    "probability": 0.9998782873153687
+                },
+                {
+                    "word": " topic,",
+                    "start": 11.26,
+                    "end": 11.78,
+                    "probability": 0.9995618462562561
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 0,
+            "start": 12.0,
+            "end": 13.64,
+            "text": " I often try to start with the limits.",
+            "tokens": [
+                50972,
+                286,
+                2049,
+                853,
+                281,
+                722,
+                365,
+                264,
+                10406,
+                13,
+                51056
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " I",
+                    "start": 12.0,
+                    "end": 12.24,
+                    "probability": 0.9997891783714294
+                },
+                {
+                    "word": " often",
+                    "start": 12.24,
+                    "end": 12.54,
+                    "probability": 0.9993544220924377
+                },
+                {
+                    "word": " try",
+                    "start": 12.54,
+                    "end": 12.72,
+                    "probability": 0.9983318448066711
+                },
+                {
+                    "word": " to",
+                    "start": 12.72,
+                    "end": 12.84,
+                    "probability": 0.9987204074859619
+                },
+                {
+                    "word": " start",
+                    "start": 12.84,
+                    "end": 13.04,
+                    "probability": 0.9996026158332825
+                },
+                {
+                    "word": " with",
+                    "start": 13.04,
+                    "end": 13.28,
+                    "probability": 0.9996271133422852
+                },
+                {
+                    "word": " the",
+                    "start": 13.28,
+                    "end": 13.38,
+                    "probability": 0.9992620348930359
+                },
+                {
+                    "word": " limits.",
+                    "start": 13.38,
+                    "end": 13.64,
+                    "probability": 0.9983738660812378
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 0,
+            "start": 13.96,
+            "end": 16.68,
+            "text": " For dividend swaps, the two obvious extremes",
+            "tokens": [
+                51087,
+                1171,
+                29796,
+                1693,
+                2382,
+                11,
+                264,
+                732,
+                6322,
+                41119,
+                51215
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " For",
+                    "start": 13.96,
+                    "end": 14.48,
+                    "probability": 0.9992269277572632
+                },
+                {
+                    "word": " dividend",
+                    "start": 14.48,
+                    "end": 14.78,
+                    "probability": 0.877524733543396
+                },
+                {
+                    "word": " swaps,",
+                    "start": 14.78,
+                    "end": 15.36,
+                    "probability": 0.9994976222515106
+                },
+                {
+                    "word": " the",
+                    "start": 15.48,
+                    "end": 15.62,
+                    "probability": 0.9992923736572266
+                },
+                {
+                    "word": " two",
+                    "start": 15.62,
+                    "end": 15.82,
+                    "probability": 0.9964166879653931
+                },
+                {
+                    "word": " obvious",
+                    "start": 15.82,
+                    "end": 16.2,
+                    "probability": 0.9988414645195007
+                },
+                {
+                    "word": " extremes",
+                    "start": 16.2,
+                    "end": 16.68,
+                    "probability": 0.9992840886116028
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "seek": 0,
+            "start": 16.68,
+            "end": 19.4,
+            "text": " are an infinitely length perpetual swap",
+            "tokens": [
+                51215,
+                366,
+                364,
+                36227,
+                4641,
+                48216,
+                18135,
+                51349
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " are",
+                    "start": 16.68,
+                    "end": 17.32,
+                    "probability": 0.9942289590835571
+                },
+                {
+                    "word": " an",
+                    "start": 17.32,
+                    "end": 17.52,
+                    "probability": 0.9948590993881226
+                },
+                {
+                    "word": " infinitely",
+                    "start": 17.52,
+                    "end": 17.9,
+                    "probability": 0.9982782602310181
+                },
+                {
+                    "word": " length",
+                    "start": 17.9,
+                    "end": 18.34,
+                    "probability": 0.8228635191917419
+                },
+                {
+                    "word": " perpetual",
+                    "start": 18.34,
+                    "end": 18.78,
+                    "probability": 0.8194426894187927
+                },
+                {
+                    "word": " swap",
+                    "start": 18.78,
+                    "end": 19.4,
+                    "probability": 0.9965937733650208
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "seek": 0,
+            "start": 19.4,
+            "end": 21.16,
+            "text": " and a bullet one-year swap.",
+            "tokens": [
+                51349,
+                293,
+                257,
+                11632,
+                472,
+                12,
+                5294,
+                18135,
+                13,
+                51433
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " and",
+                    "start": 19.4,
+                    "end": 19.96,
+                    "probability": 0.8730930089950562
+                },
+                {
+                    "word": " a",
+                    "start": 19.96,
+                    "end": 20.04,
+                    "probability": 0.9983958601951599
+                },
+                {
+                    "word": " bullet",
+                    "start": 20.04,
+                    "end": 20.3,
+                    "probability": 0.989385187625885
+                },
+                {
+                    "word": " one",
+                    "start": 20.3,
+                    "end": 20.7,
+                    "probability": 0.967994213104248
+                },
+                {
+                    "word": "-year",
+                    "start": 20.7,
+                    "end": 20.9,
+                    "probability": 0.7882976233959198
+                },
+                {
+                    "word": " swap.",
+                    "start": 20.9,
+                    "end": 21.16,
+                    "probability": 0.9977268576622009
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "seek": 0,
+            "start": 21.44,
+            "end": 23.34,
+            "text": " In the case of the perpetual swap,",
+            "tokens": [
+                51456,
+                682,
+                264,
+                1389,
+                295,
+                264,
+                48216,
+                18135,
+                11,
+                51542
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " In",
+                    "start": 21.44,
+                    "end": 21.92,
+                    "probability": 0.9994640946388245
+                },
+                {
+                    "word": " the",
+                    "start": 21.92,
+                    "end": 22.02,
+                    "probability": 0.998940646648407
+                },
+                {
+                    "word": " case",
+                    "start": 22.02,
+                    "end": 22.32,
+                    "probability": 0.999871015548706
+                },
+                {
+                    "word": " of",
+                    "start": 22.32,
+                    "end": 22.42,
+                    "probability": 0.9997105002403259
+                },
+                {
+                    "word": " the",
+                    "start": 22.42,
+                    "end": 22.48,
+                    "probability": 0.995415210723877
+                },
+                {
+                    "word": " perpetual",
+                    "start": 22.48,
+                    "end": 22.82,
+                    "probability": 0.9991204142570496
+                },
+                {
+                    "word": " swap,",
+                    "start": 22.82,
+                    "end": 23.34,
+                    "probability": 0.9985609650611877
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "seek": 0,
+            "start": 23.6,
+            "end": 26.74,
+            "text": " the floating leg receives all future dividends of the index,",
+            "tokens": [
+                51556,
+                264,
+                12607,
+                1676,
+                20717,
+                439,
+                2027,
+                39675,
+                295,
+                264,
+                8186,
+                11,
+                51711
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 23.6,
+                    "end": 23.82,
+                    "probability": 0.9994019269943237
+                },
+                {
+                    "word": " floating",
+                    "start": 23.82,
+                    "end": 24.2,
+                    "probability": 0.9966199398040771
+                },
+                {
+                    "word": " leg",
+                    "start": 24.2,
+                    "end": 24.46,
+                    "probability": 0.993919849395752
+                },
+                {
+                    "word": " receives",
+                    "start": 24.46,
+                    "end": 24.82,
+                    "probability": 0.9986560344696045
+                },
+                {
+                    "word": " all",
+                    "start": 24.82,
+                    "end": 25.2,
+                    "probability": 0.99983811378479
+                },
+                {
+                    "word": " future",
+                    "start": 25.2,
+                    "end": 25.6,
+                    "probability": 0.999470055103302
+                },
+                {
+                    "word": " dividends",
+                    "start": 25.6,
+                    "end": 26.06,
+                    "probability": 0.9989470839500427
+                },
+                {
+                    "word": " of",
+                    "start": 26.06,
+                    "end": 26.26,
+                    "probability": 0.9992369413375854
+                },
+                {
+                    "word": " the",
+                    "start": 26.26,
+                    "end": 26.34,
+                    "probability": 0.9998140931129456
+                },
+                {
+                    "word": " index,",
+                    "start": 26.34,
+                    "end": 26.74,
+                    "probability": 0.9988771080970764
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "seek": 0,
+            "start": 26.96,
+            "end": 29.0,
+            "text": " which under basic financial theory,",
+            "tokens": [
+                51736,
+                597,
+                833,
+                3875,
+                4669,
+                5261,
+                11,
+                51824
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1250279793372521,
+            "compression_ratio": 1.7016949152542373,
+            "no_speech_prob": 0.02262052334845066,
+            "words": [
+                {
+                    "word": " which",
+                    "start": 26.96,
+                    "end": 27.5,
+                    "probability": 0.9998212456703186
+                },
+                {
+                    "word": " under",
+                    "start": 27.5,
+                    "end": 27.72,
+                    "probability": 0.9737136363983154
+                },
+                {
+                    "word": " basic",
+                    "start": 27.72,
+                    "end": 28.08,
+                    "probability": 0.9957199692726135
+                },
+                {
+                    "word": " financial",
+                    "start": 28.08,
+                    "end": 28.44,
+                    "probability": 0.9995971322059631
+                },
+                {
+                    "word": " theory,",
+                    "start": 28.44,
+                    "end": 29.0,
+                    "probability": 0.9998637437820435
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "seek": 2900,
+            "start": 29.0,
+            "end": 31.68,
+            "text": " the net present value of all those dividends",
+            "tokens": [
+                50365,
+                264,
+                2533,
+                1974,
+                2158,
+                295,
+                439,
+                729,
+                39675,
+                50502
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 29.0,
+                    "end": 29.62,
+                    "probability": 0.619777262210846
+                },
+                {
+                    "word": " net",
+                    "start": 29.62,
+                    "end": 29.84,
+                    "probability": 0.9694087505340576
+                },
+                {
+                    "word": " present",
+                    "start": 29.84,
+                    "end": 30.12,
+                    "probability": 0.9939793348312378
+                },
+                {
+                    "word": " value",
+                    "start": 30.12,
+                    "end": 30.58,
+                    "probability": 0.9996753931045532
+                },
+                {
+                    "word": " of",
+                    "start": 30.58,
+                    "end": 30.9,
+                    "probability": 0.9988055229187012
+                },
+                {
+                    "word": " all",
+                    "start": 30.9,
+                    "end": 31.06,
+                    "probability": 0.9941955208778381
+                },
+                {
+                    "word": " those",
+                    "start": 31.06,
+                    "end": 31.24,
+                    "probability": 0.9928743839263916
+                },
+                {
+                    "word": " dividends",
+                    "start": 31.24,
+                    "end": 31.68,
+                    "probability": 0.9983643889427185
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "seek": 2900,
+            "start": 31.68,
+            "end": 34.08,
+            "text": " is simply equal to the current index price,",
+            "tokens": [
+                50502,
+                307,
+                2935,
+                2681,
+                281,
+                264,
+                2190,
+                8186,
+                3218,
+                11,
+                50633
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 31.68,
+                    "end": 31.98,
+                    "probability": 0.9893414974212646
+                },
+                {
+                    "word": " simply",
+                    "start": 31.98,
+                    "end": 32.3,
+                    "probability": 0.9970815777778625
+                },
+                {
+                    "word": " equal",
+                    "start": 32.3,
+                    "end": 32.58,
+                    "probability": 0.9992578625679016
+                },
+                {
+                    "word": " to",
+                    "start": 32.58,
+                    "end": 32.82,
+                    "probability": 0.9994677901268005
+                },
+                {
+                    "word": " the",
+                    "start": 32.82,
+                    "end": 32.96,
+                    "probability": 0.9986928105354309
+                },
+                {
+                    "word": " current",
+                    "start": 32.96,
+                    "end": 33.26,
+                    "probability": 0.9963052272796631
+                },
+                {
+                    "word": " index",
+                    "start": 33.26,
+                    "end": 33.66,
+                    "probability": 0.9944710731506348
+                },
+                {
+                    "word": " price,",
+                    "start": 33.66,
+                    "end": 34.08,
+                    "probability": 0.9985787868499756
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "seek": 2900,
+            "start": 34.38,
+            "end": 37.3,
+            "text": " which also tells us the value of the fixed leg.",
+            "tokens": [
+                50653,
+                597,
+                611,
+                5112,
+                505,
+                264,
+                2158,
+                295,
+                264,
+                6806,
+                1676,
+                13,
+                50789
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " which",
+                    "start": 34.38,
+                    "end": 34.9,
+                    "probability": 0.9985343217849731
+                },
+                {
+                    "word": " also",
+                    "start": 34.9,
+                    "end": 35.16,
+                    "probability": 0.9972213506698608
+                },
+                {
+                    "word": " tells",
+                    "start": 35.16,
+                    "end": 35.52,
+                    "probability": 0.9977587461471558
+                },
+                {
+                    "word": " us",
+                    "start": 35.52,
+                    "end": 35.8,
+                    "probability": 0.9987602233886719
+                },
+                {
+                    "word": " the",
+                    "start": 35.8,
+                    "end": 35.98,
+                    "probability": 0.9989184141159058
+                },
+                {
+                    "word": " value",
+                    "start": 35.98,
+                    "end": 36.3,
+                    "probability": 0.9993399977684021
+                },
+                {
+                    "word": " of",
+                    "start": 36.3,
+                    "end": 36.68,
+                    "probability": 0.9992808699607849
+                },
+                {
+                    "word": " the",
+                    "start": 36.68,
+                    "end": 36.8,
+                    "probability": 0.998375654220581
+                },
+                {
+                    "word": " fixed",
+                    "start": 36.8,
+                    "end": 37.08,
+                    "probability": 0.9809278845787048
+                },
+                {
+                    "word": " leg.",
+                    "start": 37.08,
+                    "end": 37.3,
+                    "probability": 0.9154002666473389
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "seek": 2900,
+            "start": 38.06,
+            "end": 40.74,
+            "text": " Since the index price is equal to the net present value",
+            "tokens": [
+                50818,
+                4162,
+                264,
+                8186,
+                3218,
+                307,
+                2681,
+                281,
+                264,
+                2533,
+                1974,
+                2158,
+                50960
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " Since",
+                    "start": 37.82,
+                    "end": 38.12,
+                    "probability": 0.9947409629821777
+                },
+                {
+                    "word": " the",
+                    "start": 38.12,
+                    "end": 38.32,
+                    "probability": 0.9985404014587402
+                },
+                {
+                    "word": " index",
+                    "start": 38.32,
+                    "end": 38.72,
+                    "probability": 0.9958018660545349
+                },
+                {
+                    "word": " price",
+                    "start": 38.72,
+                    "end": 39.1,
+                    "probability": 0.9975559711456299
+                },
+                {
+                    "word": " is",
+                    "start": 39.1,
+                    "end": 39.38,
+                    "probability": 0.9988831877708435
+                },
+                {
+                    "word": " equal",
+                    "start": 39.38,
+                    "end": 39.62,
+                    "probability": 0.9996079802513123
+                },
+                {
+                    "word": " to",
+                    "start": 39.62,
+                    "end": 39.8,
+                    "probability": 0.9994847774505615
+                },
+                {
+                    "word": " the",
+                    "start": 39.8,
+                    "end": 39.92,
+                    "probability": 0.9991839528083801
+                },
+                {
+                    "word": " net",
+                    "start": 39.92,
+                    "end": 40.08,
+                    "probability": 0.9946162104606628
+                },
+                {
+                    "word": " present",
+                    "start": 40.08,
+                    "end": 40.36,
+                    "probability": 0.9987928867340088
+                },
+                {
+                    "word": " value",
+                    "start": 40.36,
+                    "end": 40.74,
+                    "probability": 0.999779999256134
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "seek": 2900,
+            "start": 40.74,
+            "end": 41.84,
+            "text": " of all future dividends,",
+            "tokens": [
+                50960,
+                295,
+                439,
+                2027,
+                39675,
+                11,
+                51016
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " of",
+                    "start": 40.74,
+                    "end": 40.98,
+                    "probability": 0.99952232837677
+                },
+                {
+                    "word": " all",
+                    "start": 40.98,
+                    "end": 41.1,
+                    "probability": 0.9972425699234009
+                },
+                {
+                    "word": " future",
+                    "start": 41.1,
+                    "end": 41.4,
+                    "probability": 0.9984349608421326
+                },
+                {
+                    "word": " dividends,",
+                    "start": 41.4,
+                    "end": 41.84,
+                    "probability": 0.9991638660430908
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "seek": 2900,
+            "start": 42.1,
+            "end": 44.6,
+            "text": " any increase in index price implies",
+            "tokens": [
+                51044,
+                604,
+                3488,
+                294,
+                8186,
+                3218,
+                18779,
+                51157
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " any",
+                    "start": 42.1,
+                    "end": 42.64,
+                    "probability": 0.9962284564971924
+                },
+                {
+                    "word": " increase",
+                    "start": 42.64,
+                    "end": 43.26,
+                    "probability": 0.9968696236610413
+                },
+                {
+                    "word": " in",
+                    "start": 43.26,
+                    "end": 43.52,
+                    "probability": 0.9988527297973633
+                },
+                {
+                    "word": " index",
+                    "start": 43.52,
+                    "end": 43.78,
+                    "probability": 0.9964246153831482
+                },
+                {
+                    "word": " price",
+                    "start": 43.78,
+                    "end": 44.12,
+                    "probability": 0.998696506023407
+                },
+                {
+                    "word": " implies",
+                    "start": 44.12,
+                    "end": 44.6,
+                    "probability": 0.9982473850250244
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "seek": 2900,
+            "start": 44.6,
+            "end": 47.5,
+            "text": " that future dividends had been underestimated,",
+            "tokens": [
+                51157,
+                300,
+                2027,
+                39675,
+                632,
+                668,
+                24612,
+                33008,
+                11,
+                51294
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " that",
+                    "start": 44.6,
+                    "end": 45.06,
+                    "probability": 0.9950290322303772
+                },
+                {
+                    "word": " future",
+                    "start": 45.06,
+                    "end": 45.34,
+                    "probability": 0.9988137483596802
+                },
+                {
+                    "word": " dividends",
+                    "start": 45.34,
+                    "end": 45.88,
+                    "probability": 0.999022364616394
+                },
+                {
+                    "word": " had",
+                    "start": 45.88,
+                    "end": 46.18,
+                    "probability": 0.9884508848190308
+                },
+                {
+                    "word": " been",
+                    "start": 46.18,
+                    "end": 46.48,
+                    "probability": 0.9997130036354065
+                },
+                {
+                    "word": " underestimated,",
+                    "start": 46.48,
+                    "end": 47.5,
+                    "probability": 0.9985795617103577
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "seek": 2900,
+            "start": 47.6,
+            "end": 50.14,
+            "text": " while any decrease in index price implies",
+            "tokens": [
+                51304,
+                1339,
+                604,
+                11514,
+                294,
+                8186,
+                3218,
+                18779,
+                51432
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " while",
+                    "start": 47.6,
+                    "end": 48.08,
+                    "probability": 0.9990565180778503
+                },
+                {
+                    "word": " any",
+                    "start": 48.08,
+                    "end": 48.3,
+                    "probability": 0.9988086223602295
+                },
+                {
+                    "word": " decrease",
+                    "start": 48.3,
+                    "end": 48.72,
+                    "probability": 0.9992639422416687
+                },
+                {
+                    "word": " in",
+                    "start": 48.72,
+                    "end": 49.0,
+                    "probability": 0.9989829659461975
+                },
+                {
+                    "word": " index",
+                    "start": 49.0,
+                    "end": 49.26,
+                    "probability": 0.9984038472175598
+                },
+                {
+                    "word": " price",
+                    "start": 49.26,
+                    "end": 49.6,
+                    "probability": 0.9992948770523071
+                },
+                {
+                    "word": " implies",
+                    "start": 49.6,
+                    "end": 50.14,
+                    "probability": 0.9994148015975952
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "seek": 2900,
+            "start": 50.14,
+            "end": 52.0,
+            "text": " that they had been overestimated.",
+            "tokens": [
+                51432,
+                300,
+                436,
+                632,
+                668,
+                670,
+                377,
+                33008,
+                13,
+                51523
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " that",
+                    "start": 50.14,
+                    "end": 50.46,
+                    "probability": 0.9958963394165039
+                },
+                {
+                    "word": " they",
+                    "start": 50.46,
+                    "end": 50.64,
+                    "probability": 0.9991434812545776
+                },
+                {
+                    "word": " had",
+                    "start": 50.64,
+                    "end": 50.8,
+                    "probability": 0.9978925585746765
+                },
+                {
+                    "word": " been",
+                    "start": 50.8,
+                    "end": 51.04,
+                    "probability": 0.9995046854019165
+                },
+                {
+                    "word": " overestimated.",
+                    "start": 51.04,
+                    "end": 52.0,
+                    "probability": 0.9984341065088908
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "seek": 2900,
+            "start": 52.38,
+            "end": 55.7,
+            "text": " Therefore, mark-to-market value of the swap over time",
+            "tokens": [
+                51550,
+                7504,
+                11,
+                1491,
+                12,
+                1353,
+                12,
+                16414,
+                2158,
+                295,
+                264,
+                18135,
+                670,
+                565,
+                51711
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " Therefore,",
+                    "start": 52.38,
+                    "end": 52.98,
+                    "probability": 0.9984898567199707
+                },
+                {
+                    "word": " mark",
+                    "start": 53.28,
+                    "end": 53.62,
+                    "probability": 0.8773860931396484
+                },
+                {
+                    "word": "-to",
+                    "start": 53.62,
+                    "end": 53.8,
+                    "probability": 0.8469333946704865
+                },
+                {
+                    "word": "-market",
+                    "start": 53.8,
+                    "end": 53.94,
+                    "probability": 0.998773843050003
+                },
+                {
+                    "word": " value",
+                    "start": 53.94,
+                    "end": 54.36,
+                    "probability": 0.9985226988792419
+                },
+                {
+                    "word": " of",
+                    "start": 54.36,
+                    "end": 54.62,
+                    "probability": 0.9991052746772766
+                },
+                {
+                    "word": " the",
+                    "start": 54.62,
+                    "end": 54.66,
+                    "probability": 0.998494029045105
+                },
+                {
+                    "word": " swap",
+                    "start": 54.66,
+                    "end": 54.96,
+                    "probability": 0.995051920413971
+                },
+                {
+                    "word": " over",
+                    "start": 54.96,
+                    "end": 55.42,
+                    "probability": 0.6257145404815674
+                },
+                {
+                    "word": " time",
+                    "start": 55.42,
+                    "end": 55.7,
+                    "probability": 0.9993395209312439
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "seek": 2900,
+            "start": 55.7,
+            "end": 57.96,
+            "text": " should simply be equal to the difference",
+            "tokens": [
+                51711,
+                820,
+                2935,
+                312,
+                2681,
+                281,
+                264,
+                2649,
+                51820
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " should",
+                    "start": 55.7,
+                    "end": 56.4,
+                    "probability": 0.9872398972511292
+                },
+                {
+                    "word": " simply",
+                    "start": 56.4,
+                    "end": 56.7,
+                    "probability": 0.9993718266487122
+                },
+                {
+                    "word": " be",
+                    "start": 56.7,
+                    "end": 56.92,
+                    "probability": 0.999919056892395
+                },
+                {
+                    "word": " equal",
+                    "start": 56.92,
+                    "end": 57.22,
+                    "probability": 0.9998154044151306
+                },
+                {
+                    "word": " to",
+                    "start": 57.22,
+                    "end": 57.48,
+                    "probability": 0.9999141693115234
+                },
+                {
+                    "word": " the",
+                    "start": 57.48,
+                    "end": 57.58,
+                    "probability": 0.9998589754104614
+                },
+                {
+                    "word": " difference",
+                    "start": 57.58,
+                    "end": 57.96,
+                    "probability": 0.9991657733917236
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "seek": 2900,
+            "start": 57.96,
+            "end": 58.98,
+            "text": " between the current and the future dividends.",
+            "tokens": [
+                51820,
+                1296,
+                264,
+                2190,
+                293,
+                264,
+                2027,
+                39675,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14610113416399276,
+            "compression_ratio": 2.2,
+            "no_speech_prob": 3.0479015549644828e-05,
+            "words": [
+                {
+                    "word": " between",
+                    "start": 57.96,
+                    "end": 58.34,
+                    "probability": 0.9989499449729919
+                },
+                {
+                    "word": " the",
+                    "start": 58.34,
+                    "end": 58.56,
+                    "probability": 0.9996156692504883
+                },
+                {
+                    "word": " current",
+                    "start": 58.56,
+                    "end": 58.9,
+                    "probability": 0.9975156784057617
+                },
+                {
+                    "word": " and",
+                    "start": 58.9,
+                    "end": 58.98,
+                    "probability": 0.07343509048223495
+                },
+                {
+                    "word": " the",
+                    "start": 58.98,
+                    "end": 58.98,
+                    "probability": 0.3221372365951538
+                },
+                {
+                    "word": " future",
+                    "start": 58.98,
+                    "end": 58.98,
+                    "probability": 0.3600853681564331
+                },
+                {
+                    "word": " dividends.",
+                    "start": 58.98,
+                    "end": 58.98,
+                    "probability": 0.5946642756462097
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "seek": 5900,
+            "start": 59.0,
+            "end": 64.74,
+            "text": " The investor is holding the floating leg",
+            "tokens": [
+                50365,
+                440,
+                18479,
+                307,
+                5061,
+                264,
+                12607,
+                1676,
+                50661
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " The",
+                    "start": 59.0,
+                    "end": 59.82,
+                    "probability": 0.0006961431936360896
+                },
+                {
+                    "word": " investor",
+                    "start": 59.82,
+                    "end": 62.76,
+                    "probability": 0.0604560449719429
+                },
+                {
+                    "word": " is",
+                    "start": 62.76,
+                    "end": 63.6,
+                    "probability": 0.012692236341536045
+                },
+                {
+                    "word": " holding",
+                    "start": 63.6,
+                    "end": 63.6,
+                    "probability": 0.27680474519729614
+                },
+                {
+                    "word": " the",
+                    "start": 63.6,
+                    "end": 63.9,
+                    "probability": 0.9396043419837952
+                },
+                {
+                    "word": " floating",
+                    "start": 63.9,
+                    "end": 64.28,
+                    "probability": 0.8968786001205444
+                },
+                {
+                    "word": " leg",
+                    "start": 64.28,
+                    "end": 64.74,
+                    "probability": 0.9952144622802734
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "seek": 5900,
+            "start": 64.74,
+            "end": 68.22,
+            "text": " is effectively long the index and all its associated risks",
+            "tokens": [
+                50661,
+                307,
+                8659,
+                938,
+                264,
+                8186,
+                293,
+                439,
+                1080,
+                6615,
+                10888,
+                50834
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 64.74,
+                    "end": 65.04,
+                    "probability": 0.37719082832336426
+                },
+                {
+                    "word": " effectively",
+                    "start": 65.04,
+                    "end": 65.42,
+                    "probability": 0.996253252029419
+                },
+                {
+                    "word": " long",
+                    "start": 65.42,
+                    "end": 65.88,
+                    "probability": 0.9518975019454956
+                },
+                {
+                    "word": " the",
+                    "start": 65.88,
+                    "end": 66.1,
+                    "probability": 0.9828994274139404
+                },
+                {
+                    "word": " index",
+                    "start": 66.1,
+                    "end": 66.54,
+                    "probability": 0.9978324770927429
+                },
+                {
+                    "word": " and",
+                    "start": 66.54,
+                    "end": 66.9,
+                    "probability": 0.98675936460495
+                },
+                {
+                    "word": " all",
+                    "start": 66.9,
+                    "end": 67.1,
+                    "probability": 0.9785246253013611
+                },
+                {
+                    "word": " its",
+                    "start": 67.1,
+                    "end": 67.24,
+                    "probability": 0.9837729334831238
+                },
+                {
+                    "word": " associated",
+                    "start": 67.24,
+                    "end": 67.72,
+                    "probability": 0.9997259974479675
+                },
+                {
+                    "word": " risks",
+                    "start": 67.72,
+                    "end": 68.22,
+                    "probability": 0.9978727102279663
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "seek": 5900,
+            "start": 68.22,
+            "end": 71.52,
+            "text": " and would expect to earn the equity risk premium over time.",
+            "tokens": [
+                50834,
+                293,
+                576,
+                2066,
+                281,
+                6012,
+                264,
+                10769,
+                3148,
+                12049,
+                670,
+                565,
+                13,
+                50997
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " and",
+                    "start": 68.22,
+                    "end": 68.7,
+                    "probability": 0.9373024702072144
+                },
+                {
+                    "word": " would",
+                    "start": 68.7,
+                    "end": 68.86,
+                    "probability": 0.999462902545929
+                },
+                {
+                    "word": " expect",
+                    "start": 68.86,
+                    "end": 69.18,
+                    "probability": 0.9997456669807434
+                },
+                {
+                    "word": " to",
+                    "start": 69.18,
+                    "end": 69.44,
+                    "probability": 0.9997978806495667
+                },
+                {
+                    "word": " earn",
+                    "start": 69.44,
+                    "end": 69.7,
+                    "probability": 0.9993472695350647
+                },
+                {
+                    "word": " the",
+                    "start": 69.7,
+                    "end": 69.9,
+                    "probability": 0.9994496703147888
+                },
+                {
+                    "word": " equity",
+                    "start": 69.9,
+                    "end": 70.14,
+                    "probability": 0.9984194040298462
+                },
+                {
+                    "word": " risk",
+                    "start": 70.14,
+                    "end": 70.42,
+                    "probability": 0.9993033409118652
+                },
+                {
+                    "word": " premium",
+                    "start": 70.42,
+                    "end": 70.84,
+                    "probability": 0.9992464780807495
+                },
+                {
+                    "word": " over",
+                    "start": 70.84,
+                    "end": 71.18,
+                    "probability": 0.9971143007278442
+                },
+                {
+                    "word": " time.",
+                    "start": 71.18,
+                    "end": 71.52,
+                    "probability": 0.9999377727508545
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "seek": 5900,
+            "start": 71.78,
+            "end": 73.84,
+            "text": " On the opposite end of the spectrum,",
+            "tokens": [
+                51012,
+                1282,
+                264,
+                6182,
+                917,
+                295,
+                264,
+                11143,
+                11,
+                51111
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " On",
+                    "start": 71.78,
+                    "end": 72.38,
+                    "probability": 0.9966588020324707
+                },
+                {
+                    "word": " the",
+                    "start": 72.38,
+                    "end": 72.52,
+                    "probability": 0.9999027252197266
+                },
+                {
+                    "word": " opposite",
+                    "start": 72.52,
+                    "end": 72.88,
+                    "probability": 0.9998149275779724
+                },
+                {
+                    "word": " end",
+                    "start": 72.88,
+                    "end": 73.2,
+                    "probability": 0.9997648596763611
+                },
+                {
+                    "word": " of",
+                    "start": 73.2,
+                    "end": 73.3,
+                    "probability": 0.9997373223304749
+                },
+                {
+                    "word": " the",
+                    "start": 73.3,
+                    "end": 73.36,
+                    "probability": 0.9997521042823792
+                },
+                {
+                    "word": " spectrum,",
+                    "start": 73.36,
+                    "end": 73.84,
+                    "probability": 0.9995713829994202
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "seek": 5900,
+            "start": 74.0,
+            "end": 75.8,
+            "text": " we have a bullet one-year swap.",
+            "tokens": [
+                51126,
+                321,
+                362,
+                257,
+                11632,
+                472,
+                12,
+                5294,
+                18135,
+                13,
+                51215
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " we",
+                    "start": 74.0,
+                    "end": 74.22,
+                    "probability": 0.9995967745780945
+                },
+                {
+                    "word": " have",
+                    "start": 74.22,
+                    "end": 74.4,
+                    "probability": 0.9999499320983887
+                },
+                {
+                    "word": " a",
+                    "start": 74.4,
+                    "end": 74.54,
+                    "probability": 0.9996077418327332
+                },
+                {
+                    "word": " bullet",
+                    "start": 74.54,
+                    "end": 74.82,
+                    "probability": 0.992733359336853
+                },
+                {
+                    "word": " one",
+                    "start": 74.82,
+                    "end": 75.22,
+                    "probability": 0.9290822148323059
+                },
+                {
+                    "word": "-year",
+                    "start": 75.22,
+                    "end": 75.48,
+                    "probability": 0.8428441286087036
+                },
+                {
+                    "word": " swap.",
+                    "start": 75.48,
+                    "end": 75.8,
+                    "probability": 0.9989625215530396
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "seek": 5900,
+            "start": 76.06,
+            "end": 78.88,
+            "text": " In this case, the floating leg only bears the risk",
+            "tokens": [
+                51238,
+                682,
+                341,
+                1389,
+                11,
+                264,
+                12607,
+                1676,
+                787,
+                17276,
+                264,
+                3148,
+                51364
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " In",
+                    "start": 76.06,
+                    "end": 76.54,
+                    "probability": 0.9986867308616638
+                },
+                {
+                    "word": " this",
+                    "start": 76.54,
+                    "end": 76.74,
+                    "probability": 0.9998650550842285
+                },
+                {
+                    "word": " case,",
+                    "start": 76.74,
+                    "end": 77.04,
+                    "probability": 0.9999783039093018
+                },
+                {
+                    "word": " the",
+                    "start": 77.14,
+                    "end": 77.24,
+                    "probability": 0.9997585415840149
+                },
+                {
+                    "word": " floating",
+                    "start": 77.24,
+                    "end": 77.54,
+                    "probability": 0.9995576739311218
+                },
+                {
+                    "word": " leg",
+                    "start": 77.54,
+                    "end": 77.82,
+                    "probability": 0.9998440742492676
+                },
+                {
+                    "word": " only",
+                    "start": 77.82,
+                    "end": 78.1,
+                    "probability": 0.9990409016609192
+                },
+                {
+                    "word": " bears",
+                    "start": 78.1,
+                    "end": 78.38,
+                    "probability": 0.9989846348762512
+                },
+                {
+                    "word": " the",
+                    "start": 78.38,
+                    "end": 78.64,
+                    "probability": 0.9999207258224487
+                },
+                {
+                    "word": " risk",
+                    "start": 78.64,
+                    "end": 78.88,
+                    "probability": 0.9998434782028198
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "seek": 5900,
+            "start": 78.88,
+            "end": 81.26,
+            "text": " of the realized dividends accrued over the next year.",
+            "tokens": [
+                51364,
+                295,
+                264,
+                5334,
+                39675,
+                1317,
+                894,
+                292,
+                670,
+                264,
+                958,
+                1064,
+                13,
+                51483
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " of",
+                    "start": 78.88,
+                    "end": 79.06,
+                    "probability": 0.9997588992118835
+                },
+                {
+                    "word": " the",
+                    "start": 79.06,
+                    "end": 79.16,
+                    "probability": 0.9986465573310852
+                },
+                {
+                    "word": " realized",
+                    "start": 79.16,
+                    "end": 79.52,
+                    "probability": 0.9981656670570374
+                },
+                {
+                    "word": " dividends",
+                    "start": 79.52,
+                    "end": 80.0,
+                    "probability": 0.9994325041770935
+                },
+                {
+                    "word": " accrued",
+                    "start": 80.0,
+                    "end": 80.5,
+                    "probability": 0.9997653166453043
+                },
+                {
+                    "word": " over",
+                    "start": 80.5,
+                    "end": 80.68,
+                    "probability": 0.9996422529220581
+                },
+                {
+                    "word": " the",
+                    "start": 80.68,
+                    "end": 80.76,
+                    "probability": 0.9999178647994995
+                },
+                {
+                    "word": " next",
+                    "start": 80.76,
+                    "end": 80.94,
+                    "probability": 0.999638557434082
+                },
+                {
+                    "word": " year.",
+                    "start": 80.94,
+                    "end": 81.26,
+                    "probability": 0.9999648332595825
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "seek": 5900,
+            "start": 81.38,
+            "end": 84.56,
+            "text": " While the forecast accuracy of realized dividends",
+            "tokens": [
+                51495,
+                3987,
+                264,
+                14330,
+                14170,
+                295,
+                5334,
+                39675,
+                51650
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " While",
+                    "start": 81.38,
+                    "end": 81.98,
+                    "probability": 0.9988510608673096
+                },
+                {
+                    "word": " the",
+                    "start": 81.98,
+                    "end": 82.14,
+                    "probability": 0.9998100399971008
+                },
+                {
+                    "word": " forecast",
+                    "start": 82.14,
+                    "end": 82.6,
+                    "probability": 0.9995912909507751
+                },
+                {
+                    "word": " accuracy",
+                    "start": 82.6,
+                    "end": 83.26,
+                    "probability": 0.9997240900993347
+                },
+                {
+                    "word": " of",
+                    "start": 83.26,
+                    "end": 83.76,
+                    "probability": 0.9991050362586975
+                },
+                {
+                    "word": " realized",
+                    "start": 83.76,
+                    "end": 84.06,
+                    "probability": 0.9994389414787292
+                },
+                {
+                    "word": " dividends",
+                    "start": 84.06,
+                    "end": 84.56,
+                    "probability": 0.9994819760322571
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "seek": 5900,
+            "start": 84.56,
+            "end": 88.12,
+            "text": " over a one-year horizon is empirically fairly accurate,",
+            "tokens": [
+                51650,
+                670,
+                257,
+                472,
+                12,
+                5294,
+                18046,
+                307,
+                25790,
+                984,
+                6457,
+                8559,
+                11,
+                51828
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " over",
+                    "start": 84.56,
+                    "end": 84.86,
+                    "probability": 0.9991375207901001
+                },
+                {
+                    "word": " a",
+                    "start": 84.86,
+                    "end": 85.08,
+                    "probability": 0.9998542070388794
+                },
+                {
+                    "word": " one",
+                    "start": 85.08,
+                    "end": 85.3,
+                    "probability": 0.9997603297233582
+                },
+                {
+                    "word": "-year",
+                    "start": 85.3,
+                    "end": 85.46,
+                    "probability": 0.999520868062973
+                },
+                {
+                    "word": " horizon",
+                    "start": 85.46,
+                    "end": 85.8,
+                    "probability": 0.9990783929824829
+                },
+                {
+                    "word": " is",
+                    "start": 85.8,
+                    "end": 86.58,
+                    "probability": 0.9997144341468811
+                },
+                {
+                    "word": " empirically",
+                    "start": 86.58,
+                    "end": 87.24,
+                    "probability": 0.9995347261428833
+                },
+                {
+                    "word": " fairly",
+                    "start": 87.24,
+                    "end": 87.54,
+                    "probability": 0.9974421262741089
+                },
+                {
+                    "word": " accurate,",
+                    "start": 87.54,
+                    "end": 88.12,
+                    "probability": 0.999358594417572
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "seek": 5900,
+            "start": 88.4,
+            "end": 88.98,
+            "text": " investors are only going to be able to see the floating leg",
+            "tokens": [
+                51854,
+                11519,
+                366,
+                787,
+                516,
+                281,
+                312,
+                1075,
+                281,
+                536,
+                264,
+                12607,
+                1676,
+                51855
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": [
+                {
+                    "word": " investors",
+                    "start": 88.4,
+                    "end": 88.94,
+                    "probability": 0.9054126143455505
+                },
+                {
+                    "word": " are",
+                    "start": 88.94,
+                    "end": 88.98,
+                    "probability": 0.7830528020858765
+                },
+                {
+                    "word": " only",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.12658920884132385
+                },
+                {
+                    "word": " going",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.07455507665872574
+                },
+                {
+                    "word": " to",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.9995998740196228
+                },
+                {
+                    "word": " be",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.6547964811325073
+                },
+                {
+                    "word": " able",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.4779290556907654
+                },
+                {
+                    "word": " to",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.9999109506607056
+                },
+                {
+                    "word": " see",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.11680598556995392
+                },
+                {
+                    "word": " the",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.8352835178375244
+                },
+                {
+                    "word": " floating",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.21114720404148102
+                },
+                {
+                    "word": " leg",
+                    "start": 88.98,
+                    "end": 88.98,
+                    "probability": 0.9694594144821167
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "seek": 5900,
+            "start": 88.98,
+            "end": 88.98,
+            "text": "",
+            "tokens": [],
+            "temperature": 0.2,
+            "avg_logprob": -0.3034382462501526,
+            "compression_ratio": 1.853046594982079,
+            "no_speech_prob": 0.004433498252183199,
+            "words": []
+        },
+        {
+            "id": 35,
+            "seek": 8900,
+            "start": 89.0,
+            "end": 89.08,
+            "text": " over time.",
+            "tokens": [
+                50365,
+                670,
+                565,
+                13,
+                50390
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " over",
+                    "start": 89.0,
+                    "end": 89.08,
+                    "probability": 1.6444482753286138e-05
+                },
+                {
+                    "word": " time.",
+                    "start": 89.08,
+                    "end": 89.08,
+                    "probability": 0.2213248759508133
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "seek": 8900,
+            "start": 89.08,
+            "end": 91.7,
+            "text": " Investors willing to bear these risks are compensated",
+            "tokens": [
+                50390,
+                14008,
+                830,
+                4950,
+                281,
+                6155,
+                613,
+                10888,
+                366,
+                11598,
+                770,
+                50509
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " Investors",
+                    "start": 89.08,
+                    "end": 89.18,
+                    "probability": 0.8794000744819641
+                },
+                {
+                    "word": " willing",
+                    "start": 89.18,
+                    "end": 89.44,
+                    "probability": 0.9863670468330383
+                },
+                {
+                    "word": " to",
+                    "start": 89.44,
+                    "end": 89.72,
+                    "probability": 0.9983680844306946
+                },
+                {
+                    "word": " bear",
+                    "start": 89.72,
+                    "end": 90.0,
+                    "probability": 0.9829933643341064
+                },
+                {
+                    "word": " these",
+                    "start": 90.0,
+                    "end": 90.3,
+                    "probability": 0.985630989074707
+                },
+                {
+                    "word": " risks",
+                    "start": 90.3,
+                    "end": 90.74,
+                    "probability": 0.9941602945327759
+                },
+                {
+                    "word": " are",
+                    "start": 90.74,
+                    "end": 90.96,
+                    "probability": 0.9950459003448486
+                },
+                {
+                    "word": " compensated",
+                    "start": 90.96,
+                    "end": 91.7,
+                    "probability": 0.9993844926357269
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "seek": 8900,
+            "start": 91.7,
+            "end": 94.04,
+            "text": " with what's called the dividend risk premium.",
+            "tokens": [
+                50509,
+                365,
+                437,
+                311,
+                1219,
+                264,
+                29796,
+                3148,
+                12049,
+                13,
+                50632
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " with",
+                    "start": 91.7,
+                    "end": 91.9,
+                    "probability": 0.994496762752533
+                },
+                {
+                    "word": " what's",
+                    "start": 91.9,
+                    "end": 92.24,
+                    "probability": 0.976972758769989
+                },
+                {
+                    "word": " called",
+                    "start": 92.24,
+                    "end": 92.54,
+                    "probability": 0.9985175728797913
+                },
+                {
+                    "word": " the",
+                    "start": 92.54,
+                    "end": 92.72,
+                    "probability": 0.9862160682678223
+                },
+                {
+                    "word": " dividend",
+                    "start": 92.72,
+                    "end": 93.08,
+                    "probability": 0.8690486550331116
+                },
+                {
+                    "word": " risk",
+                    "start": 93.08,
+                    "end": 93.48,
+                    "probability": 0.9886749982833862
+                },
+                {
+                    "word": " premium.",
+                    "start": 93.48,
+                    "end": 94.04,
+                    "probability": 0.9969622492790222
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "seek": 8900,
+            "start": 95.14,
+            "end": 98.44,
+            "text": " We can use these two extremes to develop a first-order approximation",
+            "tokens": [
+                50672,
+                492,
+                393,
+                764,
+                613,
+                732,
+                41119,
+                281,
+                1499,
+                257,
+                700,
+                12,
+                4687,
+                28023,
+                50869
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " We",
+                    "start": 94.86,
+                    "end": 95.16,
+                    "probability": 0.9942899942398071
+                },
+                {
+                    "word": " can",
+                    "start": 95.16,
+                    "end": 95.32,
+                    "probability": 0.9976851940155029
+                },
+                {
+                    "word": " use",
+                    "start": 95.32,
+                    "end": 95.6,
+                    "probability": 0.9994124174118042
+                },
+                {
+                    "word": " these",
+                    "start": 95.6,
+                    "end": 95.8,
+                    "probability": 0.997071385383606
+                },
+                {
+                    "word": " two",
+                    "start": 95.8,
+                    "end": 95.98,
+                    "probability": 0.9897341728210449
+                },
+                {
+                    "word": " extremes",
+                    "start": 95.98,
+                    "end": 96.46,
+                    "probability": 0.996853768825531
+                },
+                {
+                    "word": " to",
+                    "start": 96.46,
+                    "end": 96.76,
+                    "probability": 0.9980605244636536
+                },
+                {
+                    "word": " develop",
+                    "start": 96.76,
+                    "end": 97.08,
+                    "probability": 0.9984776377677917
+                },
+                {
+                    "word": " a",
+                    "start": 97.08,
+                    "end": 97.3,
+                    "probability": 0.9963488578796387
+                },
+                {
+                    "word": " first",
+                    "start": 97.3,
+                    "end": 97.58,
+                    "probability": 0.9869053959846497
+                },
+                {
+                    "word": "-order",
+                    "start": 97.58,
+                    "end": 97.92,
+                    "probability": 0.640688493847847
+                },
+                {
+                    "word": " approximation",
+                    "start": 97.92,
+                    "end": 98.44,
+                    "probability": 0.9987164735794067
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "seek": 8900,
+            "start": 98.44,
+            "end": 101.08,
+            "text": " of how we would expect intermediate length",
+            "tokens": [
+                50882,
+                295,
+                577,
+                321,
+                576,
+                2066,
+                19376,
+                4641,
+                50982
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " of",
+                    "start": 98.44,
+                    "end": 99.34,
+                    "probability": 0.9956412315368652
+                },
+                {
+                    "word": " how",
+                    "start": 99.34,
+                    "end": 99.52,
+                    "probability": 0.9991716146469116
+                },
+                {
+                    "word": " we",
+                    "start": 99.52,
+                    "end": 99.72,
+                    "probability": 0.9988238215446472
+                },
+                {
+                    "word": " would",
+                    "start": 99.72,
+                    "end": 99.86,
+                    "probability": 0.9948503375053406
+                },
+                {
+                    "word": " expect",
+                    "start": 99.86,
+                    "end": 100.14,
+                    "probability": 0.9969122409820557
+                },
+                {
+                    "word": " intermediate",
+                    "start": 100.14,
+                    "end": 100.62,
+                    "probability": 0.978679895401001
+                },
+                {
+                    "word": " length",
+                    "start": 100.62,
+                    "end": 101.08,
+                    "probability": 0.4543447196483612
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "seek": 8900,
+            "start": 101.08,
+            "end": 102.46,
+            "text": " dividend swaps to behave.",
+            "tokens": [
+                50982,
+                29796,
+                1693,
+                2382,
+                281,
+                15158,
+                13,
+                51053
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " dividend",
+                    "start": 101.08,
+                    "end": 101.5,
+                    "probability": 0.92120361328125
+                },
+                {
+                    "word": " swaps",
+                    "start": 101.5,
+                    "end": 101.96,
+                    "probability": 0.9969727098941803
+                },
+                {
+                    "word": " to",
+                    "start": 101.96,
+                    "end": 102.2,
+                    "probability": 0.9977262616157532
+                },
+                {
+                    "word": " behave.",
+                    "start": 102.2,
+                    "end": 102.46,
+                    "probability": 0.9986957907676697
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "seek": 8900,
+            "start": 102.8,
+            "end": 106.64,
+            "text": " We would expect longer swaps to exhibit more equity sensitivity,",
+            "tokens": [
+                51076,
+                492,
+                576,
+                2066,
+                2854,
+                1693,
+                2382,
+                281,
+                20487,
+                544,
+                10769,
+                19392,
+                11,
+                51268
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " We",
+                    "start": 102.8,
+                    "end": 103.24,
+                    "probability": 0.9909418225288391
+                },
+                {
+                    "word": " would",
+                    "start": 103.24,
+                    "end": 103.36,
+                    "probability": 0.9952322840690613
+                },
+                {
+                    "word": " expect",
+                    "start": 103.36,
+                    "end": 103.66,
+                    "probability": 0.9986171722412109
+                },
+                {
+                    "word": " longer",
+                    "start": 103.66,
+                    "end": 104.12,
+                    "probability": 0.9900791645050049
+                },
+                {
+                    "word": " swaps",
+                    "start": 104.12,
+                    "end": 104.78,
+                    "probability": 0.9983879029750824
+                },
+                {
+                    "word": " to",
+                    "start": 104.78,
+                    "end": 105.06,
+                    "probability": 0.9977019429206848
+                },
+                {
+                    "word": " exhibit",
+                    "start": 105.06,
+                    "end": 105.34,
+                    "probability": 0.9983658194541931
+                },
+                {
+                    "word": " more",
+                    "start": 105.34,
+                    "end": 105.6,
+                    "probability": 0.9994295239448547
+                },
+                {
+                    "word": " equity",
+                    "start": 105.6,
+                    "end": 106.04,
+                    "probability": 0.9989079236984253
+                },
+                {
+                    "word": " sensitivity,",
+                    "start": 106.04,
+                    "end": 106.64,
+                    "probability": 0.9952256679534912
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "seek": 8900,
+            "start": 106.86,
+            "end": 109.94,
+            "text": " while shorter duration swaps would exhibit more sensitivity",
+            "tokens": [
+                51282,
+                1339,
+                11639,
+                16365,
+                1693,
+                2382,
+                576,
+                20487,
+                544,
+                19392,
+                51429
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " while",
+                    "start": 106.86,
+                    "end": 107.38,
+                    "probability": 0.9941917061805725
+                },
+                {
+                    "word": " shorter",
+                    "start": 107.38,
+                    "end": 107.76,
+                    "probability": 0.9975783228874207
+                },
+                {
+                    "word": " duration",
+                    "start": 107.76,
+                    "end": 108.14,
+                    "probability": 0.8652295470237732
+                },
+                {
+                    "word": " swaps",
+                    "start": 108.14,
+                    "end": 108.72,
+                    "probability": 0.9982082545757294
+                },
+                {
+                    "word": " would",
+                    "start": 108.72,
+                    "end": 108.94,
+                    "probability": 0.9939138293266296
+                },
+                {
+                    "word": " exhibit",
+                    "start": 108.94,
+                    "end": 109.22,
+                    "probability": 0.9984480142593384
+                },
+                {
+                    "word": " more",
+                    "start": 109.22,
+                    "end": 109.46,
+                    "probability": 0.9993846416473389
+                },
+                {
+                    "word": " sensitivity",
+                    "start": 109.46,
+                    "end": 109.94,
+                    "probability": 0.9991183876991272
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "seek": 8900,
+            "start": 109.94,
+            "end": 112.48,
+            "text": " to uncertainty in short-term dividends.",
+            "tokens": [
+                51429,
+                281,
+                15697,
+                294,
+                2099,
+                12,
+                7039,
+                39675,
+                13,
+                51558
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " to",
+                    "start": 109.94,
+                    "end": 110.38,
+                    "probability": 0.9987499713897705
+                },
+                {
+                    "word": " uncertainty",
+                    "start": 110.38,
+                    "end": 110.94,
+                    "probability": 0.9980599284172058
+                },
+                {
+                    "word": " in",
+                    "start": 110.94,
+                    "end": 111.34,
+                    "probability": 0.6291203498840332
+                },
+                {
+                    "word": " short",
+                    "start": 111.34,
+                    "end": 111.62,
+                    "probability": 0.9994445443153381
+                },
+                {
+                    "word": "-term",
+                    "start": 111.62,
+                    "end": 111.98,
+                    "probability": 0.8696034848690033
+                },
+                {
+                    "word": " dividends.",
+                    "start": 111.98,
+                    "end": 112.48,
+                    "probability": 0.9954674243927002
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "seek": 8900,
+            "start": 113.36,
+            "end": 114.46,
+            "text": " And with that out of the way,",
+            "tokens": [
+                51583,
+                400,
+                365,
+                300,
+                484,
+                295,
+                264,
+                636,
+                11,
+                51650
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 113.08,
+                    "end": 113.38,
+                    "probability": 0.9317500591278076
+                },
+                {
+                    "word": " with",
+                    "start": 113.38,
+                    "end": 113.52,
+                    "probability": 0.9887296557426453
+                },
+                {
+                    "word": " that",
+                    "start": 113.52,
+                    "end": 113.72,
+                    "probability": 0.9995204210281372
+                },
+                {
+                    "word": " out",
+                    "start": 113.72,
+                    "end": 114.06,
+                    "probability": 0.8979706168174744
+                },
+                {
+                    "word": " of",
+                    "start": 114.06,
+                    "end": 114.18,
+                    "probability": 0.9982584118843079
+                },
+                {
+                    "word": " the",
+                    "start": 114.18,
+                    "end": 114.22,
+                    "probability": 0.9994127750396729
+                },
+                {
+                    "word": " way,",
+                    "start": 114.22,
+                    "end": 114.46,
+                    "probability": 0.9997484087944031
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "seek": 8900,
+            "start": 114.6,
+            "end": 116.88,
+            "text": " back to our regularly scheduled programming.",
+            "tokens": [
+                51663,
+                646,
+                281,
+                527,
+                11672,
+                15678,
+                9410,
+                13,
+                51771
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " back",
+                    "start": 114.6,
+                    "end": 115.06,
+                    "probability": 0.9981220364570618
+                },
+                {
+                    "word": " to",
+                    "start": 115.06,
+                    "end": 115.32,
+                    "probability": 0.9995505213737488
+                },
+                {
+                    "word": " our",
+                    "start": 115.32,
+                    "end": 115.5,
+                    "probability": 0.9981716871261597
+                },
+                {
+                    "word": " regularly",
+                    "start": 115.5,
+                    "end": 115.88,
+                    "probability": 0.9871323108673096
+                },
+                {
+                    "word": " scheduled",
+                    "start": 115.88,
+                    "end": 116.28,
+                    "probability": 0.990113377571106
+                },
+                {
+                    "word": " programming.",
+                    "start": 116.28,
+                    "end": 116.88,
+                    "probability": 0.9882013201713562
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "seek": 8900,
+            "start": 117.12,
+            "end": 118.52,
+            "text": " Eric, can you provide some",
+            "tokens": [
+                51782,
+                9336,
+                11,
+                393,
+                291,
+                2893,
+                512,
+                51856
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3451912732628303,
+            "compression_ratio": 1.7224080267558528,
+            "no_speech_prob": 0.003508961293846369,
+            "words": [
+                {
+                    "word": " Eric,",
+                    "start": 117.12,
+                    "end": 117.5,
+                    "probability": 0.9072441458702087
+                },
+                {
+                    "word": " can",
+                    "start": 117.54,
+                    "end": 117.74,
+                    "probability": 0.9986444115638733
+                },
+                {
+                    "word": " you",
+                    "start": 117.74,
+                    "end": 117.88,
+                    "probability": 0.9996747970581055
+                },
+                {
+                    "word": " provide",
+                    "start": 117.88,
+                    "end": 118.2,
+                    "probability": 0.9976795315742493
+                },
+                {
+                    "word": " some",
+                    "start": 118.2,
+                    "end": 118.52,
+                    "probability": 0.9959787130355835
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "seek": 11900,
+            "start": 119.0,
+            "end": 122.18,
+            "text": " basic intuition around what the dividend risk premium",
+            "tokens": [
+                50365,
+                3875,
+                24002,
+                926,
+                437,
+                264,
+                29796,
+                3148,
+                12049,
+                50542
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.06789541244506836,
+            "compression_ratio": 0.9298245614035088,
+            "no_speech_prob": 0.003197250422090292,
+            "words": [
+                {
+                    "word": " basic",
+                    "start": 119.0,
+                    "end": 119.36,
+                    "probability": 0.662208616733551
+                },
+                {
+                    "word": " intuition",
+                    "start": 119.36,
+                    "end": 119.78,
+                    "probability": 0.998166561126709
+                },
+                {
+                    "word": " around",
+                    "start": 119.78,
+                    "end": 120.48,
+                    "probability": 0.9964422583580017
+                },
+                {
+                    "word": " what",
+                    "start": 120.48,
+                    "end": 120.86,
+                    "probability": 0.9975917339324951
+                },
+                {
+                    "word": " the",
+                    "start": 120.86,
+                    "end": 121.18,
+                    "probability": 0.9982028007507324
+                },
+                {
+                    "word": " dividend",
+                    "start": 121.18,
+                    "end": 121.48,
+                    "probability": 0.9929526448249817
+                },
+                {
+                    "word": " risk",
+                    "start": 121.48,
+                    "end": 121.84,
+                    "probability": 0.9764503836631775
+                },
+                {
+                    "word": " premium",
+                    "start": 121.84,
+                    "end": 122.18,
+                    "probability": 0.995403528213501
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}

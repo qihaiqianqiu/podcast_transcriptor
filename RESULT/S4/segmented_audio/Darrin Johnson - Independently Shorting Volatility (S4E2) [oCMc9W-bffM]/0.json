@@ -1,0 +1,4055 @@
+{
+    "text": " All right. Three, two, one, let's do it. Hello and welcome, everyone. I'm Corey Hofstein, and this is Flirting with Models, the podcast that pulls back the curtain to discover the human factor behind the quantitative strategy. Corey Hofstein is the co-founder and chief investment officer of Newfound Research. Due to industry regulations, he will not discuss any of Newfound Research's funds on this podcast. All opinions expressed by podcast participants are solely their own opinion and do not reflect the opinion of Newfound Research. This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions. Clients of Newfound Research may maintain positions and securities discussed in this podcast. For more information, visit thinknewfound.com. This season is sponsored by Simplify ETFs. Simplify seeks to help you modernize your portfolio with its innovative and innovative solutions. set of options-based strategies. Full disclosure, prior to Simplify sponsoring the season, we had incorporated some of Simplify's ETFs into our ETF model mandates here at Newfound. If you're interested in reading a brief case study about why and how, visit simplify.us slash flirting with models. And stick around after the episode for an ongoing conversation about markets and convexity with the convexity maven himself, Simplify's own Harley Bassman. Darren Johnson is the first independent trader I've interviewed for this show, and with that distinction, he brings an entirely new perspective. After learning about how Darren began his career as an independent trader, we get into the bulk of the conversation that circles around his process of shorting volatility in the S&P 500 complex, including options on futures, index options, VIX futures, and VIX ETPs. Darren provides insights into how he plays a role in the S&P 500 complex, and how he's been able to play certain tenors over others, why knowing when not to short is the most important key to risk management, why the upside can be riskier than the downside, and thinking through managing a trade over its lifetime. Towards the end of the interview, Darren paints a realistic picture of what it means to be an independent trader, and both the opportunities and constraints unique to his position. We finish with the advice Darren would give to anyone serious about starting a career in independent trading. I hope you enjoy my conversation, and I'll see you in the next video. Darren, welcome to the show. You are the first, I think, truly independent trader I've had come on the podcast, so I'm excited to get a brand new perspective for what is normally an overwhelmingly institutionally driven podcast. And given that you've chosen sort of a bit of different of a career trajectory here, I was hoping you could just start off with your background and get us to how you got to where you are today.",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 3.54,
+            "text": " All right. Three, two, one, let's do it.",
+            "tokens": [
+                50365,
+                1057,
+                558,
+                13,
+                6244,
+                11,
+                732,
+                11,
+                472,
+                11,
+                718,
+                311,
+                360,
+                309,
+                13,
+                50551
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1067905331602191,
+            "compression_ratio": 1.5914396887159532,
+            "no_speech_prob": 0.013220051303505898,
+            "words": [
+                {
+                    "word": " All",
+                    "start": 0.0,
+                    "end": 0.18,
+                    "probability": 0.9885050654411316
+                },
+                {
+                    "word": " right.",
+                    "start": 0.18,
+                    "end": 0.38,
+                    "probability": 0.9999697208404541
+                },
+                {
+                    "word": " Three,",
+                    "start": 0.44,
+                    "end": 0.9,
+                    "probability": 0.8554862141609192
+                },
+                {
+                    "word": " two,",
+                    "start": 1.1,
+                    "end": 1.76,
+                    "probability": 0.9999877214431763
+                },
+                {
+                    "word": " one,",
+                    "start": 1.9,
+                    "end": 2.84,
+                    "probability": 0.9999918937683105
+                },
+                {
+                    "word": " let's",
+                    "start": 2.94,
+                    "end": 3.2,
+                    "probability": 0.9999880194664001
+                },
+                {
+                    "word": " do",
+                    "start": 3.2,
+                    "end": 3.28,
+                    "probability": 0.9999953508377075
+                },
+                {
+                    "word": " it.",
+                    "start": 3.28,
+                    "end": 3.54,
+                    "probability": 0.9999995231628418
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 7.2,
+            "end": 11.88,
+            "text": " Hello and welcome, everyone. I'm Corey Hofstein, and this is Flirting with Models,",
+            "tokens": [
+                50728,
+                2425,
+                293,
+                2928,
+                11,
+                1518,
+                13,
+                286,
+                478,
+                39136,
+                37379,
+                9089,
+                11,
+                293,
+                341,
+                307,
+                3235,
+                36575,
+                365,
+                6583,
+                1625,
+                11,
+                50964
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1067905331602191,
+            "compression_ratio": 1.5914396887159532,
+            "no_speech_prob": 0.013220051303505898,
+            "words": [
+                {
+                    "word": " Hello",
+                    "start": 7.2,
+                    "end": 7.76,
+                    "probability": 0.9918848276138306
+                },
+                {
+                    "word": " and",
+                    "start": 7.76,
+                    "end": 8.12,
+                    "probability": 0.7217331528663635
+                },
+                {
+                    "word": " welcome,",
+                    "start": 8.12,
+                    "end": 8.42,
+                    "probability": 0.9999951124191284
+                },
+                {
+                    "word": " everyone.",
+                    "start": 8.54,
+                    "end": 8.86,
+                    "probability": 0.9999912977218628
+                },
+                {
+                    "word": " I'm",
+                    "start": 9.04,
+                    "end": 9.6,
+                    "probability": 0.99998939037323
+                },
+                {
+                    "word": " Corey",
+                    "start": 9.6,
+                    "end": 9.82,
+                    "probability": 0.9579935073852539
+                },
+                {
+                    "word": " Hofstein,",
+                    "start": 9.82,
+                    "end": 10.34,
+                    "probability": 0.9011694490909576
+                },
+                {
+                    "word": " and",
+                    "start": 10.4,
+                    "end": 10.56,
+                    "probability": 0.9999611377716064
+                },
+                {
+                    "word": " this",
+                    "start": 10.56,
+                    "end": 10.66,
+                    "probability": 0.9999804496765137
+                },
+                {
+                    "word": " is",
+                    "start": 10.66,
+                    "end": 10.84,
+                    "probability": 0.9999829530715942
+                },
+                {
+                    "word": " Flirting",
+                    "start": 10.84,
+                    "end": 11.22,
+                    "probability": 0.9951658546924591
+                },
+                {
+                    "word": " with",
+                    "start": 11.22,
+                    "end": 11.38,
+                    "probability": 0.9379929900169373
+                },
+                {
+                    "word": " Models,",
+                    "start": 11.38,
+                    "end": 11.88,
+                    "probability": 0.9998399913311005
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 11.98,
+            "end": 17.02,
+            "text": " the podcast that pulls back the curtain to discover the human factor behind the quantitative",
+            "tokens": [
+                50976,
+                264,
+                7367,
+                300,
+                16982,
+                646,
+                264,
+                26789,
+                281,
+                4411,
+                264,
+                1952,
+                5952,
+                2261,
+                264,
+                27778,
+                51221
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1067905331602191,
+            "compression_ratio": 1.5914396887159532,
+            "no_speech_prob": 0.013220051303505898,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 11.98,
+                    "end": 12.32,
+                    "probability": 0.9999493360519409
+                },
+                {
+                    "word": " podcast",
+                    "start": 12.32,
+                    "end": 12.72,
+                    "probability": 0.9999957084655762
+                },
+                {
+                    "word": " that",
+                    "start": 12.72,
+                    "end": 13.12,
+                    "probability": 0.999997615814209
+                },
+                {
+                    "word": " pulls",
+                    "start": 13.12,
+                    "end": 13.42,
+                    "probability": 0.9999723434448242
+                },
+                {
+                    "word": " back",
+                    "start": 13.42,
+                    "end": 13.74,
+                    "probability": 0.9999977350234985
+                },
+                {
+                    "word": " the",
+                    "start": 13.74,
+                    "end": 13.96,
+                    "probability": 0.9999974966049194
+                },
+                {
+                    "word": " curtain",
+                    "start": 13.96,
+                    "end": 14.34,
+                    "probability": 0.9999315738677979
+                },
+                {
+                    "word": " to",
+                    "start": 14.34,
+                    "end": 14.64,
+                    "probability": 0.9999954700469971
+                },
+                {
+                    "word": " discover",
+                    "start": 14.64,
+                    "end": 15.06,
+                    "probability": 0.9999630451202393
+                },
+                {
+                    "word": " the",
+                    "start": 15.06,
+                    "end": 15.32,
+                    "probability": 0.9999920129776001
+                },
+                {
+                    "word": " human",
+                    "start": 15.32,
+                    "end": 15.56,
+                    "probability": 0.9999696016311646
+                },
+                {
+                    "word": " factor",
+                    "start": 15.56,
+                    "end": 15.96,
+                    "probability": 0.9999524354934692
+                },
+                {
+                    "word": " behind",
+                    "start": 15.96,
+                    "end": 16.44,
+                    "probability": 0.9999916553497314
+                },
+                {
+                    "word": " the",
+                    "start": 16.44,
+                    "end": 16.66,
+                    "probability": 0.9998176693916321
+                },
+                {
+                    "word": " quantitative",
+                    "start": 16.66,
+                    "end": 17.02,
+                    "probability": 0.9998288154602051
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 0,
+            "start": 17.02,
+            "end": 23.58,
+            "text": " strategy. Corey Hofstein is the co-founder and chief investment officer of Newfound Research.",
+            "tokens": [
+                51221,
+                5206,
+                13,
+                39136,
+                37379,
+                9089,
+                307,
+                264,
+                598,
+                12,
+                33348,
+                293,
+                9588,
+                6078,
+                8456,
+                295,
+                1873,
+                17493,
+                10303,
+                13,
+                51550
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1067905331602191,
+            "compression_ratio": 1.5914396887159532,
+            "no_speech_prob": 0.013220051303505898,
+            "words": [
+                {
+                    "word": " strategy.",
+                    "start": 17.02,
+                    "end": 17.6,
+                    "probability": 0.9999841451644897
+                },
+                {
+                    "word": " Corey",
+                    "start": 19.72,
+                    "end": 20.28,
+                    "probability": 0.9949106574058533
+                },
+                {
+                    "word": " Hofstein",
+                    "start": 20.28,
+                    "end": 20.72,
+                    "probability": 0.999792069196701
+                },
+                {
+                    "word": " is",
+                    "start": 20.72,
+                    "end": 20.94,
+                    "probability": 0.9999918937683105
+                },
+                {
+                    "word": " the",
+                    "start": 20.94,
+                    "end": 21.06,
+                    "probability": 0.9999967813491821
+                },
+                {
+                    "word": " co",
+                    "start": 21.06,
+                    "end": 21.22,
+                    "probability": 0.9902369379997253
+                },
+                {
+                    "word": "-founder",
+                    "start": 21.22,
+                    "end": 21.5,
+                    "probability": 0.9988263547420502
+                },
+                {
+                    "word": " and",
+                    "start": 21.5,
+                    "end": 21.68,
+                    "probability": 0.9999972581863403
+                },
+                {
+                    "word": " chief",
+                    "start": 21.68,
+                    "end": 21.88,
+                    "probability": 0.9940767288208008
+                },
+                {
+                    "word": " investment",
+                    "start": 21.88,
+                    "end": 22.26,
+                    "probability": 0.9999889135360718
+                },
+                {
+                    "word": " officer",
+                    "start": 22.26,
+                    "end": 22.7,
+                    "probability": 0.9999622106552124
+                },
+                {
+                    "word": " of",
+                    "start": 22.7,
+                    "end": 22.96,
+                    "probability": 0.999966025352478
+                },
+                {
+                    "word": " Newfound",
+                    "start": 22.96,
+                    "end": 23.28,
+                    "probability": 0.9939244985580444
+                },
+                {
+                    "word": " Research.",
+                    "start": 23.28,
+                    "end": 23.58,
+                    "probability": 0.998944103717804
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 0,
+            "start": 23.86,
+            "end": 28.3,
+            "text": " Due to industry regulations, he will not discuss any of Newfound Research's funds on this podcast.",
+            "tokens": [
+                51571,
+                18980,
+                281,
+                3518,
+                12563,
+                11,
+                415,
+                486,
+                406,
+                2248,
+                604,
+                295,
+                1873,
+                17493,
+                10303,
+                311,
+                8271,
+                322,
+                341,
+                7367,
+                13,
+                51790
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1067905331602191,
+            "compression_ratio": 1.5914396887159532,
+            "no_speech_prob": 0.013220051303505898,
+            "words": [
+                {
+                    "word": " Due",
+                    "start": 23.86,
+                    "end": 24.22,
+                    "probability": 0.999860405921936
+                },
+                {
+                    "word": " to",
+                    "start": 24.22,
+                    "end": 24.36,
+                    "probability": 0.9999990463256836
+                },
+                {
+                    "word": " industry",
+                    "start": 24.36,
+                    "end": 24.68,
+                    "probability": 0.9996423721313477
+                },
+                {
+                    "word": " regulations,",
+                    "start": 24.68,
+                    "end": 25.08,
+                    "probability": 0.999893307685852
+                },
+                {
+                    "word": " he",
+                    "start": 25.4,
+                    "end": 25.56,
+                    "probability": 0.9971269965171814
+                },
+                {
+                    "word": " will",
+                    "start": 25.56,
+                    "end": 25.64,
+                    "probability": 0.9999923706054688
+                },
+                {
+                    "word": " not",
+                    "start": 25.64,
+                    "end": 25.86,
+                    "probability": 0.9996894598007202
+                },
+                {
+                    "word": " discuss",
+                    "start": 25.86,
+                    "end": 26.18,
+                    "probability": 0.9999194145202637
+                },
+                {
+                    "word": " any",
+                    "start": 26.18,
+                    "end": 26.38,
+                    "probability": 0.9994827508926392
+                },
+                {
+                    "word": " of",
+                    "start": 26.38,
+                    "end": 26.48,
+                    "probability": 0.9935938715934753
+                },
+                {
+                    "word": " Newfound",
+                    "start": 26.48,
+                    "end": 26.8,
+                    "probability": 0.999502569437027
+                },
+                {
+                    "word": " Research's",
+                    "start": 26.8,
+                    "end": 27.32,
+                    "probability": 0.9986272752285004
+                },
+                {
+                    "word": " funds",
+                    "start": 27.32,
+                    "end": 27.58,
+                    "probability": 0.9952130317687988
+                },
+                {
+                    "word": " on",
+                    "start": 27.58,
+                    "end": 27.74,
+                    "probability": 0.9999380111694336
+                },
+                {
+                    "word": " this",
+                    "start": 27.74,
+                    "end": 27.9,
+                    "probability": 0.9996408224105835
+                },
+                {
+                    "word": " podcast.",
+                    "start": 27.9,
+                    "end": 28.3,
+                    "probability": 0.9998999834060669
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 2830,
+            "start": 28.3,
+            "end": 32.82,
+            "text": " All opinions expressed by podcast participants are solely their own opinion and do not reflect",
+            "tokens": [
+                50365,
+                1057,
+                11819,
+                12675,
+                538,
+                7367,
+                10503,
+                366,
+                23309,
+                641,
+                1065,
+                4800,
+                293,
+                360,
+                406,
+                5031,
+                50598
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " All",
+                    "start": 28.3,
+                    "end": 28.72,
+                    "probability": 0.33360937237739563
+                },
+                {
+                    "word": " opinions",
+                    "start": 28.72,
+                    "end": 29.0,
+                    "probability": 0.9993701577186584
+                },
+                {
+                    "word": " expressed",
+                    "start": 29.0,
+                    "end": 29.44,
+                    "probability": 0.9999606609344482
+                },
+                {
+                    "word": " by",
+                    "start": 29.44,
+                    "end": 29.78,
+                    "probability": 0.9999736547470093
+                },
+                {
+                    "word": " podcast",
+                    "start": 29.78,
+                    "end": 30.14,
+                    "probability": 0.9995322227478027
+                },
+                {
+                    "word": " participants",
+                    "start": 30.14,
+                    "end": 30.58,
+                    "probability": 0.9999581575393677
+                },
+                {
+                    "word": " are",
+                    "start": 30.58,
+                    "end": 30.94,
+                    "probability": 0.9998778104782104
+                },
+                {
+                    "word": " solely",
+                    "start": 30.94,
+                    "end": 31.16,
+                    "probability": 0.9999682903289795
+                },
+                {
+                    "word": " their",
+                    "start": 31.16,
+                    "end": 31.38,
+                    "probability": 0.9999822378158569
+                },
+                {
+                    "word": " own",
+                    "start": 31.38,
+                    "end": 31.58,
+                    "probability": 0.9999902248382568
+                },
+                {
+                    "word": " opinion",
+                    "start": 31.58,
+                    "end": 31.88,
+                    "probability": 0.9999439716339111
+                },
+                {
+                    "word": " and",
+                    "start": 31.88,
+                    "end": 32.24,
+                    "probability": 0.9945946335792542
+                },
+                {
+                    "word": " do",
+                    "start": 32.24,
+                    "end": 32.38,
+                    "probability": 0.9999830722808838
+                },
+                {
+                    "word": " not",
+                    "start": 32.38,
+                    "end": 32.58,
+                    "probability": 0.9999946355819702
+                },
+                {
+                    "word": " reflect",
+                    "start": 32.58,
+                    "end": 32.82,
+                    "probability": 0.9999489784240723
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 2830,
+            "start": 32.82,
+            "end": 37.32,
+            "text": " the opinion of Newfound Research. This podcast is for informational purposes only and should",
+            "tokens": [
+                50598,
+                264,
+                4800,
+                295,
+                1873,
+                17493,
+                10303,
+                13,
+                639,
+                7367,
+                307,
+                337,
+                49391,
+                9932,
+                787,
+                293,
+                820,
+                50821
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 32.82,
+                    "end": 33.04,
+                    "probability": 0.9999363422393799
+                },
+                {
+                    "word": " opinion",
+                    "start": 33.04,
+                    "end": 33.26,
+                    "probability": 0.9999350309371948
+                },
+                {
+                    "word": " of",
+                    "start": 33.26,
+                    "end": 33.5,
+                    "probability": 0.9999886751174927
+                },
+                {
+                    "word": " Newfound",
+                    "start": 33.5,
+                    "end": 33.82,
+                    "probability": 0.984329491853714
+                },
+                {
+                    "word": " Research.",
+                    "start": 33.82,
+                    "end": 34.08,
+                    "probability": 0.9908066391944885
+                },
+                {
+                    "word": " This",
+                    "start": 34.42,
+                    "end": 34.88,
+                    "probability": 0.9997733235359192
+                },
+                {
+                    "word": " podcast",
+                    "start": 34.88,
+                    "end": 35.22,
+                    "probability": 0.9999408721923828
+                },
+                {
+                    "word": " is",
+                    "start": 35.22,
+                    "end": 35.5,
+                    "probability": 0.9999967813491821
+                },
+                {
+                    "word": " for",
+                    "start": 35.5,
+                    "end": 35.64,
+                    "probability": 0.9999713897705078
+                },
+                {
+                    "word": " informational",
+                    "start": 35.64,
+                    "end": 36.02,
+                    "probability": 0.9999827146530151
+                },
+                {
+                    "word": " purposes",
+                    "start": 36.02,
+                    "end": 36.46,
+                    "probability": 0.9999961853027344
+                },
+                {
+                    "word": " only",
+                    "start": 36.46,
+                    "end": 36.88,
+                    "probability": 0.9999918937683105
+                },
+                {
+                    "word": " and",
+                    "start": 36.88,
+                    "end": 37.14,
+                    "probability": 0.9934461712837219
+                },
+                {
+                    "word": " should",
+                    "start": 37.14,
+                    "end": 37.32,
+                    "probability": 0.9999194145202637
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "seek": 2830,
+            "start": 37.32,
+            "end": 41.3,
+            "text": " not be relied upon as a basis for investment decisions. Clients of Newfound Research may",
+            "tokens": [
+                50821,
+                406,
+                312,
+                35463,
+                3564,
+                382,
+                257,
+                5143,
+                337,
+                6078,
+                5327,
+                13,
+                2033,
+                2448,
+                295,
+                1873,
+                17493,
+                10303,
+                815,
+                51020
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " not",
+                    "start": 37.32,
+                    "end": 37.5,
+                    "probability": 0.9999867677688599
+                },
+                {
+                    "word": " be",
+                    "start": 37.5,
+                    "end": 37.64,
+                    "probability": 0.999966025352478
+                },
+                {
+                    "word": " relied",
+                    "start": 37.64,
+                    "end": 37.8,
+                    "probability": 0.9998053908348083
+                },
+                {
+                    "word": " upon",
+                    "start": 37.8,
+                    "end": 38.04,
+                    "probability": 0.9999146461486816
+                },
+                {
+                    "word": " as",
+                    "start": 38.04,
+                    "end": 38.4,
+                    "probability": 0.9998985528945923
+                },
+                {
+                    "word": " a",
+                    "start": 38.4,
+                    "end": 38.5,
+                    "probability": 0.9999724626541138
+                },
+                {
+                    "word": " basis",
+                    "start": 38.5,
+                    "end": 38.78,
+                    "probability": 0.9995762705802917
+                },
+                {
+                    "word": " for",
+                    "start": 38.78,
+                    "end": 38.96,
+                    "probability": 0.9999834299087524
+                },
+                {
+                    "word": " investment",
+                    "start": 38.96,
+                    "end": 39.2,
+                    "probability": 0.9999524354934692
+                },
+                {
+                    "word": " decisions.",
+                    "start": 39.2,
+                    "end": 39.62,
+                    "probability": 0.9998036026954651
+                },
+                {
+                    "word": " Clients",
+                    "start": 39.94,
+                    "end": 40.36,
+                    "probability": 0.9997782707214355
+                },
+                {
+                    "word": " of",
+                    "start": 40.36,
+                    "end": 40.48,
+                    "probability": 0.999992847442627
+                },
+                {
+                    "word": " Newfound",
+                    "start": 40.48,
+                    "end": 40.76,
+                    "probability": 0.9999587535858154
+                },
+                {
+                    "word": " Research",
+                    "start": 40.76,
+                    "end": 41.0,
+                    "probability": 0.9997926354408264
+                },
+                {
+                    "word": " may",
+                    "start": 41.0,
+                    "end": 41.3,
+                    "probability": 0.999875545501709
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "seek": 2830,
+            "start": 41.3,
+            "end": 45.3,
+            "text": " maintain positions and securities discussed in this podcast. For more information, visit",
+            "tokens": [
+                51020,
+                6909,
+                8432,
+                293,
+                38597,
+                7152,
+                294,
+                341,
+                7367,
+                13,
+                1171,
+                544,
+                1589,
+                11,
+                3441,
+                51220
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " maintain",
+                    "start": 41.3,
+                    "end": 41.6,
+                    "probability": 0.9995394945144653
+                },
+                {
+                    "word": " positions",
+                    "start": 41.6,
+                    "end": 41.96,
+                    "probability": 0.9997450709342957
+                },
+                {
+                    "word": " and",
+                    "start": 41.96,
+                    "end": 42.32,
+                    "probability": 0.999091625213623
+                },
+                {
+                    "word": " securities",
+                    "start": 42.32,
+                    "end": 42.64,
+                    "probability": 0.9983048439025879
+                },
+                {
+                    "word": " discussed",
+                    "start": 42.64,
+                    "end": 43.08,
+                    "probability": 0.9998551607131958
+                },
+                {
+                    "word": " in",
+                    "start": 43.08,
+                    "end": 43.28,
+                    "probability": 0.9999551773071289
+                },
+                {
+                    "word": " this",
+                    "start": 43.28,
+                    "end": 43.42,
+                    "probability": 0.9999134540557861
+                },
+                {
+                    "word": " podcast.",
+                    "start": 43.42,
+                    "end": 43.72,
+                    "probability": 0.9999605417251587
+                },
+                {
+                    "word": " For",
+                    "start": 44.04,
+                    "end": 44.34,
+                    "probability": 0.9999085664749146
+                },
+                {
+                    "word": " more",
+                    "start": 44.34,
+                    "end": 44.46,
+                    "probability": 0.9999489784240723
+                },
+                {
+                    "word": " information,",
+                    "start": 44.46,
+                    "end": 44.86,
+                    "probability": 0.9999781847000122
+                },
+                {
+                    "word": " visit",
+                    "start": 45.0,
+                    "end": 45.3,
+                    "probability": 0.9998819828033447
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "seek": 2830,
+            "start": 45.3,
+            "end": 56.28,
+            "text": " thinknewfound.com. This season is sponsored by Simplify ETFs. Simplify seeks to help you",
+            "tokens": [
+                51220,
+                519,
+                7686,
+                17493,
+                13,
+                1112,
+                13,
+                639,
+                3196,
+                307,
+                16621,
+                538,
+                3998,
+                564,
+                2505,
+                37436,
+                82,
+                13,
+                3998,
+                564,
+                2505,
+                28840,
+                281,
+                854,
+                291,
+                51768
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " thinknewfound",
+                    "start": 45.3,
+                    "end": 46.22,
+                    "probability": 0.9681583642959595
+                },
+                {
+                    "word": ".com.",
+                    "start": 46.22,
+                    "end": 46.76,
+                    "probability": 0.9999781250953674
+                },
+                {
+                    "word": " This",
+                    "start": 50.76,
+                    "end": 51.36,
+                    "probability": 0.9944944977760315
+                },
+                {
+                    "word": " season",
+                    "start": 51.36,
+                    "end": 51.76,
+                    "probability": 0.9998898506164551
+                },
+                {
+                    "word": " is",
+                    "start": 51.76,
+                    "end": 52.0,
+                    "probability": 0.9999982118606567
+                },
+                {
+                    "word": " sponsored",
+                    "start": 52.0,
+                    "end": 52.3,
+                    "probability": 0.9999831914901733
+                },
+                {
+                    "word": " by",
+                    "start": 52.3,
+                    "end": 52.68,
+                    "probability": 0.9999973773956299
+                },
+                {
+                    "word": " Simplify",
+                    "start": 52.68,
+                    "end": 53.24,
+                    "probability": 0.9954151709874471
+                },
+                {
+                    "word": " ETFs.",
+                    "start": 53.24,
+                    "end": 54.2,
+                    "probability": 0.9997455477714539
+                },
+                {
+                    "word": " Simplify",
+                    "start": 54.7,
+                    "end": 55.3,
+                    "probability": 0.9990831017494202
+                },
+                {
+                    "word": " seeks",
+                    "start": 55.3,
+                    "end": 55.58,
+                    "probability": 0.9945207834243774
+                },
+                {
+                    "word": " to",
+                    "start": 55.58,
+                    "end": 55.88,
+                    "probability": 0.9999905824661255
+                },
+                {
+                    "word": " help",
+                    "start": 55.88,
+                    "end": 56.06,
+                    "probability": 0.9999493360519409
+                },
+                {
+                    "word": " you",
+                    "start": 56.06,
+                    "end": 56.28,
+                    "probability": 0.9999661445617676
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "seek": 2830,
+            "start": 56.28,
+            "end": 58.28,
+            "text": " modernize your portfolio with its innovative and innovative solutions.",
+            "tokens": [
+                51768,
+                4363,
+                1125,
+                428,
+                12583,
+                365,
+                1080,
+                12999,
+                293,
+                12999,
+                6547,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.079427787849495,
+            "compression_ratio": 1.7736486486486487,
+            "no_speech_prob": 0.0014436258934438229,
+            "words": [
+                {
+                    "word": " modernize",
+                    "start": 56.28,
+                    "end": 56.86,
+                    "probability": 0.9996536374092102
+                },
+                {
+                    "word": " your",
+                    "start": 56.86,
+                    "end": 57.02,
+                    "probability": 0.9997733235359192
+                },
+                {
+                    "word": " portfolio",
+                    "start": 57.02,
+                    "end": 57.4,
+                    "probability": 0.9993971586227417
+                },
+                {
+                    "word": " with",
+                    "start": 57.4,
+                    "end": 57.88,
+                    "probability": 0.9976254105567932
+                },
+                {
+                    "word": " its",
+                    "start": 57.88,
+                    "end": 58.06,
+                    "probability": 0.9980223178863525
+                },
+                {
+                    "word": " innovative",
+                    "start": 58.06,
+                    "end": 58.28,
+                    "probability": 0.21558621525764465
+                },
+                {
+                    "word": " and",
+                    "start": 58.28,
+                    "end": 58.28,
+                    "probability": 0.21311378479003906
+                },
+                {
+                    "word": " innovative",
+                    "start": 58.28,
+                    "end": 58.28,
+                    "probability": 0.2628099322319031
+                },
+                {
+                    "word": " solutions.",
+                    "start": 58.28,
+                    "end": 58.28,
+                    "probability": 0.07732740789651871
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "seek": 5830,
+            "start": 58.3,
+            "end": 64.8,
+            "text": " set of options-based strategies. Full disclosure, prior to Simplify sponsoring the season,",
+            "tokens": [
+                50365,
+                992,
+                295,
+                3956,
+                12,
+                6032,
+                9029,
+                13,
+                13841,
+                30392,
+                11,
+                4059,
+                281,
+                3998,
+                564,
+                2505,
+                30311,
+                264,
+                3196,
+                11,
+                50695
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " set",
+                    "start": 58.3,
+                    "end": 58.6,
+                    "probability": 0.0001218610632349737
+                },
+                {
+                    "word": " of",
+                    "start": 58.6,
+                    "end": 59.08,
+                    "probability": 0.9998041987419128
+                },
+                {
+                    "word": " options",
+                    "start": 59.08,
+                    "end": 59.56,
+                    "probability": 0.998229444026947
+                },
+                {
+                    "word": "-based",
+                    "start": 59.56,
+                    "end": 59.96,
+                    "probability": 0.9441625773906708
+                },
+                {
+                    "word": " strategies.",
+                    "start": 59.96,
+                    "end": 60.56,
+                    "probability": 0.9999735355377197
+                },
+                {
+                    "word": " Full",
+                    "start": 61.04,
+                    "end": 61.76,
+                    "probability": 0.998721182346344
+                },
+                {
+                    "word": " disclosure,",
+                    "start": 61.76,
+                    "end": 62.22,
+                    "probability": 0.999955415725708
+                },
+                {
+                    "word": " prior",
+                    "start": 62.5,
+                    "end": 63.02,
+                    "probability": 0.9999496936798096
+                },
+                {
+                    "word": " to",
+                    "start": 63.02,
+                    "end": 63.24,
+                    "probability": 0.9999986886978149
+                },
+                {
+                    "word": " Simplify",
+                    "start": 63.24,
+                    "end": 63.66,
+                    "probability": 0.9886414806048075
+                },
+                {
+                    "word": " sponsoring",
+                    "start": 63.66,
+                    "end": 63.96,
+                    "probability": 0.9998595714569092
+                },
+                {
+                    "word": " the",
+                    "start": 63.96,
+                    "end": 64.46,
+                    "probability": 0.9991430044174194
+                },
+                {
+                    "word": " season,",
+                    "start": 64.46,
+                    "end": 64.8,
+                    "probability": 0.9999812841415405
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "seek": 5830,
+            "start": 64.96,
+            "end": 70.36,
+            "text": " we had incorporated some of Simplify's ETFs into our ETF model mandates here at Newfound.",
+            "tokens": [
+                50713,
+                321,
+                632,
+                21654,
+                512,
+                295,
+                3998,
+                564,
+                2505,
+                311,
+                37436,
+                82,
+                666,
+                527,
+                37436,
+                2316,
+                48662,
+                510,
+                412,
+                1873,
+                17493,
+                13,
+                50973
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " we",
+                    "start": 64.96,
+                    "end": 65.36,
+                    "probability": 0.9999916553497314
+                },
+                {
+                    "word": " had",
+                    "start": 65.36,
+                    "end": 65.48,
+                    "probability": 0.9999939203262329
+                },
+                {
+                    "word": " incorporated",
+                    "start": 65.48,
+                    "end": 65.94,
+                    "probability": 0.9999707937240601
+                },
+                {
+                    "word": " some",
+                    "start": 65.94,
+                    "end": 66.28,
+                    "probability": 0.9999891519546509
+                },
+                {
+                    "word": " of",
+                    "start": 66.28,
+                    "end": 66.44,
+                    "probability": 0.9999328851699829
+                },
+                {
+                    "word": " Simplify's",
+                    "start": 66.44,
+                    "end": 67.06,
+                    "probability": 0.9996350258588791
+                },
+                {
+                    "word": " ETFs",
+                    "start": 67.06,
+                    "end": 67.74,
+                    "probability": 0.9999504685401917
+                },
+                {
+                    "word": " into",
+                    "start": 67.74,
+                    "end": 67.96,
+                    "probability": 0.9999979734420776
+                },
+                {
+                    "word": " our",
+                    "start": 67.96,
+                    "end": 68.14,
+                    "probability": 0.9999979734420776
+                },
+                {
+                    "word": " ETF",
+                    "start": 68.14,
+                    "end": 68.56,
+                    "probability": 0.9999426603317261
+                },
+                {
+                    "word": " model",
+                    "start": 68.56,
+                    "end": 68.98,
+                    "probability": 0.995887815952301
+                },
+                {
+                    "word": " mandates",
+                    "start": 68.98,
+                    "end": 69.5,
+                    "probability": 0.999984860420227
+                },
+                {
+                    "word": " here",
+                    "start": 69.5,
+                    "end": 69.84,
+                    "probability": 0.9999562501907349
+                },
+                {
+                    "word": " at",
+                    "start": 69.84,
+                    "end": 70.0,
+                    "probability": 0.999996542930603
+                },
+                {
+                    "word": " Newfound.",
+                    "start": 70.0,
+                    "end": 70.36,
+                    "probability": 0.9980814456939697
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "seek": 5830,
+            "start": 70.56,
+            "end": 74.18,
+            "text": " If you're interested in reading a brief case study about why and how,",
+            "tokens": [
+                50989,
+                759,
+                291,
+                434,
+                3102,
+                294,
+                3760,
+                257,
+                5353,
+                1389,
+                2979,
+                466,
+                983,
+                293,
+                577,
+                11,
+                51169
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " If",
+                    "start": 70.56,
+                    "end": 71.26,
+                    "probability": 0.9999129772186279
+                },
+                {
+                    "word": " you're",
+                    "start": 71.26,
+                    "end": 71.42,
+                    "probability": 0.9999100863933563
+                },
+                {
+                    "word": " interested",
+                    "start": 71.42,
+                    "end": 71.72,
+                    "probability": 0.9999821186065674
+                },
+                {
+                    "word": " in",
+                    "start": 71.72,
+                    "end": 71.96,
+                    "probability": 0.9999946355819702
+                },
+                {
+                    "word": " reading",
+                    "start": 71.96,
+                    "end": 72.18,
+                    "probability": 0.9999842643737793
+                },
+                {
+                    "word": " a",
+                    "start": 72.18,
+                    "end": 72.32,
+                    "probability": 0.9999951124191284
+                },
+                {
+                    "word": " brief",
+                    "start": 72.32,
+                    "end": 72.52,
+                    "probability": 0.9999841451644897
+                },
+                {
+                    "word": " case",
+                    "start": 72.52,
+                    "end": 72.76,
+                    "probability": 0.9986422657966614
+                },
+                {
+                    "word": " study",
+                    "start": 72.76,
+                    "end": 73.06,
+                    "probability": 0.999997615814209
+                },
+                {
+                    "word": " about",
+                    "start": 73.06,
+                    "end": 73.36,
+                    "probability": 0.9999889135360718
+                },
+                {
+                    "word": " why",
+                    "start": 73.36,
+                    "end": 73.72,
+                    "probability": 0.9999855756759644
+                },
+                {
+                    "word": " and",
+                    "start": 73.72,
+                    "end": 73.92,
+                    "probability": 0.9999821186065674
+                },
+                {
+                    "word": " how,",
+                    "start": 73.92,
+                    "end": 74.18,
+                    "probability": 0.9999927282333374
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "seek": 5830,
+            "start": 74.36,
+            "end": 81.26,
+            "text": " visit simplify.us slash flirting with models. And stick around after the episode for an ongoing",
+            "tokens": [
+                51189,
+                3441,
+                20460,
+                13,
+                301,
+                17330,
+                45777,
+                365,
+                5245,
+                13,
+                400,
+                2897,
+                926,
+                934,
+                264,
+                3500,
+                337,
+                364,
+                10452,
+                51521
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " visit",
+                    "start": 74.36,
+                    "end": 74.9,
+                    "probability": 0.9999614953994751
+                },
+                {
+                    "word": " simplify",
+                    "start": 74.9,
+                    "end": 75.36,
+                    "probability": 0.9776952862739563
+                },
+                {
+                    "word": ".us",
+                    "start": 75.36,
+                    "end": 76.2,
+                    "probability": 0.9997976422309875
+                },
+                {
+                    "word": " slash",
+                    "start": 76.2,
+                    "end": 76.88,
+                    "probability": 0.9846611618995667
+                },
+                {
+                    "word": " flirting",
+                    "start": 76.88,
+                    "end": 77.4,
+                    "probability": 0.9942933320999146
+                },
+                {
+                    "word": " with",
+                    "start": 77.4,
+                    "end": 77.68,
+                    "probability": 0.6889951229095459
+                },
+                {
+                    "word": " models.",
+                    "start": 77.68,
+                    "end": 78.08,
+                    "probability": 0.9999229907989502
+                },
+                {
+                    "word": " And",
+                    "start": 78.46,
+                    "end": 79.18,
+                    "probability": 0.9983628392219543
+                },
+                {
+                    "word": " stick",
+                    "start": 79.18,
+                    "end": 79.38,
+                    "probability": 0.9999756813049316
+                },
+                {
+                    "word": " around",
+                    "start": 79.38,
+                    "end": 79.6,
+                    "probability": 0.9999985694885254
+                },
+                {
+                    "word": " after",
+                    "start": 79.6,
+                    "end": 79.98,
+                    "probability": 0.9999730587005615
+                },
+                {
+                    "word": " the",
+                    "start": 79.98,
+                    "end": 80.14,
+                    "probability": 0.9999822378158569
+                },
+                {
+                    "word": " episode",
+                    "start": 80.14,
+                    "end": 80.52,
+                    "probability": 0.9999337196350098
+                },
+                {
+                    "word": " for",
+                    "start": 80.52,
+                    "end": 80.8,
+                    "probability": 0.9999915361404419
+                },
+                {
+                    "word": " an",
+                    "start": 80.8,
+                    "end": 80.94,
+                    "probability": 0.9999812841415405
+                },
+                {
+                    "word": " ongoing",
+                    "start": 80.94,
+                    "end": 81.26,
+                    "probability": 0.9995280504226685
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "seek": 5830,
+            "start": 81.26,
+            "end": 86.94,
+            "text": " conversation about markets and convexity with the convexity maven himself, Simplify's own",
+            "tokens": [
+                51521,
+                3761,
+                466,
+                8383,
+                293,
+                42432,
+                507,
+                365,
+                264,
+                42432,
+                507,
+                463,
+                553,
+                3647,
+                11,
+                3998,
+                564,
+                2505,
+                311,
+                1065,
+                51808
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " conversation",
+                    "start": 81.26,
+                    "end": 81.88,
+                    "probability": 0.9999697208404541
+                },
+                {
+                    "word": " about",
+                    "start": 81.88,
+                    "end": 82.44,
+                    "probability": 0.9999066591262817
+                },
+                {
+                    "word": " markets",
+                    "start": 82.44,
+                    "end": 82.88,
+                    "probability": 0.9987185001373291
+                },
+                {
+                    "word": " and",
+                    "start": 82.88,
+                    "end": 83.1,
+                    "probability": 0.9963594079017639
+                },
+                {
+                    "word": " convexity",
+                    "start": 83.1,
+                    "end": 83.72,
+                    "probability": 0.9871494472026825
+                },
+                {
+                    "word": " with",
+                    "start": 83.72,
+                    "end": 84.18,
+                    "probability": 0.9918947815895081
+                },
+                {
+                    "word": " the",
+                    "start": 84.18,
+                    "end": 84.28,
+                    "probability": 0.9930745363235474
+                },
+                {
+                    "word": " convexity",
+                    "start": 84.28,
+                    "end": 84.8,
+                    "probability": 0.9928698837757111
+                },
+                {
+                    "word": " maven",
+                    "start": 84.8,
+                    "end": 85.2,
+                    "probability": 0.9960129261016846
+                },
+                {
+                    "word": " himself,",
+                    "start": 85.2,
+                    "end": 85.48,
+                    "probability": 0.9965741634368896
+                },
+                {
+                    "word": " Simplify's",
+                    "start": 85.88,
+                    "end": 86.7,
+                    "probability": 0.9995757639408112
+                },
+                {
+                    "word": " own",
+                    "start": 86.7,
+                    "end": 86.94,
+                    "probability": 0.9995632767677307
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "seek": 5830,
+            "start": 86.94,
+            "end": 88.0,
+            "text": " Harley Bassman.",
+            "tokens": [
+                51808,
+                34921,
+                29626,
+                1601,
+                13,
+                51854
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.08938858487190457,
+            "compression_ratio": 1.6142857142857143,
+            "no_speech_prob": 0.012239012867212296,
+            "words": [
+                {
+                    "word": " Harley",
+                    "start": 86.94,
+                    "end": 87.44,
+                    "probability": 0.9671578407287598
+                },
+                {
+                    "word": " Bassman.",
+                    "start": 87.44,
+                    "end": 88.0,
+                    "probability": 0.9859141409397125
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "seek": 8830,
+            "start": 90.36,
+            "end": 94.64,
+            "text": " Darren Johnson is the first independent trader I've interviewed for this show,",
+            "tokens": [
+                50365,
+                36691,
+                9779,
+                307,
+                264,
+                700,
+                6695,
+                31961,
+                286,
+                600,
+                19770,
+                337,
+                341,
+                855,
+                11,
+                50687
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " Darren",
+                    "start": 90.36,
+                    "end": 91.0,
+                    "probability": 0.5886631608009338
+                },
+                {
+                    "word": " Johnson",
+                    "start": 91.0,
+                    "end": 91.32,
+                    "probability": 0.9595946073532104
+                },
+                {
+                    "word": " is",
+                    "start": 91.32,
+                    "end": 91.74,
+                    "probability": 0.9967189431190491
+                },
+                {
+                    "word": " the",
+                    "start": 91.74,
+                    "end": 91.88,
+                    "probability": 0.9999024868011475
+                },
+                {
+                    "word": " first",
+                    "start": 91.88,
+                    "end": 92.16,
+                    "probability": 0.9998960494995117
+                },
+                {
+                    "word": " independent",
+                    "start": 92.16,
+                    "end": 92.66,
+                    "probability": 0.9995816349983215
+                },
+                {
+                    "word": " trader",
+                    "start": 92.66,
+                    "end": 93.24,
+                    "probability": 0.9997082352638245
+                },
+                {
+                    "word": " I've",
+                    "start": 93.24,
+                    "end": 93.62,
+                    "probability": 0.9989340901374817
+                },
+                {
+                    "word": " interviewed",
+                    "start": 93.62,
+                    "end": 93.94,
+                    "probability": 0.9998639822006226
+                },
+                {
+                    "word": " for",
+                    "start": 93.94,
+                    "end": 94.16,
+                    "probability": 0.9997822642326355
+                },
+                {
+                    "word": " this",
+                    "start": 94.16,
+                    "end": 94.32,
+                    "probability": 0.9997528195381165
+                },
+                {
+                    "word": " show,",
+                    "start": 94.32,
+                    "end": 94.64,
+                    "probability": 0.9999297857284546
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "seek": 8830,
+            "start": 94.76,
+            "end": 98.08,
+            "text": " and with that distinction, he brings an entirely new perspective.",
+            "tokens": [
+                50703,
+                293,
+                365,
+                300,
+                16844,
+                11,
+                415,
+                5607,
+                364,
+                7696,
+                777,
+                4585,
+                13,
+                50866
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " and",
+                    "start": 94.76,
+                    "end": 95.14,
+                    "probability": 0.9985463619232178
+                },
+                {
+                    "word": " with",
+                    "start": 95.14,
+                    "end": 95.26,
+                    "probability": 0.9997743964195251
+                },
+                {
+                    "word": " that",
+                    "start": 95.26,
+                    "end": 95.5,
+                    "probability": 0.9999629259109497
+                },
+                {
+                    "word": " distinction,",
+                    "start": 95.5,
+                    "end": 95.94,
+                    "probability": 0.9999302625656128
+                },
+                {
+                    "word": " he",
+                    "start": 96.14,
+                    "end": 96.34,
+                    "probability": 0.9999531507492065
+                },
+                {
+                    "word": " brings",
+                    "start": 96.34,
+                    "end": 96.66,
+                    "probability": 0.9998674392700195
+                },
+                {
+                    "word": " an",
+                    "start": 96.66,
+                    "end": 96.88,
+                    "probability": 0.9997060894966125
+                },
+                {
+                    "word": " entirely",
+                    "start": 96.88,
+                    "end": 97.28,
+                    "probability": 0.9997031092643738
+                },
+                {
+                    "word": " new",
+                    "start": 97.28,
+                    "end": 97.7,
+                    "probability": 0.9999116659164429
+                },
+                {
+                    "word": " perspective.",
+                    "start": 97.7,
+                    "end": 98.08,
+                    "probability": 0.9999586343765259
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "seek": 8830,
+            "start": 98.54,
+            "end": 102.36,
+            "text": " After learning about how Darren began his career as an independent trader,",
+            "tokens": [
+                50900,
+                2381,
+                2539,
+                466,
+                577,
+                36691,
+                4283,
+                702,
+                3988,
+                382,
+                364,
+                6695,
+                31961,
+                11,
+                51074
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " After",
+                    "start": 98.54,
+                    "end": 99.18,
+                    "probability": 0.999713122844696
+                },
+                {
+                    "word": " learning",
+                    "start": 99.18,
+                    "end": 99.56,
+                    "probability": 0.9998815059661865
+                },
+                {
+                    "word": " about",
+                    "start": 99.56,
+                    "end": 99.76,
+                    "probability": 0.9992641806602478
+                },
+                {
+                    "word": " how",
+                    "start": 99.76,
+                    "end": 99.96,
+                    "probability": 0.9993780851364136
+                },
+                {
+                    "word": " Darren",
+                    "start": 99.96,
+                    "end": 100.32,
+                    "probability": 0.9997114539146423
+                },
+                {
+                    "word": " began",
+                    "start": 100.32,
+                    "end": 100.54,
+                    "probability": 0.9995951056480408
+                },
+                {
+                    "word": " his",
+                    "start": 100.54,
+                    "end": 100.88,
+                    "probability": 0.9996682405471802
+                },
+                {
+                    "word": " career",
+                    "start": 100.88,
+                    "end": 101.18,
+                    "probability": 0.9989950060844421
+                },
+                {
+                    "word": " as",
+                    "start": 101.18,
+                    "end": 101.44,
+                    "probability": 0.9998206496238708
+                },
+                {
+                    "word": " an",
+                    "start": 101.44,
+                    "end": 101.56,
+                    "probability": 0.9998052716255188
+                },
+                {
+                    "word": " independent",
+                    "start": 101.56,
+                    "end": 101.88,
+                    "probability": 0.9999083280563354
+                },
+                {
+                    "word": " trader,",
+                    "start": 101.88,
+                    "end": 102.36,
+                    "probability": 0.9998739957809448
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "seek": 8830,
+            "start": 102.56,
+            "end": 107.5,
+            "text": " we get into the bulk of the conversation that circles around his process of shorting volatility",
+            "tokens": [
+                51094,
+                321,
+                483,
+                666,
+                264,
+                16139,
+                295,
+                264,
+                3761,
+                300,
+                13040,
+                926,
+                702,
+                1399,
+                295,
+                2099,
+                278,
+                25877,
+                51338
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " we",
+                    "start": 102.56,
+                    "end": 103.0,
+                    "probability": 0.9998904466629028
+                },
+                {
+                    "word": " get",
+                    "start": 103.0,
+                    "end": 103.14,
+                    "probability": 0.9997919201850891
+                },
+                {
+                    "word": " into",
+                    "start": 103.14,
+                    "end": 103.26,
+                    "probability": 0.999636173248291
+                },
+                {
+                    "word": " the",
+                    "start": 103.26,
+                    "end": 103.42,
+                    "probability": 0.9999251365661621
+                },
+                {
+                    "word": " bulk",
+                    "start": 103.42,
+                    "end": 103.68,
+                    "probability": 0.9994799494743347
+                },
+                {
+                    "word": " of",
+                    "start": 103.68,
+                    "end": 103.82,
+                    "probability": 0.9999051094055176
+                },
+                {
+                    "word": " the",
+                    "start": 103.82,
+                    "end": 103.92,
+                    "probability": 0.9976595640182495
+                },
+                {
+                    "word": " conversation",
+                    "start": 103.92,
+                    "end": 104.44,
+                    "probability": 0.9992992877960205
+                },
+                {
+                    "word": " that",
+                    "start": 104.44,
+                    "end": 104.96,
+                    "probability": 0.999707043170929
+                },
+                {
+                    "word": " circles",
+                    "start": 104.96,
+                    "end": 105.3,
+                    "probability": 0.9983637928962708
+                },
+                {
+                    "word": " around",
+                    "start": 105.3,
+                    "end": 105.62,
+                    "probability": 0.9997246861457825
+                },
+                {
+                    "word": " his",
+                    "start": 105.62,
+                    "end": 105.84,
+                    "probability": 0.9996529817581177
+                },
+                {
+                    "word": " process",
+                    "start": 105.84,
+                    "end": 106.34,
+                    "probability": 0.9992417097091675
+                },
+                {
+                    "word": " of",
+                    "start": 106.34,
+                    "end": 106.72,
+                    "probability": 0.9999184608459473
+                },
+                {
+                    "word": " shorting",
+                    "start": 106.72,
+                    "end": 107.16,
+                    "probability": 0.999176025390625
+                },
+                {
+                    "word": " volatility",
+                    "start": 107.16,
+                    "end": 107.5,
+                    "probability": 0.998781144618988
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "seek": 8830,
+            "start": 107.5,
+            "end": 115.14,
+            "text": " in the S&P 500 complex, including options on futures, index options, VIX futures, and VIX ETPs.",
+            "tokens": [
+                51338,
+                294,
+                264,
+                318,
+                5,
+                47,
+                5923,
+                3997,
+                11,
+                3009,
+                3956,
+                322,
+                26071,
+                11,
+                8186,
+                3956,
+                11,
+                691,
+                21124,
+                26071,
+                11,
+                293,
+                691,
+                21124,
+                462,
+                16804,
+                82,
+                13,
+                51712
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " in",
+                    "start": 107.5,
+                    "end": 107.98,
+                    "probability": 0.999785840511322
+                },
+                {
+                    "word": " the",
+                    "start": 107.98,
+                    "end": 108.06,
+                    "probability": 0.9997661709785461
+                },
+                {
+                    "word": " S",
+                    "start": 108.06,
+                    "end": 108.32,
+                    "probability": 0.9981936812400818
+                },
+                {
+                    "word": "&P",
+                    "start": 108.32,
+                    "end": 108.52,
+                    "probability": 0.9998180866241455
+                },
+                {
+                    "word": " 500",
+                    "start": 108.52,
+                    "end": 108.88,
+                    "probability": 0.998842179775238
+                },
+                {
+                    "word": " complex,",
+                    "start": 108.88,
+                    "end": 109.46,
+                    "probability": 0.9955393671989441
+                },
+                {
+                    "word": " including",
+                    "start": 109.74,
+                    "end": 110.34,
+                    "probability": 0.9998134970664978
+                },
+                {
+                    "word": " options",
+                    "start": 110.34,
+                    "end": 110.88,
+                    "probability": 0.9982080459594727
+                },
+                {
+                    "word": " on",
+                    "start": 110.88,
+                    "end": 111.16,
+                    "probability": 0.9984234571456909
+                },
+                {
+                    "word": " futures,",
+                    "start": 111.16,
+                    "end": 111.56,
+                    "probability": 0.998855471611023
+                },
+                {
+                    "word": " index",
+                    "start": 111.8,
+                    "end": 112.2,
+                    "probability": 0.999405026435852
+                },
+                {
+                    "word": " options,",
+                    "start": 112.2,
+                    "end": 112.6,
+                    "probability": 0.9996159076690674
+                },
+                {
+                    "word": " VIX",
+                    "start": 112.98,
+                    "end": 113.24,
+                    "probability": 0.996638834476471
+                },
+                {
+                    "word": " futures,",
+                    "start": 113.24,
+                    "end": 113.68,
+                    "probability": 0.9988246560096741
+                },
+                {
+                    "word": " and",
+                    "start": 113.8,
+                    "end": 114.06,
+                    "probability": 0.9997163414955139
+                },
+                {
+                    "word": " VIX",
+                    "start": 114.06,
+                    "end": 114.32,
+                    "probability": 0.9995574951171875
+                },
+                {
+                    "word": " ETPs.",
+                    "start": 114.32,
+                    "end": 115.14,
+                    "probability": 0.9881903330485026
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "seek": 8830,
+            "start": 115.7,
+            "end": 118.28,
+            "text": " Darren provides insights into how he plays a role in the S&P 500 complex, and how he's been",
+            "tokens": [
+                51741,
+                36691,
+                6417,
+                14310,
+                666,
+                577,
+                415,
+                5749,
+                257,
+                3090,
+                294,
+                264,
+                318,
+                5,
+                47,
+                5923,
+                3997,
+                11,
+                293,
+                577,
+                415,
+                311,
+                668,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.19178825313762082,
+            "compression_ratio": 1.6879194630872483,
+            "no_speech_prob": 0.236403226852417,
+            "words": [
+                {
+                    "word": " Darren",
+                    "start": 115.7,
+                    "end": 116.34,
+                    "probability": 0.9925393462181091
+                },
+                {
+                    "word": " provides",
+                    "start": 116.34,
+                    "end": 116.58,
+                    "probability": 0.9974395036697388
+                },
+                {
+                    "word": " insights",
+                    "start": 116.58,
+                    "end": 117.2,
+                    "probability": 0.9975026249885559
+                },
+                {
+                    "word": " into",
+                    "start": 117.2,
+                    "end": 117.64,
+                    "probability": 0.9990457892417908
+                },
+                {
+                    "word": " how",
+                    "start": 117.64,
+                    "end": 117.82,
+                    "probability": 0.9977057576179504
+                },
+                {
+                    "word": " he",
+                    "start": 117.82,
+                    "end": 118.02,
+                    "probability": 0.998426079750061
+                },
+                {
+                    "word": " plays",
+                    "start": 118.02,
+                    "end": 118.24,
+                    "probability": 0.3559551239013672
+                },
+                {
+                    "word": " a",
+                    "start": 118.24,
+                    "end": 118.28,
+                    "probability": 0.21953514218330383
+                },
+                {
+                    "word": " role",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.4005690813064575
+                },
+                {
+                    "word": " in",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.9791263341903687
+                },
+                {
+                    "word": " the",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.8664611577987671
+                },
+                {
+                    "word": " S",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.5804849863052368
+                },
+                {
+                    "word": "&P",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.9998520314693451
+                },
+                {
+                    "word": " 500",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.9970249533653259
+                },
+                {
+                    "word": " complex,",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.253085196018219
+                },
+                {
+                    "word": " and",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.8078542947769165
+                },
+                {
+                    "word": " how",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.837029218673706
+                },
+                {
+                    "word": " he's",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.5735222324728966
+                },
+                {
+                    "word": " been",
+                    "start": 118.28,
+                    "end": 118.28,
+                    "probability": 0.437604695558548
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "seek": 11830,
+            "start": 118.3,
+            "end": 122.62,
+            "text": " able to play certain tenors over others, why knowing when not to short is the most important",
+            "tokens": [
+                50365,
+                1075,
+                281,
+                862,
+                1629,
+                2064,
+                830,
+                670,
+                2357,
+                11,
+                983,
+                5276,
+                562,
+                406,
+                281,
+                2099,
+                307,
+                264,
+                881,
+                1021,
+                50588
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " able",
+                    "start": 118.3,
+                    "end": 118.48,
+                    "probability": 1.6322120472977986e-06
+                },
+                {
+                    "word": " to",
+                    "start": 118.48,
+                    "end": 118.48,
+                    "probability": 0.9723312258720398
+                },
+                {
+                    "word": " play",
+                    "start": 118.48,
+                    "end": 118.48,
+                    "probability": 0.006251913961023092
+                },
+                {
+                    "word": " certain",
+                    "start": 118.48,
+                    "end": 118.48,
+                    "probability": 0.7497607469558716
+                },
+                {
+                    "word": " tenors",
+                    "start": 118.48,
+                    "end": 118.96,
+                    "probability": 0.9546851813793182
+                },
+                {
+                    "word": " over",
+                    "start": 118.96,
+                    "end": 119.14,
+                    "probability": 0.9962064027786255
+                },
+                {
+                    "word": " others,",
+                    "start": 119.14,
+                    "end": 119.5,
+                    "probability": 0.997340738773346
+                },
+                {
+                    "word": " why",
+                    "start": 119.68,
+                    "end": 120.12,
+                    "probability": 0.9759619832038879
+                },
+                {
+                    "word": " knowing",
+                    "start": 120.12,
+                    "end": 120.48,
+                    "probability": 0.9944720268249512
+                },
+                {
+                    "word": " when",
+                    "start": 120.48,
+                    "end": 120.88,
+                    "probability": 0.9934773445129395
+                },
+                {
+                    "word": " not",
+                    "start": 120.88,
+                    "end": 121.18,
+                    "probability": 0.9610894918441772
+                },
+                {
+                    "word": " to",
+                    "start": 121.18,
+                    "end": 121.4,
+                    "probability": 0.9878131151199341
+                },
+                {
+                    "word": " short",
+                    "start": 121.4,
+                    "end": 121.72,
+                    "probability": 0.9984228610992432
+                },
+                {
+                    "word": " is",
+                    "start": 121.72,
+                    "end": 121.96,
+                    "probability": 0.992373526096344
+                },
+                {
+                    "word": " the",
+                    "start": 121.96,
+                    "end": 122.12,
+                    "probability": 0.9949835538864136
+                },
+                {
+                    "word": " most",
+                    "start": 122.12,
+                    "end": 122.26,
+                    "probability": 0.9943723678588867
+                },
+                {
+                    "word": " important",
+                    "start": 122.26,
+                    "end": 122.62,
+                    "probability": 0.9958978295326233
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "seek": 11830,
+            "start": 122.62,
+            "end": 128.28,
+            "text": " key to risk management, why the upside can be riskier than the downside, and thinking through",
+            "tokens": [
+                50588,
+                2141,
+                281,
+                3148,
+                4592,
+                11,
+                983,
+                264,
+                14119,
+                393,
+                312,
+                3148,
+                811,
+                813,
+                264,
+                25060,
+                11,
+                293,
+                1953,
+                807,
+                50870
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " key",
+                    "start": 122.62,
+                    "end": 122.86,
+                    "probability": 0.998580813407898
+                },
+                {
+                    "word": " to",
+                    "start": 122.86,
+                    "end": 123.08,
+                    "probability": 0.9982019662857056
+                },
+                {
+                    "word": " risk",
+                    "start": 123.08,
+                    "end": 123.3,
+                    "probability": 0.9985048770904541
+                },
+                {
+                    "word": " management,",
+                    "start": 123.3,
+                    "end": 123.78,
+                    "probability": 0.9972075819969177
+                },
+                {
+                    "word": " why",
+                    "start": 123.98,
+                    "end": 124.48,
+                    "probability": 0.9958593249320984
+                },
+                {
+                    "word": " the",
+                    "start": 124.48,
+                    "end": 124.7,
+                    "probability": 0.9981212019920349
+                },
+                {
+                    "word": " upside",
+                    "start": 124.7,
+                    "end": 125.1,
+                    "probability": 0.9894756078720093
+                },
+                {
+                    "word": " can",
+                    "start": 125.1,
+                    "end": 125.48,
+                    "probability": 0.9962441921234131
+                },
+                {
+                    "word": " be",
+                    "start": 125.48,
+                    "end": 125.64,
+                    "probability": 0.9984018206596375
+                },
+                {
+                    "word": " riskier",
+                    "start": 125.64,
+                    "end": 126.2,
+                    "probability": 0.9989931881427765
+                },
+                {
+                    "word": " than",
+                    "start": 126.2,
+                    "end": 126.4,
+                    "probability": 0.9985336065292358
+                },
+                {
+                    "word": " the",
+                    "start": 126.4,
+                    "end": 126.52,
+                    "probability": 0.9979536533355713
+                },
+                {
+                    "word": " downside,",
+                    "start": 126.52,
+                    "end": 126.92,
+                    "probability": 0.9957754015922546
+                },
+                {
+                    "word": " and",
+                    "start": 127.18,
+                    "end": 127.66,
+                    "probability": 0.9978267550468445
+                },
+                {
+                    "word": " thinking",
+                    "start": 127.66,
+                    "end": 128.0,
+                    "probability": 0.9975228905677795
+                },
+                {
+                    "word": " through",
+                    "start": 128.0,
+                    "end": 128.28,
+                    "probability": 0.998212456703186
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "seek": 11830,
+            "start": 128.28,
+            "end": 133.68,
+            "text": " managing a trade over its lifetime. Towards the end of the interview, Darren paints a realistic",
+            "tokens": [
+                50870,
+                11642,
+                257,
+                4923,
+                670,
+                1080,
+                11364,
+                13,
+                48938,
+                264,
+                917,
+                295,
+                264,
+                4049,
+                11,
+                36691,
+                28076,
+                257,
+                12465,
+                51142
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " managing",
+                    "start": 128.28,
+                    "end": 128.66,
+                    "probability": 0.9991124272346497
+                },
+                {
+                    "word": " a",
+                    "start": 128.66,
+                    "end": 128.92,
+                    "probability": 0.9984867572784424
+                },
+                {
+                    "word": " trade",
+                    "start": 128.92,
+                    "end": 129.22,
+                    "probability": 0.9993078708648682
+                },
+                {
+                    "word": " over",
+                    "start": 129.22,
+                    "end": 129.5,
+                    "probability": 0.9980238676071167
+                },
+                {
+                    "word": " its",
+                    "start": 129.5,
+                    "end": 129.74,
+                    "probability": 0.9904112815856934
+                },
+                {
+                    "word": " lifetime.",
+                    "start": 129.74,
+                    "end": 130.12,
+                    "probability": 0.9986445307731628
+                },
+                {
+                    "word": " Towards",
+                    "start": 131.06,
+                    "end": 131.58,
+                    "probability": 0.9805985689163208
+                },
+                {
+                    "word": " the",
+                    "start": 131.58,
+                    "end": 131.78,
+                    "probability": 0.9998300075531006
+                },
+                {
+                    "word": " end",
+                    "start": 131.78,
+                    "end": 131.94,
+                    "probability": 0.999829888343811
+                },
+                {
+                    "word": " of",
+                    "start": 131.94,
+                    "end": 132.02,
+                    "probability": 0.9992208480834961
+                },
+                {
+                    "word": " the",
+                    "start": 132.02,
+                    "end": 132.1,
+                    "probability": 0.9966149926185608
+                },
+                {
+                    "word": " interview,",
+                    "start": 132.1,
+                    "end": 132.44,
+                    "probability": 0.9997523427009583
+                },
+                {
+                    "word": " Darren",
+                    "start": 132.62,
+                    "end": 132.88,
+                    "probability": 0.9536861181259155
+                },
+                {
+                    "word": " paints",
+                    "start": 132.88,
+                    "end": 133.1,
+                    "probability": 0.9982951283454895
+                },
+                {
+                    "word": " a",
+                    "start": 133.1,
+                    "end": 133.36,
+                    "probability": 0.999131977558136
+                },
+                {
+                    "word": " realistic",
+                    "start": 133.36,
+                    "end": 133.68,
+                    "probability": 0.998635470867157
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "seek": 11830,
+            "start": 133.68,
+            "end": 138.74,
+            "text": " picture of what it means to be an independent trader, and both the opportunities and constraints",
+            "tokens": [
+                51142,
+                3036,
+                295,
+                437,
+                309,
+                1355,
+                281,
+                312,
+                364,
+                6695,
+                31961,
+                11,
+                293,
+                1293,
+                264,
+                4786,
+                293,
+                18491,
+                51399
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " picture",
+                    "start": 133.68,
+                    "end": 134.22,
+                    "probability": 0.9995152950286865
+                },
+                {
+                    "word": " of",
+                    "start": 134.22,
+                    "end": 134.48,
+                    "probability": 0.9994621872901917
+                },
+                {
+                    "word": " what",
+                    "start": 134.48,
+                    "end": 134.6,
+                    "probability": 0.9996325969696045
+                },
+                {
+                    "word": " it",
+                    "start": 134.6,
+                    "end": 134.74,
+                    "probability": 0.9993420243263245
+                },
+                {
+                    "word": " means",
+                    "start": 134.74,
+                    "end": 135.0,
+                    "probability": 0.9994315505027771
+                },
+                {
+                    "word": " to",
+                    "start": 135.0,
+                    "end": 135.18,
+                    "probability": 0.9997057318687439
+                },
+                {
+                    "word": " be",
+                    "start": 135.18,
+                    "end": 135.28,
+                    "probability": 0.9997085928916931
+                },
+                {
+                    "word": " an",
+                    "start": 135.28,
+                    "end": 135.48,
+                    "probability": 0.9994173049926758
+                },
+                {
+                    "word": " independent",
+                    "start": 135.48,
+                    "end": 135.76,
+                    "probability": 0.9980244636535645
+                },
+                {
+                    "word": " trader,",
+                    "start": 135.76,
+                    "end": 136.26,
+                    "probability": 0.99952232837677
+                },
+                {
+                    "word": " and",
+                    "start": 136.46,
+                    "end": 136.96,
+                    "probability": 0.9461391568183899
+                },
+                {
+                    "word": " both",
+                    "start": 136.96,
+                    "end": 137.16,
+                    "probability": 0.9991145730018616
+                },
+                {
+                    "word": " the",
+                    "start": 137.16,
+                    "end": 137.34,
+                    "probability": 0.9989533424377441
+                },
+                {
+                    "word": " opportunities",
+                    "start": 137.34,
+                    "end": 137.88,
+                    "probability": 0.9990286827087402
+                },
+                {
+                    "word": " and",
+                    "start": 137.88,
+                    "end": 138.32,
+                    "probability": 0.9992364645004272
+                },
+                {
+                    "word": " constraints",
+                    "start": 138.32,
+                    "end": 138.74,
+                    "probability": 0.9991829991340637
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "seek": 11830,
+            "start": 138.74,
+            "end": 144.34,
+            "text": " unique to his position. We finish with the advice Darren would give to anyone serious about starting",
+            "tokens": [
+                51399,
+                3845,
+                281,
+                702,
+                2535,
+                13,
+                492,
+                2413,
+                365,
+                264,
+                5192,
+                36691,
+                576,
+                976,
+                281,
+                2878,
+                3156,
+                466,
+                2891,
+                51672
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " unique",
+                    "start": 138.74,
+                    "end": 139.28,
+                    "probability": 0.9985347986221313
+                },
+                {
+                    "word": " to",
+                    "start": 139.28,
+                    "end": 139.54,
+                    "probability": 0.9998999834060669
+                },
+                {
+                    "word": " his",
+                    "start": 139.54,
+                    "end": 139.68,
+                    "probability": 0.9996236562728882
+                },
+                {
+                    "word": " position.",
+                    "start": 139.68,
+                    "end": 140.12,
+                    "probability": 0.9999144077301025
+                },
+                {
+                    "word": " We",
+                    "start": 140.34,
+                    "end": 140.86,
+                    "probability": 0.9984955787658691
+                },
+                {
+                    "word": " finish",
+                    "start": 140.86,
+                    "end": 141.1,
+                    "probability": 0.9782201051712036
+                },
+                {
+                    "word": " with",
+                    "start": 141.1,
+                    "end": 141.34,
+                    "probability": 0.9995517134666443
+                },
+                {
+                    "word": " the",
+                    "start": 141.34,
+                    "end": 141.48,
+                    "probability": 0.9987925291061401
+                },
+                {
+                    "word": " advice",
+                    "start": 141.48,
+                    "end": 141.8,
+                    "probability": 0.9998489618301392
+                },
+                {
+                    "word": " Darren",
+                    "start": 141.8,
+                    "end": 142.16,
+                    "probability": 0.9983581900596619
+                },
+                {
+                    "word": " would",
+                    "start": 142.16,
+                    "end": 142.4,
+                    "probability": 0.999569833278656
+                },
+                {
+                    "word": " give",
+                    "start": 142.4,
+                    "end": 142.64,
+                    "probability": 0.9993475079536438
+                },
+                {
+                    "word": " to",
+                    "start": 142.64,
+                    "end": 142.82,
+                    "probability": 0.9985559582710266
+                },
+                {
+                    "word": " anyone",
+                    "start": 142.82,
+                    "end": 143.1,
+                    "probability": 0.9992886781692505
+                },
+                {
+                    "word": " serious",
+                    "start": 143.1,
+                    "end": 143.6,
+                    "probability": 0.9981430768966675
+                },
+                {
+                    "word": " about",
+                    "start": 143.6,
+                    "end": 143.96,
+                    "probability": 0.9998449087142944
+                },
+                {
+                    "word": " starting",
+                    "start": 143.96,
+                    "end": 144.34,
+                    "probability": 0.9993201494216919
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "seek": 11830,
+            "start": 144.34,
+            "end": 148.28,
+            "text": " a career in independent trading. I hope you enjoy my conversation, and I'll see you in the next video.",
+            "tokens": [
+                51672,
+                257,
+                3988,
+                294,
+                6695,
+                9529,
+                13,
+                286,
+                1454,
+                291,
+                2103,
+                452,
+                3761,
+                11,
+                293,
+                286,
+                603,
+                536,
+                291,
+                294,
+                264,
+                958,
+                960,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11942460968738466,
+            "compression_ratio": 1.7402985074626867,
+            "no_speech_prob": 0.02063942514359951,
+            "words": [
+                {
+                    "word": " a",
+                    "start": 144.34,
+                    "end": 144.5,
+                    "probability": 0.9997339844703674
+                },
+                {
+                    "word": " career",
+                    "start": 144.5,
+                    "end": 144.84,
+                    "probability": 0.9995168447494507
+                },
+                {
+                    "word": " in",
+                    "start": 144.84,
+                    "end": 145.14,
+                    "probability": 0.999495267868042
+                },
+                {
+                    "word": " independent",
+                    "start": 145.14,
+                    "end": 145.5,
+                    "probability": 0.9990116357803345
+                },
+                {
+                    "word": " trading.",
+                    "start": 145.5,
+                    "end": 146.12,
+                    "probability": 0.9990465044975281
+                },
+                {
+                    "word": " I",
+                    "start": 146.56,
+                    "end": 147.08,
+                    "probability": 0.9977339506149292
+                },
+                {
+                    "word": " hope",
+                    "start": 147.08,
+                    "end": 147.28,
+                    "probability": 0.9997114539146423
+                },
+                {
+                    "word": " you",
+                    "start": 147.28,
+                    "end": 147.42,
+                    "probability": 0.9997649788856506
+                },
+                {
+                    "word": " enjoy",
+                    "start": 147.42,
+                    "end": 147.66,
+                    "probability": 0.9463551044464111
+                },
+                {
+                    "word": " my",
+                    "start": 147.66,
+                    "end": 147.86,
+                    "probability": 0.9991588592529297
+                },
+                {
+                    "word": " conversation,",
+                    "start": 147.86,
+                    "end": 148.28,
+                    "probability": 0.9679602980613708
+                },
+                {
+                    "word": " and",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.9845249056816101
+                },
+                {
+                    "word": " I'll",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.7489821314811707
+                },
+                {
+                    "word": " see",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.9861695766448975
+                },
+                {
+                    "word": " you",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.9996116757392883
+                },
+                {
+                    "word": " in",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.5280788540840149
+                },
+                {
+                    "word": " the",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.9498628377914429
+                },
+                {
+                    "word": " next",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.989736795425415
+                },
+                {
+                    "word": " video.",
+                    "start": 148.28,
+                    "end": 148.28,
+                    "probability": 0.5451008081436157
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "seek": 14830,
+            "start": 148.3,
+            "end": 159.26,
+            "text": " Darren, welcome to the show. You are the first, I think, truly independent trader I've had come on",
+            "tokens": [
+                50365,
+                36691,
+                11,
+                2928,
+                281,
+                264,
+                855,
+                13,
+                509,
+                366,
+                264,
+                700,
+                11,
+                286,
+                519,
+                11,
+                4908,
+                6695,
+                31961,
+                286,
+                600,
+                632,
+                808,
+                322,
+                50917
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09431299209594726,
+            "compression_ratio": 1.6168582375478928,
+            "no_speech_prob": 0.013426915742456913,
+            "words": [
+                {
+                    "word": " Darren,",
+                    "start": 148.3,
+                    "end": 149.04,
+                    "probability": 0.045767977833747864
+                },
+                {
+                    "word": " welcome",
+                    "start": 149.64,
+                    "end": 152.56,
+                    "probability": 0.9947757720947266
+                },
+                {
+                    "word": " to",
+                    "start": 152.56,
+                    "end": 153.12,
+                    "probability": 0.9992665648460388
+                },
+                {
+                    "word": " the",
+                    "start": 153.12,
+                    "end": 153.26,
+                    "probability": 0.9996507167816162
+                },
+                {
+                    "word": " show.",
+                    "start": 153.26,
+                    "end": 153.64,
+                    "probability": 0.999221682548523
+                },
+                {
+                    "word": " You",
+                    "start": 154.12,
+                    "end": 154.64,
+                    "probability": 0.9898461103439331
+                },
+                {
+                    "word": " are",
+                    "start": 154.64,
+                    "end": 154.98,
+                    "probability": 0.9993035793304443
+                },
+                {
+                    "word": " the",
+                    "start": 154.98,
+                    "end": 155.44,
+                    "probability": 0.9993133544921875
+                },
+                {
+                    "word": " first,",
+                    "start": 155.44,
+                    "end": 156.06,
+                    "probability": 0.9995416402816772
+                },
+                {
+                    "word": " I",
+                    "start": 156.1,
+                    "end": 156.42,
+                    "probability": 0.9926356673240662
+                },
+                {
+                    "word": " think,",
+                    "start": 156.42,
+                    "end": 156.58,
+                    "probability": 0.9995150566101074
+                },
+                {
+                    "word": " truly",
+                    "start": 156.58,
+                    "end": 156.9,
+                    "probability": 0.9995602965354919
+                },
+                {
+                    "word": " independent",
+                    "start": 156.9,
+                    "end": 157.38,
+                    "probability": 0.9990990161895752
+                },
+                {
+                    "word": " trader",
+                    "start": 157.38,
+                    "end": 158.04,
+                    "probability": 0.9979526996612549
+                },
+                {
+                    "word": " I've",
+                    "start": 158.04,
+                    "end": 158.52,
+                    "probability": 0.9976855218410492
+                },
+                {
+                    "word": " had",
+                    "start": 158.52,
+                    "end": 158.74,
+                    "probability": 0.9997045397758484
+                },
+                {
+                    "word": " come",
+                    "start": 158.74,
+                    "end": 159.0,
+                    "probability": 0.9984123706817627
+                },
+                {
+                    "word": " on",
+                    "start": 159.0,
+                    "end": 159.26,
+                    "probability": 0.9997473359107971
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "seek": 14830,
+            "start": 159.26,
+            "end": 163.96,
+            "text": " the podcast, so I'm excited to get a brand new perspective for what is normally an overwhelmingly",
+            "tokens": [
+                50917,
+                264,
+                7367,
+                11,
+                370,
+                286,
+                478,
+                2919,
+                281,
+                483,
+                257,
+                3360,
+                777,
+                4585,
+                337,
+                437,
+                307,
+                5646,
+                364,
+                42926,
+                51166
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09431299209594726,
+            "compression_ratio": 1.6168582375478928,
+            "no_speech_prob": 0.013426915742456913,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 159.26,
+                    "end": 159.36,
+                    "probability": 0.9996029734611511
+                },
+                {
+                    "word": " podcast,",
+                    "start": 159.36,
+                    "end": 159.78,
+                    "probability": 0.9997251629829407
+                },
+                {
+                    "word": " so",
+                    "start": 159.84,
+                    "end": 160.04,
+                    "probability": 0.9988154172897339
+                },
+                {
+                    "word": " I'm",
+                    "start": 160.04,
+                    "end": 160.14,
+                    "probability": 0.9994888305664062
+                },
+                {
+                    "word": " excited",
+                    "start": 160.14,
+                    "end": 160.34,
+                    "probability": 0.9996618032455444
+                },
+                {
+                    "word": " to",
+                    "start": 160.34,
+                    "end": 160.54,
+                    "probability": 0.9995536208152771
+                },
+                {
+                    "word": " get",
+                    "start": 160.54,
+                    "end": 160.68,
+                    "probability": 0.9995267391204834
+                },
+                {
+                    "word": " a",
+                    "start": 160.68,
+                    "end": 161.04,
+                    "probability": 0.9989680051803589
+                },
+                {
+                    "word": " brand",
+                    "start": 161.04,
+                    "end": 161.38,
+                    "probability": 0.9993026256561279
+                },
+                {
+                    "word": " new",
+                    "start": 161.38,
+                    "end": 161.68,
+                    "probability": 0.931198000907898
+                },
+                {
+                    "word": " perspective",
+                    "start": 161.68,
+                    "end": 162.08,
+                    "probability": 0.999821126461029
+                },
+                {
+                    "word": " for",
+                    "start": 162.08,
+                    "end": 162.54,
+                    "probability": 0.9980059266090393
+                },
+                {
+                    "word": " what",
+                    "start": 162.54,
+                    "end": 162.82,
+                    "probability": 0.9989269375801086
+                },
+                {
+                    "word": " is",
+                    "start": 162.82,
+                    "end": 163.0,
+                    "probability": 0.9996138215065002
+                },
+                {
+                    "word": " normally",
+                    "start": 163.0,
+                    "end": 163.24,
+                    "probability": 0.9981641173362732
+                },
+                {
+                    "word": " an",
+                    "start": 163.24,
+                    "end": 163.44,
+                    "probability": 0.9978482723236084
+                },
+                {
+                    "word": " overwhelmingly",
+                    "start": 163.44,
+                    "end": 163.96,
+                    "probability": 0.9982663989067078
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "seek": 14830,
+            "start": 165.57999999999998,
+            "end": 170.94,
+            "text": " institutionally driven podcast. And given that you've chosen sort of a bit of different of a",
+            "tokens": [
+                51166,
+                7818,
+                379,
+                9555,
+                7367,
+                13,
+                400,
+                2212,
+                300,
+                291,
+                600,
+                8614,
+                1333,
+                295,
+                257,
+                857,
+                295,
+                819,
+                295,
+                257,
+                51502
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09431299209594726,
+            "compression_ratio": 1.6168582375478928,
+            "no_speech_prob": 0.013426915742456913,
+            "words": [
+                {
+                    "word": " institutionally",
+                    "start": 165.57999999999998,
+                    "end": 166.1,
+                    "probability": 0.9951773285865784
+                },
+                {
+                    "word": " driven",
+                    "start": 166.1,
+                    "end": 166.48,
+                    "probability": 0.8568949103355408
+                },
+                {
+                    "word": " podcast.",
+                    "start": 166.48,
+                    "end": 167.04,
+                    "probability": 0.9996501207351685
+                },
+                {
+                    "word": " And",
+                    "start": 167.42,
+                    "end": 167.9,
+                    "probability": 0.8253486156463623
+                },
+                {
+                    "word": " given",
+                    "start": 167.9,
+                    "end": 168.5,
+                    "probability": 0.9987009763717651
+                },
+                {
+                    "word": " that",
+                    "start": 168.5,
+                    "end": 168.88,
+                    "probability": 0.9995611310005188
+                },
+                {
+                    "word": " you've",
+                    "start": 168.88,
+                    "end": 169.28,
+                    "probability": 0.9989751875400543
+                },
+                {
+                    "word": " chosen",
+                    "start": 169.28,
+                    "end": 169.74,
+                    "probability": 0.9983854293823242
+                },
+                {
+                    "word": " sort",
+                    "start": 169.74,
+                    "end": 169.96,
+                    "probability": 0.9522440433502197
+                },
+                {
+                    "word": " of",
+                    "start": 169.96,
+                    "end": 170.08,
+                    "probability": 0.9998238682746887
+                },
+                {
+                    "word": " a",
+                    "start": 170.08,
+                    "end": 170.12,
+                    "probability": 0.9996914863586426
+                },
+                {
+                    "word": " bit",
+                    "start": 170.12,
+                    "end": 170.28,
+                    "probability": 0.9989098310470581
+                },
+                {
+                    "word": " of",
+                    "start": 170.28,
+                    "end": 170.36,
+                    "probability": 0.9136528968811035
+                },
+                {
+                    "word": " different",
+                    "start": 170.36,
+                    "end": 170.62,
+                    "probability": 0.5796515345573425
+                },
+                {
+                    "word": " of",
+                    "start": 170.62,
+                    "end": 170.86,
+                    "probability": 0.9172999262809753
+                },
+                {
+                    "word": " a",
+                    "start": 170.86,
+                    "end": 170.94,
+                    "probability": 0.9995653033256531
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "seek": 14830,
+            "start": 170.94,
+            "end": 176.06,
+            "text": " career trajectory here, I was hoping you could just start off with your background and get us to",
+            "tokens": [
+                51502,
+                3988,
+                21512,
+                510,
+                11,
+                286,
+                390,
+                7159,
+                291,
+                727,
+                445,
+                722,
+                766,
+                365,
+                428,
+                3678,
+                293,
+                483,
+                505,
+                281,
+                51761
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09431299209594726,
+            "compression_ratio": 1.6168582375478928,
+            "no_speech_prob": 0.013426915742456913,
+            "words": [
+                {
+                    "word": " career",
+                    "start": 170.94,
+                    "end": 171.4,
+                    "probability": 0.9994838237762451
+                },
+                {
+                    "word": " trajectory",
+                    "start": 171.4,
+                    "end": 171.82,
+                    "probability": 0.9990113973617554
+                },
+                {
+                    "word": " here,",
+                    "start": 171.82,
+                    "end": 172.4,
+                    "probability": 0.9966074228286743
+                },
+                {
+                    "word": " I",
+                    "start": 172.52,
+                    "end": 173.02,
+                    "probability": 0.9992409944534302
+                },
+                {
+                    "word": " was",
+                    "start": 173.02,
+                    "end": 173.2,
+                    "probability": 0.9995923638343811
+                },
+                {
+                    "word": " hoping",
+                    "start": 173.2,
+                    "end": 173.36,
+                    "probability": 0.9996598958969116
+                },
+                {
+                    "word": " you",
+                    "start": 173.36,
+                    "end": 173.52,
+                    "probability": 0.9989765882492065
+                },
+                {
+                    "word": " could",
+                    "start": 173.52,
+                    "end": 173.62,
+                    "probability": 0.9994774460792542
+                },
+                {
+                    "word": " just",
+                    "start": 173.62,
+                    "end": 173.76,
+                    "probability": 0.9983983635902405
+                },
+                {
+                    "word": " start",
+                    "start": 173.76,
+                    "end": 173.96,
+                    "probability": 0.9990480542182922
+                },
+                {
+                    "word": " off",
+                    "start": 173.96,
+                    "end": 174.16,
+                    "probability": 0.9975014328956604
+                },
+                {
+                    "word": " with",
+                    "start": 174.16,
+                    "end": 174.36,
+                    "probability": 0.9982744455337524
+                },
+                {
+                    "word": " your",
+                    "start": 174.36,
+                    "end": 174.8,
+                    "probability": 0.9923050999641418
+                },
+                {
+                    "word": " background",
+                    "start": 174.8,
+                    "end": 175.24,
+                    "probability": 0.996921956539154
+                },
+                {
+                    "word": " and",
+                    "start": 175.24,
+                    "end": 175.56,
+                    "probability": 0.9917322397232056
+                },
+                {
+                    "word": " get",
+                    "start": 175.56,
+                    "end": 175.72,
+                    "probability": 0.997296154499054
+                },
+                {
+                    "word": " us",
+                    "start": 175.72,
+                    "end": 175.86,
+                    "probability": 0.9978127479553223
+                },
+                {
+                    "word": " to",
+                    "start": 175.86,
+                    "end": 176.06,
+                    "probability": 0.9918041229248047
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "seek": 14830,
+            "start": 176.06,
+            "end": 177.82,
+            "text": " how you got to where you are today.",
+            "tokens": [
+                51761,
+                577,
+                291,
+                658,
+                281,
+                689,
+                291,
+                366,
+                965,
+                13,
+                51850
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09431299209594726,
+            "compression_ratio": 1.6168582375478928,
+            "no_speech_prob": 0.013426915742456913,
+            "words": [
+                {
+                    "word": " how",
+                    "start": 176.06,
+                    "end": 176.64,
+                    "probability": 0.9785537719726562
+                },
+                {
+                    "word": " you",
+                    "start": 176.64,
+                    "end": 176.84,
+                    "probability": 0.9992995262145996
+                },
+                {
+                    "word": " got",
+                    "start": 176.84,
+                    "end": 176.98,
+                    "probability": 0.9984336495399475
+                },
+                {
+                    "word": " to",
+                    "start": 176.98,
+                    "end": 177.14,
+                    "probability": 0.9983857870101929
+                },
+                {
+                    "word": " where",
+                    "start": 177.14,
+                    "end": 177.26,
+                    "probability": 0.9988057613372803
+                },
+                {
+                    "word": " you",
+                    "start": 177.26,
+                    "end": 177.42,
+                    "probability": 0.9995644688606262
+                },
+                {
+                    "word": " are",
+                    "start": 177.42,
+                    "end": 177.56,
+                    "probability": 0.999479353427887
+                },
+                {
+                    "word": " today.",
+                    "start": 177.56,
+                    "end": 177.82,
+                    "probability": 0.9970667958259583
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}

@@ -1,0 +1,5987 @@
+{
+    "text": " Yeah, so you're absolutely right that your focus on transaction costs and in particular market impact slash slippage becomes very important as you're looking at faster and faster trading. In fact, I'd say even more extreme than that, in some markets or for some strategies, slippage completely dominates your trading costs. It's bigger by an order of magnitude compared to the fee you're paying or the bid offer spread. And naive modeling of market impact leads to assumptions like, well, I've got a large trade to do, but I can just split it into 10 small chunks and execute them equally over the next 10 minutes with a very small amount of market impact in each little bin that I trade in. And so that leads you to write back tests and simulations which are not very reflective of reality. And market impact is kind of nice. It's something where there is actually, I think, a pretty good academic literature on it. Because people tend to view it not so much a component of their alpha as part of their edge. So they're much more willing to publish on it. And so you can go read this literature and there are really interesting puzzles to resolve. Like, OK, we know trading causes price impact. And we know that after large trades, prices tend to revert a little bit as the market absorbs some of that flow. And we also know that order flow tends to be very correlated in time. So if you see a lot of aggressive buying in one time period, you're likely. To see aggressive buying in future time periods. And the time lag on this can be extremely long. It can be weeks or months. You can observe some strong buy pressure today. And that can give me a prediction that two months from now, it's going to be slightly stronger buy pressure than average. But even though that order flow is correlated and is extremely predictable, prices themselves don't seem to be that predictable, even though the order flow impacts the price. So how do you resolve this? And if you're trying to model this yourself, you've got the, you know, in your You're working at a hedge fund or a prop firm and you've got your own trades, you know, saying, OK, what is the market impact of my trades? You've got the double problem that you traded presumably because you had some alpha and your alpha was going to predict that the market would move in the direction of your trade anyway, even if you didn't trade. And if your alpha is good, then indeed it would have moved that way. So how do you disentangle the effect of the market impact you had by trading versus how much the market was going to move anyway, just because you predicted that it would. So it's a fascinating area to study. It's interesting. It's interesting to try and incorporate it into a simulation as well, because a cute little fact is that empirically we see that the market impact of a trade of a certain size follows what people normally call a square root law. So that the size of your market impact is proportional to the square root of your participation in the market over the time period that you traded. And then if you go and implement this in backtest and you say, OK, there's some market impact, which is proportional to the square root of the trade, and then it decays slowly over time. You'll quickly find that this is very, very arbitrageable in the sense that you can just write a strategy which in simulation does lots and lots of small trades in the same direction and builds up some market impact over time. So say you buy, buy, buy, buy, buy, successively, you push the price up and then you just do a big sell trade into all that price impact you've created. And your big sell trade, because of the square root law, doesn't move the market down as much as your previous buys moved it up. And you can just buy something which in simulation is profitable. So it's a, I like it. It's a weird example of what. It seems to empirically fit the best in some sense cannot be correct. There's some missing factor. And I'm trying to untangle this is something that I've personally",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 11.14,
+            "text": " Yeah, so you're absolutely right that your focus on transaction costs and in particular market impact slash slippage becomes very important as you're looking at faster and faster trading.",
+            "tokens": [
+                50365,
+                865,
+                11,
+                370,
+                291,
+                434,
+                3122,
+                558,
+                300,
+                428,
+                1879,
+                322,
+                14425,
+                5497,
+                293,
+                294,
+                1729,
+                2142,
+                2712,
+                17330,
+                20129,
+                609,
+                3643,
+                588,
+                1021,
+                382,
+                291,
+                434,
+                1237,
+                412,
+                4663,
+                293,
+                4663,
+                9529,
+                13,
+                50929
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11105676319288171,
+            "compression_ratio": 1.6626984126984128,
+            "no_speech_prob": 0.0011877317447215319,
+            "words": [
+                {
+                    "word": " Yeah,",
+                    "start": 0.0,
+                    "end": 0.28,
+                    "probability": 0.8515900373458862
+                },
+                {
+                    "word": " so",
+                    "start": 0.38,
+                    "end": 0.6,
+                    "probability": 0.9805240631103516
+                },
+                {
+                    "word": " you're",
+                    "start": 0.6,
+                    "end": 1.56,
+                    "probability": 0.9954574108123779
+                },
+                {
+                    "word": " absolutely",
+                    "start": 1.56,
+                    "end": 1.8,
+                    "probability": 0.9997463822364807
+                },
+                {
+                    "word": " right",
+                    "start": 1.8,
+                    "end": 2.12,
+                    "probability": 0.999782145023346
+                },
+                {
+                    "word": " that",
+                    "start": 2.12,
+                    "end": 2.3,
+                    "probability": 0.5748717784881592
+                },
+                {
+                    "word": " your",
+                    "start": 2.3,
+                    "end": 2.42,
+                    "probability": 0.9940547347068787
+                },
+                {
+                    "word": " focus",
+                    "start": 2.42,
+                    "end": 2.74,
+                    "probability": 0.999951958656311
+                },
+                {
+                    "word": " on",
+                    "start": 2.74,
+                    "end": 3.04,
+                    "probability": 0.9998124241828918
+                },
+                {
+                    "word": " transaction",
+                    "start": 3.04,
+                    "end": 3.7,
+                    "probability": 0.9952102303504944
+                },
+                {
+                    "word": " costs",
+                    "start": 3.7,
+                    "end": 4.04,
+                    "probability": 0.9851623177528381
+                },
+                {
+                    "word": " and",
+                    "start": 4.04,
+                    "end": 4.22,
+                    "probability": 0.6102690100669861
+                },
+                {
+                    "word": " in",
+                    "start": 4.22,
+                    "end": 4.3,
+                    "probability": 0.8515589237213135
+                },
+                {
+                    "word": " particular",
+                    "start": 4.3,
+                    "end": 4.76,
+                    "probability": 0.9998527765274048
+                },
+                {
+                    "word": " market",
+                    "start": 4.76,
+                    "end": 5.52,
+                    "probability": 0.8383024334907532
+                },
+                {
+                    "word": " impact",
+                    "start": 5.52,
+                    "end": 5.8,
+                    "probability": 0.9923753142356873
+                },
+                {
+                    "word": " slash",
+                    "start": 5.8,
+                    "end": 6.36,
+                    "probability": 0.9702966213226318
+                },
+                {
+                    "word": " slippage",
+                    "start": 6.36,
+                    "end": 6.84,
+                    "probability": 0.9995855391025543
+                },
+                {
+                    "word": " becomes",
+                    "start": 6.84,
+                    "end": 7.26,
+                    "probability": 0.9983470439910889
+                },
+                {
+                    "word": " very",
+                    "start": 7.26,
+                    "end": 7.58,
+                    "probability": 0.999923586845398
+                },
+                {
+                    "word": " important",
+                    "start": 7.58,
+                    "end": 7.98,
+                    "probability": 0.9999746084213257
+                },
+                {
+                    "word": " as",
+                    "start": 7.98,
+                    "end": 8.8,
+                    "probability": 0.9962265491485596
+                },
+                {
+                    "word": " you're",
+                    "start": 8.8,
+                    "end": 9.02,
+                    "probability": 0.9998756647109985
+                },
+                {
+                    "word": " looking",
+                    "start": 9.02,
+                    "end": 9.22,
+                    "probability": 0.9999130964279175
+                },
+                {
+                    "word": " at",
+                    "start": 9.22,
+                    "end": 9.4,
+                    "probability": 0.9999098777770996
+                },
+                {
+                    "word": " faster",
+                    "start": 9.4,
+                    "end": 9.82,
+                    "probability": 0.9996688365936279
+                },
+                {
+                    "word": " and",
+                    "start": 9.82,
+                    "end": 9.98,
+                    "probability": 0.9994532465934753
+                },
+                {
+                    "word": " faster",
+                    "start": 9.98,
+                    "end": 10.14,
+                    "probability": 0.9995087385177612
+                },
+                {
+                    "word": " trading.",
+                    "start": 10.14,
+                    "end": 11.14,
+                    "probability": 0.996086597442627
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 11.32,
+            "end": 19.3,
+            "text": " In fact, I'd say even more extreme than that, in some markets or for some strategies, slippage completely dominates your trading costs.",
+            "tokens": [
+                50934,
+                682,
+                1186,
+                11,
+                286,
+                1116,
+                584,
+                754,
+                544,
+                8084,
+                813,
+                300,
+                11,
+                294,
+                512,
+                8383,
+                420,
+                337,
+                512,
+                9029,
+                11,
+                20129,
+                609,
+                2584,
+                8859,
+                1024,
+                428,
+                9529,
+                5497,
+                13,
+                51337
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11105676319288171,
+            "compression_ratio": 1.6626984126984128,
+            "no_speech_prob": 0.0011877317447215319,
+            "words": [
+                {
+                    "word": " In",
+                    "start": 11.32,
+                    "end": 11.8,
+                    "probability": 0.9947823882102966
+                },
+                {
+                    "word": " fact,",
+                    "start": 11.8,
+                    "end": 11.96,
+                    "probability": 0.9998641014099121
+                },
+                {
+                    "word": " I'd",
+                    "start": 12.0,
+                    "end": 12.16,
+                    "probability": 0.9996989667415619
+                },
+                {
+                    "word": " say",
+                    "start": 12.16,
+                    "end": 12.58,
+                    "probability": 0.9998835325241089
+                },
+                {
+                    "word": " even",
+                    "start": 12.58,
+                    "end": 13.44,
+                    "probability": 0.9795071482658386
+                },
+                {
+                    "word": " more",
+                    "start": 13.44,
+                    "end": 13.66,
+                    "probability": 0.9999785423278809
+                },
+                {
+                    "word": " extreme",
+                    "start": 13.66,
+                    "end": 13.92,
+                    "probability": 0.9867017865180969
+                },
+                {
+                    "word": " than",
+                    "start": 13.92,
+                    "end": 14.08,
+                    "probability": 0.9853848814964294
+                },
+                {
+                    "word": " that,",
+                    "start": 14.08,
+                    "end": 14.26,
+                    "probability": 0.9999115467071533
+                },
+                {
+                    "word": " in",
+                    "start": 14.32,
+                    "end": 14.68,
+                    "probability": 0.9991576671600342
+                },
+                {
+                    "word": " some",
+                    "start": 14.68,
+                    "end": 14.98,
+                    "probability": 0.9999873638153076
+                },
+                {
+                    "word": " markets",
+                    "start": 14.98,
+                    "end": 15.54,
+                    "probability": 0.9999923706054688
+                },
+                {
+                    "word": " or",
+                    "start": 15.54,
+                    "end": 15.7,
+                    "probability": 0.9971856474876404
+                },
+                {
+                    "word": " for",
+                    "start": 15.7,
+                    "end": 15.8,
+                    "probability": 0.9988540410995483
+                },
+                {
+                    "word": " some",
+                    "start": 15.8,
+                    "end": 15.94,
+                    "probability": 0.9998705387115479
+                },
+                {
+                    "word": " strategies,",
+                    "start": 15.94,
+                    "end": 16.3,
+                    "probability": 0.9999063014984131
+                },
+                {
+                    "word": " slippage",
+                    "start": 16.52,
+                    "end": 17.42,
+                    "probability": 0.9999013841152191
+                },
+                {
+                    "word": " completely",
+                    "start": 17.42,
+                    "end": 17.72,
+                    "probability": 0.9996956586837769
+                },
+                {
+                    "word": " dominates",
+                    "start": 17.72,
+                    "end": 18.34,
+                    "probability": 0.9999696016311646
+                },
+                {
+                    "word": " your",
+                    "start": 18.34,
+                    "end": 18.8,
+                    "probability": 0.9997074007987976
+                },
+                {
+                    "word": " trading",
+                    "start": 18.8,
+                    "end": 19.06,
+                    "probability": 0.9992369413375854
+                },
+                {
+                    "word": " costs.",
+                    "start": 19.06,
+                    "end": 19.3,
+                    "probability": 0.9980302453041077
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 19.44,
+            "end": 24.5,
+            "text": " It's bigger by an order of magnitude compared to the fee you're paying or the bid offer spread.",
+            "tokens": [
+                51348,
+                467,
+                311,
+                3801,
+                538,
+                364,
+                1668,
+                295,
+                15668,
+                5347,
+                281,
+                264,
+                12054,
+                291,
+                434,
+                6229,
+                420,
+                264,
+                12957,
+                2626,
+                3974,
+                13,
+                51596
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11105676319288171,
+            "compression_ratio": 1.6626984126984128,
+            "no_speech_prob": 0.0011877317447215319,
+            "words": [
+                {
+                    "word": " It's",
+                    "start": 19.44,
+                    "end": 19.92,
+                    "probability": 0.9962425231933594
+                },
+                {
+                    "word": " bigger",
+                    "start": 19.92,
+                    "end": 20.74,
+                    "probability": 0.8708248734474182
+                },
+                {
+                    "word": " by",
+                    "start": 20.74,
+                    "end": 20.92,
+                    "probability": 0.9999743700027466
+                },
+                {
+                    "word": " an",
+                    "start": 20.92,
+                    "end": 21.06,
+                    "probability": 0.9999212026596069
+                },
+                {
+                    "word": " order",
+                    "start": 21.06,
+                    "end": 21.22,
+                    "probability": 0.998958945274353
+                },
+                {
+                    "word": " of",
+                    "start": 21.22,
+                    "end": 21.36,
+                    "probability": 0.9999910593032837
+                },
+                {
+                    "word": " magnitude",
+                    "start": 21.36,
+                    "end": 21.64,
+                    "probability": 0.9998857975006104
+                },
+                {
+                    "word": " compared",
+                    "start": 21.64,
+                    "end": 22.14,
+                    "probability": 0.9996227025985718
+                },
+                {
+                    "word": " to",
+                    "start": 22.14,
+                    "end": 22.5,
+                    "probability": 0.9999850988388062
+                },
+                {
+                    "word": " the",
+                    "start": 22.5,
+                    "end": 22.86,
+                    "probability": 0.9999556541442871
+                },
+                {
+                    "word": " fee",
+                    "start": 22.86,
+                    "end": 23.06,
+                    "probability": 0.9999077320098877
+                },
+                {
+                    "word": " you're",
+                    "start": 23.06,
+                    "end": 23.22,
+                    "probability": 0.9999540448188782
+                },
+                {
+                    "word": " paying",
+                    "start": 23.22,
+                    "end": 23.46,
+                    "probability": 0.9996840953826904
+                },
+                {
+                    "word": " or",
+                    "start": 23.46,
+                    "end": 23.8,
+                    "probability": 0.999496340751648
+                },
+                {
+                    "word": " the",
+                    "start": 23.8,
+                    "end": 24.06,
+                    "probability": 0.9998494386672974
+                },
+                {
+                    "word": " bid",
+                    "start": 24.06,
+                    "end": 24.18,
+                    "probability": 0.9884508848190308
+                },
+                {
+                    "word": " offer",
+                    "start": 24.18,
+                    "end": 24.28,
+                    "probability": 0.503930926322937
+                },
+                {
+                    "word": " spread.",
+                    "start": 24.28,
+                    "end": 24.5,
+                    "probability": 0.9986516833305359
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 2450,
+            "start": 24.5,
+            "end": 40.76,
+            "text": " And naive modeling of market impact leads to assumptions like, well, I've got a large trade to do, but I can just split it into 10 small chunks and execute them equally over the next 10 minutes with a very small amount of market impact in each little bin that I trade in.",
+            "tokens": [
+                50365,
+                400,
+                29052,
+                15983,
+                295,
+                2142,
+                2712,
+                6689,
+                281,
+                17695,
+                411,
+                11,
+                731,
+                11,
+                286,
+                600,
+                658,
+                257,
+                2416,
+                4923,
+                281,
+                360,
+                11,
+                457,
+                286,
+                393,
+                445,
+                7472,
+                309,
+                666,
+                1266,
+                1359,
+                24004,
+                293,
+                14483,
+                552,
+                12309,
+                670,
+                264,
+                958,
+                1266,
+                2077,
+                365,
+                257,
+                588,
+                1359,
+                2372,
+                295,
+                2142,
+                2712,
+                294,
+                1184,
+                707,
+                5171,
+                300,
+                286,
+                4923,
+                294,
+                13,
+                51183
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09321154535344217,
+            "compression_ratio": 1.67003367003367,
+            "no_speech_prob": 0.00020027111168019474,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 24.5,
+                    "end": 24.98,
+                    "probability": 0.7807378172874451
+                },
+                {
+                    "word": " naive",
+                    "start": 24.98,
+                    "end": 26.0,
+                    "probability": 0.9743072390556335
+                },
+                {
+                    "word": " modeling",
+                    "start": 26.0,
+                    "end": 26.34,
+                    "probability": 0.9383937120437622
+                },
+                {
+                    "word": " of",
+                    "start": 26.34,
+                    "end": 26.84,
+                    "probability": 0.9998509883880615
+                },
+                {
+                    "word": " market",
+                    "start": 26.84,
+                    "end": 27.38,
+                    "probability": 0.9945929646492004
+                },
+                {
+                    "word": " impact",
+                    "start": 27.38,
+                    "end": 27.56,
+                    "probability": 0.9998010993003845
+                },
+                {
+                    "word": " leads",
+                    "start": 27.56,
+                    "end": 27.96,
+                    "probability": 0.9995200634002686
+                },
+                {
+                    "word": " to",
+                    "start": 27.96,
+                    "end": 28.26,
+                    "probability": 0.9999681711196899
+                },
+                {
+                    "word": " assumptions",
+                    "start": 28.26,
+                    "end": 28.68,
+                    "probability": 0.9998483657836914
+                },
+                {
+                    "word": " like,",
+                    "start": 28.68,
+                    "end": 29.08,
+                    "probability": 0.9981561303138733
+                },
+                {
+                    "word": " well,",
+                    "start": 29.14,
+                    "end": 29.38,
+                    "probability": 0.9821701049804688
+                },
+                {
+                    "word": " I've",
+                    "start": 29.4,
+                    "end": 29.88,
+                    "probability": 0.8074278831481934
+                },
+                {
+                    "word": " got",
+                    "start": 29.88,
+                    "end": 29.92,
+                    "probability": 0.9999803304672241
+                },
+                {
+                    "word": " a",
+                    "start": 29.92,
+                    "end": 30.0,
+                    "probability": 0.9999698400497437
+                },
+                {
+                    "word": " large",
+                    "start": 30.0,
+                    "end": 30.14,
+                    "probability": 0.9963411688804626
+                },
+                {
+                    "word": " trade",
+                    "start": 30.14,
+                    "end": 30.36,
+                    "probability": 0.9995827078819275
+                },
+                {
+                    "word": " to",
+                    "start": 30.36,
+                    "end": 30.48,
+                    "probability": 0.9991626739501953
+                },
+                {
+                    "word": " do,",
+                    "start": 30.48,
+                    "end": 30.62,
+                    "probability": 0.9999055862426758
+                },
+                {
+                    "word": " but",
+                    "start": 30.68,
+                    "end": 31.14,
+                    "probability": 0.9997075200080872
+                },
+                {
+                    "word": " I",
+                    "start": 31.14,
+                    "end": 31.26,
+                    "probability": 0.9999701976776123
+                },
+                {
+                    "word": " can",
+                    "start": 31.26,
+                    "end": 31.34,
+                    "probability": 0.9999755620956421
+                },
+                {
+                    "word": " just",
+                    "start": 31.34,
+                    "end": 31.52,
+                    "probability": 0.9999699592590332
+                },
+                {
+                    "word": " split",
+                    "start": 31.52,
+                    "end": 31.72,
+                    "probability": 0.9970171451568604
+                },
+                {
+                    "word": " it",
+                    "start": 31.72,
+                    "end": 31.86,
+                    "probability": 0.9997324347496033
+                },
+                {
+                    "word": " into",
+                    "start": 31.86,
+                    "end": 31.98,
+                    "probability": 0.9999561309814453
+                },
+                {
+                    "word": " 10",
+                    "start": 31.98,
+                    "end": 32.14,
+                    "probability": 0.994019627571106
+                },
+                {
+                    "word": " small",
+                    "start": 32.14,
+                    "end": 32.28,
+                    "probability": 0.9997962117195129
+                },
+                {
+                    "word": " chunks",
+                    "start": 32.28,
+                    "end": 32.6,
+                    "probability": 0.9999786615371704
+                },
+                {
+                    "word": " and",
+                    "start": 32.6,
+                    "end": 32.84,
+                    "probability": 0.9993507266044617
+                },
+                {
+                    "word": " execute",
+                    "start": 32.84,
+                    "end": 33.14,
+                    "probability": 0.9998952150344849
+                },
+                {
+                    "word": " them",
+                    "start": 33.14,
+                    "end": 34.16,
+                    "probability": 0.9989773035049438
+                },
+                {
+                    "word": " equally",
+                    "start": 34.16,
+                    "end": 34.82,
+                    "probability": 0.998593270778656
+                },
+                {
+                    "word": " over",
+                    "start": 34.82,
+                    "end": 35.12,
+                    "probability": 0.9999351501464844
+                },
+                {
+                    "word": " the",
+                    "start": 35.12,
+                    "end": 35.22,
+                    "probability": 0.9999781847000122
+                },
+                {
+                    "word": " next",
+                    "start": 35.22,
+                    "end": 35.42,
+                    "probability": 0.9985452890396118
+                },
+                {
+                    "word": " 10",
+                    "start": 35.42,
+                    "end": 36.28,
+                    "probability": 0.9998247027397156
+                },
+                {
+                    "word": " minutes",
+                    "start": 36.28,
+                    "end": 36.5,
+                    "probability": 0.9999337196350098
+                },
+                {
+                    "word": " with",
+                    "start": 36.5,
+                    "end": 36.74,
+                    "probability": 0.9921654462814331
+                },
+                {
+                    "word": " a",
+                    "start": 36.74,
+                    "end": 36.82,
+                    "probability": 0.9998940229415894
+                },
+                {
+                    "word": " very",
+                    "start": 36.82,
+                    "end": 36.94,
+                    "probability": 0.9997791647911072
+                },
+                {
+                    "word": " small",
+                    "start": 36.94,
+                    "end": 37.12,
+                    "probability": 0.9999877214431763
+                },
+                {
+                    "word": " amount",
+                    "start": 37.12,
+                    "end": 37.36,
+                    "probability": 0.9999704360961914
+                },
+                {
+                    "word": " of",
+                    "start": 37.36,
+                    "end": 37.5,
+                    "probability": 0.9999617338180542
+                },
+                {
+                    "word": " market",
+                    "start": 37.5,
+                    "end": 37.68,
+                    "probability": 0.9933331608772278
+                },
+                {
+                    "word": " impact",
+                    "start": 37.68,
+                    "end": 37.92,
+                    "probability": 0.9983890056610107
+                },
+                {
+                    "word": " in",
+                    "start": 37.92,
+                    "end": 38.34,
+                    "probability": 0.9969478249549866
+                },
+                {
+                    "word": " each",
+                    "start": 38.34,
+                    "end": 39.24,
+                    "probability": 0.9998633861541748
+                },
+                {
+                    "word": " little",
+                    "start": 39.24,
+                    "end": 39.98,
+                    "probability": 0.9986472725868225
+                },
+                {
+                    "word": " bin",
+                    "start": 39.98,
+                    "end": 40.22,
+                    "probability": 0.9991118311882019
+                },
+                {
+                    "word": " that",
+                    "start": 40.22,
+                    "end": 40.38,
+                    "probability": 0.9998916387557983
+                },
+                {
+                    "word": " I",
+                    "start": 40.38,
+                    "end": 40.46,
+                    "probability": 0.9999520778656006
+                },
+                {
+                    "word": " trade",
+                    "start": 40.46,
+                    "end": 40.66,
+                    "probability": 0.9993744492530823
+                },
+                {
+                    "word": " in.",
+                    "start": 40.66,
+                    "end": 40.76,
+                    "probability": 0.8828169703483582
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 2450,
+            "start": 41.36,
+            "end": 47.3,
+            "text": " And so that leads you to write back tests and simulations which are not very reflective of reality.",
+            "tokens": [
+                51220,
+                400,
+                370,
+                300,
+                6689,
+                291,
+                281,
+                2464,
+                646,
+                6921,
+                293,
+                35138,
+                597,
+                366,
+                406,
+                588,
+                28931,
+                295,
+                4103,
+                13,
+                51520
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09321154535344217,
+            "compression_ratio": 1.67003367003367,
+            "no_speech_prob": 0.00020027111168019474,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 41.36,
+                    "end": 41.8,
+                    "probability": 0.9989036321640015
+                },
+                {
+                    "word": " so",
+                    "start": 41.8,
+                    "end": 42.08,
+                    "probability": 0.3635593354701996
+                },
+                {
+                    "word": " that",
+                    "start": 42.08,
+                    "end": 42.28,
+                    "probability": 0.9850606322288513
+                },
+                {
+                    "word": " leads",
+                    "start": 42.28,
+                    "end": 42.62,
+                    "probability": 0.9982036352157593
+                },
+                {
+                    "word": " you",
+                    "start": 42.62,
+                    "end": 42.8,
+                    "probability": 0.9999852180480957
+                },
+                {
+                    "word": " to",
+                    "start": 42.8,
+                    "end": 43.02,
+                    "probability": 0.9998694658279419
+                },
+                {
+                    "word": " write",
+                    "start": 43.02,
+                    "end": 43.56,
+                    "probability": 0.8567185997962952
+                },
+                {
+                    "word": " back",
+                    "start": 43.56,
+                    "end": 43.96,
+                    "probability": 0.9995027780532837
+                },
+                {
+                    "word": " tests",
+                    "start": 43.96,
+                    "end": 44.24,
+                    "probability": 0.8464198112487793
+                },
+                {
+                    "word": " and",
+                    "start": 44.24,
+                    "end": 44.48,
+                    "probability": 0.9999107122421265
+                },
+                {
+                    "word": " simulations",
+                    "start": 44.48,
+                    "end": 44.7,
+                    "probability": 0.9995409250259399
+                },
+                {
+                    "word": " which",
+                    "start": 44.7,
+                    "end": 45.14,
+                    "probability": 0.49601078033447266
+                },
+                {
+                    "word": " are",
+                    "start": 45.14,
+                    "end": 45.34,
+                    "probability": 0.9999933242797852
+                },
+                {
+                    "word": " not",
+                    "start": 45.34,
+                    "end": 45.96,
+                    "probability": 0.9999518394470215
+                },
+                {
+                    "word": " very",
+                    "start": 45.96,
+                    "end": 46.12,
+                    "probability": 0.9996668100357056
+                },
+                {
+                    "word": " reflective",
+                    "start": 46.12,
+                    "end": 46.46,
+                    "probability": 0.9999512434005737
+                },
+                {
+                    "word": " of",
+                    "start": 46.46,
+                    "end": 46.84,
+                    "probability": 0.9999781847000122
+                },
+                {
+                    "word": " reality.",
+                    "start": 46.84,
+                    "end": 47.3,
+                    "probability": 0.9997805953025818
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 2450,
+            "start": 48.019999999999996,
+            "end": 50.18,
+            "text": " And market impact is kind of nice.",
+            "tokens": [
+                51545,
+                400,
+                2142,
+                2712,
+                307,
+                733,
+                295,
+                1481,
+                13,
+                51654
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09321154535344217,
+            "compression_ratio": 1.67003367003367,
+            "no_speech_prob": 0.00020027111168019474,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 48.019999999999996,
+                    "end": 48.459999999999994,
+                    "probability": 0.9988202452659607
+                },
+                {
+                    "word": " market",
+                    "start": 48.459999999999994,
+                    "end": 48.9,
+                    "probability": 0.999714195728302
+                },
+                {
+                    "word": " impact",
+                    "start": 48.9,
+                    "end": 49.14,
+                    "probability": 0.9994781613349915
+                },
+                {
+                    "word": " is",
+                    "start": 49.14,
+                    "end": 49.72,
+                    "probability": 0.4184509217739105
+                },
+                {
+                    "word": " kind",
+                    "start": 49.72,
+                    "end": 49.92,
+                    "probability": 0.9874102473258972
+                },
+                {
+                    "word": " of",
+                    "start": 49.92,
+                    "end": 50.02,
+                    "probability": 0.9999933242797852
+                },
+                {
+                    "word": " nice.",
+                    "start": 50.02,
+                    "end": 50.18,
+                    "probability": 0.9997615218162537
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 2450,
+            "start": 50.26,
+            "end": 54.48,
+            "text": " It's something where there is actually, I think, a pretty good academic literature on it.",
+            "tokens": [
+                51661,
+                467,
+                311,
+                746,
+                689,
+                456,
+                307,
+                767,
+                11,
+                286,
+                519,
+                11,
+                257,
+                1238,
+                665,
+                7778,
+                10394,
+                322,
+                309,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.09321154535344217,
+            "compression_ratio": 1.67003367003367,
+            "no_speech_prob": 0.00020027111168019474,
+            "words": [
+                {
+                    "word": " It's",
+                    "start": 50.26,
+                    "end": 50.44,
+                    "probability": 0.9998432695865631
+                },
+                {
+                    "word": " something",
+                    "start": 50.44,
+                    "end": 50.76,
+                    "probability": 0.9999656677246094
+                },
+                {
+                    "word": " where",
+                    "start": 50.76,
+                    "end": 50.98,
+                    "probability": 0.9999881982803345
+                },
+                {
+                    "word": " there",
+                    "start": 50.98,
+                    "end": 51.1,
+                    "probability": 0.9999614953994751
+                },
+                {
+                    "word": " is",
+                    "start": 51.1,
+                    "end": 51.22,
+                    "probability": 0.9999204874038696
+                },
+                {
+                    "word": " actually,",
+                    "start": 51.22,
+                    "end": 51.36,
+                    "probability": 0.9999535083770752
+                },
+                {
+                    "word": " I",
+                    "start": 51.48,
+                    "end": 51.76,
+                    "probability": 0.9999027252197266
+                },
+                {
+                    "word": " think,",
+                    "start": 51.76,
+                    "end": 51.94,
+                    "probability": 0.9999879598617554
+                },
+                {
+                    "word": " a",
+                    "start": 51.98,
+                    "end": 52.02,
+                    "probability": 0.9998778104782104
+                },
+                {
+                    "word": " pretty",
+                    "start": 52.02,
+                    "end": 52.14,
+                    "probability": 0.9999840259552002
+                },
+                {
+                    "word": " good",
+                    "start": 52.14,
+                    "end": 52.42,
+                    "probability": 0.9999955892562866
+                },
+                {
+                    "word": " academic",
+                    "start": 52.42,
+                    "end": 52.76,
+                    "probability": 0.9999626874923706
+                },
+                {
+                    "word": " literature",
+                    "start": 52.76,
+                    "end": 53.26,
+                    "probability": 0.9999756813049316
+                },
+                {
+                    "word": " on",
+                    "start": 53.26,
+                    "end": 54.3,
+                    "probability": 0.9954537153244019
+                },
+                {
+                    "word": " it.",
+                    "start": 54.3,
+                    "end": 54.48,
+                    "probability": 0.9995579123497009
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "seek": 5450,
+            "start": 54.5,
+            "end": 59.98,
+            "text": " Because people tend to view it not so much a component of their alpha as part of their edge.",
+            "tokens": [
+                50365,
+                1436,
+                561,
+                3928,
+                281,
+                1910,
+                309,
+                406,
+                370,
+                709,
+                257,
+                6542,
+                295,
+                641,
+                8961,
+                382,
+                644,
+                295,
+                641,
+                4691,
+                13,
+                50642
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " Because",
+                    "start": 54.5,
+                    "end": 54.88,
+                    "probability": 0.059100765734910965
+                },
+                {
+                    "word": " people",
+                    "start": 54.88,
+                    "end": 55.32,
+                    "probability": 0.9967750906944275
+                },
+                {
+                    "word": " tend",
+                    "start": 55.32,
+                    "end": 55.62,
+                    "probability": 0.999176561832428
+                },
+                {
+                    "word": " to",
+                    "start": 55.62,
+                    "end": 55.78,
+                    "probability": 0.9989699125289917
+                },
+                {
+                    "word": " view",
+                    "start": 55.78,
+                    "end": 55.94,
+                    "probability": 0.9989622831344604
+                },
+                {
+                    "word": " it",
+                    "start": 55.94,
+                    "end": 56.18,
+                    "probability": 0.9977695941925049
+                },
+                {
+                    "word": " not",
+                    "start": 56.18,
+                    "end": 56.78,
+                    "probability": 0.8789041042327881
+                },
+                {
+                    "word": " so",
+                    "start": 56.78,
+                    "end": 56.94,
+                    "probability": 0.9984509944915771
+                },
+                {
+                    "word": " much",
+                    "start": 56.94,
+                    "end": 57.16,
+                    "probability": 0.9997257590293884
+                },
+                {
+                    "word": " a",
+                    "start": 57.16,
+                    "end": 57.28,
+                    "probability": 0.8985198140144348
+                },
+                {
+                    "word": " component",
+                    "start": 57.28,
+                    "end": 57.54,
+                    "probability": 0.9994277358055115
+                },
+                {
+                    "word": " of",
+                    "start": 57.54,
+                    "end": 57.9,
+                    "probability": 0.99801105260849
+                },
+                {
+                    "word": " their",
+                    "start": 57.9,
+                    "end": 58.18,
+                    "probability": 0.9224565029144287
+                },
+                {
+                    "word": " alpha",
+                    "start": 58.18,
+                    "end": 59.12,
+                    "probability": 0.9643478989601135
+                },
+                {
+                    "word": " as",
+                    "start": 59.12,
+                    "end": 59.34,
+                    "probability": 0.845797598361969
+                },
+                {
+                    "word": " part",
+                    "start": 59.34,
+                    "end": 59.48,
+                    "probability": 0.9991070628166199
+                },
+                {
+                    "word": " of",
+                    "start": 59.48,
+                    "end": 59.62,
+                    "probability": 0.9998235106468201
+                },
+                {
+                    "word": " their",
+                    "start": 59.62,
+                    "end": 59.7,
+                    "probability": 0.9794678092002869
+                },
+                {
+                    "word": " edge.",
+                    "start": 59.7,
+                    "end": 59.98,
+                    "probability": 0.9957188963890076
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "seek": 5450,
+            "start": 60.04,
+            "end": 62.5,
+            "text": " So they're much more willing to publish on it.",
+            "tokens": [
+                50655,
+                407,
+                436,
+                434,
+                709,
+                544,
+                4950,
+                281,
+                11374,
+                322,
+                309,
+                13,
+                50771
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 60.04,
+                    "end": 60.3,
+                    "probability": 0.9914461374282837
+                },
+                {
+                    "word": " they're",
+                    "start": 60.3,
+                    "end": 60.48,
+                    "probability": 0.9687174558639526
+                },
+                {
+                    "word": " much",
+                    "start": 60.48,
+                    "end": 60.76,
+                    "probability": 0.9996107220649719
+                },
+                {
+                    "word": " more",
+                    "start": 60.76,
+                    "end": 60.86,
+                    "probability": 0.9997418522834778
+                },
+                {
+                    "word": " willing",
+                    "start": 60.86,
+                    "end": 61.04,
+                    "probability": 0.9996023774147034
+                },
+                {
+                    "word": " to",
+                    "start": 61.04,
+                    "end": 61.2,
+                    "probability": 0.9999562501907349
+                },
+                {
+                    "word": " publish",
+                    "start": 61.2,
+                    "end": 61.48,
+                    "probability": 0.9998841285705566
+                },
+                {
+                    "word": " on",
+                    "start": 61.48,
+                    "end": 62.36,
+                    "probability": 0.9959010481834412
+                },
+                {
+                    "word": " it.",
+                    "start": 62.36,
+                    "end": 62.5,
+                    "probability": 0.9999198913574219
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "seek": 5450,
+            "start": 62.62,
+            "end": 66.18,
+            "text": " And so you can go read this literature and there are really interesting puzzles to resolve.",
+            "tokens": [
+                50787,
+                400,
+                370,
+                291,
+                393,
+                352,
+                1401,
+                341,
+                10394,
+                293,
+                456,
+                366,
+                534,
+                1880,
+                24138,
+                281,
+                14151,
+                13,
+                50957
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 62.62,
+                    "end": 62.92,
+                    "probability": 0.9846245050430298
+                },
+                {
+                    "word": " so",
+                    "start": 62.92,
+                    "end": 63.02,
+                    "probability": 0.9997054934501648
+                },
+                {
+                    "word": " you",
+                    "start": 63.02,
+                    "end": 63.14,
+                    "probability": 0.9979172348976135
+                },
+                {
+                    "word": " can",
+                    "start": 63.14,
+                    "end": 63.26,
+                    "probability": 0.9998420476913452
+                },
+                {
+                    "word": " go",
+                    "start": 63.26,
+                    "end": 63.38,
+                    "probability": 0.9983211159706116
+                },
+                {
+                    "word": " read",
+                    "start": 63.38,
+                    "end": 63.56,
+                    "probability": 0.9969313144683838
+                },
+                {
+                    "word": " this",
+                    "start": 63.56,
+                    "end": 63.72,
+                    "probability": 0.9975106716156006
+                },
+                {
+                    "word": " literature",
+                    "start": 63.72,
+                    "end": 63.96,
+                    "probability": 0.9998764991760254
+                },
+                {
+                    "word": " and",
+                    "start": 63.96,
+                    "end": 64.18,
+                    "probability": 0.517922580242157
+                },
+                {
+                    "word": " there",
+                    "start": 64.18,
+                    "end": 64.36,
+                    "probability": 0.9963449835777283
+                },
+                {
+                    "word": " are",
+                    "start": 64.36,
+                    "end": 64.46,
+                    "probability": 0.9502484202384949
+                },
+                {
+                    "word": " really",
+                    "start": 64.46,
+                    "end": 64.62,
+                    "probability": 0.9996823072433472
+                },
+                {
+                    "word": " interesting",
+                    "start": 64.62,
+                    "end": 65.06,
+                    "probability": 0.9998880624771118
+                },
+                {
+                    "word": " puzzles",
+                    "start": 65.06,
+                    "end": 65.4,
+                    "probability": 0.9999573230743408
+                },
+                {
+                    "word": " to",
+                    "start": 65.4,
+                    "end": 65.9,
+                    "probability": 0.9987433552742004
+                },
+                {
+                    "word": " resolve.",
+                    "start": 65.9,
+                    "end": 66.18,
+                    "probability": 0.9986695051193237
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "seek": 5450,
+            "start": 66.34,
+            "end": 68.64,
+            "text": " Like, OK, we know trading causes price impact.",
+            "tokens": [
+                50973,
+                1743,
+                11,
+                2264,
+                11,
+                321,
+                458,
+                9529,
+                7700,
+                3218,
+                2712,
+                13,
+                51082
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " Like,",
+                    "start": 66.34,
+                    "end": 66.58,
+                    "probability": 0.9551146626472473
+                },
+                {
+                    "word": " OK,",
+                    "start": 66.68,
+                    "end": 67.26,
+                    "probability": 0.11717569082975388
+                },
+                {
+                    "word": " we",
+                    "start": 67.3,
+                    "end": 67.42,
+                    "probability": 0.9998558759689331
+                },
+                {
+                    "word": " know",
+                    "start": 67.42,
+                    "end": 67.58,
+                    "probability": 0.9999843835830688
+                },
+                {
+                    "word": " trading",
+                    "start": 67.58,
+                    "end": 67.88,
+                    "probability": 0.9994114637374878
+                },
+                {
+                    "word": " causes",
+                    "start": 67.88,
+                    "end": 68.14,
+                    "probability": 0.9999299049377441
+                },
+                {
+                    "word": " price",
+                    "start": 68.14,
+                    "end": 68.42,
+                    "probability": 0.9998685121536255
+                },
+                {
+                    "word": " impact.",
+                    "start": 68.42,
+                    "end": 68.64,
+                    "probability": 0.9858621954917908
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "seek": 5450,
+            "start": 68.86,
+            "end": 76.64,
+            "text": " And we know that after large trades, prices tend to revert a little bit as the market absorbs some of that flow.",
+            "tokens": [
+                51095,
+                400,
+                321,
+                458,
+                300,
+                934,
+                2416,
+                21287,
+                11,
+                7901,
+                3928,
+                281,
+                319,
+                3281,
+                257,
+                707,
+                857,
+                382,
+                264,
+                2142,
+                40745,
+                512,
+                295,
+                300,
+                3095,
+                13,
+                51478
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 68.86,
+                    "end": 69.28,
+                    "probability": 0.9995773434638977
+                },
+                {
+                    "word": " we",
+                    "start": 69.28,
+                    "end": 69.38,
+                    "probability": 0.9999812841415405
+                },
+                {
+                    "word": " know",
+                    "start": 69.38,
+                    "end": 69.6,
+                    "probability": 0.9999934434890747
+                },
+                {
+                    "word": " that",
+                    "start": 69.6,
+                    "end": 70.08,
+                    "probability": 0.9999693632125854
+                },
+                {
+                    "word": " after",
+                    "start": 70.08,
+                    "end": 71.0,
+                    "probability": 0.9995802044868469
+                },
+                {
+                    "word": " large",
+                    "start": 71.0,
+                    "end": 71.76,
+                    "probability": 0.999954104423523
+                },
+                {
+                    "word": " trades,",
+                    "start": 71.76,
+                    "end": 72.18,
+                    "probability": 0.9999734163284302
+                },
+                {
+                    "word": " prices",
+                    "start": 72.36,
+                    "end": 72.92,
+                    "probability": 0.9999438524246216
+                },
+                {
+                    "word": " tend",
+                    "start": 72.92,
+                    "end": 73.1,
+                    "probability": 0.9999915361404419
+                },
+                {
+                    "word": " to",
+                    "start": 73.1,
+                    "end": 73.3,
+                    "probability": 0.9999938011169434
+                },
+                {
+                    "word": " revert",
+                    "start": 73.3,
+                    "end": 73.58,
+                    "probability": 0.9998903870582581
+                },
+                {
+                    "word": " a",
+                    "start": 73.58,
+                    "end": 74.08,
+                    "probability": 0.9986097812652588
+                },
+                {
+                    "word": " little",
+                    "start": 74.08,
+                    "end": 74.28,
+                    "probability": 0.9999581575393677
+                },
+                {
+                    "word": " bit",
+                    "start": 74.28,
+                    "end": 74.46,
+                    "probability": 0.9999560117721558
+                },
+                {
+                    "word": " as",
+                    "start": 74.46,
+                    "end": 74.7,
+                    "probability": 0.9957214593887329
+                },
+                {
+                    "word": " the",
+                    "start": 74.7,
+                    "end": 74.94,
+                    "probability": 0.999203622341156
+                },
+                {
+                    "word": " market",
+                    "start": 74.94,
+                    "end": 75.26,
+                    "probability": 0.999840259552002
+                },
+                {
+                    "word": " absorbs",
+                    "start": 75.26,
+                    "end": 75.88,
+                    "probability": 0.9988622665405273
+                },
+                {
+                    "word": " some",
+                    "start": 75.88,
+                    "end": 76.3,
+                    "probability": 0.9999480247497559
+                },
+                {
+                    "word": " of",
+                    "start": 76.3,
+                    "end": 76.38,
+                    "probability": 0.9999920129776001
+                },
+                {
+                    "word": " that",
+                    "start": 76.38,
+                    "end": 76.46,
+                    "probability": 0.9999791383743286
+                },
+                {
+                    "word": " flow.",
+                    "start": 76.46,
+                    "end": 76.64,
+                    "probability": 0.9999295473098755
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "seek": 5450,
+            "start": 76.76,
+            "end": 80.9,
+            "text": " And we also know that order flow tends to be very correlated in time.",
+            "tokens": [
+                51478,
+                400,
+                321,
+                611,
+                458,
+                300,
+                1668,
+                3095,
+                12258,
+                281,
+                312,
+                588,
+                38574,
+                294,
+                565,
+                13,
+                51691
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 76.76,
+                    "end": 77.2,
+                    "probability": 0.9996476173400879
+                },
+                {
+                    "word": " we",
+                    "start": 77.2,
+                    "end": 77.32,
+                    "probability": 0.999956488609314
+                },
+                {
+                    "word": " also",
+                    "start": 77.32,
+                    "end": 77.5,
+                    "probability": 0.9999861717224121
+                },
+                {
+                    "word": " know",
+                    "start": 77.5,
+                    "end": 77.78,
+                    "probability": 0.9999961853027344
+                },
+                {
+                    "word": " that",
+                    "start": 77.78,
+                    "end": 78.3,
+                    "probability": 0.9999762773513794
+                },
+                {
+                    "word": " order",
+                    "start": 78.3,
+                    "end": 79.08,
+                    "probability": 0.9978744983673096
+                },
+                {
+                    "word": " flow",
+                    "start": 79.08,
+                    "end": 79.24,
+                    "probability": 0.9999363422393799
+                },
+                {
+                    "word": " tends",
+                    "start": 79.24,
+                    "end": 79.46,
+                    "probability": 0.9999581575393677
+                },
+                {
+                    "word": " to",
+                    "start": 79.46,
+                    "end": 79.64,
+                    "probability": 0.9999905824661255
+                },
+                {
+                    "word": " be",
+                    "start": 79.64,
+                    "end": 79.74,
+                    "probability": 0.9999724626541138
+                },
+                {
+                    "word": " very",
+                    "start": 79.74,
+                    "end": 79.86,
+                    "probability": 0.9993996620178223
+                },
+                {
+                    "word": " correlated",
+                    "start": 79.86,
+                    "end": 80.2,
+                    "probability": 0.9999438524246216
+                },
+                {
+                    "word": " in",
+                    "start": 80.2,
+                    "end": 80.6,
+                    "probability": 0.9986978769302368
+                },
+                {
+                    "word": " time.",
+                    "start": 80.6,
+                    "end": 80.9,
+                    "probability": 0.999984860420227
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "seek": 5450,
+            "start": 80.98,
+            "end": 84.42,
+            "text": " So if you see a lot of aggressive buying in one time period, you're likely.",
+            "tokens": [
+                51698,
+                407,
+                498,
+                291,
+                536,
+                257,
+                688,
+                295,
+                10762,
+                6382,
+                294,
+                472,
+                565,
+                2896,
+                11,
+                291,
+                434,
+                3700,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.12577779365308356,
+            "compression_ratio": 1.6940063091482649,
+            "no_speech_prob": 0.0011784948874264956,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 80.98,
+                    "end": 81.16,
+                    "probability": 0.9994184970855713
+                },
+                {
+                    "word": " if",
+                    "start": 81.16,
+                    "end": 81.32,
+                    "probability": 0.7309227585792542
+                },
+                {
+                    "word": " you",
+                    "start": 81.32,
+                    "end": 81.48,
+                    "probability": 0.9999741315841675
+                },
+                {
+                    "word": " see",
+                    "start": 81.48,
+                    "end": 81.6,
+                    "probability": 0.99988853931427
+                },
+                {
+                    "word": " a",
+                    "start": 81.6,
+                    "end": 81.72,
+                    "probability": 0.9998787641525269
+                },
+                {
+                    "word": " lot",
+                    "start": 81.72,
+                    "end": 81.82,
+                    "probability": 0.9996799230575562
+                },
+                {
+                    "word": " of",
+                    "start": 81.82,
+                    "end": 81.96,
+                    "probability": 0.9998797178268433
+                },
+                {
+                    "word": " aggressive",
+                    "start": 81.96,
+                    "end": 82.52,
+                    "probability": 0.9997956156730652
+                },
+                {
+                    "word": " buying",
+                    "start": 82.52,
+                    "end": 82.92,
+                    "probability": 0.9997530579566956
+                },
+                {
+                    "word": " in",
+                    "start": 82.92,
+                    "end": 83.36,
+                    "probability": 0.9987106323242188
+                },
+                {
+                    "word": " one",
+                    "start": 83.36,
+                    "end": 83.44,
+                    "probability": 0.996951699256897
+                },
+                {
+                    "word": " time",
+                    "start": 83.44,
+                    "end": 83.66,
+                    "probability": 0.9986590147018433
+                },
+                {
+                    "word": " period,",
+                    "start": 83.66,
+                    "end": 83.94,
+                    "probability": 0.9997866749763489
+                },
+                {
+                    "word": " you're",
+                    "start": 84.08,
+                    "end": 84.16,
+                    "probability": 0.9960871636867523
+                },
+                {
+                    "word": " likely.",
+                    "start": 84.16,
+                    "end": 84.42,
+                    "probability": 0.9965099692344666
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "seek": 8450,
+            "start": 84.5,
+            "end": 86.6,
+            "text": " To see aggressive buying in future time periods.",
+            "tokens": [
+                50369,
+                1407,
+                536,
+                10762,
+                6382,
+                294,
+                2027,
+                565,
+                13804,
+                13,
+                50479
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " To",
+                    "start": 84.5,
+                    "end": 84.58,
+                    "probability": 0.002130493288859725
+                },
+                {
+                    "word": " see",
+                    "start": 84.58,
+                    "end": 84.76,
+                    "probability": 0.9692646861076355
+                },
+                {
+                    "word": " aggressive",
+                    "start": 84.76,
+                    "end": 85.46,
+                    "probability": 0.9397754073143005
+                },
+                {
+                    "word": " buying",
+                    "start": 85.46,
+                    "end": 85.82,
+                    "probability": 0.9583643078804016
+                },
+                {
+                    "word": " in",
+                    "start": 85.82,
+                    "end": 86.0,
+                    "probability": 0.8678686022758484
+                },
+                {
+                    "word": " future",
+                    "start": 86.0,
+                    "end": 86.18,
+                    "probability": 0.9871953725814819
+                },
+                {
+                    "word": " time",
+                    "start": 86.18,
+                    "end": 86.38,
+                    "probability": 0.9396843314170837
+                },
+                {
+                    "word": " periods.",
+                    "start": 86.38,
+                    "end": 86.6,
+                    "probability": 0.8253753781318665
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "seek": 8450,
+            "start": 86.72,
+            "end": 88.38,
+            "text": " And the time lag on this can be extremely long.",
+            "tokens": [
+                50479,
+                400,
+                264,
+                565,
+                8953,
+                322,
+                341,
+                393,
+                312,
+                4664,
+                938,
+                13,
+                50565
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 86.72,
+                    "end": 86.86,
+                    "probability": 0.9045301675796509
+                },
+                {
+                    "word": " the",
+                    "start": 86.86,
+                    "end": 87.04,
+                    "probability": 0.9831764698028564
+                },
+                {
+                    "word": " time",
+                    "start": 87.04,
+                    "end": 87.28,
+                    "probability": 0.9577620625495911
+                },
+                {
+                    "word": " lag",
+                    "start": 87.28,
+                    "end": 87.42,
+                    "probability": 0.991675078868866
+                },
+                {
+                    "word": " on",
+                    "start": 87.42,
+                    "end": 87.54,
+                    "probability": 0.993843674659729
+                },
+                {
+                    "word": " this",
+                    "start": 87.54,
+                    "end": 87.64,
+                    "probability": 0.9976619482040405
+                },
+                {
+                    "word": " can",
+                    "start": 87.64,
+                    "end": 87.74,
+                    "probability": 0.9772113561630249
+                },
+                {
+                    "word": " be",
+                    "start": 87.74,
+                    "end": 87.84,
+                    "probability": 0.9995455145835876
+                },
+                {
+                    "word": " extremely",
+                    "start": 87.84,
+                    "end": 88.12,
+                    "probability": 0.9960636496543884
+                },
+                {
+                    "word": " long.",
+                    "start": 88.12,
+                    "end": 88.38,
+                    "probability": 0.9984411597251892
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "seek": 8450,
+            "start": 88.48,
+            "end": 89.26,
+            "text": " It can be weeks or months.",
+            "tokens": [
+                50566,
+                467,
+                393,
+                312,
+                3259,
+                420,
+                2493,
+                13,
+                50611
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " It",
+                    "start": 88.48,
+                    "end": 88.54,
+                    "probability": 0.9954639077186584
+                },
+                {
+                    "word": " can",
+                    "start": 88.54,
+                    "end": 88.62,
+                    "probability": 0.9973570704460144
+                },
+                {
+                    "word": " be",
+                    "start": 88.62,
+                    "end": 88.76,
+                    "probability": 0.9997428059577942
+                },
+                {
+                    "word": " weeks",
+                    "start": 88.76,
+                    "end": 88.98,
+                    "probability": 0.9987660646438599
+                },
+                {
+                    "word": " or",
+                    "start": 88.98,
+                    "end": 89.06,
+                    "probability": 0.9916747212409973
+                },
+                {
+                    "word": " months.",
+                    "start": 89.06,
+                    "end": 89.26,
+                    "probability": 0.9994264841079712
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "seek": 8450,
+            "start": 89.38,
+            "end": 91.66,
+            "text": " You can observe some strong buy pressure today.",
+            "tokens": [
+                50620,
+                509,
+                393,
+                11441,
+                512,
+                2068,
+                2256,
+                3321,
+                965,
+                13,
+                50739
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " You",
+                    "start": 89.38,
+                    "end": 89.54,
+                    "probability": 0.6160178184509277
+                },
+                {
+                    "word": " can",
+                    "start": 89.54,
+                    "end": 89.64,
+                    "probability": 0.9865140318870544
+                },
+                {
+                    "word": " observe",
+                    "start": 89.64,
+                    "end": 89.9,
+                    "probability": 0.998342752456665
+                },
+                {
+                    "word": " some",
+                    "start": 89.9,
+                    "end": 90.22,
+                    "probability": 0.9939689636230469
+                },
+                {
+                    "word": " strong",
+                    "start": 90.22,
+                    "end": 90.94,
+                    "probability": 0.9396340250968933
+                },
+                {
+                    "word": " buy",
+                    "start": 90.94,
+                    "end": 91.12,
+                    "probability": 0.9104348421096802
+                },
+                {
+                    "word": " pressure",
+                    "start": 91.12,
+                    "end": 91.32,
+                    "probability": 0.9994301199913025
+                },
+                {
+                    "word": " today.",
+                    "start": 91.32,
+                    "end": 91.66,
+                    "probability": 0.9969695210456848
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "seek": 8450,
+            "start": 91.9,
+            "end": 97.08,
+            "text": " And that can give me a prediction that two months from now, it's going to be slightly stronger buy pressure than average.",
+            "tokens": [
+                50739,
+                400,
+                300,
+                393,
+                976,
+                385,
+                257,
+                17630,
+                300,
+                732,
+                2493,
+                490,
+                586,
+                11,
+                309,
+                311,
+                516,
+                281,
+                312,
+                4748,
+                7249,
+                2256,
+                3321,
+                813,
+                4274,
+                13,
+                51010
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 91.9,
+                    "end": 92.12,
+                    "probability": 0.9949722290039062
+                },
+                {
+                    "word": " that",
+                    "start": 92.12,
+                    "end": 92.32,
+                    "probability": 0.9822516441345215
+                },
+                {
+                    "word": " can",
+                    "start": 92.32,
+                    "end": 92.48,
+                    "probability": 0.982882559299469
+                },
+                {
+                    "word": " give",
+                    "start": 92.48,
+                    "end": 92.64,
+                    "probability": 0.9990047812461853
+                },
+                {
+                    "word": " me",
+                    "start": 92.64,
+                    "end": 92.72,
+                    "probability": 0.9443645477294922
+                },
+                {
+                    "word": " a",
+                    "start": 92.72,
+                    "end": 92.76,
+                    "probability": 0.999370276927948
+                },
+                {
+                    "word": " prediction",
+                    "start": 92.76,
+                    "end": 93.02,
+                    "probability": 0.9994927644729614
+                },
+                {
+                    "word": " that",
+                    "start": 93.02,
+                    "end": 93.34,
+                    "probability": 0.7777020931243896
+                },
+                {
+                    "word": " two",
+                    "start": 93.34,
+                    "end": 93.78,
+                    "probability": 0.8200363516807556
+                },
+                {
+                    "word": " months",
+                    "start": 93.78,
+                    "end": 94.04,
+                    "probability": 0.9998646974563599
+                },
+                {
+                    "word": " from",
+                    "start": 94.04,
+                    "end": 94.2,
+                    "probability": 0.9996036887168884
+                },
+                {
+                    "word": " now,",
+                    "start": 94.2,
+                    "end": 94.38,
+                    "probability": 0.999769389629364
+                },
+                {
+                    "word": " it's",
+                    "start": 94.48,
+                    "end": 94.88,
+                    "probability": 0.8731038570404053
+                },
+                {
+                    "word": " going",
+                    "start": 94.88,
+                    "end": 94.96,
+                    "probability": 0.9657794833183289
+                },
+                {
+                    "word": " to",
+                    "start": 94.96,
+                    "end": 95.02,
+                    "probability": 0.9997133612632751
+                },
+                {
+                    "word": " be",
+                    "start": 95.02,
+                    "end": 95.12,
+                    "probability": 0.9999582767486572
+                },
+                {
+                    "word": " slightly",
+                    "start": 95.12,
+                    "end": 95.38,
+                    "probability": 0.9973528385162354
+                },
+                {
+                    "word": " stronger",
+                    "start": 95.38,
+                    "end": 95.82,
+                    "probability": 0.9996232986450195
+                },
+                {
+                    "word": " buy",
+                    "start": 95.82,
+                    "end": 96.04,
+                    "probability": 0.979592502117157
+                },
+                {
+                    "word": " pressure",
+                    "start": 96.04,
+                    "end": 96.4,
+                    "probability": 0.9998440742492676
+                },
+                {
+                    "word": " than",
+                    "start": 96.4,
+                    "end": 96.86,
+                    "probability": 0.9981591105461121
+                },
+                {
+                    "word": " average.",
+                    "start": 96.86,
+                    "end": 97.08,
+                    "probability": 0.999762237071991
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "seek": 8450,
+            "start": 98.4,
+            "end": 108.36,
+            "text": " But even though that order flow is correlated and is extremely predictable, prices themselves don't seem to be that predictable, even though the order flow impacts the price.",
+            "tokens": [
+                51035,
+                583,
+                754,
+                1673,
+                300,
+                1668,
+                3095,
+                307,
+                38574,
+                293,
+                307,
+                4664,
+                27737,
+                11,
+                7901,
+                2969,
+                500,
+                380,
+                1643,
+                281,
+                312,
+                300,
+                27737,
+                11,
+                754,
+                1673,
+                264,
+                1668,
+                3095,
+                11606,
+                264,
+                3218,
+                13,
+                51571
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " But",
+                    "start": 98.4,
+                    "end": 98.80000000000001,
+                    "probability": 0.9984777569770813
+                },
+                {
+                    "word": " even",
+                    "start": 98.80000000000001,
+                    "end": 99.2,
+                    "probability": 0.9877211451530457
+                },
+                {
+                    "word": " though",
+                    "start": 99.2,
+                    "end": 99.5,
+                    "probability": 0.9994506239891052
+                },
+                {
+                    "word": " that",
+                    "start": 99.5,
+                    "end": 99.96,
+                    "probability": 0.8772453665733337
+                },
+                {
+                    "word": " order",
+                    "start": 99.96,
+                    "end": 100.14,
+                    "probability": 0.998162567615509
+                },
+                {
+                    "word": " flow",
+                    "start": 100.14,
+                    "end": 100.3,
+                    "probability": 0.6501726508140564
+                },
+                {
+                    "word": " is",
+                    "start": 100.3,
+                    "end": 100.62,
+                    "probability": 0.9995392560958862
+                },
+                {
+                    "word": " correlated",
+                    "start": 100.62,
+                    "end": 101.66,
+                    "probability": 0.9986874461174011
+                },
+                {
+                    "word": " and",
+                    "start": 101.66,
+                    "end": 102.54,
+                    "probability": 0.9011067152023315
+                },
+                {
+                    "word": " is",
+                    "start": 102.54,
+                    "end": 102.72,
+                    "probability": 0.9597981572151184
+                },
+                {
+                    "word": " extremely",
+                    "start": 102.72,
+                    "end": 103.12,
+                    "probability": 0.999738872051239
+                },
+                {
+                    "word": " predictable,",
+                    "start": 103.12,
+                    "end": 103.64,
+                    "probability": 0.9997971653938293
+                },
+                {
+                    "word": " prices",
+                    "start": 104.1,
+                    "end": 104.72,
+                    "probability": 0.9935761094093323
+                },
+                {
+                    "word": " themselves",
+                    "start": 104.72,
+                    "end": 105.02,
+                    "probability": 0.9998689889907837
+                },
+                {
+                    "word": " don't",
+                    "start": 105.02,
+                    "end": 105.58,
+                    "probability": 0.9991886615753174
+                },
+                {
+                    "word": " seem",
+                    "start": 105.58,
+                    "end": 105.74,
+                    "probability": 0.9999412298202515
+                },
+                {
+                    "word": " to",
+                    "start": 105.74,
+                    "end": 105.82,
+                    "probability": 0.999923586845398
+                },
+                {
+                    "word": " be",
+                    "start": 105.82,
+                    "end": 105.92,
+                    "probability": 0.9999575614929199
+                },
+                {
+                    "word": " that",
+                    "start": 105.92,
+                    "end": 106.06,
+                    "probability": 0.9995391368865967
+                },
+                {
+                    "word": " predictable,",
+                    "start": 106.06,
+                    "end": 106.46,
+                    "probability": 0.9998773336410522
+                },
+                {
+                    "word": " even",
+                    "start": 106.56,
+                    "end": 106.8,
+                    "probability": 0.9998764991760254
+                },
+                {
+                    "word": " though",
+                    "start": 106.8,
+                    "end": 107.06,
+                    "probability": 0.9999083280563354
+                },
+                {
+                    "word": " the",
+                    "start": 107.06,
+                    "end": 107.28,
+                    "probability": 0.9999157190322876
+                },
+                {
+                    "word": " order",
+                    "start": 107.28,
+                    "end": 107.4,
+                    "probability": 0.9998824596405029
+                },
+                {
+                    "word": " flow",
+                    "start": 107.4,
+                    "end": 107.56,
+                    "probability": 0.9998041987419128
+                },
+                {
+                    "word": " impacts",
+                    "start": 107.56,
+                    "end": 107.84,
+                    "probability": 0.9996026158332825
+                },
+                {
+                    "word": " the",
+                    "start": 107.84,
+                    "end": 108.1,
+                    "probability": 0.9998533725738525
+                },
+                {
+                    "word": " price.",
+                    "start": 108.1,
+                    "end": 108.36,
+                    "probability": 0.9999608993530273
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "seek": 8450,
+            "start": 108.56,
+            "end": 109.64,
+            "text": " So how do you resolve this?",
+            "tokens": [
+                51578,
+                407,
+                577,
+                360,
+                291,
+                14151,
+                341,
+                30,
+                51630
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 108.56,
+                    "end": 108.8,
+                    "probability": 0.9491562843322754
+                },
+                {
+                    "word": " how",
+                    "start": 108.8,
+                    "end": 108.98,
+                    "probability": 0.9588220119476318
+                },
+                {
+                    "word": " do",
+                    "start": 108.98,
+                    "end": 109.14,
+                    "probability": 0.9999754428863525
+                },
+                {
+                    "word": " you",
+                    "start": 109.14,
+                    "end": 109.2,
+                    "probability": 0.9995379447937012
+                },
+                {
+                    "word": " resolve",
+                    "start": 109.2,
+                    "end": 109.46,
+                    "probability": 0.9995152950286865
+                },
+                {
+                    "word": " this?",
+                    "start": 109.46,
+                    "end": 109.64,
+                    "probability": 0.998869001865387
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "seek": 8450,
+            "start": 109.88,
+            "end": 114.36,
+            "text": " And if you're trying to model this yourself, you've got the, you know, in your",
+            "tokens": [
+                51648,
+                400,
+                498,
+                291,
+                434,
+                1382,
+                281,
+                2316,
+                341,
+                1803,
+                11,
+                291,
+                600,
+                658,
+                264,
+                11,
+                291,
+                458,
+                11,
+                294,
+                428,
+                51863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2337755673173545,
+            "compression_ratio": 1.8668831168831168,
+            "no_speech_prob": 0.002264818176627159,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 109.88,
+                    "end": 110.28,
+                    "probability": 0.9979516863822937
+                },
+                {
+                    "word": " if",
+                    "start": 110.28,
+                    "end": 111.2,
+                    "probability": 0.9997889399528503
+                },
+                {
+                    "word": " you're",
+                    "start": 111.2,
+                    "end": 111.34,
+                    "probability": 0.9999608397483826
+                },
+                {
+                    "word": " trying",
+                    "start": 111.34,
+                    "end": 111.54,
+                    "probability": 0.9998310804367065
+                },
+                {
+                    "word": " to",
+                    "start": 111.54,
+                    "end": 111.74,
+                    "probability": 0.9999804496765137
+                },
+                {
+                    "word": " model",
+                    "start": 111.74,
+                    "end": 112.34,
+                    "probability": 0.9999189376831055
+                },
+                {
+                    "word": " this",
+                    "start": 112.34,
+                    "end": 112.54,
+                    "probability": 0.9998947381973267
+                },
+                {
+                    "word": " yourself,",
+                    "start": 112.54,
+                    "end": 112.86,
+                    "probability": 0.9995311498641968
+                },
+                {
+                    "word": " you've",
+                    "start": 113.04,
+                    "end": 113.16,
+                    "probability": 0.9854219257831573
+                },
+                {
+                    "word": " got",
+                    "start": 113.16,
+                    "end": 113.3,
+                    "probability": 0.999685525894165
+                },
+                {
+                    "word": " the,",
+                    "start": 113.3,
+                    "end": 113.46,
+                    "probability": 0.9921544194221497
+                },
+                {
+                    "word": " you",
+                    "start": 113.48,
+                    "end": 113.86,
+                    "probability": 0.7503678798675537
+                },
+                {
+                    "word": " know,",
+                    "start": 113.86,
+                    "end": 113.94,
+                    "probability": 0.9978930354118347
+                },
+                {
+                    "word": " in",
+                    "start": 114.0,
+                    "end": 114.18,
+                    "probability": 0.5403475165367126
+                },
+                {
+                    "word": " your",
+                    "start": 114.18,
+                    "end": 114.36,
+                    "probability": 0.9962297081947327
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "seek": 11436,
+            "start": 114.36,
+            "end": 119.62,
+            "text": " You're working at a hedge fund or a prop firm and you've got your own trades, you know, saying, OK, what is the market impact of my trades?",
+            "tokens": [
+                50365,
+                509,
+                434,
+                1364,
+                412,
+                257,
+                25304,
+                2374,
+                420,
+                257,
+                2365,
+                6174,
+                293,
+                291,
+                600,
+                658,
+                428,
+                1065,
+                21287,
+                11,
+                291,
+                458,
+                11,
+                1566,
+                11,
+                2264,
+                11,
+                437,
+                307,
+                264,
+                2142,
+                2712,
+                295,
+                452,
+                21287,
+                30,
+                50637
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " You're",
+                    "start": 114.36,
+                    "end": 114.36,
+                    "probability": 0.6062088534235954
+                },
+                {
+                    "word": " working",
+                    "start": 114.36,
+                    "end": 114.6,
+                    "probability": 0.9971627593040466
+                },
+                {
+                    "word": " at",
+                    "start": 114.6,
+                    "end": 114.86,
+                    "probability": 0.9954138398170471
+                },
+                {
+                    "word": " a",
+                    "start": 114.86,
+                    "end": 115.36,
+                    "probability": 0.9820219278335571
+                },
+                {
+                    "word": " hedge",
+                    "start": 115.36,
+                    "end": 115.5,
+                    "probability": 0.9453874230384827
+                },
+                {
+                    "word": " fund",
+                    "start": 115.5,
+                    "end": 115.66,
+                    "probability": 0.9984791874885559
+                },
+                {
+                    "word": " or",
+                    "start": 115.66,
+                    "end": 115.84,
+                    "probability": 0.9908111095428467
+                },
+                {
+                    "word": " a",
+                    "start": 115.84,
+                    "end": 115.9,
+                    "probability": 0.9440193772315979
+                },
+                {
+                    "word": " prop",
+                    "start": 115.9,
+                    "end": 116.02,
+                    "probability": 0.9056620597839355
+                },
+                {
+                    "word": " firm",
+                    "start": 116.02,
+                    "end": 116.24,
+                    "probability": 0.9994534850120544
+                },
+                {
+                    "word": " and",
+                    "start": 116.24,
+                    "end": 116.76,
+                    "probability": 0.41131654381752014
+                },
+                {
+                    "word": " you've",
+                    "start": 116.76,
+                    "end": 116.94,
+                    "probability": 0.9991702437400818
+                },
+                {
+                    "word": " got",
+                    "start": 116.94,
+                    "end": 117.12,
+                    "probability": 0.9996769428253174
+                },
+                {
+                    "word": " your",
+                    "start": 117.12,
+                    "end": 117.36,
+                    "probability": 0.9982988238334656
+                },
+                {
+                    "word": " own",
+                    "start": 117.36,
+                    "end": 117.5,
+                    "probability": 0.997565507888794
+                },
+                {
+                    "word": " trades,",
+                    "start": 117.5,
+                    "end": 117.9,
+                    "probability": 0.9462596774101257
+                },
+                {
+                    "word": " you",
+                    "start": 117.94,
+                    "end": 118.04,
+                    "probability": 0.5206427574157715
+                },
+                {
+                    "word": " know,",
+                    "start": 118.04,
+                    "end": 118.06,
+                    "probability": 0.48429861664772034
+                },
+                {
+                    "word": " saying,",
+                    "start": 118.1,
+                    "end": 118.22,
+                    "probability": 0.800920307636261
+                },
+                {
+                    "word": " OK,",
+                    "start": 118.24,
+                    "end": 118.34,
+                    "probability": 0.08131804317235947
+                },
+                {
+                    "word": " what",
+                    "start": 118.34,
+                    "end": 118.44,
+                    "probability": 0.9965555667877197
+                },
+                {
+                    "word": " is",
+                    "start": 118.44,
+                    "end": 118.56,
+                    "probability": 0.9977547526359558
+                },
+                {
+                    "word": " the",
+                    "start": 118.56,
+                    "end": 118.64,
+                    "probability": 0.9997397065162659
+                },
+                {
+                    "word": " market",
+                    "start": 118.64,
+                    "end": 118.84,
+                    "probability": 0.9983106851577759
+                },
+                {
+                    "word": " impact",
+                    "start": 118.84,
+                    "end": 119.08,
+                    "probability": 0.9997952580451965
+                },
+                {
+                    "word": " of",
+                    "start": 119.08,
+                    "end": 119.24,
+                    "probability": 0.7766156792640686
+                },
+                {
+                    "word": " my",
+                    "start": 119.24,
+                    "end": 119.32,
+                    "probability": 0.9996080994606018
+                },
+                {
+                    "word": " trades?",
+                    "start": 119.32,
+                    "end": 119.62,
+                    "probability": 0.8536680340766907
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "seek": 11436,
+            "start": 119.66,
+            "end": 129.44,
+            "text": " You've got the double problem that you traded presumably because you had some alpha and your alpha was going to predict that the market would move in the direction of your trade anyway, even if you didn't trade.",
+            "tokens": [
+                50637,
+                509,
+                600,
+                658,
+                264,
+                3834,
+                1154,
+                300,
+                291,
+                27157,
+                26742,
+                570,
+                291,
+                632,
+                512,
+                8961,
+                293,
+                428,
+                8961,
+                390,
+                516,
+                281,
+                6069,
+                300,
+                264,
+                2142,
+                576,
+                1286,
+                294,
+                264,
+                3513,
+                295,
+                428,
+                4923,
+                4033,
+                11,
+                754,
+                498,
+                291,
+                994,
+                380,
+                4923,
+                13,
+                51128
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " You've",
+                    "start": 119.66,
+                    "end": 119.88,
+                    "probability": 0.9730024933815002
+                },
+                {
+                    "word": " got",
+                    "start": 119.88,
+                    "end": 119.88,
+                    "probability": 0.9998524188995361
+                },
+                {
+                    "word": " the",
+                    "start": 119.88,
+                    "end": 120.02,
+                    "probability": 0.9996548891067505
+                },
+                {
+                    "word": " double",
+                    "start": 120.02,
+                    "end": 120.24,
+                    "probability": 0.9994768500328064
+                },
+                {
+                    "word": " problem",
+                    "start": 120.24,
+                    "end": 120.5,
+                    "probability": 0.9996354579925537
+                },
+                {
+                    "word": " that",
+                    "start": 120.5,
+                    "end": 120.86,
+                    "probability": 0.9922016859054565
+                },
+                {
+                    "word": " you",
+                    "start": 120.86,
+                    "end": 121.56,
+                    "probability": 0.9992794394493103
+                },
+                {
+                    "word": " traded",
+                    "start": 121.56,
+                    "end": 121.96,
+                    "probability": 0.9979575872421265
+                },
+                {
+                    "word": " presumably",
+                    "start": 121.96,
+                    "end": 122.26,
+                    "probability": 0.7567098140716553
+                },
+                {
+                    "word": " because",
+                    "start": 122.26,
+                    "end": 122.64,
+                    "probability": 0.9978548884391785
+                },
+                {
+                    "word": " you",
+                    "start": 122.64,
+                    "end": 122.78,
+                    "probability": 0.9998807907104492
+                },
+                {
+                    "word": " had",
+                    "start": 122.78,
+                    "end": 122.88,
+                    "probability": 0.9894208908081055
+                },
+                {
+                    "word": " some",
+                    "start": 122.88,
+                    "end": 123.02,
+                    "probability": 0.99946528673172
+                },
+                {
+                    "word": " alpha",
+                    "start": 123.02,
+                    "end": 123.2,
+                    "probability": 0.9928693175315857
+                },
+                {
+                    "word": " and",
+                    "start": 123.2,
+                    "end": 123.88,
+                    "probability": 0.9642782211303711
+                },
+                {
+                    "word": " your",
+                    "start": 123.88,
+                    "end": 124.02,
+                    "probability": 0.9994072914123535
+                },
+                {
+                    "word": " alpha",
+                    "start": 124.02,
+                    "end": 124.28,
+                    "probability": 0.9992038607597351
+                },
+                {
+                    "word": " was",
+                    "start": 124.28,
+                    "end": 124.52,
+                    "probability": 0.9991130232810974
+                },
+                {
+                    "word": " going",
+                    "start": 124.52,
+                    "end": 124.62,
+                    "probability": 0.9988479614257812
+                },
+                {
+                    "word": " to",
+                    "start": 124.62,
+                    "end": 124.74,
+                    "probability": 0.9998617172241211
+                },
+                {
+                    "word": " predict",
+                    "start": 124.74,
+                    "end": 125.0,
+                    "probability": 0.9997300505638123
+                },
+                {
+                    "word": " that",
+                    "start": 125.0,
+                    "end": 125.22,
+                    "probability": 0.9990034699440002
+                },
+                {
+                    "word": " the",
+                    "start": 125.22,
+                    "end": 125.36,
+                    "probability": 0.999832272529602
+                },
+                {
+                    "word": " market",
+                    "start": 125.36,
+                    "end": 125.62,
+                    "probability": 0.9996331930160522
+                },
+                {
+                    "word": " would",
+                    "start": 125.62,
+                    "end": 126.1,
+                    "probability": 0.9996583461761475
+                },
+                {
+                    "word": " move",
+                    "start": 126.1,
+                    "end": 126.48,
+                    "probability": 0.9999266862869263
+                },
+                {
+                    "word": " in",
+                    "start": 126.48,
+                    "end": 127.08,
+                    "probability": 0.9997357726097107
+                },
+                {
+                    "word": " the",
+                    "start": 127.08,
+                    "end": 127.2,
+                    "probability": 0.9999310970306396
+                },
+                {
+                    "word": " direction",
+                    "start": 127.2,
+                    "end": 127.4,
+                    "probability": 0.99967360496521
+                },
+                {
+                    "word": " of",
+                    "start": 127.4,
+                    "end": 127.6,
+                    "probability": 0.9999053478240967
+                },
+                {
+                    "word": " your",
+                    "start": 127.6,
+                    "end": 127.66,
+                    "probability": 0.9998877048492432
+                },
+                {
+                    "word": " trade",
+                    "start": 127.66,
+                    "end": 127.94,
+                    "probability": 0.9998693466186523
+                },
+                {
+                    "word": " anyway,",
+                    "start": 127.94,
+                    "end": 128.34,
+                    "probability": 0.9893622994422913
+                },
+                {
+                    "word": " even",
+                    "start": 128.44,
+                    "end": 128.84,
+                    "probability": 0.9998010993003845
+                },
+                {
+                    "word": " if",
+                    "start": 128.84,
+                    "end": 128.98,
+                    "probability": 0.9999822378158569
+                },
+                {
+                    "word": " you",
+                    "start": 128.98,
+                    "end": 129.06,
+                    "probability": 0.9998959302902222
+                },
+                {
+                    "word": " didn't",
+                    "start": 129.06,
+                    "end": 129.24,
+                    "probability": 0.9999171495437622
+                },
+                {
+                    "word": " trade.",
+                    "start": 129.24,
+                    "end": 129.44,
+                    "probability": 0.9994694590568542
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "seek": 11436,
+            "start": 129.54,
+            "end": 131.88,
+            "text": " And if your alpha is good, then indeed it would have moved that way.",
+            "tokens": [
+                51128,
+                400,
+                498,
+                428,
+                8961,
+                307,
+                665,
+                11,
+                550,
+                6451,
+                309,
+                576,
+                362,
+                4259,
+                300,
+                636,
+                13,
+                51249
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 129.54,
+                    "end": 129.62,
+                    "probability": 0.9905493855476379
+                },
+                {
+                    "word": " if",
+                    "start": 129.62,
+                    "end": 129.7,
+                    "probability": 0.9987454414367676
+                },
+                {
+                    "word": " your",
+                    "start": 129.7,
+                    "end": 129.78,
+                    "probability": 0.8973654508590698
+                },
+                {
+                    "word": " alpha",
+                    "start": 129.78,
+                    "end": 129.96,
+                    "probability": 0.9996545314788818
+                },
+                {
+                    "word": " is",
+                    "start": 129.96,
+                    "end": 130.08,
+                    "probability": 0.5361550450325012
+                },
+                {
+                    "word": " good,",
+                    "start": 130.08,
+                    "end": 130.18,
+                    "probability": 0.9996637105941772
+                },
+                {
+                    "word": " then",
+                    "start": 130.3,
+                    "end": 130.4,
+                    "probability": 0.9995840191841125
+                },
+                {
+                    "word": " indeed",
+                    "start": 130.4,
+                    "end": 130.58,
+                    "probability": 0.9951962828636169
+                },
+                {
+                    "word": " it",
+                    "start": 130.58,
+                    "end": 130.7,
+                    "probability": 0.937170147895813
+                },
+                {
+                    "word": " would",
+                    "start": 130.7,
+                    "end": 130.8,
+                    "probability": 0.9999692440032959
+                },
+                {
+                    "word": " have",
+                    "start": 130.8,
+                    "end": 130.9,
+                    "probability": 0.9998171925544739
+                },
+                {
+                    "word": " moved",
+                    "start": 130.9,
+                    "end": 131.1,
+                    "probability": 0.999853253364563
+                },
+                {
+                    "word": " that",
+                    "start": 131.1,
+                    "end": 131.78,
+                    "probability": 0.9935137033462524
+                },
+                {
+                    "word": " way.",
+                    "start": 131.78,
+                    "end": 131.88,
+                    "probability": 0.9999955892562866
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "seek": 11436,
+            "start": 131.96,
+            "end": 138.88,
+            "text": " So how do you disentangle the effect of the market impact you had by trading versus how much the market was going to move anyway, just because you predicted that it would.",
+            "tokens": [
+                51249,
+                407,
+                577,
+                360,
+                291,
+                37313,
+                7846,
+                264,
+                1802,
+                295,
+                264,
+                2142,
+                2712,
+                291,
+                632,
+                538,
+                9529,
+                5717,
+                577,
+                709,
+                264,
+                2142,
+                390,
+                516,
+                281,
+                1286,
+                4033,
+                11,
+                445,
+                570,
+                291,
+                19147,
+                300,
+                309,
+                576,
+                13,
+                51599
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 131.96,
+                    "end": 132.04,
+                    "probability": 0.9978504180908203
+                },
+                {
+                    "word": " how",
+                    "start": 132.04,
+                    "end": 132.2,
+                    "probability": 0.9861021041870117
+                },
+                {
+                    "word": " do",
+                    "start": 132.2,
+                    "end": 132.3,
+                    "probability": 0.999976634979248
+                },
+                {
+                    "word": " you",
+                    "start": 132.3,
+                    "end": 132.36,
+                    "probability": 0.9999042749404907
+                },
+                {
+                    "word": " disentangle",
+                    "start": 132.36,
+                    "end": 133.0,
+                    "probability": 0.9999134540557861
+                },
+                {
+                    "word": " the",
+                    "start": 133.0,
+                    "end": 133.24,
+                    "probability": 0.999942421913147
+                },
+                {
+                    "word": " effect",
+                    "start": 133.24,
+                    "end": 133.38,
+                    "probability": 0.8857367634773254
+                },
+                {
+                    "word": " of",
+                    "start": 133.38,
+                    "end": 133.64,
+                    "probability": 0.9995824694633484
+                },
+                {
+                    "word": " the",
+                    "start": 133.64,
+                    "end": 133.92,
+                    "probability": 0.9991105198860168
+                },
+                {
+                    "word": " market",
+                    "start": 133.92,
+                    "end": 134.18,
+                    "probability": 0.9998584985733032
+                },
+                {
+                    "word": " impact",
+                    "start": 134.18,
+                    "end": 134.38,
+                    "probability": 0.9999675750732422
+                },
+                {
+                    "word": " you",
+                    "start": 134.38,
+                    "end": 134.62,
+                    "probability": 0.9990589022636414
+                },
+                {
+                    "word": " had",
+                    "start": 134.62,
+                    "end": 134.74,
+                    "probability": 0.9999145269393921
+                },
+                {
+                    "word": " by",
+                    "start": 134.74,
+                    "end": 134.9,
+                    "probability": 0.9998051524162292
+                },
+                {
+                    "word": " trading",
+                    "start": 134.9,
+                    "end": 135.22,
+                    "probability": 0.9998492002487183
+                },
+                {
+                    "word": " versus",
+                    "start": 135.22,
+                    "end": 135.64,
+                    "probability": 0.9996485710144043
+                },
+                {
+                    "word": " how",
+                    "start": 135.64,
+                    "end": 135.82,
+                    "probability": 0.9999185800552368
+                },
+                {
+                    "word": " much",
+                    "start": 135.82,
+                    "end": 136.0,
+                    "probability": 0.9967713952064514
+                },
+                {
+                    "word": " the",
+                    "start": 136.0,
+                    "end": 136.12,
+                    "probability": 0.9996578693389893
+                },
+                {
+                    "word": " market",
+                    "start": 136.12,
+                    "end": 136.34,
+                    "probability": 0.9999288320541382
+                },
+                {
+                    "word": " was",
+                    "start": 136.34,
+                    "end": 136.48,
+                    "probability": 0.9999102354049683
+                },
+                {
+                    "word": " going",
+                    "start": 136.48,
+                    "end": 136.58,
+                    "probability": 0.9998419284820557
+                },
+                {
+                    "word": " to",
+                    "start": 136.58,
+                    "end": 136.68,
+                    "probability": 0.9997633099555969
+                },
+                {
+                    "word": " move",
+                    "start": 136.68,
+                    "end": 136.78,
+                    "probability": 0.9993158578872681
+                },
+                {
+                    "word": " anyway,",
+                    "start": 136.78,
+                    "end": 137.04,
+                    "probability": 0.9994932413101196
+                },
+                {
+                    "word": " just",
+                    "start": 137.16,
+                    "end": 137.56,
+                    "probability": 0.8150784969329834
+                },
+                {
+                    "word": " because",
+                    "start": 137.56,
+                    "end": 137.72,
+                    "probability": 0.999951958656311
+                },
+                {
+                    "word": " you",
+                    "start": 137.72,
+                    "end": 137.84,
+                    "probability": 0.9999054670333862
+                },
+                {
+                    "word": " predicted",
+                    "start": 137.84,
+                    "end": 138.32,
+                    "probability": 0.9999642372131348
+                },
+                {
+                    "word": " that",
+                    "start": 138.32,
+                    "end": 138.64,
+                    "probability": 0.9998799562454224
+                },
+                {
+                    "word": " it",
+                    "start": 138.64,
+                    "end": 138.74,
+                    "probability": 0.9999525547027588
+                },
+                {
+                    "word": " would.",
+                    "start": 138.74,
+                    "end": 138.88,
+                    "probability": 0.9998905658721924
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "seek": 11436,
+            "start": 139.33999999999997,
+            "end": 142.52,
+            "text": " So it's a fascinating area to study.",
+            "tokens": [
+                51625,
+                407,
+                309,
+                311,
+                257,
+                10343,
+                1859,
+                281,
+                2979,
+                13,
+                51785
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 139.33999999999997,
+                    "end": 139.7,
+                    "probability": 0.9975364208221436
+                },
+                {
+                    "word": " it's",
+                    "start": 139.7,
+                    "end": 140.06,
+                    "probability": 0.7047593891620636
+                },
+                {
+                    "word": " a",
+                    "start": 140.06,
+                    "end": 140.28,
+                    "probability": 0.9996460676193237
+                },
+                {
+                    "word": " fascinating",
+                    "start": 140.28,
+                    "end": 140.66,
+                    "probability": 0.9999759197235107
+                },
+                {
+                    "word": " area",
+                    "start": 140.66,
+                    "end": 141.5,
+                    "probability": 0.9997071623802185
+                },
+                {
+                    "word": " to",
+                    "start": 141.5,
+                    "end": 142.16,
+                    "probability": 0.9991266131401062
+                },
+                {
+                    "word": " study.",
+                    "start": 142.16,
+                    "end": 142.52,
+                    "probability": 0.9999881982803345
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "seek": 11436,
+            "start": 143.47999999999996,
+            "end": 144.2,
+            "text": " It's interesting.",
+            "tokens": [
+                51809,
+                467,
+                311,
+                1880,
+                13,
+                51863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.2182494132749496,
+            "compression_ratio": 1.9313432835820896,
+            "no_speech_prob": 0.0021646718960255384,
+            "words": [
+                {
+                    "word": " It's",
+                    "start": 143.47999999999996,
+                    "end": 143.83999999999997,
+                    "probability": 0.9997435212135315
+                },
+                {
+                    "word": " interesting.",
+                    "start": 143.83999999999997,
+                    "end": 144.2,
+                    "probability": 0.9965761303901672
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "seek": 14420,
+            "start": 144.2,
+            "end": 157.66,
+            "text": " It's interesting to try and incorporate it into a simulation as well, because a cute little fact is that empirically we see that the market impact of a trade of a certain size follows what people normally call a square root law.",
+            "tokens": [
+                50365,
+                467,
+                311,
+                1880,
+                281,
+                853,
+                293,
+                16091,
+                309,
+                666,
+                257,
+                16575,
+                382,
+                731,
+                11,
+                570,
+                257,
+                4052,
+                707,
+                1186,
+                307,
+                300,
+                25790,
+                984,
+                321,
+                536,
+                300,
+                264,
+                2142,
+                2712,
+                295,
+                257,
+                4923,
+                295,
+                257,
+                1629,
+                2744,
+                10002,
+                437,
+                561,
+                5646,
+                818,
+                257,
+                3732,
+                5593,
+                2101,
+                13,
+                51046
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11219555331814673,
+            "compression_ratio": 1.9347079037800687,
+            "no_speech_prob": 0.0005972878425382078,
+            "words": [
+                {
+                    "word": " It's",
+                    "start": 144.2,
+                    "end": 144.32,
+                    "probability": 0.42763465247116983
+                },
+                {
+                    "word": " interesting",
+                    "start": 144.32,
+                    "end": 144.32,
+                    "probability": 0.5329663157463074
+                },
+                {
+                    "word": " to",
+                    "start": 144.32,
+                    "end": 144.44,
+                    "probability": 0.9965548515319824
+                },
+                {
+                    "word": " try",
+                    "start": 144.44,
+                    "end": 144.54,
+                    "probability": 0.9968830943107605
+                },
+                {
+                    "word": " and",
+                    "start": 144.54,
+                    "end": 144.68,
+                    "probability": 0.9802467823028564
+                },
+                {
+                    "word": " incorporate",
+                    "start": 144.68,
+                    "end": 144.94,
+                    "probability": 0.9980541467666626
+                },
+                {
+                    "word": " it",
+                    "start": 144.94,
+                    "end": 145.14,
+                    "probability": 0.9416061043739319
+                },
+                {
+                    "word": " into",
+                    "start": 145.14,
+                    "end": 145.28,
+                    "probability": 0.9973160624504089
+                },
+                {
+                    "word": " a",
+                    "start": 145.28,
+                    "end": 145.38,
+                    "probability": 0.9715399146080017
+                },
+                {
+                    "word": " simulation",
+                    "start": 145.38,
+                    "end": 145.64,
+                    "probability": 0.9886815547943115
+                },
+                {
+                    "word": " as",
+                    "start": 145.64,
+                    "end": 146.1,
+                    "probability": 0.9698073863983154
+                },
+                {
+                    "word": " well,",
+                    "start": 146.1,
+                    "end": 146.3,
+                    "probability": 0.9997262358665466
+                },
+                {
+                    "word": " because",
+                    "start": 146.42,
+                    "end": 146.74,
+                    "probability": 0.9989379048347473
+                },
+                {
+                    "word": " a",
+                    "start": 146.74,
+                    "end": 147.1,
+                    "probability": 0.8755011558532715
+                },
+                {
+                    "word": " cute",
+                    "start": 147.1,
+                    "end": 147.42,
+                    "probability": 0.9793515205383301
+                },
+                {
+                    "word": " little",
+                    "start": 147.42,
+                    "end": 147.92,
+                    "probability": 0.8060781359672546
+                },
+                {
+                    "word": " fact",
+                    "start": 147.92,
+                    "end": 148.22,
+                    "probability": 0.9895877838134766
+                },
+                {
+                    "word": " is",
+                    "start": 148.22,
+                    "end": 148.46,
+                    "probability": 0.9931465983390808
+                },
+                {
+                    "word": " that",
+                    "start": 148.46,
+                    "end": 148.62,
+                    "probability": 0.996084451675415
+                },
+                {
+                    "word": " empirically",
+                    "start": 148.62,
+                    "end": 149.7,
+                    "probability": 0.9541028439998627
+                },
+                {
+                    "word": " we",
+                    "start": 149.7,
+                    "end": 150.32,
+                    "probability": 0.5170594453811646
+                },
+                {
+                    "word": " see",
+                    "start": 150.32,
+                    "end": 150.58,
+                    "probability": 0.9993394017219543
+                },
+                {
+                    "word": " that",
+                    "start": 150.58,
+                    "end": 151.04,
+                    "probability": 0.9956011772155762
+                },
+                {
+                    "word": " the",
+                    "start": 151.04,
+                    "end": 151.68,
+                    "probability": 0.994907796382904
+                },
+                {
+                    "word": " market",
+                    "start": 151.68,
+                    "end": 151.9,
+                    "probability": 0.9983240962028503
+                },
+                {
+                    "word": " impact",
+                    "start": 151.9,
+                    "end": 152.12,
+                    "probability": 0.9993975162506104
+                },
+                {
+                    "word": " of",
+                    "start": 152.12,
+                    "end": 152.38,
+                    "probability": 0.9984734654426575
+                },
+                {
+                    "word": " a",
+                    "start": 152.38,
+                    "end": 152.44,
+                    "probability": 0.9984982013702393
+                },
+                {
+                    "word": " trade",
+                    "start": 152.44,
+                    "end": 152.64,
+                    "probability": 0.9935311675071716
+                },
+                {
+                    "word": " of",
+                    "start": 152.64,
+                    "end": 152.78,
+                    "probability": 0.9952055215835571
+                },
+                {
+                    "word": " a",
+                    "start": 152.78,
+                    "end": 152.8,
+                    "probability": 0.9992666840553284
+                },
+                {
+                    "word": " certain",
+                    "start": 152.8,
+                    "end": 152.98,
+                    "probability": 0.998618483543396
+                },
+                {
+                    "word": " size",
+                    "start": 152.98,
+                    "end": 153.28,
+                    "probability": 0.9998922348022461
+                },
+                {
+                    "word": " follows",
+                    "start": 153.28,
+                    "end": 154.34,
+                    "probability": 0.9923680424690247
+                },
+                {
+                    "word": " what",
+                    "start": 154.34,
+                    "end": 156.12,
+                    "probability": 0.9806443452835083
+                },
+                {
+                    "word": " people",
+                    "start": 156.12,
+                    "end": 156.42,
+                    "probability": 0.9996660947799683
+                },
+                {
+                    "word": " normally",
+                    "start": 156.42,
+                    "end": 156.72,
+                    "probability": 0.9983909130096436
+                },
+                {
+                    "word": " call",
+                    "start": 156.72,
+                    "end": 156.98,
+                    "probability": 0.9993187189102173
+                },
+                {
+                    "word": " a",
+                    "start": 156.98,
+                    "end": 157.12,
+                    "probability": 0.9965536594390869
+                },
+                {
+                    "word": " square",
+                    "start": 157.12,
+                    "end": 157.32,
+                    "probability": 0.9898524880409241
+                },
+                {
+                    "word": " root",
+                    "start": 157.32,
+                    "end": 157.48,
+                    "probability": 0.9493798017501831
+                },
+                {
+                    "word": " law.",
+                    "start": 157.48,
+                    "end": 157.66,
+                    "probability": 0.996081531047821
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "seek": 14420,
+            "start": 157.8,
+            "end": 164.34,
+            "text": " So that the size of your market impact is proportional to the square root of your participation in the market over the time period that you traded.",
+            "tokens": [
+                51046,
+                407,
+                300,
+                264,
+                2744,
+                295,
+                428,
+                2142,
+                2712,
+                307,
+                24969,
+                281,
+                264,
+                3732,
+                5593,
+                295,
+                428,
+                13487,
+                294,
+                264,
+                2142,
+                670,
+                264,
+                565,
+                2896,
+                300,
+                291,
+                27157,
+                13,
+                51375
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11219555331814673,
+            "compression_ratio": 1.9347079037800687,
+            "no_speech_prob": 0.0005972878425382078,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 157.8,
+                    "end": 158.12,
+                    "probability": 0.959574282169342
+                },
+                {
+                    "word": " that",
+                    "start": 158.12,
+                    "end": 158.38,
+                    "probability": 0.4016559422016144
+                },
+                {
+                    "word": " the",
+                    "start": 158.38,
+                    "end": 158.58,
+                    "probability": 0.9852234125137329
+                },
+                {
+                    "word": " size",
+                    "start": 158.58,
+                    "end": 158.84,
+                    "probability": 0.9968505501747131
+                },
+                {
+                    "word": " of",
+                    "start": 158.84,
+                    "end": 158.92,
+                    "probability": 0.9969080090522766
+                },
+                {
+                    "word": " your",
+                    "start": 158.92,
+                    "end": 158.96,
+                    "probability": 0.9963732361793518
+                },
+                {
+                    "word": " market",
+                    "start": 158.96,
+                    "end": 159.18,
+                    "probability": 0.9980236291885376
+                },
+                {
+                    "word": " impact",
+                    "start": 159.18,
+                    "end": 159.36,
+                    "probability": 0.9998446702957153
+                },
+                {
+                    "word": " is",
+                    "start": 159.36,
+                    "end": 159.7,
+                    "probability": 0.9992423057556152
+                },
+                {
+                    "word": " proportional",
+                    "start": 159.7,
+                    "end": 159.92,
+                    "probability": 0.9902617335319519
+                },
+                {
+                    "word": " to",
+                    "start": 159.92,
+                    "end": 160.2,
+                    "probability": 0.9997712969779968
+                },
+                {
+                    "word": " the",
+                    "start": 160.2,
+                    "end": 160.28,
+                    "probability": 0.9995939135551453
+                },
+                {
+                    "word": " square",
+                    "start": 160.28,
+                    "end": 160.52,
+                    "probability": 0.9997950196266174
+                },
+                {
+                    "word": " root",
+                    "start": 160.52,
+                    "end": 160.72,
+                    "probability": 0.9947734475135803
+                },
+                {
+                    "word": " of",
+                    "start": 160.72,
+                    "end": 160.92,
+                    "probability": 0.9993126392364502
+                },
+                {
+                    "word": " your",
+                    "start": 160.92,
+                    "end": 161.8,
+                    "probability": 0.9980825185775757
+                },
+                {
+                    "word": " participation",
+                    "start": 161.8,
+                    "end": 162.26,
+                    "probability": 0.9994522929191589
+                },
+                {
+                    "word": " in",
+                    "start": 162.26,
+                    "end": 162.66,
+                    "probability": 0.9994839429855347
+                },
+                {
+                    "word": " the",
+                    "start": 162.66,
+                    "end": 163.04,
+                    "probability": 0.9996764659881592
+                },
+                {
+                    "word": " market",
+                    "start": 163.04,
+                    "end": 163.32,
+                    "probability": 0.9997501969337463
+                },
+                {
+                    "word": " over",
+                    "start": 163.32,
+                    "end": 163.5,
+                    "probability": 0.9989288449287415
+                },
+                {
+                    "word": " the",
+                    "start": 163.5,
+                    "end": 163.6,
+                    "probability": 0.9991932511329651
+                },
+                {
+                    "word": " time",
+                    "start": 163.6,
+                    "end": 163.76,
+                    "probability": 0.9978851675987244
+                },
+                {
+                    "word": " period",
+                    "start": 163.76,
+                    "end": 163.92,
+                    "probability": 0.9981403350830078
+                },
+                {
+                    "word": " that",
+                    "start": 163.92,
+                    "end": 164.08,
+                    "probability": 0.9820358157157898
+                },
+                {
+                    "word": " you",
+                    "start": 164.08,
+                    "end": 164.1,
+                    "probability": 0.9995887875556946
+                },
+                {
+                    "word": " traded.",
+                    "start": 164.1,
+                    "end": 164.34,
+                    "probability": 0.9967696666717529
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "seek": 14420,
+            "start": 164.74,
+            "end": 173.56,
+            "text": " And then if you go and implement this in backtest and you say, OK, there's some market impact, which is proportional to the square root of the trade, and then it decays slowly over time.",
+            "tokens": [
+                51407,
+                400,
+                550,
+                498,
+                291,
+                352,
+                293,
+                4445,
+                341,
+                294,
+                646,
+                31636,
+                293,
+                291,
+                584,
+                11,
+                2264,
+                11,
+                456,
+                311,
+                512,
+                2142,
+                2712,
+                11,
+                597,
+                307,
+                24969,
+                281,
+                264,
+                3732,
+                5593,
+                295,
+                264,
+                4923,
+                11,
+                293,
+                550,
+                309,
+                979,
+                3772,
+                5692,
+                670,
+                565,
+                13,
+                51841
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.11219555331814673,
+            "compression_ratio": 1.9347079037800687,
+            "no_speech_prob": 0.0005972878425382078,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 164.74,
+                    "end": 165.14,
+                    "probability": 0.9859787821769714
+                },
+                {
+                    "word": " then",
+                    "start": 165.14,
+                    "end": 165.3,
+                    "probability": 0.9993651509284973
+                },
+                {
+                    "word": " if",
+                    "start": 165.3,
+                    "end": 165.52,
+                    "probability": 0.9928905963897705
+                },
+                {
+                    "word": " you",
+                    "start": 165.52,
+                    "end": 165.76,
+                    "probability": 0.9998260140419006
+                },
+                {
+                    "word": " go",
+                    "start": 165.76,
+                    "end": 166.26,
+                    "probability": 0.9945794343948364
+                },
+                {
+                    "word": " and",
+                    "start": 166.26,
+                    "end": 166.34,
+                    "probability": 0.9993698000907898
+                },
+                {
+                    "word": " implement",
+                    "start": 166.34,
+                    "end": 166.6,
+                    "probability": 0.9997705817222595
+                },
+                {
+                    "word": " this",
+                    "start": 166.6,
+                    "end": 167.0,
+                    "probability": 0.9995953440666199
+                },
+                {
+                    "word": " in",
+                    "start": 167.0,
+                    "end": 167.36,
+                    "probability": 0.9959523677825928
+                },
+                {
+                    "word": " backtest",
+                    "start": 167.36,
+                    "end": 168.08,
+                    "probability": 0.9310504496097565
+                },
+                {
+                    "word": " and",
+                    "start": 168.08,
+                    "end": 168.76,
+                    "probability": 0.7503080368041992
+                },
+                {
+                    "word": " you",
+                    "start": 168.76,
+                    "end": 168.86,
+                    "probability": 0.9979941844940186
+                },
+                {
+                    "word": " say,",
+                    "start": 168.86,
+                    "end": 168.98,
+                    "probability": 0.9917871356010437
+                },
+                {
+                    "word": " OK,",
+                    "start": 169.02,
+                    "end": 169.18,
+                    "probability": 0.17145246267318726
+                },
+                {
+                    "word": " there's",
+                    "start": 169.2,
+                    "end": 169.36,
+                    "probability": 0.9992923140525818
+                },
+                {
+                    "word": " some",
+                    "start": 169.36,
+                    "end": 169.5,
+                    "probability": 0.9962385892868042
+                },
+                {
+                    "word": " market",
+                    "start": 169.5,
+                    "end": 169.84,
+                    "probability": 0.9989952445030212
+                },
+                {
+                    "word": " impact,",
+                    "start": 169.84,
+                    "end": 170.04,
+                    "probability": 0.9995299577713013
+                },
+                {
+                    "word": " which",
+                    "start": 170.16,
+                    "end": 170.32,
+                    "probability": 0.9989920258522034
+                },
+                {
+                    "word": " is",
+                    "start": 170.32,
+                    "end": 170.4,
+                    "probability": 0.9999743700027466
+                },
+                {
+                    "word": " proportional",
+                    "start": 170.4,
+                    "end": 170.7,
+                    "probability": 0.9997023940086365
+                },
+                {
+                    "word": " to",
+                    "start": 170.7,
+                    "end": 171.04,
+                    "probability": 0.9999253749847412
+                },
+                {
+                    "word": " the",
+                    "start": 171.04,
+                    "end": 171.12,
+                    "probability": 0.9997851252555847
+                },
+                {
+                    "word": " square",
+                    "start": 171.12,
+                    "end": 171.28,
+                    "probability": 0.9986950755119324
+                },
+                {
+                    "word": " root",
+                    "start": 171.28,
+                    "end": 171.42,
+                    "probability": 0.9907388687133789
+                },
+                {
+                    "word": " of",
+                    "start": 171.42,
+                    "end": 171.48,
+                    "probability": 0.9985533356666565
+                },
+                {
+                    "word": " the",
+                    "start": 171.48,
+                    "end": 171.58,
+                    "probability": 0.9997850060462952
+                },
+                {
+                    "word": " trade,",
+                    "start": 171.58,
+                    "end": 171.82,
+                    "probability": 0.9998182654380798
+                },
+                {
+                    "word": " and",
+                    "start": 171.9,
+                    "end": 172.32,
+                    "probability": 0.9992903470993042
+                },
+                {
+                    "word": " then",
+                    "start": 172.32,
+                    "end": 172.44,
+                    "probability": 0.9992396831512451
+                },
+                {
+                    "word": " it",
+                    "start": 172.44,
+                    "end": 172.54,
+                    "probability": 0.9997265934944153
+                },
+                {
+                    "word": " decays",
+                    "start": 172.54,
+                    "end": 172.8,
+                    "probability": 0.9965872168540955
+                },
+                {
+                    "word": " slowly",
+                    "start": 172.8,
+                    "end": 173.04,
+                    "probability": 0.9998273849487305
+                },
+                {
+                    "word": " over",
+                    "start": 173.04,
+                    "end": 173.38,
+                    "probability": 0.9990084767341614
+                },
+                {
+                    "word": " time.",
+                    "start": 173.38,
+                    "end": 173.56,
+                    "probability": 0.9999698400497437
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "seek": 17420,
+            "start": 174.2,
+            "end": 185.36,
+            "text": " You'll quickly find that this is very, very arbitrageable in the sense that you can just write a strategy which in simulation does lots and lots of small trades in the same direction and builds up some market impact over time.",
+            "tokens": [
+                50365,
+                509,
+                603,
+                2661,
+                915,
+                300,
+                341,
+                307,
+                588,
+                11,
+                588,
+                14931,
+                16223,
+                712,
+                294,
+                264,
+                2020,
+                300,
+                291,
+                393,
+                445,
+                2464,
+                257,
+                5206,
+                597,
+                294,
+                16575,
+                775,
+                3195,
+                293,
+                3195,
+                295,
+                1359,
+                21287,
+                294,
+                264,
+                912,
+                3513,
+                293,
+                15182,
+                493,
+                512,
+                2142,
+                2712,
+                670,
+                565,
+                13,
+                50932
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " You'll",
+                    "start": 174.2,
+                    "end": 174.44,
+                    "probability": 0.5572036728262901
+                },
+                {
+                    "word": " quickly",
+                    "start": 174.44,
+                    "end": 174.68,
+                    "probability": 0.9992538094520569
+                },
+                {
+                    "word": " find",
+                    "start": 174.68,
+                    "end": 175.0,
+                    "probability": 0.9997629523277283
+                },
+                {
+                    "word": " that",
+                    "start": 175.0,
+                    "end": 175.14,
+                    "probability": 0.996187150478363
+                },
+                {
+                    "word": " this",
+                    "start": 175.14,
+                    "end": 175.28,
+                    "probability": 0.9973920583724976
+                },
+                {
+                    "word": " is",
+                    "start": 175.28,
+                    "end": 175.52,
+                    "probability": 0.9991905093193054
+                },
+                {
+                    "word": " very,",
+                    "start": 175.52,
+                    "end": 176.02,
+                    "probability": 0.9953676462173462
+                },
+                {
+                    "word": " very",
+                    "start": 176.08,
+                    "end": 176.2,
+                    "probability": 0.9996404647827148
+                },
+                {
+                    "word": " arbitrageable",
+                    "start": 176.2,
+                    "end": 176.78,
+                    "probability": 0.9752739667892456
+                },
+                {
+                    "word": " in",
+                    "start": 176.78,
+                    "end": 177.36,
+                    "probability": 0.8792657256126404
+                },
+                {
+                    "word": " the",
+                    "start": 177.36,
+                    "end": 177.62,
+                    "probability": 0.9996509552001953
+                },
+                {
+                    "word": " sense",
+                    "start": 177.62,
+                    "end": 177.82,
+                    "probability": 0.9999028444290161
+                },
+                {
+                    "word": " that",
+                    "start": 177.82,
+                    "end": 178.1,
+                    "probability": 0.9992213249206543
+                },
+                {
+                    "word": " you",
+                    "start": 178.1,
+                    "end": 178.46,
+                    "probability": 0.9957078695297241
+                },
+                {
+                    "word": " can",
+                    "start": 178.46,
+                    "end": 178.54,
+                    "probability": 0.998807430267334
+                },
+                {
+                    "word": " just",
+                    "start": 178.54,
+                    "end": 178.68,
+                    "probability": 0.9970683455467224
+                },
+                {
+                    "word": " write",
+                    "start": 178.68,
+                    "end": 178.78,
+                    "probability": 0.8914523720741272
+                },
+                {
+                    "word": " a",
+                    "start": 178.78,
+                    "end": 178.88,
+                    "probability": 0.9987697005271912
+                },
+                {
+                    "word": " strategy",
+                    "start": 178.88,
+                    "end": 179.16,
+                    "probability": 0.9998053908348083
+                },
+                {
+                    "word": " which",
+                    "start": 179.16,
+                    "end": 179.62,
+                    "probability": 0.3532005548477173
+                },
+                {
+                    "word": " in",
+                    "start": 179.62,
+                    "end": 180.0,
+                    "probability": 0.6126269102096558
+                },
+                {
+                    "word": " simulation",
+                    "start": 180.0,
+                    "end": 180.28,
+                    "probability": 0.9817043542861938
+                },
+                {
+                    "word": " does",
+                    "start": 180.28,
+                    "end": 180.66,
+                    "probability": 0.980614960193634
+                },
+                {
+                    "word": " lots",
+                    "start": 180.66,
+                    "end": 180.9,
+                    "probability": 0.9988135099411011
+                },
+                {
+                    "word": " and",
+                    "start": 180.9,
+                    "end": 181.02,
+                    "probability": 0.9947570562362671
+                },
+                {
+                    "word": " lots",
+                    "start": 181.02,
+                    "end": 181.1,
+                    "probability": 0.9995563626289368
+                },
+                {
+                    "word": " of",
+                    "start": 181.1,
+                    "end": 181.22,
+                    "probability": 0.999077320098877
+                },
+                {
+                    "word": " small",
+                    "start": 181.22,
+                    "end": 181.38,
+                    "probability": 0.998871386051178
+                },
+                {
+                    "word": " trades",
+                    "start": 181.38,
+                    "end": 181.68,
+                    "probability": 0.9990299940109253
+                },
+                {
+                    "word": " in",
+                    "start": 181.68,
+                    "end": 181.86,
+                    "probability": 0.9983189702033997
+                },
+                {
+                    "word": " the",
+                    "start": 181.86,
+                    "end": 181.94,
+                    "probability": 0.9994404911994934
+                },
+                {
+                    "word": " same",
+                    "start": 181.94,
+                    "end": 182.04,
+                    "probability": 0.9995129108428955
+                },
+                {
+                    "word": " direction",
+                    "start": 182.04,
+                    "end": 182.32,
+                    "probability": 0.9998447895050049
+                },
+                {
+                    "word": " and",
+                    "start": 182.32,
+                    "end": 183.02,
+                    "probability": 0.9321762919425964
+                },
+                {
+                    "word": " builds",
+                    "start": 183.02,
+                    "end": 183.28,
+                    "probability": 0.9983062744140625
+                },
+                {
+                    "word": " up",
+                    "start": 183.28,
+                    "end": 183.58,
+                    "probability": 0.9998169541358948
+                },
+                {
+                    "word": " some",
+                    "start": 183.58,
+                    "end": 184.04,
+                    "probability": 0.9981927275657654
+                },
+                {
+                    "word": " market",
+                    "start": 184.04,
+                    "end": 184.36,
+                    "probability": 0.9986149072647095
+                },
+                {
+                    "word": " impact",
+                    "start": 184.36,
+                    "end": 184.58,
+                    "probability": 0.9998441934585571
+                },
+                {
+                    "word": " over",
+                    "start": 184.58,
+                    "end": 185.1,
+                    "probability": 0.9979054927825928
+                },
+                {
+                    "word": " time.",
+                    "start": 185.1,
+                    "end": 185.36,
+                    "probability": 0.9999285936355591
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "seek": 17420,
+            "start": 185.68,
+            "end": 192.46,
+            "text": " So say you buy, buy, buy, buy, buy, successively, you push the price up and then you just do a big sell trade into all that price impact you've created.",
+            "tokens": [
+                50953,
+                407,
+                584,
+                291,
+                2256,
+                11,
+                2256,
+                11,
+                2256,
+                11,
+                2256,
+                11,
+                2256,
+                11,
+                2245,
+                3413,
+                11,
+                291,
+                2944,
+                264,
+                3218,
+                493,
+                293,
+                550,
+                291,
+                445,
+                360,
+                257,
+                955,
+                3607,
+                4923,
+                666,
+                439,
+                300,
+                3218,
+                2712,
+                291,
+                600,
+                2942,
+                13,
+                51290
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 185.68,
+                    "end": 186.04,
+                    "probability": 0.945026159286499
+                },
+                {
+                    "word": " say",
+                    "start": 186.04,
+                    "end": 186.16,
+                    "probability": 0.6723423600196838
+                },
+                {
+                    "word": " you",
+                    "start": 186.16,
+                    "end": 186.26,
+                    "probability": 0.9861068725585938
+                },
+                {
+                    "word": " buy,",
+                    "start": 186.26,
+                    "end": 186.46,
+                    "probability": 0.9992542862892151
+                },
+                {
+                    "word": " buy,",
+                    "start": 186.5,
+                    "end": 186.62,
+                    "probability": 0.999563992023468
+                },
+                {
+                    "word": " buy,",
+                    "start": 186.66,
+                    "end": 186.8,
+                    "probability": 0.9996377229690552
+                },
+                {
+                    "word": " buy,",
+                    "start": 186.86,
+                    "end": 186.98,
+                    "probability": 0.9993307590484619
+                },
+                {
+                    "word": " buy,",
+                    "start": 187.0,
+                    "end": 187.12,
+                    "probability": 0.9981365203857422
+                },
+                {
+                    "word": " successively,",
+                    "start": 187.2,
+                    "end": 187.74,
+                    "probability": 0.7782867848873138
+                },
+                {
+                    "word": " you",
+                    "start": 187.84,
+                    "end": 188.14,
+                    "probability": 0.9989696741104126
+                },
+                {
+                    "word": " push",
+                    "start": 188.14,
+                    "end": 188.32,
+                    "probability": 0.9996942281723022
+                },
+                {
+                    "word": " the",
+                    "start": 188.32,
+                    "end": 188.44,
+                    "probability": 0.9997013211250305
+                },
+                {
+                    "word": " price",
+                    "start": 188.44,
+                    "end": 188.62,
+                    "probability": 0.999765932559967
+                },
+                {
+                    "word": " up",
+                    "start": 188.62,
+                    "end": 188.8,
+                    "probability": 0.9981799125671387
+                },
+                {
+                    "word": " and",
+                    "start": 188.8,
+                    "end": 189.24,
+                    "probability": 0.5032818913459778
+                },
+                {
+                    "word": " then",
+                    "start": 189.24,
+                    "end": 189.36,
+                    "probability": 0.9951589703559875
+                },
+                {
+                    "word": " you",
+                    "start": 189.36,
+                    "end": 189.46,
+                    "probability": 0.9938495755195618
+                },
+                {
+                    "word": " just",
+                    "start": 189.46,
+                    "end": 189.58,
+                    "probability": 0.9990124702453613
+                },
+                {
+                    "word": " do",
+                    "start": 189.58,
+                    "end": 189.62,
+                    "probability": 0.9984667897224426
+                },
+                {
+                    "word": " a",
+                    "start": 189.62,
+                    "end": 189.72,
+                    "probability": 0.9992246627807617
+                },
+                {
+                    "word": " big",
+                    "start": 189.72,
+                    "end": 189.84,
+                    "probability": 0.9991647005081177
+                },
+                {
+                    "word": " sell",
+                    "start": 189.84,
+                    "end": 190.0,
+                    "probability": 0.9587882161140442
+                },
+                {
+                    "word": " trade",
+                    "start": 190.0,
+                    "end": 190.26,
+                    "probability": 0.9989327788352966
+                },
+                {
+                    "word": " into",
+                    "start": 190.26,
+                    "end": 191.08,
+                    "probability": 0.9735478162765503
+                },
+                {
+                    "word": " all",
+                    "start": 191.08,
+                    "end": 191.3,
+                    "probability": 0.9996321201324463
+                },
+                {
+                    "word": " that",
+                    "start": 191.3,
+                    "end": 191.48,
+                    "probability": 0.9974163770675659
+                },
+                {
+                    "word": " price",
+                    "start": 191.48,
+                    "end": 191.68,
+                    "probability": 0.9854926466941833
+                },
+                {
+                    "word": " impact",
+                    "start": 191.68,
+                    "end": 191.9,
+                    "probability": 0.9951207041740417
+                },
+                {
+                    "word": " you've",
+                    "start": 191.9,
+                    "end": 192.18,
+                    "probability": 0.9973771572113037
+                },
+                {
+                    "word": " created.",
+                    "start": 192.18,
+                    "end": 192.46,
+                    "probability": 0.9995819926261902
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "seek": 17420,
+            "start": 192.58,
+            "end": 197.86,
+            "text": " And your big sell trade, because of the square root law, doesn't move the market down as much as your previous buys moved it up.",
+            "tokens": [
+                51290,
+                400,
+                428,
+                955,
+                3607,
+                4923,
+                11,
+                570,
+                295,
+                264,
+                3732,
+                5593,
+                2101,
+                11,
+                1177,
+                380,
+                1286,
+                264,
+                2142,
+                760,
+                382,
+                709,
+                382,
+                428,
+                3894,
+                28153,
+                4259,
+                309,
+                493,
+                13,
+                51553
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 192.58,
+                    "end": 192.84,
+                    "probability": 0.992597222328186
+                },
+                {
+                    "word": " your",
+                    "start": 192.84,
+                    "end": 192.96,
+                    "probability": 0.9955350160598755
+                },
+                {
+                    "word": " big",
+                    "start": 192.96,
+                    "end": 193.1,
+                    "probability": 0.9993823766708374
+                },
+                {
+                    "word": " sell",
+                    "start": 193.1,
+                    "end": 193.28,
+                    "probability": 0.9971828460693359
+                },
+                {
+                    "word": " trade,",
+                    "start": 193.28,
+                    "end": 193.56,
+                    "probability": 0.9995812773704529
+                },
+                {
+                    "word": " because",
+                    "start": 193.6,
+                    "end": 193.8,
+                    "probability": 0.9995279312133789
+                },
+                {
+                    "word": " of",
+                    "start": 193.8,
+                    "end": 193.94,
+                    "probability": 0.9993657469749451
+                },
+                {
+                    "word": " the",
+                    "start": 193.94,
+                    "end": 193.96,
+                    "probability": 0.9995583891868591
+                },
+                {
+                    "word": " square",
+                    "start": 193.96,
+                    "end": 194.18,
+                    "probability": 0.974376380443573
+                },
+                {
+                    "word": " root",
+                    "start": 194.18,
+                    "end": 194.34,
+                    "probability": 0.9939234852790833
+                },
+                {
+                    "word": " law,",
+                    "start": 194.34,
+                    "end": 194.48,
+                    "probability": 0.9982494115829468
+                },
+                {
+                    "word": " doesn't",
+                    "start": 194.6,
+                    "end": 195.26,
+                    "probability": 0.9995025992393494
+                },
+                {
+                    "word": " move",
+                    "start": 195.26,
+                    "end": 195.4,
+                    "probability": 0.9997691512107849
+                },
+                {
+                    "word": " the",
+                    "start": 195.4,
+                    "end": 195.56,
+                    "probability": 0.9997616410255432
+                },
+                {
+                    "word": " market",
+                    "start": 195.56,
+                    "end": 195.74,
+                    "probability": 0.9998772144317627
+                },
+                {
+                    "word": " down",
+                    "start": 195.74,
+                    "end": 196.0,
+                    "probability": 0.9998550415039062
+                },
+                {
+                    "word": " as",
+                    "start": 196.0,
+                    "end": 196.26,
+                    "probability": 0.999025821685791
+                },
+                {
+                    "word": " much",
+                    "start": 196.26,
+                    "end": 196.42,
+                    "probability": 0.999091625213623
+                },
+                {
+                    "word": " as",
+                    "start": 196.42,
+                    "end": 196.56,
+                    "probability": 0.9993332028388977
+                },
+                {
+                    "word": " your",
+                    "start": 196.56,
+                    "end": 196.62,
+                    "probability": 0.9993594288825989
+                },
+                {
+                    "word": " previous",
+                    "start": 196.62,
+                    "end": 196.88,
+                    "probability": 0.9998168349266052
+                },
+                {
+                    "word": " buys",
+                    "start": 196.88,
+                    "end": 197.14,
+                    "probability": 0.9893988370895386
+                },
+                {
+                    "word": " moved",
+                    "start": 197.14,
+                    "end": 197.56,
+                    "probability": 0.9923082590103149
+                },
+                {
+                    "word": " it",
+                    "start": 197.56,
+                    "end": 197.68,
+                    "probability": 0.9995430707931519
+                },
+                {
+                    "word": " up.",
+                    "start": 197.68,
+                    "end": 197.86,
+                    "probability": 0.9999305009841919
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "seek": 17420,
+            "start": 197.94,
+            "end": 200.08,
+            "text": " And you can just buy something which in simulation is profitable.",
+            "tokens": [
+                51553,
+                400,
+                291,
+                393,
+                445,
+                2256,
+                746,
+                597,
+                294,
+                16575,
+                307,
+                21608,
+                13,
+                51673
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 197.94,
+                    "end": 198.02,
+                    "probability": 0.9969931840896606
+                },
+                {
+                    "word": " you",
+                    "start": 198.02,
+                    "end": 198.28,
+                    "probability": 0.9987629652023315
+                },
+                {
+                    "word": " can",
+                    "start": 198.28,
+                    "end": 198.38,
+                    "probability": 0.9998438358306885
+                },
+                {
+                    "word": " just",
+                    "start": 198.38,
+                    "end": 198.56,
+                    "probability": 0.9997701048851013
+                },
+                {
+                    "word": " buy",
+                    "start": 198.56,
+                    "end": 198.82,
+                    "probability": 0.9698329567909241
+                },
+                {
+                    "word": " something",
+                    "start": 198.82,
+                    "end": 199.08,
+                    "probability": 0.9995133876800537
+                },
+                {
+                    "word": " which",
+                    "start": 199.08,
+                    "end": 199.24,
+                    "probability": 0.9882849454879761
+                },
+                {
+                    "word": " in",
+                    "start": 199.24,
+                    "end": 199.34,
+                    "probability": 0.9839993119239807
+                },
+                {
+                    "word": " simulation",
+                    "start": 199.34,
+                    "end": 199.58,
+                    "probability": 0.9957916736602783
+                },
+                {
+                    "word": " is",
+                    "start": 199.58,
+                    "end": 199.9,
+                    "probability": 0.9998418092727661
+                },
+                {
+                    "word": " profitable.",
+                    "start": 199.9,
+                    "end": 200.08,
+                    "probability": 0.9971495270729065
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "seek": 17420,
+            "start": 200.46,
+            "end": 201.8,
+            "text": " So it's a, I like it.",
+            "tokens": [
+                51692,
+                407,
+                309,
+                311,
+                257,
+                11,
+                286,
+                411,
+                309,
+                13,
+                51746
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 200.46,
+                    "end": 200.82,
+                    "probability": 0.94502192735672
+                },
+                {
+                    "word": " it's",
+                    "start": 200.82,
+                    "end": 201.1,
+                    "probability": 0.569990299642086
+                },
+                {
+                    "word": " a,",
+                    "start": 201.1,
+                    "end": 201.3,
+                    "probability": 0.9287835955619812
+                },
+                {
+                    "word": " I",
+                    "start": 201.3,
+                    "end": 201.48,
+                    "probability": 0.9992221593856812
+                },
+                {
+                    "word": " like",
+                    "start": 201.48,
+                    "end": 201.72,
+                    "probability": 0.9999516010284424
+                },
+                {
+                    "word": " it.",
+                    "start": 201.72,
+                    "end": 201.8,
+                    "probability": 0.9995869994163513
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "seek": 17420,
+            "start": 201.84,
+            "end": 203.76,
+            "text": " It's a weird example of what.",
+            "tokens": [
+                51746,
+                467,
+                311,
+                257,
+                3657,
+                1365,
+                295,
+                437,
+                13,
+                51857
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.18393506759252304,
+            "compression_ratio": 1.8304093567251463,
+            "no_speech_prob": 0.0006210944848135114,
+            "words": [
+                {
+                    "word": " It's",
+                    "start": 201.84,
+                    "end": 201.92,
+                    "probability": 0.9991640448570251
+                },
+                {
+                    "word": " a",
+                    "start": 201.92,
+                    "end": 201.98,
+                    "probability": 0.9998099207878113
+                },
+                {
+                    "word": " weird",
+                    "start": 201.98,
+                    "end": 202.22,
+                    "probability": 0.999735414981842
+                },
+                {
+                    "word": " example",
+                    "start": 202.22,
+                    "end": 202.54,
+                    "probability": 0.999950647354126
+                },
+                {
+                    "word": " of",
+                    "start": 202.54,
+                    "end": 202.9,
+                    "probability": 0.999572217464447
+                },
+                {
+                    "word": " what.",
+                    "start": 202.9,
+                    "end": 203.76,
+                    "probability": 0.9982830286026001
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "seek": 20420,
+            "start": 204.2,
+            "end": 208.44,
+            "text": " It seems to empirically fit the best in some sense cannot be correct.",
+            "tokens": [
+                50365,
+                467,
+                2544,
+                281,
+                25790,
+                984,
+                3318,
+                264,
+                1151,
+                294,
+                512,
+                2020,
+                2644,
+                312,
+                3006,
+                13,
+                50588
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3601283800034296,
+            "compression_ratio": 1.3225806451612903,
+            "no_speech_prob": 0.0009544659988023341,
+            "words": [
+                {
+                    "word": " It",
+                    "start": 204.2,
+                    "end": 204.64,
+                    "probability": 0.15674938261508942
+                },
+                {
+                    "word": " seems",
+                    "start": 204.64,
+                    "end": 204.82,
+                    "probability": 0.9543058276176453
+                },
+                {
+                    "word": " to",
+                    "start": 204.82,
+                    "end": 204.92,
+                    "probability": 0.9883920550346375
+                },
+                {
+                    "word": " empirically",
+                    "start": 204.92,
+                    "end": 205.44,
+                    "probability": 0.9818182289600372
+                },
+                {
+                    "word": " fit",
+                    "start": 205.44,
+                    "end": 206.04,
+                    "probability": 0.9608044624328613
+                },
+                {
+                    "word": " the",
+                    "start": 206.04,
+                    "end": 206.48,
+                    "probability": 0.9624214768409729
+                },
+                {
+                    "word": " best",
+                    "start": 206.48,
+                    "end": 206.72,
+                    "probability": 0.9919490814208984
+                },
+                {
+                    "word": " in",
+                    "start": 206.72,
+                    "end": 207.2,
+                    "probability": 0.4286758601665497
+                },
+                {
+                    "word": " some",
+                    "start": 207.2,
+                    "end": 207.32,
+                    "probability": 0.9805682301521301
+                },
+                {
+                    "word": " sense",
+                    "start": 207.32,
+                    "end": 207.44,
+                    "probability": 0.9877832531929016
+                },
+                {
+                    "word": " cannot",
+                    "start": 207.44,
+                    "end": 207.72,
+                    "probability": 0.5209318995475769
+                },
+                {
+                    "word": " be",
+                    "start": 207.72,
+                    "end": 207.96,
+                    "probability": 0.999345600605011
+                },
+                {
+                    "word": " correct.",
+                    "start": 207.96,
+                    "end": 208.44,
+                    "probability": 0.980606734752655
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "seek": 20420,
+            "start": 208.58,
+            "end": 209.48,
+            "text": " There's some missing factor.",
+            "tokens": [
+                50588,
+                821,
+                311,
+                512,
+                5361,
+                5952,
+                13,
+                50640
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3601283800034296,
+            "compression_ratio": 1.3225806451612903,
+            "no_speech_prob": 0.0009544659988023341,
+            "words": [
+                {
+                    "word": " There's",
+                    "start": 208.58,
+                    "end": 208.78,
+                    "probability": 0.8993852138519287
+                },
+                {
+                    "word": " some",
+                    "start": 208.78,
+                    "end": 208.92,
+                    "probability": 0.9945506453514099
+                },
+                {
+                    "word": " missing",
+                    "start": 208.92,
+                    "end": 209.14,
+                    "probability": 0.998120129108429
+                },
+                {
+                    "word": " factor.",
+                    "start": 209.14,
+                    "end": 209.48,
+                    "probability": 0.9956464171409607
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "seek": 20420,
+            "start": 209.64,
+            "end": 212.1,
+            "text": " And I'm trying to untangle this is something that I've personally",
+            "tokens": [
+                50646,
+                400,
+                286,
+                478,
+                1382,
+                281,
+                1701,
+                7846,
+                341,
+                307,
+                746,
+                300,
+                286,
+                600,
+                5665,
+                50768
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.3601283800034296,
+            "compression_ratio": 1.3225806451612903,
+            "no_speech_prob": 0.0009544659988023341,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 209.64,
+                    "end": 209.96,
+                    "probability": 0.33505669236183167
+                },
+                {
+                    "word": " I'm",
+                    "start": 209.96,
+                    "end": 210.16,
+                    "probability": 0.9737849831581116
+                },
+                {
+                    "word": " trying",
+                    "start": 210.16,
+                    "end": 210.3,
+                    "probability": 0.9986445307731628
+                },
+                {
+                    "word": " to",
+                    "start": 210.3,
+                    "end": 210.44,
+                    "probability": 0.9995131492614746
+                },
+                {
+                    "word": " untangle",
+                    "start": 210.44,
+                    "end": 210.76,
+                    "probability": 0.9953188300132751
+                },
+                {
+                    "word": " this",
+                    "start": 210.76,
+                    "end": 210.92,
+                    "probability": 0.707161009311676
+                },
+                {
+                    "word": " is",
+                    "start": 210.92,
+                    "end": 211.02,
+                    "probability": 0.3883435130119324
+                },
+                {
+                    "word": " something",
+                    "start": 211.02,
+                    "end": 211.22,
+                    "probability": 0.9981111288070679
+                },
+                {
+                    "word": " that",
+                    "start": 211.22,
+                    "end": 211.58,
+                    "probability": 0.6031624674797058
+                },
+                {
+                    "word": " I've",
+                    "start": 211.58,
+                    "end": 211.86,
+                    "probability": 0.6905542016029358
+                },
+                {
+                    "word": " personally",
+                    "start": 211.86,
+                    "end": 212.1,
+                    "probability": 0.9987849593162537
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}

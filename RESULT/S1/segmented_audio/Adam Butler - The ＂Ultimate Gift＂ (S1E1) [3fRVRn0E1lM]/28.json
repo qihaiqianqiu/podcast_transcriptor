@@ -1,0 +1,4660 @@
+{
+    "text": " So let's unpack these results, right? So you've got this 10 assets, 10 industry groups, all US portfolios of US stocks. We tried a bunch of optimizations. None of them helped. Most of them delivered worse results than one over around. The hell's going on? The culprit, it turns out, is that there is no information in the correlation. So if you decompose the sources of risk through principal component analysis of 10 industry portfolios, you find that about 90% of the risk is in the first principal component. And that in fact, the first principal component is the only statistically significant or economically meaningful source of risk. So in fact, if you regress the returns for each of the industries on the S&P 500, and then you extract the residuals, those residuals contain no new information about the structure of those assets. Which is kind of interesting because what it says from an economic interpretation is that industries, at least according to how they're classified by Fama French, are basically just random portfolios of stocks. They don't introduce any more information about the structure of the market than you would get from just constructing any random 10 diversified portfolios of stocks, right? So that was interesting. And actually, there's a way you can derive the number of industries, independent risks in the portfolio as the square of the diversification ratio. So you find the maximum diversified portfolio and you take the square of the diversification ratio of that portfolio. If you do that for the 10 industry universe, you discover that there's less than one and a half independent bets across those 10 assets. So then we thought, okay, well, that's interesting. I wonder if we can get better results from another of the universes, the 25 portfolios sorted on size and book to market also. And in fact, we do get slightly better results. But even across 25 portfolios sorted on both size and book to market, there's less than two independent sources of return. What is the purpose of optimization? It is to maximize the opportunity for diversification. Well, the fact that there's one and a half or two bets across these 10 or 25 different assets means that there's no opportunity for diversification. Now, if you run it on, for example, the asset universe that we use for a global risk parity portfolio, well, now you've got five independent bets across 12 assets. If you run it on our 48 futures universe, you've got 13 independent bets. So the broad lesson is that mean variance optimization is extremely useful where there are several different independent sources of risk. If risk is all dominated by one risk factor, then there is no opportunity for diversification. And therefore, optimization is truly just operating on random noise. And so it's obviously not going to be useful.",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 2.3,
+            "text": " So let's unpack these results, right?",
+            "tokens": [
+                50365,
+                407,
+                718,
+                311,
+                26699,
+                613,
+                3542,
+                11,
+                558,
+                30,
+                50486
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 0.0,
+                    "end": 0.12,
+                    "probability": 0.9457942843437195
+                },
+                {
+                    "word": " let's",
+                    "start": 0.12,
+                    "end": 0.66,
+                    "probability": 0.9104473292827606
+                },
+                {
+                    "word": " unpack",
+                    "start": 0.66,
+                    "end": 1.12,
+                    "probability": 0.9993370175361633
+                },
+                {
+                    "word": " these",
+                    "start": 1.12,
+                    "end": 1.54,
+                    "probability": 0.9991550445556641
+                },
+                {
+                    "word": " results,",
+                    "start": 1.54,
+                    "end": 1.98,
+                    "probability": 0.9998972415924072
+                },
+                {
+                    "word": " right?",
+                    "start": 2.14,
+                    "end": 2.3,
+                    "probability": 0.9985799789428711
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 2.4,
+            "end": 5.46,
+            "text": " So you've got this 10 assets, 10 industry groups,",
+            "tokens": [
+                50488,
+                407,
+                291,
+                600,
+                658,
+                341,
+                1266,
+                9769,
+                11,
+                1266,
+                3518,
+                3935,
+                11,
+                50649
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 2.4,
+                    "end": 2.58,
+                    "probability": 0.994543194770813
+                },
+                {
+                    "word": " you've",
+                    "start": 2.58,
+                    "end": 2.76,
+                    "probability": 0.9972955882549286
+                },
+                {
+                    "word": " got",
+                    "start": 2.76,
+                    "end": 2.94,
+                    "probability": 0.9998385906219482
+                },
+                {
+                    "word": " this",
+                    "start": 2.94,
+                    "end": 3.12,
+                    "probability": 0.9742487668991089
+                },
+                {
+                    "word": " 10",
+                    "start": 3.12,
+                    "end": 3.88,
+                    "probability": 0.9900584816932678
+                },
+                {
+                    "word": " assets,",
+                    "start": 3.88,
+                    "end": 4.28,
+                    "probability": 0.9987010955810547
+                },
+                {
+                    "word": " 10",
+                    "start": 4.38,
+                    "end": 4.7,
+                    "probability": 0.9992749094963074
+                },
+                {
+                    "word": " industry",
+                    "start": 4.7,
+                    "end": 5.02,
+                    "probability": 0.9994578957557678
+                },
+                {
+                    "word": " groups,",
+                    "start": 5.02,
+                    "end": 5.46,
+                    "probability": 0.9994170665740967
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 6.36,
+            "end": 9.1,
+            "text": " all US portfolios of US stocks.",
+            "tokens": [
+                50683,
+                439,
+                2546,
+                11688,
+                2717,
+                295,
+                2546,
+                12966,
+                13,
+                50830
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " all",
+                    "start": 6.08,
+                    "end": 6.38,
+                    "probability": 0.9995096921920776
+                },
+                {
+                    "word": " US",
+                    "start": 6.38,
+                    "end": 6.84,
+                    "probability": 0.6428595781326294
+                },
+                {
+                    "word": " portfolios",
+                    "start": 6.84,
+                    "end": 8.28,
+                    "probability": 0.998659759759903
+                },
+                {
+                    "word": " of",
+                    "start": 8.28,
+                    "end": 8.46,
+                    "probability": 0.9987704157829285
+                },
+                {
+                    "word": " US",
+                    "start": 8.46,
+                    "end": 8.66,
+                    "probability": 0.9992208480834961
+                },
+                {
+                    "word": " stocks.",
+                    "start": 8.66,
+                    "end": 9.1,
+                    "probability": 0.9995487332344055
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 0,
+            "start": 9.34,
+            "end": 11.06,
+            "text": " We tried a bunch of optimizations.",
+            "tokens": [
+                50852,
+                492,
+                3031,
+                257,
+                3840,
+                295,
+                5028,
+                14455,
+                13,
+                50924
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " We",
+                    "start": 9.34,
+                    "end": 9.82,
+                    "probability": 0.9997643828392029
+                },
+                {
+                    "word": " tried",
+                    "start": 9.82,
+                    "end": 10.06,
+                    "probability": 0.9999414682388306
+                },
+                {
+                    "word": " a",
+                    "start": 10.06,
+                    "end": 10.18,
+                    "probability": 0.9998444318771362
+                },
+                {
+                    "word": " bunch",
+                    "start": 10.18,
+                    "end": 10.32,
+                    "probability": 0.9998390674591064
+                },
+                {
+                    "word": " of",
+                    "start": 10.32,
+                    "end": 10.44,
+                    "probability": 0.999945878982544
+                },
+                {
+                    "word": " optimizations.",
+                    "start": 10.44,
+                    "end": 11.06,
+                    "probability": 0.9987483322620392
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 0,
+            "start": 11.16,
+            "end": 12.36,
+            "text": " None of them helped.",
+            "tokens": [
+                50934,
+                14492,
+                295,
+                552,
+                4254,
+                13,
+                50989
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " None",
+                    "start": 11.16,
+                    "end": 11.42,
+                    "probability": 0.9997060894966125
+                },
+                {
+                    "word": " of",
+                    "start": 11.42,
+                    "end": 11.56,
+                    "probability": 0.9999829530715942
+                },
+                {
+                    "word": " them",
+                    "start": 11.56,
+                    "end": 11.72,
+                    "probability": 0.9991952776908875
+                },
+                {
+                    "word": " helped.",
+                    "start": 11.72,
+                    "end": 12.36,
+                    "probability": 0.9997166991233826
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 0,
+            "start": 12.46,
+            "end": 15.14,
+            "text": " Most of them delivered worse results than one over around.",
+            "tokens": [
+                51002,
+                4534,
+                295,
+                552,
+                10144,
+                5324,
+                3542,
+                813,
+                472,
+                670,
+                926,
+                13,
+                51125
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " Most",
+                    "start": 12.46,
+                    "end": 12.86,
+                    "probability": 0.9997956156730652
+                },
+                {
+                    "word": " of",
+                    "start": 12.86,
+                    "end": 12.98,
+                    "probability": 0.9999717473983765
+                },
+                {
+                    "word": " them",
+                    "start": 12.98,
+                    "end": 13.14,
+                    "probability": 0.9997252821922302
+                },
+                {
+                    "word": " delivered",
+                    "start": 13.14,
+                    "end": 13.48,
+                    "probability": 0.9998399019241333
+                },
+                {
+                    "word": " worse",
+                    "start": 13.48,
+                    "end": 13.8,
+                    "probability": 0.9940339922904968
+                },
+                {
+                    "word": " results",
+                    "start": 13.8,
+                    "end": 14.2,
+                    "probability": 0.9999464750289917
+                },
+                {
+                    "word": " than",
+                    "start": 14.2,
+                    "end": 14.48,
+                    "probability": 0.9988982677459717
+                },
+                {
+                    "word": " one",
+                    "start": 14.48,
+                    "end": 14.8,
+                    "probability": 0.6702656745910645
+                },
+                {
+                    "word": " over",
+                    "start": 14.8,
+                    "end": 14.96,
+                    "probability": 0.9611508250236511
+                },
+                {
+                    "word": " around.",
+                    "start": 14.96,
+                    "end": 15.14,
+                    "probability": 0.167406365275383
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 0,
+            "start": 15.28,
+            "end": 15.96,
+            "text": " The hell's going on?",
+            "tokens": [
+                51134,
+                440,
+                4921,
+                311,
+                516,
+                322,
+                30,
+                51171
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " The",
+                    "start": 15.28,
+                    "end": 15.46,
+                    "probability": 0.6433939337730408
+                },
+                {
+                    "word": " hell's",
+                    "start": 15.46,
+                    "end": 15.64,
+                    "probability": 0.9912830889225006
+                },
+                {
+                    "word": " going",
+                    "start": 15.64,
+                    "end": 15.72,
+                    "probability": 0.9999589920043945
+                },
+                {
+                    "word": " on?",
+                    "start": 15.72,
+                    "end": 15.96,
+                    "probability": 0.9999676942825317
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "seek": 0,
+            "start": 16.08,
+            "end": 17.78,
+            "text": " The culprit, it turns out,",
+            "tokens": [
+                51171,
+                440,
+                39220,
+                11,
+                309,
+                4523,
+                484,
+                11,
+                51260
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " The",
+                    "start": 16.08,
+                    "end": 16.58,
+                    "probability": 0.999453604221344
+                },
+                {
+                    "word": " culprit,",
+                    "start": 16.58,
+                    "end": 16.9,
+                    "probability": 0.9996553659439087
+                },
+                {
+                    "word": " it",
+                    "start": 17.08,
+                    "end": 17.2,
+                    "probability": 0.999944806098938
+                },
+                {
+                    "word": " turns",
+                    "start": 17.2,
+                    "end": 17.4,
+                    "probability": 0.9998252987861633
+                },
+                {
+                    "word": " out,",
+                    "start": 17.4,
+                    "end": 17.78,
+                    "probability": 0.9999849796295166
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "seek": 0,
+            "start": 18.3,
+            "end": 21.36,
+            "text": " is that there is no information in the correlation.",
+            "tokens": [
+                51280,
+                307,
+                300,
+                456,
+                307,
+                572,
+                1589,
+                294,
+                264,
+                20009,
+                13,
+                51441
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 18.099999999999998,
+                    "end": 18.4,
+                    "probability": 0.9999092817306519
+                },
+                {
+                    "word": " that",
+                    "start": 18.4,
+                    "end": 18.72,
+                    "probability": 0.9999524354934692
+                },
+                {
+                    "word": " there",
+                    "start": 18.72,
+                    "end": 19.32,
+                    "probability": 0.999925971031189
+                },
+                {
+                    "word": " is",
+                    "start": 19.32,
+                    "end": 19.52,
+                    "probability": 0.9999856948852539
+                },
+                {
+                    "word": " no",
+                    "start": 19.52,
+                    "end": 19.78,
+                    "probability": 0.999931812286377
+                },
+                {
+                    "word": " information",
+                    "start": 19.78,
+                    "end": 20.42,
+                    "probability": 0.9999308586120605
+                },
+                {
+                    "word": " in",
+                    "start": 20.42,
+                    "end": 20.88,
+                    "probability": 0.9947721362113953
+                },
+                {
+                    "word": " the",
+                    "start": 20.88,
+                    "end": 21.04,
+                    "probability": 0.9997408986091614
+                },
+                {
+                    "word": " correlation.",
+                    "start": 21.04,
+                    "end": 21.36,
+                    "probability": 0.9976467490196228
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "seek": 0,
+            "start": 21.4,
+            "end": 25.38,
+            "text": " So if you decompose the sources of risk",
+            "tokens": [
+                51451,
+                407,
+                498,
+                291,
+                22867,
+                541,
+                264,
+                7139,
+                295,
+                3148,
+                51647
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 21.4,
+                    "end": 21.98,
+                    "probability": 0.9995622038841248
+                },
+                {
+                    "word": " if",
+                    "start": 21.98,
+                    "end": 22.22,
+                    "probability": 0.9997847676277161
+                },
+                {
+                    "word": " you",
+                    "start": 22.22,
+                    "end": 22.5,
+                    "probability": 0.9999902248382568
+                },
+                {
+                    "word": " decompose",
+                    "start": 22.5,
+                    "end": 23.54,
+                    "probability": 0.9999352097511292
+                },
+                {
+                    "word": " the",
+                    "start": 23.54,
+                    "end": 24.28,
+                    "probability": 0.9999181032180786
+                },
+                {
+                    "word": " sources",
+                    "start": 24.28,
+                    "end": 24.82,
+                    "probability": 0.9998866319656372
+                },
+                {
+                    "word": " of",
+                    "start": 24.82,
+                    "end": 25.16,
+                    "probability": 0.9999805688858032
+                },
+                {
+                    "word": " risk",
+                    "start": 25.16,
+                    "end": 25.38,
+                    "probability": 0.9999078512191772
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "seek": 0,
+            "start": 25.38,
+            "end": 27.22,
+            "text": " through principal component analysis",
+            "tokens": [
+                51647,
+                807,
+                9716,
+                6542,
+                5215,
+                51741
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " through",
+                    "start": 25.38,
+                    "end": 26.0,
+                    "probability": 0.9995527863502502
+                },
+                {
+                    "word": " principal",
+                    "start": 26.0,
+                    "end": 26.54,
+                    "probability": 0.9730193614959717
+                },
+                {
+                    "word": " component",
+                    "start": 26.54,
+                    "end": 26.86,
+                    "probability": 0.9997854828834534
+                },
+                {
+                    "word": " analysis",
+                    "start": 26.86,
+                    "end": 27.22,
+                    "probability": 0.999971866607666
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "seek": 0,
+            "start": 27.22,
+            "end": 29.88,
+            "text": " of 10 industry portfolios,",
+            "tokens": [
+                51741,
+                295,
+                1266,
+                3518,
+                11688,
+                2717,
+                11,
+                51862
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1742850144704183,
+            "compression_ratio": 1.6528301886792454,
+            "no_speech_prob": 0.0011512789642438293,
+            "words": [
+                {
+                    "word": " of",
+                    "start": 27.22,
+                    "end": 27.98,
+                    "probability": 0.9992473125457764
+                },
+                {
+                    "word": " 10",
+                    "start": 27.98,
+                    "end": 28.8,
+                    "probability": 0.9999402761459351
+                },
+                {
+                    "word": " industry",
+                    "start": 28.8,
+                    "end": 29.14,
+                    "probability": 0.9998503923416138
+                },
+                {
+                    "word": " portfolios,",
+                    "start": 29.14,
+                    "end": 29.88,
+                    "probability": 0.9990358352661133
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "seek": 3000,
+            "start": 30.0,
+            "end": 33.02,
+            "text": " you find that about 90% of the risk",
+            "tokens": [
+                50369,
+                291,
+                915,
+                300,
+                466,
+                4289,
+                4,
+                295,
+                264,
+                3148,
+                50531
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " you",
+                    "start": 30.0,
+                    "end": 30.06,
+                    "probability": 0.9147486090660095
+                },
+                {
+                    "word": " find",
+                    "start": 30.06,
+                    "end": 30.32,
+                    "probability": 0.999789297580719
+                },
+                {
+                    "word": " that",
+                    "start": 30.32,
+                    "end": 30.46,
+                    "probability": 0.9999079704284668
+                },
+                {
+                    "word": " about",
+                    "start": 30.46,
+                    "end": 30.62,
+                    "probability": 0.9998632669448853
+                },
+                {
+                    "word": " 90",
+                    "start": 30.62,
+                    "end": 31.08,
+                    "probability": 0.9992368221282959
+                },
+                {
+                    "word": "%",
+                    "start": 31.08,
+                    "end": 31.4,
+                    "probability": 0.9810691475868225
+                },
+                {
+                    "word": " of",
+                    "start": 31.4,
+                    "end": 31.9,
+                    "probability": 0.9997496008872986
+                },
+                {
+                    "word": " the",
+                    "start": 31.9,
+                    "end": 32.72,
+                    "probability": 0.9999011754989624
+                },
+                {
+                    "word": " risk",
+                    "start": 32.72,
+                    "end": 33.02,
+                    "probability": 0.9998446702957153
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "seek": 3000,
+            "start": 33.02,
+            "end": 35.74,
+            "text": " is in the first principal component.",
+            "tokens": [
+                50531,
+                307,
+                294,
+                264,
+                700,
+                9716,
+                6542,
+                13,
+                50661
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 33.02,
+                    "end": 33.88,
+                    "probability": 0.9996809959411621
+                },
+                {
+                    "word": " in",
+                    "start": 33.88,
+                    "end": 34.48,
+                    "probability": 0.9997988343238831
+                },
+                {
+                    "word": " the",
+                    "start": 34.48,
+                    "end": 34.74,
+                    "probability": 0.9998941421508789
+                },
+                {
+                    "word": " first",
+                    "start": 34.74,
+                    "end": 35.04,
+                    "probability": 0.9948621392250061
+                },
+                {
+                    "word": " principal",
+                    "start": 35.04,
+                    "end": 35.34,
+                    "probability": 0.8584898114204407
+                },
+                {
+                    "word": " component.",
+                    "start": 35.34,
+                    "end": 35.74,
+                    "probability": 0.9999274015426636
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "seek": 3000,
+            "start": 35.94,
+            "end": 37.96,
+            "text": " And that in fact, the first principal component",
+            "tokens": [
+                50687,
+                400,
+                300,
+                294,
+                1186,
+                11,
+                264,
+                700,
+                9716,
+                6542,
+                50772
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 35.94,
+                    "end": 36.48,
+                    "probability": 0.9789320826530457
+                },
+                {
+                    "word": " that",
+                    "start": 36.48,
+                    "end": 36.6,
+                    "probability": 0.8572680354118347
+                },
+                {
+                    "word": " in",
+                    "start": 36.6,
+                    "end": 36.74,
+                    "probability": 0.6075372099876404
+                },
+                {
+                    "word": " fact,",
+                    "start": 36.74,
+                    "end": 37.06,
+                    "probability": 0.9998225569725037
+                },
+                {
+                    "word": " the",
+                    "start": 37.06,
+                    "end": 37.18,
+                    "probability": 0.999485969543457
+                },
+                {
+                    "word": " first",
+                    "start": 37.18,
+                    "end": 37.38,
+                    "probability": 0.9992777705192566
+                },
+                {
+                    "word": " principal",
+                    "start": 37.38,
+                    "end": 37.62,
+                    "probability": 0.9956467747688293
+                },
+                {
+                    "word": " component",
+                    "start": 37.62,
+                    "end": 37.96,
+                    "probability": 0.9999452829360962
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "seek": 3000,
+            "start": 37.96,
+            "end": 39.7,
+            "text": " is the only statistically significant",
+            "tokens": [
+                50772,
+                307,
+                264,
+                787,
+                36478,
+                4776,
+                50863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 37.96,
+                    "end": 38.28,
+                    "probability": 0.9998737573623657
+                },
+                {
+                    "word": " the",
+                    "start": 38.28,
+                    "end": 38.38,
+                    "probability": 0.9997491240501404
+                },
+                {
+                    "word": " only",
+                    "start": 38.38,
+                    "end": 38.66,
+                    "probability": 0.9998346567153931
+                },
+                {
+                    "word": " statistically",
+                    "start": 38.66,
+                    "end": 39.2,
+                    "probability": 0.9998880624771118
+                },
+                {
+                    "word": " significant",
+                    "start": 39.2,
+                    "end": 39.7,
+                    "probability": 0.9998703002929688
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "seek": 3000,
+            "start": 39.7,
+            "end": 42.7,
+            "text": " or economically meaningful source of risk.",
+            "tokens": [
+                50863,
+                420,
+                26811,
+                10995,
+                4009,
+                295,
+                3148,
+                13,
+                51005
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " or",
+                    "start": 39.7,
+                    "end": 40.4,
+                    "probability": 0.9919731616973877
+                },
+                {
+                    "word": " economically",
+                    "start": 40.4,
+                    "end": 40.8,
+                    "probability": 0.999909520149231
+                },
+                {
+                    "word": " meaningful",
+                    "start": 40.8,
+                    "end": 41.36,
+                    "probability": 0.9999181032180786
+                },
+                {
+                    "word": " source",
+                    "start": 41.36,
+                    "end": 42.3,
+                    "probability": 0.9993769526481628
+                },
+                {
+                    "word": " of",
+                    "start": 42.3,
+                    "end": 42.46,
+                    "probability": 0.9998540878295898
+                },
+                {
+                    "word": " risk.",
+                    "start": 42.46,
+                    "end": 42.7,
+                    "probability": 0.9997318387031555
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "seek": 3000,
+            "start": 42.94,
+            "end": 46.56,
+            "text": " So in fact, if you regress the returns",
+            "tokens": [
+                51005,
+                407,
+                294,
+                1186,
+                11,
+                498,
+                291,
+                1121,
+                735,
+                264,
+                11247,
+                51209
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 42.94,
+                    "end": 43.48,
+                    "probability": 0.989463210105896
+                },
+                {
+                    "word": " in",
+                    "start": 43.48,
+                    "end": 43.58,
+                    "probability": 0.9943661689758301
+                },
+                {
+                    "word": " fact,",
+                    "start": 43.58,
+                    "end": 43.8,
+                    "probability": 0.9999409914016724
+                },
+                {
+                    "word": " if",
+                    "start": 43.8,
+                    "end": 43.96,
+                    "probability": 0.9998617172241211
+                },
+                {
+                    "word": " you",
+                    "start": 43.96,
+                    "end": 44.02,
+                    "probability": 0.9999897480010986
+                },
+                {
+                    "word": " regress",
+                    "start": 44.02,
+                    "end": 44.52,
+                    "probability": 0.9998820424079895
+                },
+                {
+                    "word": " the",
+                    "start": 44.52,
+                    "end": 45.36,
+                    "probability": 0.9987377524375916
+                },
+                {
+                    "word": " returns",
+                    "start": 45.36,
+                    "end": 46.56,
+                    "probability": 0.9998781681060791
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "seek": 3000,
+            "start": 46.56,
+            "end": 49.1,
+            "text": " for each of the industries on the S&P 500,",
+            "tokens": [
+                51209,
+                337,
+                1184,
+                295,
+                264,
+                13284,
+                322,
+                264,
+                318,
+                5,
+                47,
+                5923,
+                11,
+                51327
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " for",
+                    "start": 46.56,
+                    "end": 47.24,
+                    "probability": 0.9997895359992981
+                },
+                {
+                    "word": " each",
+                    "start": 47.24,
+                    "end": 47.42,
+                    "probability": 0.9998992681503296
+                },
+                {
+                    "word": " of",
+                    "start": 47.42,
+                    "end": 47.54,
+                    "probability": 0.9999558925628662
+                },
+                {
+                    "word": " the",
+                    "start": 47.54,
+                    "end": 47.64,
+                    "probability": 0.9999125003814697
+                },
+                {
+                    "word": " industries",
+                    "start": 47.64,
+                    "end": 48.08,
+                    "probability": 0.9995858073234558
+                },
+                {
+                    "word": " on",
+                    "start": 48.08,
+                    "end": 48.4,
+                    "probability": 0.9993950128555298
+                },
+                {
+                    "word": " the",
+                    "start": 48.4,
+                    "end": 48.52,
+                    "probability": 0.999847412109375
+                },
+                {
+                    "word": " S",
+                    "start": 48.52,
+                    "end": 48.7,
+                    "probability": 0.999392032623291
+                },
+                {
+                    "word": "&P",
+                    "start": 48.7,
+                    "end": 48.78,
+                    "probability": 0.993797779083252
+                },
+                {
+                    "word": " 500,",
+                    "start": 48.78,
+                    "end": 49.1,
+                    "probability": 0.9991501569747925
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "seek": 3000,
+            "start": 49.26,
+            "end": 51.5,
+            "text": " and then you extract the residuals,",
+            "tokens": [
+                51348,
+                293,
+                550,
+                291,
+                8947,
+                264,
+                27980,
+                82,
+                11,
+                51447
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " and",
+                    "start": 49.26,
+                    "end": 50.04,
+                    "probability": 0.9995043277740479
+                },
+                {
+                    "word": " then",
+                    "start": 50.04,
+                    "end": 50.16,
+                    "probability": 0.9999363422393799
+                },
+                {
+                    "word": " you",
+                    "start": 50.16,
+                    "end": 50.26,
+                    "probability": 0.9999643564224243
+                },
+                {
+                    "word": " extract",
+                    "start": 50.26,
+                    "end": 50.56,
+                    "probability": 0.9997100234031677
+                },
+                {
+                    "word": " the",
+                    "start": 50.56,
+                    "end": 50.8,
+                    "probability": 0.999786913394928
+                },
+                {
+                    "word": " residuals,",
+                    "start": 50.8,
+                    "end": 51.5,
+                    "probability": 0.9983242154121399
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "seek": 3000,
+            "start": 51.5,
+            "end": 55.68,
+            "text": " those residuals contain no new information",
+            "tokens": [
+                51461,
+                729,
+                27980,
+                82,
+                5304,
+                572,
+                777,
+                1589,
+                51662
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " those",
+                    "start": 51.5,
+                    "end": 52.14,
+                    "probability": 0.9999003410339355
+                },
+                {
+                    "word": " residuals",
+                    "start": 52.14,
+                    "end": 53.0,
+                    "probability": 0.9999454021453857
+                },
+                {
+                    "word": " contain",
+                    "start": 53.0,
+                    "end": 53.2,
+                    "probability": 0.9976263642311096
+                },
+                {
+                    "word": " no",
+                    "start": 53.2,
+                    "end": 53.92,
+                    "probability": 0.9999716281890869
+                },
+                {
+                    "word": " new",
+                    "start": 53.92,
+                    "end": 55.04,
+                    "probability": 0.9999732971191406
+                },
+                {
+                    "word": " information",
+                    "start": 55.04,
+                    "end": 55.68,
+                    "probability": 0.9999864101409912
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "seek": 3000,
+            "start": 55.68,
+            "end": 59.38,
+            "text": " about the structure of those assets.",
+            "tokens": [
+                51662,
+                466,
+                264,
+                3877,
+                295,
+                729,
+                9769,
+                13,
+                51840
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.15805642581680446,
+            "compression_ratio": 1.74235807860262,
+            "no_speech_prob": 2.3552440325147472e-05,
+            "words": [
+                {
+                    "word": " about",
+                    "start": 55.68,
+                    "end": 56.52,
+                    "probability": 0.9999456405639648
+                },
+                {
+                    "word": " the",
+                    "start": 56.52,
+                    "end": 56.74,
+                    "probability": 0.9999942779541016
+                },
+                {
+                    "word": " structure",
+                    "start": 56.74,
+                    "end": 57.24,
+                    "probability": 0.9999610185623169
+                },
+                {
+                    "word": " of",
+                    "start": 57.24,
+                    "end": 58.12,
+                    "probability": 0.9999918937683105
+                },
+                {
+                    "word": " those",
+                    "start": 58.12,
+                    "end": 58.92,
+                    "probability": 0.9999819993972778
+                },
+                {
+                    "word": " assets.",
+                    "start": 58.92,
+                    "end": 59.38,
+                    "probability": 0.9999526739120483
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "seek": 5938,
+            "start": 59.38,
+            "end": 60.82,
+            "text": " Which is kind of interesting",
+            "tokens": [
+                50365,
+                3013,
+                307,
+                733,
+                295,
+                1880,
+                50442
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " Which",
+                    "start": 59.38,
+                    "end": 59.72,
+                    "probability": 0.3023682236671448
+                },
+                {
+                    "word": " is",
+                    "start": 59.72,
+                    "end": 60.3,
+                    "probability": 0.997225821018219
+                },
+                {
+                    "word": " kind",
+                    "start": 60.3,
+                    "end": 60.46,
+                    "probability": 0.9093252420425415
+                },
+                {
+                    "word": " of",
+                    "start": 60.46,
+                    "end": 60.58,
+                    "probability": 0.9997275471687317
+                },
+                {
+                    "word": " interesting",
+                    "start": 60.58,
+                    "end": 60.82,
+                    "probability": 0.9995680451393127
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "seek": 5938,
+            "start": 60.82,
+            "end": 63.22,
+            "text": " because what it says from an economic interpretation",
+            "tokens": [
+                50442,
+                570,
+                437,
+                309,
+                1619,
+                490,
+                364,
+                4836,
+                14174,
+                50561
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " because",
+                    "start": 60.82,
+                    "end": 61.1,
+                    "probability": 0.8105434775352478
+                },
+                {
+                    "word": " what",
+                    "start": 61.1,
+                    "end": 61.28,
+                    "probability": 0.6764666438102722
+                },
+                {
+                    "word": " it",
+                    "start": 61.28,
+                    "end": 61.46,
+                    "probability": 0.998006284236908
+                },
+                {
+                    "word": " says",
+                    "start": 61.46,
+                    "end": 61.8,
+                    "probability": 0.9996005892753601
+                },
+                {
+                    "word": " from",
+                    "start": 61.8,
+                    "end": 62.26,
+                    "probability": 0.9470693469047546
+                },
+                {
+                    "word": " an",
+                    "start": 62.26,
+                    "end": 62.4,
+                    "probability": 0.9989520311355591
+                },
+                {
+                    "word": " economic",
+                    "start": 62.4,
+                    "end": 62.74,
+                    "probability": 0.999275267124176
+                },
+                {
+                    "word": " interpretation",
+                    "start": 62.74,
+                    "end": 63.22,
+                    "probability": 0.9970799088478088
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "seek": 5938,
+            "start": 63.22,
+            "end": 65.02,
+            "text": " is that industries,",
+            "tokens": [
+                50561,
+                307,
+                300,
+                13284,
+                11,
+                50654
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 63.22,
+                    "end": 64.06,
+                    "probability": 0.9446946382522583
+                },
+                {
+                    "word": " that",
+                    "start": 64.06,
+                    "end": 64.28,
+                    "probability": 0.996658444404602
+                },
+                {
+                    "word": " industries,",
+                    "start": 64.28,
+                    "end": 65.02,
+                    "probability": 0.9731472134590149
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "seek": 5938,
+            "start": 65.16,
+            "end": 67.54,
+            "text": " at least according to how they're classified by Fama French,",
+            "tokens": [
+                50663,
+                412,
+                1935,
+                4650,
+                281,
+                577,
+                436,
+                434,
+                20627,
+                538,
+                479,
+                2404,
+                5522,
+                11,
+                50786
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " at",
+                    "start": 65.16,
+                    "end": 65.48,
+                    "probability": 0.9975662231445312
+                },
+                {
+                    "word": " least",
+                    "start": 65.48,
+                    "end": 65.68,
+                    "probability": 0.9997431635856628
+                },
+                {
+                    "word": " according",
+                    "start": 65.68,
+                    "end": 65.96,
+                    "probability": 0.9956732392311096
+                },
+                {
+                    "word": " to",
+                    "start": 65.96,
+                    "end": 66.16,
+                    "probability": 0.9998306035995483
+                },
+                {
+                    "word": " how",
+                    "start": 66.16,
+                    "end": 66.26,
+                    "probability": 0.999728262424469
+                },
+                {
+                    "word": " they're",
+                    "start": 66.26,
+                    "end": 66.42,
+                    "probability": 0.9919659197330475
+                },
+                {
+                    "word": " classified",
+                    "start": 66.42,
+                    "end": 66.76,
+                    "probability": 0.9995126724243164
+                },
+                {
+                    "word": " by",
+                    "start": 66.76,
+                    "end": 67.08,
+                    "probability": 0.9985958933830261
+                },
+                {
+                    "word": " Fama",
+                    "start": 67.08,
+                    "end": 67.32,
+                    "probability": 0.9740443825721741
+                },
+                {
+                    "word": " French,",
+                    "start": 67.32,
+                    "end": 67.54,
+                    "probability": 0.8472506403923035
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "seek": 5938,
+            "start": 67.84,
+            "end": 71.96,
+            "text": " are basically just random portfolios of stocks.",
+            "tokens": [
+                50813,
+                366,
+                1936,
+                445,
+                4974,
+                11688,
+                2717,
+                295,
+                12966,
+                13,
+                51004
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " are",
+                    "start": 67.84,
+                    "end": 68.46,
+                    "probability": 0.9993104934692383
+                },
+                {
+                    "word": " basically",
+                    "start": 68.46,
+                    "end": 68.88,
+                    "probability": 0.9996551275253296
+                },
+                {
+                    "word": " just",
+                    "start": 68.88,
+                    "end": 69.22,
+                    "probability": 0.9997788071632385
+                },
+                {
+                    "word": " random",
+                    "start": 69.22,
+                    "end": 69.64,
+                    "probability": 0.9996938705444336
+                },
+                {
+                    "word": " portfolios",
+                    "start": 69.64,
+                    "end": 70.96,
+                    "probability": 0.9990310668945312
+                },
+                {
+                    "word": " of",
+                    "start": 70.96,
+                    "end": 71.2,
+                    "probability": 0.9997851252555847
+                },
+                {
+                    "word": " stocks.",
+                    "start": 71.2,
+                    "end": 71.96,
+                    "probability": 0.9992923736572266
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "seek": 5938,
+            "start": 72.2,
+            "end": 75.2,
+            "text": " They don't introduce any more information",
+            "tokens": [
+                51022,
+                814,
+                500,
+                380,
+                5366,
+                604,
+                544,
+                1589,
+                51171
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " They",
+                    "start": 72.2,
+                    "end": 72.78,
+                    "probability": 0.9994878768920898
+                },
+                {
+                    "word": " don't",
+                    "start": 72.78,
+                    "end": 73.18,
+                    "probability": 0.9998822808265686
+                },
+                {
+                    "word": " introduce",
+                    "start": 73.18,
+                    "end": 73.48,
+                    "probability": 0.9997422099113464
+                },
+                {
+                    "word": " any",
+                    "start": 73.48,
+                    "end": 73.86,
+                    "probability": 0.9991005659103394
+                },
+                {
+                    "word": " more",
+                    "start": 73.86,
+                    "end": 74.14,
+                    "probability": 0.9997543692588806
+                },
+                {
+                    "word": " information",
+                    "start": 74.14,
+                    "end": 75.2,
+                    "probability": 0.9992175102233887
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "seek": 5938,
+            "start": 75.2,
+            "end": 76.96,
+            "text": " about the structure of the market",
+            "tokens": [
+                51171,
+                466,
+                264,
+                3877,
+                295,
+                264,
+                2142,
+                51248
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " about",
+                    "start": 75.2,
+                    "end": 75.72,
+                    "probability": 0.9999086856842041
+                },
+                {
+                    "word": " the",
+                    "start": 75.72,
+                    "end": 75.86,
+                    "probability": 0.9999568462371826
+                },
+                {
+                    "word": " structure",
+                    "start": 75.86,
+                    "end": 76.24,
+                    "probability": 0.9998769760131836
+                },
+                {
+                    "word": " of",
+                    "start": 76.24,
+                    "end": 76.5,
+                    "probability": 0.9999328851699829
+                },
+                {
+                    "word": " the",
+                    "start": 76.5,
+                    "end": 76.6,
+                    "probability": 0.9999161958694458
+                },
+                {
+                    "word": " market",
+                    "start": 76.6,
+                    "end": 76.96,
+                    "probability": 0.9998675584793091
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "seek": 5938,
+            "start": 76.96,
+            "end": 79.64,
+            "text": " than you would get from just constructing",
+            "tokens": [
+                51248,
+                813,
+                291,
+                576,
+                483,
+                490,
+                445,
+                39969,
+                51385
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " than",
+                    "start": 76.96,
+                    "end": 77.56,
+                    "probability": 0.9943833351135254
+                },
+                {
+                    "word": " you",
+                    "start": 77.56,
+                    "end": 77.7,
+                    "probability": 0.9999294281005859
+                },
+                {
+                    "word": " would",
+                    "start": 77.7,
+                    "end": 77.84,
+                    "probability": 0.9996379613876343
+                },
+                {
+                    "word": " get",
+                    "start": 77.84,
+                    "end": 78.02,
+                    "probability": 0.9999333620071411
+                },
+                {
+                    "word": " from",
+                    "start": 78.02,
+                    "end": 78.36,
+                    "probability": 0.9997029900550842
+                },
+                {
+                    "word": " just",
+                    "start": 78.36,
+                    "end": 78.62,
+                    "probability": 0.9984331727027893
+                },
+                {
+                    "word": " constructing",
+                    "start": 78.62,
+                    "end": 79.64,
+                    "probability": 0.9992238283157349
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "seek": 5938,
+            "start": 79.64,
+            "end": 84.1,
+            "text": " any random 10 diversified portfolios of stocks, right?",
+            "tokens": [
+                51385,
+                604,
+                4974,
+                1266,
+                6111,
+                2587,
+                11688,
+                2717,
+                295,
+                12966,
+                11,
+                558,
+                30,
+                51608
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " any",
+                    "start": 79.64,
+                    "end": 80.24,
+                    "probability": 0.9988991022109985
+                },
+                {
+                    "word": " random",
+                    "start": 80.24,
+                    "end": 81.38,
+                    "probability": 0.9993005990982056
+                },
+                {
+                    "word": " 10",
+                    "start": 81.38,
+                    "end": 82.0,
+                    "probability": 0.9492715001106262
+                },
+                {
+                    "word": " diversified",
+                    "start": 82.0,
+                    "end": 82.52,
+                    "probability": 0.9987854361534119
+                },
+                {
+                    "word": " portfolios",
+                    "start": 82.52,
+                    "end": 82.98,
+                    "probability": 0.9997592270374298
+                },
+                {
+                    "word": " of",
+                    "start": 82.98,
+                    "end": 83.1,
+                    "probability": 0.9998329877853394
+                },
+                {
+                    "word": " stocks,",
+                    "start": 83.1,
+                    "end": 83.4,
+                    "probability": 0.9997629523277283
+                },
+                {
+                    "word": " right?",
+                    "start": 83.54,
+                    "end": 84.1,
+                    "probability": 0.9997573494911194
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "seek": 5938,
+            "start": 84.24,
+            "end": 85.06,
+            "text": " So that was interesting.",
+            "tokens": [
+                51628,
+                407,
+                300,
+                390,
+                1880,
+                13,
+                51658
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 84.24,
+                    "end": 84.78,
+                    "probability": 0.9919955730438232
+                },
+                {
+                    "word": " that",
+                    "start": 84.78,
+                    "end": 84.86,
+                    "probability": 0.9516849517822266
+                },
+                {
+                    "word": " was",
+                    "start": 84.86,
+                    "end": 84.94,
+                    "probability": 0.9989343285560608
+                },
+                {
+                    "word": " interesting.",
+                    "start": 84.94,
+                    "end": 85.06,
+                    "probability": 0.9984398484230042
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "seek": 5938,
+            "start": 85.3,
+            "end": 87.22,
+            "text": " And actually, there's a way you can derive",
+            "tokens": [
+                51674,
+                400,
+                767,
+                11,
+                456,
+                311,
+                257,
+                636,
+                291,
+                393,
+                28446,
+                51778
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 85.3,
+                    "end": 85.54,
+                    "probability": 0.9933305382728577
+                },
+                {
+                    "word": " actually,",
+                    "start": 85.54,
+                    "end": 85.84,
+                    "probability": 0.9984506368637085
+                },
+                {
+                    "word": " there's",
+                    "start": 85.86,
+                    "end": 86.14,
+                    "probability": 0.9998366236686707
+                },
+                {
+                    "word": " a",
+                    "start": 86.14,
+                    "end": 86.2,
+                    "probability": 0.9999440908432007
+                },
+                {
+                    "word": " way",
+                    "start": 86.2,
+                    "end": 86.42,
+                    "probability": 0.9999651908874512
+                },
+                {
+                    "word": " you",
+                    "start": 86.42,
+                    "end": 86.66,
+                    "probability": 0.9993046522140503
+                },
+                {
+                    "word": " can",
+                    "start": 86.66,
+                    "end": 86.76,
+                    "probability": 0.9997804760932922
+                },
+                {
+                    "word": " derive",
+                    "start": 86.76,
+                    "end": 87.22,
+                    "probability": 0.9986518025398254
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "seek": 5938,
+            "start": 87.22,
+            "end": 89.36,
+            "text": " the number of industries,",
+            "tokens": [
+                51778,
+                264,
+                1230,
+                295,
+                13284,
+                11,
+                51863
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.1844532958462707,
+            "compression_ratio": 1.6736842105263159,
+            "no_speech_prob": 0.02441657893359661,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 87.22,
+                    "end": 88.36,
+                    "probability": 0.999751627445221
+                },
+                {
+                    "word": " number",
+                    "start": 88.36,
+                    "end": 88.7,
+                    "probability": 0.9994760155677795
+                },
+                {
+                    "word": " of",
+                    "start": 88.7,
+                    "end": 88.96,
+                    "probability": 0.9998366832733154
+                },
+                {
+                    "word": " industries,",
+                    "start": 88.96,
+                    "end": 89.36,
+                    "probability": 0.346670538187027
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "seek": 8936,
+            "start": 89.36,
+            "end": 91.26,
+            "text": " independent risks in the portfolio",
+            "tokens": [
+                50365,
+                6695,
+                10888,
+                294,
+                264,
+                12583,
+                50467
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " independent",
+                    "start": 89.36,
+                    "end": 89.64,
+                    "probability": 0.5523982048034668
+                },
+                {
+                    "word": " risks",
+                    "start": 89.64,
+                    "end": 90.48,
+                    "probability": 0.987069845199585
+                },
+                {
+                    "word": " in",
+                    "start": 90.48,
+                    "end": 90.84,
+                    "probability": 0.9989732503890991
+                },
+                {
+                    "word": " the",
+                    "start": 90.84,
+                    "end": 90.88,
+                    "probability": 0.9994468092918396
+                },
+                {
+                    "word": " portfolio",
+                    "start": 90.88,
+                    "end": 91.26,
+                    "probability": 0.9995856881141663
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "seek": 8936,
+            "start": 91.26,
+            "end": 93.92,
+            "text": " as the square of the diversification ratio.",
+            "tokens": [
+                50467,
+                382,
+                264,
+                3732,
+                295,
+                264,
+                6111,
+                3774,
+                8509,
+                13,
+                50603
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " as",
+                    "start": 91.26,
+                    "end": 92.14,
+                    "probability": 0.9766532778739929
+                },
+                {
+                    "word": " the",
+                    "start": 92.14,
+                    "end": 92.38,
+                    "probability": 0.999663233757019
+                },
+                {
+                    "word": " square",
+                    "start": 92.38,
+                    "end": 92.7,
+                    "probability": 0.9993571639060974
+                },
+                {
+                    "word": " of",
+                    "start": 92.7,
+                    "end": 92.94,
+                    "probability": 0.9997362494468689
+                },
+                {
+                    "word": " the",
+                    "start": 92.94,
+                    "end": 93.02,
+                    "probability": 0.9994342923164368
+                },
+                {
+                    "word": " diversification",
+                    "start": 93.02,
+                    "end": 93.46,
+                    "probability": 0.9995851814746857
+                },
+                {
+                    "word": " ratio.",
+                    "start": 93.46,
+                    "end": 93.92,
+                    "probability": 0.999289870262146
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "seek": 8936,
+            "start": 94.16,
+            "end": 96.26,
+            "text": " So you find the maximum diversified portfolio",
+            "tokens": [
+                50622,
+                407,
+                291,
+                915,
+                264,
+                6674,
+                6111,
+                2587,
+                12583,
+                50721
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 94.16,
+                    "end": 94.56,
+                    "probability": 0.9637092351913452
+                },
+                {
+                    "word": " you",
+                    "start": 94.56,
+                    "end": 94.64,
+                    "probability": 0.9765358567237854
+                },
+                {
+                    "word": " find",
+                    "start": 94.64,
+                    "end": 94.86,
+                    "probability": 0.9996843338012695
+                },
+                {
+                    "word": " the",
+                    "start": 94.86,
+                    "end": 94.94,
+                    "probability": 0.9785717725753784
+                },
+                {
+                    "word": " maximum",
+                    "start": 94.94,
+                    "end": 95.32,
+                    "probability": 0.9985198378562927
+                },
+                {
+                    "word": " diversified",
+                    "start": 95.32,
+                    "end": 95.88,
+                    "probability": 0.9980182647705078
+                },
+                {
+                    "word": " portfolio",
+                    "start": 95.88,
+                    "end": 96.26,
+                    "probability": 0.9998602867126465
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "seek": 8936,
+            "start": 96.26,
+            "end": 99.38,
+            "text": " and you take the square of the diversification ratio",
+            "tokens": [
+                50721,
+                293,
+                291,
+                747,
+                264,
+                3732,
+                295,
+                264,
+                6111,
+                3774,
+                8509,
+                50873
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " and",
+                    "start": 96.26,
+                    "end": 97.12,
+                    "probability": 0.5648396015167236
+                },
+                {
+                    "word": " you",
+                    "start": 97.12,
+                    "end": 97.26,
+                    "probability": 0.9982646107673645
+                },
+                {
+                    "word": " take",
+                    "start": 97.26,
+                    "end": 97.44,
+                    "probability": 0.9986386895179749
+                },
+                {
+                    "word": " the",
+                    "start": 97.44,
+                    "end": 97.68,
+                    "probability": 0.9998974800109863
+                },
+                {
+                    "word": " square",
+                    "start": 97.68,
+                    "end": 98.2,
+                    "probability": 0.9998831748962402
+                },
+                {
+                    "word": " of",
+                    "start": 98.2,
+                    "end": 98.42,
+                    "probability": 0.9998971223831177
+                },
+                {
+                    "word": " the",
+                    "start": 98.42,
+                    "end": 98.5,
+                    "probability": 0.9989812970161438
+                },
+                {
+                    "word": " diversification",
+                    "start": 98.5,
+                    "end": 98.9,
+                    "probability": 0.9999818205833435
+                },
+                {
+                    "word": " ratio",
+                    "start": 98.9,
+                    "end": 99.38,
+                    "probability": 0.9997921586036682
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "seek": 8936,
+            "start": 99.38,
+            "end": 100.04,
+            "text": " of that portfolio.",
+            "tokens": [
+                50873,
+                295,
+                300,
+                12583,
+                13,
+                50906
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " of",
+                    "start": 99.38,
+                    "end": 99.6,
+                    "probability": 0.9997422099113464
+                },
+                {
+                    "word": " that",
+                    "start": 99.6,
+                    "end": 99.7,
+                    "probability": 0.9997711777687073
+                },
+                {
+                    "word": " portfolio.",
+                    "start": 99.7,
+                    "end": 100.04,
+                    "probability": 0.9995844960212708
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "seek": 8936,
+            "start": 100.22,
+            "end": 102.52,
+            "text": " If you do that for the 10 industry universe,",
+            "tokens": [
+                50906,
+                759,
+                291,
+                360,
+                300,
+                337,
+                264,
+                1266,
+                3518,
+                6445,
+                11,
+                51038
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " If",
+                    "start": 100.22,
+                    "end": 100.5,
+                    "probability": 0.9994357228279114
+                },
+                {
+                    "word": " you",
+                    "start": 100.5,
+                    "end": 100.6,
+                    "probability": 0.9999915361404419
+                },
+                {
+                    "word": " do",
+                    "start": 100.6,
+                    "end": 100.74,
+                    "probability": 0.9999843835830688
+                },
+                {
+                    "word": " that",
+                    "start": 100.74,
+                    "end": 100.98,
+                    "probability": 0.9999604225158691
+                },
+                {
+                    "word": " for",
+                    "start": 100.98,
+                    "end": 101.26,
+                    "probability": 0.997434675693512
+                },
+                {
+                    "word": " the",
+                    "start": 101.26,
+                    "end": 101.4,
+                    "probability": 0.9997292160987854
+                },
+                {
+                    "word": " 10",
+                    "start": 101.4,
+                    "end": 101.56,
+                    "probability": 0.9894009232521057
+                },
+                {
+                    "word": " industry",
+                    "start": 101.56,
+                    "end": 101.8,
+                    "probability": 0.972855806350708
+                },
+                {
+                    "word": " universe,",
+                    "start": 101.8,
+                    "end": 102.52,
+                    "probability": 0.9994515776634216
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "seek": 8936,
+            "start": 102.82,
+            "end": 105.02,
+            "text": " you discover that there's less than one and a half",
+            "tokens": [
+                51046,
+                291,
+                4411,
+                300,
+                456,
+                311,
+                1570,
+                813,
+                472,
+                293,
+                257,
+                1922,
+                51155
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " you",
+                    "start": 102.82,
+                    "end": 103.22,
+                    "probability": 0.9999377727508545
+                },
+                {
+                    "word": " discover",
+                    "start": 103.22,
+                    "end": 103.5,
+                    "probability": 0.9929072856903076
+                },
+                {
+                    "word": " that",
+                    "start": 103.5,
+                    "end": 103.76,
+                    "probability": 0.9998973608016968
+                },
+                {
+                    "word": " there's",
+                    "start": 103.76,
+                    "end": 104.04,
+                    "probability": 0.9994788765907288
+                },
+                {
+                    "word": " less",
+                    "start": 104.04,
+                    "end": 104.24,
+                    "probability": 0.9999467134475708
+                },
+                {
+                    "word": " than",
+                    "start": 104.24,
+                    "end": 104.46,
+                    "probability": 0.9999487400054932
+                },
+                {
+                    "word": " one",
+                    "start": 104.46,
+                    "end": 104.64,
+                    "probability": 0.9413507580757141
+                },
+                {
+                    "word": " and",
+                    "start": 104.64,
+                    "end": 104.78,
+                    "probability": 0.998485267162323
+                },
+                {
+                    "word": " a",
+                    "start": 104.78,
+                    "end": 104.82,
+                    "probability": 0.999772846698761
+                },
+                {
+                    "word": " half",
+                    "start": 104.82,
+                    "end": 105.02,
+                    "probability": 0.9998840093612671
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "seek": 8936,
+            "start": 105.02,
+            "end": 107.36,
+            "text": " independent bets across those 10 assets.",
+            "tokens": [
+                51155,
+                6695,
+                39922,
+                2108,
+                729,
+                1266,
+                9769,
+                13,
+                51270
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " independent",
+                    "start": 105.02,
+                    "end": 105.42,
+                    "probability": 0.9997190833091736
+                },
+                {
+                    "word": " bets",
+                    "start": 105.42,
+                    "end": 105.86,
+                    "probability": 0.9994332194328308
+                },
+                {
+                    "word": " across",
+                    "start": 105.86,
+                    "end": 106.58,
+                    "probability": 0.9996764659881592
+                },
+                {
+                    "word": " those",
+                    "start": 106.58,
+                    "end": 106.92,
+                    "probability": 0.9999780654907227
+                },
+                {
+                    "word": " 10",
+                    "start": 106.92,
+                    "end": 107.1,
+                    "probability": 0.9990984201431274
+                },
+                {
+                    "word": " assets.",
+                    "start": 107.1,
+                    "end": 107.36,
+                    "probability": 0.9923795461654663
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "seek": 8936,
+            "start": 107.52,
+            "end": 109.22,
+            "text": " So then we thought, okay, well, that's interesting.",
+            "tokens": [
+                51288,
+                407,
+                550,
+                321,
+                1194,
+                11,
+                1392,
+                11,
+                731,
+                11,
+                300,
+                311,
+                1880,
+                13,
+                51363
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 107.52,
+                    "end": 107.8,
+                    "probability": 0.998812198638916
+                },
+                {
+                    "word": " then",
+                    "start": 107.8,
+                    "end": 108.02,
+                    "probability": 0.9998816251754761
+                },
+                {
+                    "word": " we",
+                    "start": 108.02,
+                    "end": 108.16,
+                    "probability": 0.9998599290847778
+                },
+                {
+                    "word": " thought,",
+                    "start": 108.16,
+                    "end": 108.36,
+                    "probability": 0.9999886751174927
+                },
+                {
+                    "word": " okay,",
+                    "start": 108.44,
+                    "end": 108.64,
+                    "probability": 0.8584355115890503
+                },
+                {
+                    "word": " well,",
+                    "start": 108.68,
+                    "end": 108.8,
+                    "probability": 0.997546374797821
+                },
+                {
+                    "word": " that's",
+                    "start": 108.84,
+                    "end": 109.02,
+                    "probability": 0.9999447464942932
+                },
+                {
+                    "word": " interesting.",
+                    "start": 109.02,
+                    "end": 109.22,
+                    "probability": 0.9996976852416992
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "seek": 8936,
+            "start": 109.34,
+            "end": 110.64,
+            "text": " I wonder if we can get better results",
+            "tokens": [
+                51368,
+                286,
+                2441,
+                498,
+                321,
+                393,
+                483,
+                1101,
+                3542,
+                51440
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " I",
+                    "start": 109.34,
+                    "end": 109.42,
+                    "probability": 0.9999233484268188
+                },
+                {
+                    "word": " wonder",
+                    "start": 109.42,
+                    "end": 109.58,
+                    "probability": 0.9998866319656372
+                },
+                {
+                    "word": " if",
+                    "start": 109.58,
+                    "end": 109.72,
+                    "probability": 0.9999828338623047
+                },
+                {
+                    "word": " we",
+                    "start": 109.72,
+                    "end": 109.82,
+                    "probability": 0.9999215602874756
+                },
+                {
+                    "word": " can",
+                    "start": 109.82,
+                    "end": 109.94,
+                    "probability": 0.9999370574951172
+                },
+                {
+                    "word": " get",
+                    "start": 109.94,
+                    "end": 110.12,
+                    "probability": 0.9999697208404541
+                },
+                {
+                    "word": " better",
+                    "start": 110.12,
+                    "end": 110.4,
+                    "probability": 0.9999610185623169
+                },
+                {
+                    "word": " results",
+                    "start": 110.4,
+                    "end": 110.64,
+                    "probability": 0.9999717473983765
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "seek": 8936,
+            "start": 110.64,
+            "end": 112.92,
+            "text": " from another of the universes,",
+            "tokens": [
+                51440,
+                490,
+                1071,
+                295,
+                264,
+                50168,
+                11,
+                51553
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " from",
+                    "start": 110.64,
+                    "end": 111.06,
+                    "probability": 0.9998830556869507
+                },
+                {
+                    "word": " another",
+                    "start": 111.06,
+                    "end": 111.84,
+                    "probability": 0.9998927116394043
+                },
+                {
+                    "word": " of",
+                    "start": 111.84,
+                    "end": 112.16,
+                    "probability": 0.999911904335022
+                },
+                {
+                    "word": " the",
+                    "start": 112.16,
+                    "end": 112.3,
+                    "probability": 0.9999599456787109
+                },
+                {
+                    "word": " universes,",
+                    "start": 112.3,
+                    "end": 112.92,
+                    "probability": 0.9996832609176636
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "seek": 8936,
+            "start": 113.14,
+            "end": 116.76,
+            "text": " the 25 portfolios sorted on size and book to market also.",
+            "tokens": [
+                51563,
+                264,
+                3552,
+                11688,
+                2717,
+                25462,
+                322,
+                2744,
+                293,
+                1446,
+                281,
+                2142,
+                611,
+                13,
+                51740
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 113.14,
+                    "end": 113.32,
+                    "probability": 0.9997844099998474
+                },
+                {
+                    "word": " 25",
+                    "start": 113.32,
+                    "end": 113.64,
+                    "probability": 0.9994820952415466
+                },
+                {
+                    "word": " portfolios",
+                    "start": 113.64,
+                    "end": 115.04,
+                    "probability": 0.7412078529596329
+                },
+                {
+                    "word": " sorted",
+                    "start": 115.04,
+                    "end": 115.3,
+                    "probability": 0.994950532913208
+                },
+                {
+                    "word": " on",
+                    "start": 115.3,
+                    "end": 115.5,
+                    "probability": 0.9997016787528992
+                },
+                {
+                    "word": " size",
+                    "start": 115.5,
+                    "end": 115.82,
+                    "probability": 0.9993969202041626
+                },
+                {
+                    "word": " and",
+                    "start": 115.82,
+                    "end": 116.02,
+                    "probability": 0.9988234639167786
+                },
+                {
+                    "word": " book",
+                    "start": 116.02,
+                    "end": 116.16,
+                    "probability": 0.9679082036018372
+                },
+                {
+                    "word": " to",
+                    "start": 116.16,
+                    "end": 116.28,
+                    "probability": 0.8785918951034546
+                },
+                {
+                    "word": " market",
+                    "start": 116.28,
+                    "end": 116.5,
+                    "probability": 0.9993342757225037
+                },
+                {
+                    "word": " also.",
+                    "start": 116.5,
+                    "end": 116.76,
+                    "probability": 0.944053053855896
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "seek": 8936,
+            "start": 117.0,
+            "end": 119.1,
+            "text": " And in fact, we do get slightly better results.",
+            "tokens": [
+                51755,
+                400,
+                294,
+                1186,
+                11,
+                321,
+                360,
+                483,
+                4748,
+                1101,
+                3542,
+                13,
+                51860
+            ],
+            "temperature": 0.2,
+            "avg_logprob": -0.14809085953403528,
+            "compression_ratio": 1.9243986254295533,
+            "no_speech_prob": 0.0065885488875210285,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 117.0,
+                    "end": 117.44,
+                    "probability": 0.9962263107299805
+                },
+                {
+                    "word": " in",
+                    "start": 117.44,
+                    "end": 117.6,
+                    "probability": 0.9988387227058411
+                },
+                {
+                    "word": " fact,",
+                    "start": 117.6,
+                    "end": 117.86,
+                    "probability": 0.9999809265136719
+                },
+                {
+                    "word": " we",
+                    "start": 117.86,
+                    "end": 118.0,
+                    "probability": 0.9999792575836182
+                },
+                {
+                    "word": " do",
+                    "start": 118.0,
+                    "end": 118.1,
+                    "probability": 0.999981164932251
+                },
+                {
+                    "word": " get",
+                    "start": 118.1,
+                    "end": 118.28,
+                    "probability": 0.9999852180480957
+                },
+                {
+                    "word": " slightly",
+                    "start": 118.28,
+                    "end": 118.5,
+                    "probability": 0.9999163150787354
+                },
+                {
+                    "word": " better",
+                    "start": 118.5,
+                    "end": 118.78,
+                    "probability": 0.9999854564666748
+                },
+                {
+                    "word": " results.",
+                    "start": 118.78,
+                    "end": 119.1,
+                    "probability": 0.9999200105667114
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "seek": 11936,
+            "start": 119.36,
+            "end": 123.42,
+            "text": " But even across 25 portfolios",
+            "tokens": [
+                50365,
+                583,
+                754,
+                2108,
+                3552,
+                11688,
+                2717,
+                50571
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " But",
+                    "start": 119.36,
+                    "end": 119.62,
+                    "probability": 0.9320580363273621
+                },
+                {
+                    "word": " even",
+                    "start": 119.62,
+                    "end": 120.16,
+                    "probability": 0.999032735824585
+                },
+                {
+                    "word": " across",
+                    "start": 120.16,
+                    "end": 121.08,
+                    "probability": 0.999966025352478
+                },
+                {
+                    "word": " 25",
+                    "start": 121.08,
+                    "end": 121.76,
+                    "probability": 0.9989718198776245
+                },
+                {
+                    "word": " portfolios",
+                    "start": 121.76,
+                    "end": 123.42,
+                    "probability": 0.9996864199638367
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "seek": 11936,
+            "start": 123.42,
+            "end": 125.2,
+            "text": " sorted on both size and book to market,",
+            "tokens": [
+                50571,
+                25462,
+                322,
+                1293,
+                2744,
+                293,
+                1446,
+                281,
+                2142,
+                11,
+                50664
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " sorted",
+                    "start": 123.42,
+                    "end": 123.7,
+                    "probability": 0.9871676564216614
+                },
+                {
+                    "word": " on",
+                    "start": 123.7,
+                    "end": 123.9,
+                    "probability": 0.9999713897705078
+                },
+                {
+                    "word": " both",
+                    "start": 123.9,
+                    "end": 124.12,
+                    "probability": 0.9994465708732605
+                },
+                {
+                    "word": " size",
+                    "start": 124.12,
+                    "end": 124.34,
+                    "probability": 0.9505786895751953
+                },
+                {
+                    "word": " and",
+                    "start": 124.34,
+                    "end": 124.66,
+                    "probability": 0.9998854398727417
+                },
+                {
+                    "word": " book",
+                    "start": 124.66,
+                    "end": 124.84,
+                    "probability": 0.9945381283760071
+                },
+                {
+                    "word": " to",
+                    "start": 124.84,
+                    "end": 124.98,
+                    "probability": 0.4569944739341736
+                },
+                {
+                    "word": " market,",
+                    "start": 124.98,
+                    "end": 125.2,
+                    "probability": 0.9999428987503052
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "seek": 11936,
+            "start": 125.44,
+            "end": 127.92,
+            "text": " there's less than two independent sources of return.",
+            "tokens": [
+                50680,
+                456,
+                311,
+                1570,
+                813,
+                732,
+                6695,
+                7139,
+                295,
+                2736,
+                13,
+                50803
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " there's",
+                    "start": 125.44,
+                    "end": 126.06,
+                    "probability": 0.9994220733642578
+                },
+                {
+                    "word": " less",
+                    "start": 126.06,
+                    "end": 126.32,
+                    "probability": 0.9999662637710571
+                },
+                {
+                    "word": " than",
+                    "start": 126.32,
+                    "end": 126.48,
+                    "probability": 0.9999819993972778
+                },
+                {
+                    "word": " two",
+                    "start": 126.48,
+                    "end": 126.76,
+                    "probability": 0.9964582324028015
+                },
+                {
+                    "word": " independent",
+                    "start": 126.76,
+                    "end": 127.12,
+                    "probability": 0.9997811913490295
+                },
+                {
+                    "word": " sources",
+                    "start": 127.12,
+                    "end": 127.5,
+                    "probability": 0.9999566078186035
+                },
+                {
+                    "word": " of",
+                    "start": 127.5,
+                    "end": 127.74,
+                    "probability": 0.9999653100967407
+                },
+                {
+                    "word": " return.",
+                    "start": 127.74,
+                    "end": 127.92,
+                    "probability": 0.9999479055404663
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "seek": 11936,
+            "start": 128.26,
+            "end": 130.24,
+            "text": " What is the purpose of optimization?",
+            "tokens": [
+                50825,
+                708,
+                307,
+                264,
+                4334,
+                295,
+                19618,
+                30,
+                50922
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " What",
+                    "start": 128.26,
+                    "end": 128.68,
+                    "probability": 0.9995579123497009
+                },
+                {
+                    "word": " is",
+                    "start": 128.68,
+                    "end": 128.84,
+                    "probability": 0.9999971389770508
+                },
+                {
+                    "word": " the",
+                    "start": 128.84,
+                    "end": 128.94,
+                    "probability": 0.9999953508377075
+                },
+                {
+                    "word": " purpose",
+                    "start": 128.94,
+                    "end": 129.22,
+                    "probability": 0.9999814033508301
+                },
+                {
+                    "word": " of",
+                    "start": 129.22,
+                    "end": 129.54,
+                    "probability": 0.9999967813491821
+                },
+                {
+                    "word": " optimization?",
+                    "start": 129.54,
+                    "end": 130.24,
+                    "probability": 0.97276771068573
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "seek": 11936,
+            "start": 130.52,
+            "end": 134.24,
+            "text": " It is to maximize the opportunity for diversification.",
+            "tokens": [
+                50922,
+                467,
+                307,
+                281,
+                19874,
+                264,
+                2650,
+                337,
+                6111,
+                3774,
+                13,
+                51122
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " It",
+                    "start": 130.52,
+                    "end": 130.96,
+                    "probability": 0.999496340751648
+                },
+                {
+                    "word": " is",
+                    "start": 130.96,
+                    "end": 131.18,
+                    "probability": 0.9999915361404419
+                },
+                {
+                    "word": " to",
+                    "start": 131.18,
+                    "end": 131.4,
+                    "probability": 0.9999938011169434
+                },
+                {
+                    "word": " maximize",
+                    "start": 131.4,
+                    "end": 132.58,
+                    "probability": 0.9997057318687439
+                },
+                {
+                    "word": " the",
+                    "start": 132.58,
+                    "end": 133.02,
+                    "probability": 0.9999818801879883
+                },
+                {
+                    "word": " opportunity",
+                    "start": 133.02,
+                    "end": 133.34,
+                    "probability": 0.999991774559021
+                },
+                {
+                    "word": " for",
+                    "start": 133.34,
+                    "end": 133.74,
+                    "probability": 0.9999887943267822
+                },
+                {
+                    "word": " diversification.",
+                    "start": 133.74,
+                    "end": 134.24,
+                    "probability": 0.9999927282333374
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "seek": 11936,
+            "start": 134.58,
+            "end": 137.3,
+            "text": " Well, the fact that there's one and a half or two bets",
+            "tokens": [
+                51148,
+                1042,
+                11,
+                264,
+                1186,
+                300,
+                456,
+                311,
+                472,
+                293,
+                257,
+                1922,
+                420,
+                732,
+                39922,
+                51270
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " Well,",
+                    "start": 134.58,
+                    "end": 135.04,
+                    "probability": 0.9943767786026001
+                },
+                {
+                    "word": " the",
+                    "start": 135.06,
+                    "end": 135.12,
+                    "probability": 0.9999774694442749
+                },
+                {
+                    "word": " fact",
+                    "start": 135.12,
+                    "end": 135.44,
+                    "probability": 0.9999953508377075
+                },
+                {
+                    "word": " that",
+                    "start": 135.44,
+                    "end": 135.62,
+                    "probability": 0.9999939203262329
+                },
+                {
+                    "word": " there's",
+                    "start": 135.62,
+                    "end": 136.04,
+                    "probability": 0.9967522323131561
+                },
+                {
+                    "word": " one",
+                    "start": 136.04,
+                    "end": 136.34,
+                    "probability": 0.9503178000450134
+                },
+                {
+                    "word": " and",
+                    "start": 136.34,
+                    "end": 136.48,
+                    "probability": 0.9984130859375
+                },
+                {
+                    "word": " a",
+                    "start": 136.48,
+                    "end": 136.58,
+                    "probability": 0.9999276399612427
+                },
+                {
+                    "word": " half",
+                    "start": 136.58,
+                    "end": 136.74,
+                    "probability": 0.9999758005142212
+                },
+                {
+                    "word": " or",
+                    "start": 136.74,
+                    "end": 136.92,
+                    "probability": 0.9997630715370178
+                },
+                {
+                    "word": " two",
+                    "start": 136.92,
+                    "end": 137.08,
+                    "probability": 0.9997649788856506
+                },
+                {
+                    "word": " bets",
+                    "start": 137.08,
+                    "end": 137.3,
+                    "probability": 0.9967256784439087
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "seek": 11936,
+            "start": 137.3,
+            "end": 140.18,
+            "text": " across these 10 or 25 different assets",
+            "tokens": [
+                51270,
+                2108,
+                613,
+                1266,
+                420,
+                3552,
+                819,
+                9769,
+                51412
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " across",
+                    "start": 137.3,
+                    "end": 137.66,
+                    "probability": 0.9999277591705322
+                },
+                {
+                    "word": " these",
+                    "start": 137.66,
+                    "end": 137.98,
+                    "probability": 0.9999775886535645
+                },
+                {
+                    "word": " 10",
+                    "start": 137.98,
+                    "end": 138.26,
+                    "probability": 0.9990578293800354
+                },
+                {
+                    "word": " or",
+                    "start": 138.26,
+                    "end": 138.44,
+                    "probability": 0.9999748468399048
+                },
+                {
+                    "word": " 25",
+                    "start": 138.44,
+                    "end": 138.74,
+                    "probability": 0.9999533891677856
+                },
+                {
+                    "word": " different",
+                    "start": 138.74,
+                    "end": 139.28,
+                    "probability": 0.9999725818634033
+                },
+                {
+                    "word": " assets",
+                    "start": 139.28,
+                    "end": 140.18,
+                    "probability": 0.9997920393943787
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "seek": 11936,
+            "start": 140.18,
+            "end": 142.82,
+            "text": " means that there's no opportunity for diversification.",
+            "tokens": [
+                51412,
+                1355,
+                300,
+                456,
+                311,
+                572,
+                2650,
+                337,
+                6111,
+                3774,
+                13,
+                51550
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " means",
+                    "start": 140.18,
+                    "end": 141.16,
+                    "probability": 0.9951615929603577
+                },
+                {
+                    "word": " that",
+                    "start": 141.16,
+                    "end": 141.34,
+                    "probability": 0.9999592304229736
+                },
+                {
+                    "word": " there's",
+                    "start": 141.34,
+                    "end": 141.52,
+                    "probability": 0.9999966621398926
+                },
+                {
+                    "word": " no",
+                    "start": 141.52,
+                    "end": 141.64,
+                    "probability": 0.9999237060546875
+                },
+                {
+                    "word": " opportunity",
+                    "start": 141.64,
+                    "end": 142.0,
+                    "probability": 0.9999902248382568
+                },
+                {
+                    "word": " for",
+                    "start": 142.0,
+                    "end": 142.32,
+                    "probability": 0.9999942779541016
+                },
+                {
+                    "word": " diversification.",
+                    "start": 142.32,
+                    "end": 142.82,
+                    "probability": 0.9999961853027344
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "seek": 11936,
+            "start": 143.16,
+            "end": 146.32,
+            "text": " Now, if you run it on, for example,",
+            "tokens": [
+                51578,
+                823,
+                11,
+                498,
+                291,
+                1190,
+                309,
+                322,
+                11,
+                337,
+                1365,
+                11,
+                51718
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " Now,",
+                    "start": 143.16,
+                    "end": 143.72,
+                    "probability": 0.9995357990264893
+                },
+                {
+                    "word": " if",
+                    "start": 143.82,
+                    "end": 144.46,
+                    "probability": 0.9999854564666748
+                },
+                {
+                    "word": " you",
+                    "start": 144.46,
+                    "end": 144.58,
+                    "probability": 0.9999983310699463
+                },
+                {
+                    "word": " run",
+                    "start": 144.58,
+                    "end": 144.8,
+                    "probability": 0.9999855756759644
+                },
+                {
+                    "word": " it",
+                    "start": 144.8,
+                    "end": 144.94,
+                    "probability": 0.9999587535858154
+                },
+                {
+                    "word": " on,",
+                    "start": 144.94,
+                    "end": 145.24,
+                    "probability": 0.999951958656311
+                },
+                {
+                    "word": " for",
+                    "start": 145.32,
+                    "end": 145.94,
+                    "probability": 0.9999706745147705
+                },
+                {
+                    "word": " example,",
+                    "start": 145.94,
+                    "end": 146.32,
+                    "probability": 0.9999910593032837
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "seek": 11936,
+            "start": 146.32,
+            "end": 147.72,
+            "text": " the asset universe that we use",
+            "tokens": [
+                51725,
+                264,
+                11999,
+                6445,
+                300,
+                321,
+                764,
+                51788
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 146.32,
+                    "end": 146.6,
+                    "probability": 0.9999092817306519
+                },
+                {
+                    "word": " asset",
+                    "start": 146.6,
+                    "end": 146.86,
+                    "probability": 0.9075564742088318
+                },
+                {
+                    "word": " universe",
+                    "start": 146.86,
+                    "end": 147.16,
+                    "probability": 0.999935507774353
+                },
+                {
+                    "word": " that",
+                    "start": 147.16,
+                    "end": 147.46,
+                    "probability": 0.9998698234558105
+                },
+                {
+                    "word": " we",
+                    "start": 147.46,
+                    "end": 147.54,
+                    "probability": 0.9999867677688599
+                },
+                {
+                    "word": " use",
+                    "start": 147.54,
+                    "end": 147.72,
+                    "probability": 0.9998155236244202
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "seek": 11936,
+            "start": 147.72,
+            "end": 149.08,
+            "text": " for a global risk parity portfolio,",
+            "tokens": [
+                51788,
+                337,
+                257,
+                4338,
+                3148,
+                44747,
+                12583,
+                11,
+                51860
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14842074712117512,
+            "compression_ratio": 1.7453183520599251,
+            "no_speech_prob": 0.0008693245472386479,
+            "words": [
+                {
+                    "word": " for",
+                    "start": 147.72,
+                    "end": 147.9,
+                    "probability": 0.9999551773071289
+                },
+                {
+                    "word": " a",
+                    "start": 147.9,
+                    "end": 148.02,
+                    "probability": 0.9875997304916382
+                },
+                {
+                    "word": " global",
+                    "start": 148.02,
+                    "end": 148.2,
+                    "probability": 0.9937238097190857
+                },
+                {
+                    "word": " risk",
+                    "start": 148.2,
+                    "end": 148.44,
+                    "probability": 0.995322048664093
+                },
+                {
+                    "word": " parity",
+                    "start": 148.44,
+                    "end": 148.64,
+                    "probability": 0.9982646107673645
+                },
+                {
+                    "word": " portfolio,",
+                    "start": 148.64,
+                    "end": 149.08,
+                    "probability": 0.9992666840553284
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "seek": 14936,
+            "start": 149.36,
+            "end": 151.42,
+            "text": " well, now you've got five independent bets",
+            "tokens": [
+                50365,
+                731,
+                11,
+                586,
+                291,
+                600,
+                658,
+                1732,
+                6695,
+                39922,
+                50475
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " well,",
+                    "start": 149.36,
+                    "end": 149.74,
+                    "probability": 0.16559331119060516
+                },
+                {
+                    "word": " now",
+                    "start": 150.04,
+                    "end": 150.12,
+                    "probability": 0.9992413520812988
+                },
+                {
+                    "word": " you've",
+                    "start": 150.12,
+                    "end": 150.26,
+                    "probability": 0.9947572350502014
+                },
+                {
+                    "word": " got",
+                    "start": 150.26,
+                    "end": 150.34,
+                    "probability": 0.9997226595878601
+                },
+                {
+                    "word": " five",
+                    "start": 150.34,
+                    "end": 150.64,
+                    "probability": 0.9369271993637085
+                },
+                {
+                    "word": " independent",
+                    "start": 150.64,
+                    "end": 150.98,
+                    "probability": 0.9990739822387695
+                },
+                {
+                    "word": " bets",
+                    "start": 150.98,
+                    "end": 151.42,
+                    "probability": 0.9959487915039062
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "seek": 14936,
+            "start": 151.42,
+            "end": 152.7,
+            "text": " across 12 assets.",
+            "tokens": [
+                50475,
+                2108,
+                2272,
+                9769,
+                13,
+                50542
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " across",
+                    "start": 151.42,
+                    "end": 152.04,
+                    "probability": 0.9916382431983948
+                },
+                {
+                    "word": " 12",
+                    "start": 152.04,
+                    "end": 152.34,
+                    "probability": 0.9930094480514526
+                },
+                {
+                    "word": " assets.",
+                    "start": 152.34,
+                    "end": 152.7,
+                    "probability": 0.9985557198524475
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "seek": 14936,
+            "start": 152.94,
+            "end": 155.4,
+            "text": " If you run it on our 48 futures universe,",
+            "tokens": [
+                50551,
+                759,
+                291,
+                1190,
+                309,
+                322,
+                527,
+                11174,
+                26071,
+                6445,
+                11,
+                50675
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " If",
+                    "start": 152.94,
+                    "end": 153.36,
+                    "probability": 0.9996392726898193
+                },
+                {
+                    "word": " you",
+                    "start": 153.36,
+                    "end": 153.48,
+                    "probability": 0.9998859167098999
+                },
+                {
+                    "word": " run",
+                    "start": 153.48,
+                    "end": 153.66,
+                    "probability": 0.9999319314956665
+                },
+                {
+                    "word": " it",
+                    "start": 153.66,
+                    "end": 153.78,
+                    "probability": 0.9998868703842163
+                },
+                {
+                    "word": " on",
+                    "start": 153.78,
+                    "end": 153.92,
+                    "probability": 0.9997316002845764
+                },
+                {
+                    "word": " our",
+                    "start": 153.92,
+                    "end": 154.08,
+                    "probability": 0.9989480376243591
+                },
+                {
+                    "word": " 48",
+                    "start": 154.08,
+                    "end": 154.5,
+                    "probability": 0.9979215264320374
+                },
+                {
+                    "word": " futures",
+                    "start": 154.5,
+                    "end": 155.08,
+                    "probability": 0.9856603145599365
+                },
+                {
+                    "word": " universe,",
+                    "start": 155.08,
+                    "end": 155.4,
+                    "probability": 0.9995724558830261
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "seek": 14936,
+            "start": 155.74,
+            "end": 157.6,
+            "text": " you've got 13 independent bets.",
+            "tokens": [
+                50707,
+                291,
+                600,
+                658,
+                3705,
+                6695,
+                39922,
+                13,
+                50786
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " you've",
+                    "start": 155.74,
+                    "end": 156.32,
+                    "probability": 0.998684823513031
+                },
+                {
+                    "word": " got",
+                    "start": 156.32,
+                    "end": 156.38,
+                    "probability": 0.9961357116699219
+                },
+                {
+                    "word": " 13",
+                    "start": 156.38,
+                    "end": 156.88,
+                    "probability": 0.999817430973053
+                },
+                {
+                    "word": " independent",
+                    "start": 156.88,
+                    "end": 157.24,
+                    "probability": 0.9998158812522888
+                },
+                {
+                    "word": " bets.",
+                    "start": 157.24,
+                    "end": 157.6,
+                    "probability": 0.9998162388801575
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "seek": 14936,
+            "start": 157.84,
+            "end": 161.5,
+            "text": " So the broad lesson is that mean variance optimization",
+            "tokens": [
+                50810,
+                407,
+                264,
+                4152,
+                6898,
+                307,
+                300,
+                914,
+                21977,
+                19618,
+                50983
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " So",
+                    "start": 157.84,
+                    "end": 158.3,
+                    "probability": 0.966250479221344
+                },
+                {
+                    "word": " the",
+                    "start": 158.3,
+                    "end": 158.82,
+                    "probability": 0.9424547553062439
+                },
+                {
+                    "word": " broad",
+                    "start": 158.82,
+                    "end": 159.16,
+                    "probability": 0.9999386072158813
+                },
+                {
+                    "word": " lesson",
+                    "start": 159.16,
+                    "end": 159.52,
+                    "probability": 0.9999504089355469
+                },
+                {
+                    "word": " is",
+                    "start": 159.52,
+                    "end": 159.84,
+                    "probability": 0.9999282360076904
+                },
+                {
+                    "word": " that",
+                    "start": 159.84,
+                    "end": 160.44,
+                    "probability": 0.9959593415260315
+                },
+                {
+                    "word": " mean",
+                    "start": 160.44,
+                    "end": 160.78,
+                    "probability": 0.9968292117118835
+                },
+                {
+                    "word": " variance",
+                    "start": 160.78,
+                    "end": 161.08,
+                    "probability": 0.9862328767776489
+                },
+                {
+                    "word": " optimization",
+                    "start": 161.08,
+                    "end": 161.5,
+                    "probability": 0.9948782920837402
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "seek": 14936,
+            "start": 161.5,
+            "end": 162.78,
+            "text": " is extremely useful",
+            "tokens": [
+                50983,
+                307,
+                4664,
+                4420,
+                51044
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " is",
+                    "start": 161.5,
+                    "end": 162.02,
+                    "probability": 0.9999516010284424
+                },
+                {
+                    "word": " extremely",
+                    "start": 162.02,
+                    "end": 162.36,
+                    "probability": 0.9998881816864014
+                },
+                {
+                    "word": " useful",
+                    "start": 162.36,
+                    "end": 162.78,
+                    "probability": 0.9999188184738159
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "seek": 14936,
+            "start": 162.78,
+            "end": 164.62,
+            "text": " where there are several different",
+            "tokens": [
+                51044,
+                689,
+                456,
+                366,
+                2940,
+                819,
+                51134
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " where",
+                    "start": 162.78,
+                    "end": 163.54,
+                    "probability": 0.9840887784957886
+                },
+                {
+                    "word": " there",
+                    "start": 163.54,
+                    "end": 163.72,
+                    "probability": 0.9999419450759888
+                },
+                {
+                    "word": " are",
+                    "start": 163.72,
+                    "end": 163.92,
+                    "probability": 0.9999524354934692
+                },
+                {
+                    "word": " several",
+                    "start": 163.92,
+                    "end": 164.26,
+                    "probability": 0.9996328353881836
+                },
+                {
+                    "word": " different",
+                    "start": 164.26,
+                    "end": 164.62,
+                    "probability": 0.9994545578956604
+                }
+            ]
+        },
+        {
+            "id": 65,
+            "seek": 14936,
+            "start": 164.62,
+            "end": 165.76,
+            "text": " independent sources of risk.",
+            "tokens": [
+                51134,
+                6695,
+                7139,
+                295,
+                3148,
+                13,
+                51192
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " independent",
+                    "start": 164.62,
+                    "end": 164.98,
+                    "probability": 0.9986284971237183
+                },
+                {
+                    "word": " sources",
+                    "start": 164.98,
+                    "end": 165.28,
+                    "probability": 0.998954176902771
+                },
+                {
+                    "word": " of",
+                    "start": 165.28,
+                    "end": 165.54,
+                    "probability": 0.9998140931129456
+                },
+                {
+                    "word": " risk.",
+                    "start": 165.54,
+                    "end": 165.76,
+                    "probability": 0.9999500513076782
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "seek": 14936,
+            "start": 165.9,
+            "end": 170.62,
+            "text": " If risk is all dominated by one risk factor,",
+            "tokens": [
+                51205,
+                759,
+                3148,
+                307,
+                439,
+                23755,
+                538,
+                472,
+                3148,
+                5952,
+                11,
+                51434
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " If",
+                    "start": 165.9,
+                    "end": 166.48,
+                    "probability": 0.9997891783714294
+                },
+                {
+                    "word": " risk",
+                    "start": 166.48,
+                    "end": 167.28,
+                    "probability": 0.999916672706604
+                },
+                {
+                    "word": " is",
+                    "start": 167.28,
+                    "end": 167.64,
+                    "probability": 0.999982476234436
+                },
+                {
+                    "word": " all",
+                    "start": 167.64,
+                    "end": 167.94,
+                    "probability": 0.9999690055847168
+                },
+                {
+                    "word": " dominated",
+                    "start": 167.94,
+                    "end": 168.58,
+                    "probability": 0.9998290538787842
+                },
+                {
+                    "word": " by",
+                    "start": 168.58,
+                    "end": 168.96,
+                    "probability": 0.9993102550506592
+                },
+                {
+                    "word": " one",
+                    "start": 168.96,
+                    "end": 169.66,
+                    "probability": 0.991395890712738
+                },
+                {
+                    "word": " risk",
+                    "start": 169.66,
+                    "end": 170.22,
+                    "probability": 0.9999487400054932
+                },
+                {
+                    "word": " factor,",
+                    "start": 170.22,
+                    "end": 170.62,
+                    "probability": 0.9999288320541382
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "seek": 14936,
+            "start": 170.8,
+            "end": 173.18,
+            "text": " then there is no opportunity for diversification.",
+            "tokens": [
+                51448,
+                550,
+                456,
+                307,
+                572,
+                2650,
+                337,
+                6111,
+                3774,
+                13,
+                51569
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " then",
+                    "start": 170.8,
+                    "end": 171.28,
+                    "probability": 0.9996036887168884
+                },
+                {
+                    "word": " there",
+                    "start": 171.28,
+                    "end": 171.42,
+                    "probability": 0.9999799728393555
+                },
+                {
+                    "word": " is",
+                    "start": 171.42,
+                    "end": 171.6,
+                    "probability": 0.9999895095825195
+                },
+                {
+                    "word": " no",
+                    "start": 171.6,
+                    "end": 171.78,
+                    "probability": 0.9999064207077026
+                },
+                {
+                    "word": " opportunity",
+                    "start": 171.78,
+                    "end": 172.16,
+                    "probability": 0.9999698400497437
+                },
+                {
+                    "word": " for",
+                    "start": 172.16,
+                    "end": 172.58,
+                    "probability": 0.9999462366104126
+                },
+                {
+                    "word": " diversification.",
+                    "start": 172.58,
+                    "end": 173.18,
+                    "probability": 0.9518199265003204
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "seek": 14936,
+            "start": 173.4,
+            "end": 176.6,
+            "text": " And therefore, optimization is truly",
+            "tokens": [
+                51602,
+                400,
+                4412,
+                11,
+                19618,
+                307,
+                4908,
+                51738
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 173.4,
+                    "end": 174.08,
+                    "probability": 0.9980226755142212
+                },
+                {
+                    "word": " therefore,",
+                    "start": 174.08,
+                    "end": 174.44,
+                    "probability": 0.9969456791877747
+                },
+                {
+                    "word": " optimization",
+                    "start": 174.56,
+                    "end": 175.6,
+                    "probability": 0.994397759437561
+                },
+                {
+                    "word": " is",
+                    "start": 175.6,
+                    "end": 176.28,
+                    "probability": 0.9999638795852661
+                },
+                {
+                    "word": " truly",
+                    "start": 176.28,
+                    "end": 176.6,
+                    "probability": 0.9996435642242432
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "seek": 14936,
+            "start": 176.6,
+            "end": 179.34,
+            "text": " just operating on random noise.",
+            "tokens": [
+                51738,
+                445,
+                7447,
+                322,
+                4974,
+                5658,
+                13,
+                51864
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.14651883089983905,
+            "compression_ratio": 1.6833976833976834,
+            "no_speech_prob": 0.0011072141351178288,
+            "words": [
+                {
+                    "word": " just",
+                    "start": 176.6,
+                    "end": 177.52,
+                    "probability": 0.999235987663269
+                },
+                {
+                    "word": " operating",
+                    "start": 177.52,
+                    "end": 178.48,
+                    "probability": 0.9979769587516785
+                },
+                {
+                    "word": " on",
+                    "start": 178.48,
+                    "end": 178.82,
+                    "probability": 0.9994897842407227
+                },
+                {
+                    "word": " random",
+                    "start": 178.82,
+                    "end": 179.08,
+                    "probability": 0.9970765113830566
+                },
+                {
+                    "word": " noise.",
+                    "start": 179.08,
+                    "end": 179.34,
+                    "probability": 0.9588775634765625
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "seek": 17936,
+            "start": 179.36,
+            "end": 181.28,
+            "text": " And so it's obviously not going to be useful.",
+            "tokens": [
+                50365,
+                400,
+                370,
+                309,
+                311,
+                2745,
+                406,
+                516,
+                281,
+                312,
+                4420,
+                13,
+                50466
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.24420012746538436,
+            "compression_ratio": 0.8490566037735849,
+            "no_speech_prob": 0.00029827197431586683,
+            "words": [
+                {
+                    "word": " And",
+                    "start": 179.36,
+                    "end": 179.74,
+                    "probability": 0.8528098464012146
+                },
+                {
+                    "word": " so",
+                    "start": 179.74,
+                    "end": 179.9,
+                    "probability": 0.9992052912712097
+                },
+                {
+                    "word": " it's",
+                    "start": 179.9,
+                    "end": 180.08,
+                    "probability": 0.9858829379081726
+                },
+                {
+                    "word": " obviously",
+                    "start": 180.08,
+                    "end": 180.46,
+                    "probability": 0.5638037919998169
+                },
+                {
+                    "word": " not",
+                    "start": 180.46,
+                    "end": 180.86,
+                    "probability": 0.9994140863418579
+                },
+                {
+                    "word": " going",
+                    "start": 180.86,
+                    "end": 180.98,
+                    "probability": 0.7741521596908569
+                },
+                {
+                    "word": " to",
+                    "start": 180.98,
+                    "end": 181.06,
+                    "probability": 0.9994288086891174
+                },
+                {
+                    "word": " be",
+                    "start": 181.06,
+                    "end": 181.1,
+                    "probability": 0.9994422793388367
+                },
+                {
+                    "word": " useful.",
+                    "start": 181.1,
+                    "end": 181.28,
+                    "probability": 0.9995418787002563
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}

@@ -1,0 +1,991 @@
+{
+    "text": " I want to talk a minute away from the theoretical and more towards the practical, because when you trade in options, you're trading in an instrument that has much wider spreads than, say, something like cash equities. So we have this theoretical concept of the win rate, the win size, the loss size. You're trying to fix two and then choose a strategy such that the third bumps you into positive expectancy. But the actual implementation realities are going to move that win size and loss size potentially off of target. So how do you account for things like spreads and slippage in your premium calculations? And how do you try to minimize them from an implementation risk perspective?",
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            "start": 0.0,
+            "end": 3.72,
+            "text": " I want to talk a minute away from the theoretical and more towards the practical,",
+            "tokens": [
+                50365,
+                286,
+                528,
+                281,
+                751,
+                257,
+                3456,
+                1314,
+                490,
+                264,
+                20864,
+                293,
+                544,
+                3030,
+                264,
+                8496,
+                11,
+                50555
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.07759106833979769,
+            "compression_ratio": 1.6845878136200716,
+            "no_speech_prob": 0.0012255387846380472,
+            "words": [
+                {
+                    "word": " I",
+                    "start": 0.0,
+                    "end": 0.0,
+                    "probability": 0.9860522747039795
+                },
+                {
+                    "word": " want",
+                    "start": 0.0,
+                    "end": 0.1,
+                    "probability": 0.9585672616958618
+                },
+                {
+                    "word": " to",
+                    "start": 0.1,
+                    "end": 0.14,
+                    "probability": 0.999997615814209
+                },
+                {
+                    "word": " talk",
+                    "start": 0.14,
+                    "end": 0.32,
+                    "probability": 0.9999696016311646
+                },
+                {
+                    "word": " a",
+                    "start": 0.32,
+                    "end": 0.62,
+                    "probability": 0.9999943971633911
+                },
+                {
+                    "word": " minute",
+                    "start": 0.62,
+                    "end": 0.92,
+                    "probability": 0.9999746084213257
+                },
+                {
+                    "word": " away",
+                    "start": 0.92,
+                    "end": 1.36,
+                    "probability": 0.9999825954437256
+                },
+                {
+                    "word": " from",
+                    "start": 1.36,
+                    "end": 1.7,
+                    "probability": 0.9999939203262329
+                },
+                {
+                    "word": " the",
+                    "start": 1.7,
+                    "end": 1.78,
+                    "probability": 0.9999934434890747
+                },
+                {
+                    "word": " theoretical",
+                    "start": 1.78,
+                    "end": 2.2,
+                    "probability": 0.9999873638153076
+                },
+                {
+                    "word": " and",
+                    "start": 2.2,
+                    "end": 2.44,
+                    "probability": 0.9998669624328613
+                },
+                {
+                    "word": " more",
+                    "start": 2.44,
+                    "end": 2.62,
+                    "probability": 0.9999767541885376
+                },
+                {
+                    "word": " towards",
+                    "start": 2.62,
+                    "end": 3.02,
+                    "probability": 0.9999978542327881
+                },
+                {
+                    "word": " the",
+                    "start": 3.02,
+                    "end": 3.24,
+                    "probability": 0.9999938011169434
+                },
+                {
+                    "word": " practical,",
+                    "start": 3.24,
+                    "end": 3.72,
+                    "probability": 0.999983549118042
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "seek": 0,
+            "start": 3.82,
+            "end": 10.72,
+            "text": " because when you trade in options, you're trading in an instrument that has much wider spreads",
+            "tokens": [
+                50569,
+                570,
+                562,
+                291,
+                4923,
+                294,
+                3956,
+                11,
+                291,
+                434,
+                9529,
+                294,
+                364,
+                7198,
+                300,
+                575,
+                709,
+                11842,
+                25728,
+                50915
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.07759106833979769,
+            "compression_ratio": 1.6845878136200716,
+            "no_speech_prob": 0.0012255387846380472,
+            "words": [
+                {
+                    "word": " because",
+                    "start": 3.82,
+                    "end": 4.12,
+                    "probability": 0.999840259552002
+                },
+                {
+                    "word": " when",
+                    "start": 4.12,
+                    "end": 4.28,
+                    "probability": 0.9999876022338867
+                },
+                {
+                    "word": " you",
+                    "start": 4.28,
+                    "end": 4.5,
+                    "probability": 0.9998912811279297
+                },
+                {
+                    "word": " trade",
+                    "start": 4.5,
+                    "end": 5.02,
+                    "probability": 0.9998248219490051
+                },
+                {
+                    "word": " in",
+                    "start": 5.02,
+                    "end": 5.16,
+                    "probability": 0.9595440030097961
+                },
+                {
+                    "word": " options,",
+                    "start": 5.16,
+                    "end": 5.42,
+                    "probability": 0.996467113494873
+                },
+                {
+                    "word": " you're",
+                    "start": 5.7,
+                    "end": 5.98,
+                    "probability": 0.9999539852142334
+                },
+                {
+                    "word": " trading",
+                    "start": 5.98,
+                    "end": 6.32,
+                    "probability": 0.9995185136795044
+                },
+                {
+                    "word": " in",
+                    "start": 6.32,
+                    "end": 6.78,
+                    "probability": 0.999997615814209
+                },
+                {
+                    "word": " an",
+                    "start": 6.78,
+                    "end": 7.08,
+                    "probability": 0.7371464371681213
+                },
+                {
+                    "word": " instrument",
+                    "start": 7.08,
+                    "end": 8.16,
+                    "probability": 0.999984860420227
+                },
+                {
+                    "word": " that",
+                    "start": 8.16,
+                    "end": 8.48,
+                    "probability": 0.9999961853027344
+                },
+                {
+                    "word": " has",
+                    "start": 8.48,
+                    "end": 8.9,
+                    "probability": 0.9999947547912598
+                },
+                {
+                    "word": " much",
+                    "start": 8.9,
+                    "end": 9.42,
+                    "probability": 0.9999483823776245
+                },
+                {
+                    "word": " wider",
+                    "start": 9.42,
+                    "end": 9.9,
+                    "probability": 0.9998812675476074
+                },
+                {
+                    "word": " spreads",
+                    "start": 9.9,
+                    "end": 10.72,
+                    "probability": 0.9997707009315491
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "seek": 0,
+            "start": 10.72,
+            "end": 17.22,
+            "text": " than, say, something like cash equities. So we have this theoretical concept of the win rate,",
+            "tokens": [
+                50915,
+                813,
+                11,
+                584,
+                11,
+                746,
+                411,
+                6388,
+                1267,
+                1088,
+                13,
+                407,
+                321,
+                362,
+                341,
+                20864,
+                3410,
+                295,
+                264,
+                1942,
+                3314,
+                11,
+                51229
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.07759106833979769,
+            "compression_ratio": 1.6845878136200716,
+            "no_speech_prob": 0.0012255387846380472,
+            "words": [
+                {
+                    "word": " than,",
+                    "start": 10.72,
+                    "end": 11.56,
+                    "probability": 0.9971622824668884
+                },
+                {
+                    "word": " say,",
+                    "start": 11.6,
+                    "end": 11.82,
+                    "probability": 0.9990020394325256
+                },
+                {
+                    "word": " something",
+                    "start": 11.82,
+                    "end": 12.14,
+                    "probability": 0.9975946545600891
+                },
+                {
+                    "word": " like",
+                    "start": 12.14,
+                    "end": 12.5,
+                    "probability": 0.999977707862854
+                },
+                {
+                    "word": " cash",
+                    "start": 12.5,
+                    "end": 12.92,
+                    "probability": 0.9998487234115601
+                },
+                {
+                    "word": " equities.",
+                    "start": 12.92,
+                    "end": 13.38,
+                    "probability": 0.9999505877494812
+                },
+                {
+                    "word": " So",
+                    "start": 13.62,
+                    "end": 14.14,
+                    "probability": 0.882258951663971
+                },
+                {
+                    "word": " we",
+                    "start": 14.14,
+                    "end": 14.48,
+                    "probability": 0.963760256767273
+                },
+                {
+                    "word": " have",
+                    "start": 14.48,
+                    "end": 14.66,
+                    "probability": 0.9999963045120239
+                },
+                {
+                    "word": " this",
+                    "start": 14.66,
+                    "end": 14.82,
+                    "probability": 0.999991774559021
+                },
+                {
+                    "word": " theoretical",
+                    "start": 14.82,
+                    "end": 15.16,
+                    "probability": 0.9999771118164062
+                },
+                {
+                    "word": " concept",
+                    "start": 15.16,
+                    "end": 15.72,
+                    "probability": 0.9999898672103882
+                },
+                {
+                    "word": " of",
+                    "start": 15.72,
+                    "end": 16.22,
+                    "probability": 0.9999901056289673
+                },
+                {
+                    "word": " the",
+                    "start": 16.22,
+                    "end": 16.9,
+                    "probability": 0.9999727010726929
+                },
+                {
+                    "word": " win",
+                    "start": 16.9,
+                    "end": 17.04,
+                    "probability": 0.999782383441925
+                },
+                {
+                    "word": " rate,",
+                    "start": 17.04,
+                    "end": 17.22,
+                    "probability": 0.9948614239692688
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "seek": 0,
+            "start": 17.28,
+            "end": 21.86,
+            "text": " the win size, the loss size. You're trying to fix two and then choose a strategy such that the third",
+            "tokens": [
+                51229,
+                264,
+                1942,
+                2744,
+                11,
+                264,
+                4470,
+                2744,
+                13,
+                509,
+                434,
+                1382,
+                281,
+                3191,
+                732,
+                293,
+                550,
+                2826,
+                257,
+                5206,
+                1270,
+                300,
+                264,
+                2636,
+                51463
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.07759106833979769,
+            "compression_ratio": 1.6845878136200716,
+            "no_speech_prob": 0.0012255387846380472,
+            "words": [
+                {
+                    "word": " the",
+                    "start": 17.28,
+                    "end": 17.34,
+                    "probability": 0.9997723698616028
+                },
+                {
+                    "word": " win",
+                    "start": 17.34,
+                    "end": 17.52,
+                    "probability": 0.9994258880615234
+                },
+                {
+                    "word": " size,",
+                    "start": 17.52,
+                    "end": 17.84,
+                    "probability": 0.9996539354324341
+                },
+                {
+                    "word": " the",
+                    "start": 17.88,
+                    "end": 18.02,
+                    "probability": 0.9996064305305481
+                },
+                {
+                    "word": " loss",
+                    "start": 18.02,
+                    "end": 18.28,
+                    "probability": 0.9984346032142639
+                },
+                {
+                    "word": " size.",
+                    "start": 18.28,
+                    "end": 18.6,
+                    "probability": 0.9999433755874634
+                },
+                {
+                    "word": " You're",
+                    "start": 18.68,
+                    "end": 18.82,
+                    "probability": 0.9997840225696564
+                },
+                {
+                    "word": " trying",
+                    "start": 18.82,
+                    "end": 19.0,
+                    "probability": 0.9973458647727966
+                },
+                {
+                    "word": " to",
+                    "start": 19.0,
+                    "end": 19.1,
+                    "probability": 0.9999011754989624
+                },
+                {
+                    "word": " fix",
+                    "start": 19.1,
+                    "end": 19.46,
+                    "probability": 0.9986819624900818
+                },
+                {
+                    "word": " two",
+                    "start": 19.46,
+                    "end": 19.76,
+                    "probability": 0.9956274032592773
+                },
+                {
+                    "word": " and",
+                    "start": 19.76,
+                    "end": 19.98,
+                    "probability": 0.9997642636299133
+                },
+                {
+                    "word": " then",
+                    "start": 19.98,
+                    "end": 20.1,
+                    "probability": 0.9999338388442993
+                },
+                {
+                    "word": " choose",
+                    "start": 20.1,
+                    "end": 20.36,
+                    "probability": 0.9999167919158936
+                },
+                {
+                    "word": " a",
+                    "start": 20.36,
+                    "end": 20.58,
+                    "probability": 0.9999817609786987
+                },
+                {
+                    "word": " strategy",
+                    "start": 20.58,
+                    "end": 20.98,
+                    "probability": 0.9998657703399658
+                },
+                {
+                    "word": " such",
+                    "start": 20.98,
+                    "end": 21.22,
+                    "probability": 0.9997491240501404
+                },
+                {
+                    "word": " that",
+                    "start": 21.22,
+                    "end": 21.4,
+                    "probability": 0.9999110698699951
+                },
+                {
+                    "word": " the",
+                    "start": 21.4,
+                    "end": 21.56,
+                    "probability": 0.9996906518936157
+                },
+                {
+                    "word": " third",
+                    "start": 21.56,
+                    "end": 21.86,
+                    "probability": 0.999808132648468
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "seek": 0,
+            "start": 21.86,
+            "end": 29.8,
+            "text": " bumps you into positive expectancy. But the actual implementation realities are going to move that",
+            "tokens": [
+                51463,
+                27719,
+                291,
+                666,
+                3353,
+                42574,
+                13,
+                583,
+                264,
+                3539,
+                11420,
+                27785,
+                366,
+                516,
+                281,
+                1286,
+                300,
+                51861
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.07759106833979769,
+            "compression_ratio": 1.6845878136200716,
+            "no_speech_prob": 0.0012255387846380472,
+            "words": [
+                {
+                    "word": " bumps",
+                    "start": 21.86,
+                    "end": 22.26,
+                    "probability": 0.9996079802513123
+                },
+                {
+                    "word": " you",
+                    "start": 22.26,
+                    "end": 22.44,
+                    "probability": 0.9999418258666992
+                },
+                {
+                    "word": " into",
+                    "start": 22.44,
+                    "end": 22.64,
+                    "probability": 0.9999110698699951
+                },
+                {
+                    "word": " positive",
+                    "start": 22.64,
+                    "end": 23.02,
+                    "probability": 0.9996097683906555
+                },
+                {
+                    "word": " expectancy.",
+                    "start": 23.02,
+                    "end": 23.62,
+                    "probability": 0.9983678460121155
+                },
+                {
+                    "word": " But",
+                    "start": 24.04,
+                    "end": 24.64,
+                    "probability": 0.999651312828064
+                },
+                {
+                    "word": " the",
+                    "start": 24.64,
+                    "end": 24.92,
+                    "probability": 0.9999878406524658
+                },
+                {
+                    "word": " actual",
+                    "start": 24.92,
+                    "end": 25.26,
+                    "probability": 0.9997920393943787
+                },
+                {
+                    "word": " implementation",
+                    "start": 25.26,
+                    "end": 26.02,
+                    "probability": 0.9997051358222961
+                },
+                {
+                    "word": " realities",
+                    "start": 26.02,
+                    "end": 27.32,
+                    "probability": 0.9974697828292847
+                },
+                {
+                    "word": " are",
+                    "start": 27.32,
+                    "end": 28.28,
+                    "probability": 0.9999048709869385
+                },
+                {
+                    "word": " going",
+                    "start": 28.28,
+                    "end": 28.64,
+                    "probability": 0.9998189806938171
+                },
+                {
+                    "word": " to",
+                    "start": 28.64,
+                    "end": 28.96,
+                    "probability": 0.9999862909317017
+                },
+                {
+                    "word": " move",
+                    "start": 28.96,
+                    "end": 29.32,
+                    "probability": 0.9997960925102234
+                },
+                {
+                    "word": " that",
+                    "start": 29.32,
+                    "end": 29.8,
+                    "probability": 0.9931361675262451
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "seek": 2980,
+            "start": 29.8,
+            "end": 36.28,
+            "text": " win size and loss size potentially off of target. So how do you account for things like spreads and",
+            "tokens": [
+                50365,
+                1942,
+                2744,
+                293,
+                4470,
+                2744,
+                7263,
+                766,
+                295,
+                3779,
+                13,
+                407,
+                577,
+                360,
+                291,
+                2696,
+                337,
+                721,
+                411,
+                25728,
+                293,
+                50696
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.06773685415585835,
+            "compression_ratio": 1.4052287581699345,
+            "no_speech_prob": 9.009756468003616e-06,
+            "words": [
+                {
+                    "word": " win",
+                    "start": 29.8,
+                    "end": 29.96,
+                    "probability": 0.026776622980833054
+                },
+                {
+                    "word": " size",
+                    "start": 29.96,
+                    "end": 30.34,
+                    "probability": 0.8413835763931274
+                },
+                {
+                    "word": " and",
+                    "start": 30.34,
+                    "end": 30.64,
+                    "probability": 0.9836764931678772
+                },
+                {
+                    "word": " loss",
+                    "start": 30.64,
+                    "end": 30.92,
+                    "probability": 0.9613227248191833
+                },
+                {
+                    "word": " size",
+                    "start": 30.92,
+                    "end": 31.36,
+                    "probability": 0.9972129464149475
+                },
+                {
+                    "word": " potentially",
+                    "start": 31.36,
+                    "end": 32.08,
+                    "probability": 0.7431820631027222
+                },
+                {
+                    "word": " off",
+                    "start": 32.08,
+                    "end": 32.8,
+                    "probability": 0.9422616958618164
+                },
+                {
+                    "word": " of",
+                    "start": 32.8,
+                    "end": 32.96,
+                    "probability": 0.9862659573554993
+                },
+                {
+                    "word": " target.",
+                    "start": 32.96,
+                    "end": 33.28,
+                    "probability": 0.9178518652915955
+                },
+                {
+                    "word": " So",
+                    "start": 33.4,
+                    "end": 33.82,
+                    "probability": 0.9422902464866638
+                },
+                {
+                    "word": " how",
+                    "start": 33.82,
+                    "end": 33.96,
+                    "probability": 0.9231374263763428
+                },
+                {
+                    "word": " do",
+                    "start": 33.96,
+                    "end": 34.04,
+                    "probability": 0.9980764389038086
+                },
+                {
+                    "word": " you",
+                    "start": 34.04,
+                    "end": 34.12,
+                    "probability": 0.9992088675498962
+                },
+                {
+                    "word": " account",
+                    "start": 34.12,
+                    "end": 34.4,
+                    "probability": 0.9980011582374573
+                },
+                {
+                    "word": " for",
+                    "start": 34.4,
+                    "end": 34.68,
+                    "probability": 0.9996945858001709
+                },
+                {
+                    "word": " things",
+                    "start": 34.68,
+                    "end": 34.9,
+                    "probability": 0.9990140199661255
+                },
+                {
+                    "word": " like",
+                    "start": 34.9,
+                    "end": 35.3,
+                    "probability": 0.9994263648986816
+                },
+                {
+                    "word": " spreads",
+                    "start": 35.3,
+                    "end": 36.04,
+                    "probability": 0.9910277724266052
+                },
+                {
+                    "word": " and",
+                    "start": 36.04,
+                    "end": 36.28,
+                    "probability": 0.9911776185035706
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "seek": 2980,
+            "start": 36.28,
+            "end": 41.92,
+            "text": " slippage in your premium calculations? And how do you try to minimize them from an implementation",
+            "tokens": [
+                50696,
+                20129,
+                609,
+                294,
+                428,
+                12049,
+                20448,
+                30,
+                400,
+                577,
+                360,
+                291,
+                853,
+                281,
+                17522,
+                552,
+                490,
+                364,
+                11420,
+                50975
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.06773685415585835,
+            "compression_ratio": 1.4052287581699345,
+            "no_speech_prob": 9.009756468003616e-06,
+            "words": [
+                {
+                    "word": " slippage",
+                    "start": 36.28,
+                    "end": 36.98,
+                    "probability": 0.999540776014328
+                },
+                {
+                    "word": " in",
+                    "start": 36.98,
+                    "end": 37.52,
+                    "probability": 0.9845907688140869
+                },
+                {
+                    "word": " your",
+                    "start": 37.52,
+                    "end": 37.68,
+                    "probability": 0.9996402263641357
+                },
+                {
+                    "word": " premium",
+                    "start": 37.68,
+                    "end": 38.0,
+                    "probability": 0.9971718192100525
+                },
+                {
+                    "word": " calculations?",
+                    "start": 38.0,
+                    "end": 38.58,
+                    "probability": 0.995624840259552
+                },
+                {
+                    "word": " And",
+                    "start": 38.84,
+                    "end": 39.44,
+                    "probability": 0.9893575310707092
+                },
+                {
+                    "word": " how",
+                    "start": 39.44,
+                    "end": 39.74,
+                    "probability": 0.9984835982322693
+                },
+                {
+                    "word": " do",
+                    "start": 39.74,
+                    "end": 39.84,
+                    "probability": 0.999025821685791
+                },
+                {
+                    "word": " you",
+                    "start": 39.84,
+                    "end": 39.92,
+                    "probability": 0.9994471669197083
+                },
+                {
+                    "word": " try",
+                    "start": 39.92,
+                    "end": 40.0,
+                    "probability": 0.998921275138855
+                },
+                {
+                    "word": " to",
+                    "start": 40.0,
+                    "end": 40.08,
+                    "probability": 0.9988763928413391
+                },
+                {
+                    "word": " minimize",
+                    "start": 40.08,
+                    "end": 40.46,
+                    "probability": 0.9841824173927307
+                },
+                {
+                    "word": " them",
+                    "start": 40.46,
+                    "end": 40.92,
+                    "probability": 0.9995280504226685
+                },
+                {
+                    "word": " from",
+                    "start": 40.92,
+                    "end": 41.4,
+                    "probability": 0.9970230460166931
+                },
+                {
+                    "word": " an",
+                    "start": 41.4,
+                    "end": 41.54,
+                    "probability": 0.9943639039993286
+                },
+                {
+                    "word": " implementation",
+                    "start": 41.54,
+                    "end": 41.92,
+                    "probability": 0.9970248341560364
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "seek": 2980,
+            "start": 41.92,
+            "end": 42.74,
+            "text": " risk perspective?",
+            "tokens": [
+                50975,
+                3148,
+                4585,
+                30,
+                51023
+            ],
+            "temperature": 0.0,
+            "avg_logprob": -0.06773685415585835,
+            "compression_ratio": 1.4052287581699345,
+            "no_speech_prob": 9.009756468003616e-06,
+            "words": [
+                {
+                    "word": " risk",
+                    "start": 41.92,
+                    "end": 42.32,
+                    "probability": 0.9985761642456055
+                },
+                {
+                    "word": " perspective?",
+                    "start": 42.32,
+                    "end": 42.74,
+                    "probability": 0.9987791180610657
+                }
+            ]
+        }
+    ],
+    "language": "en"
+}
