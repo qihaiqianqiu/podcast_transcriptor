@@ -34,6 +34,12 @@ def diarization(sample_file_path:str) -> list:
         list: [output_path, file_name]
     """
     print(sample_file_path)
+    file_name, file_extensions = os.path.splitext(os.path.basename(sample_file_path))
+    with open(os.path.join(BASE_DIR, "transcripted.txt"), "r") as infile:
+        trancripted = infile.readlines()
+    if file_name + "\n" in trancripted:
+        print("Transcripted audio, skipping...")
+        return
     global pipeline
     start_time = time.time()
     waveform, sample_rate = torchaudio.load(sample_file_path)
@@ -44,9 +50,7 @@ def diarization(sample_file_path:str) -> list:
     output_path = os.path.dirname(output_path)
     if not os.path.exists(os.path.join(output_path, "diarizations")):
         os.mkdir(os.path.join(output_path, "diarizations"))
-    file_name, file_extensions = os.path.splitext(os.path.basename(sample_file_path))
     output_path = os.path.join(output_path, "diarizations", file_name + "_diarization.txt")
-
     with ProgressHook() as hook:
         dz = pipeline({"waveform": waveform, "sample_rate": sample_rate}, hook=hook)
 
@@ -120,7 +124,7 @@ def group_segments(diary_res:list) -> str:
         end = millisec(end)  #- spacermilli
         gidx += 1
         audio[start:end].export(str(gidx) + '.wav', format='wav')
-        print(f"group {gidx}: {start}--{end}")
+        #print(f"group {gidx}: {start}--{end}")
     return os.path.join(seg_path, diary)
 
 def transcription(segment_path:str) -> None:
@@ -138,7 +142,13 @@ def transcription(segment_path:str) -> None:
             df.to_csv(podcast + "_transcription.csv", encoding='utf-8', index=False)
             print("Transcription saved to ", podcast + "_transcription.csv")
     """
-    global model
+    global model, BASE_DIR
+    # Skip transcripted audio
+    with open(os.path.join(BASE_DIR, "transcripted.txt"), "r") as infile:
+        trancripted = infile.readlines()
+    if os.path.basename(segment_path) + "\n" in trancripted:
+        print("Transcripted audio, skipping...")
+        return
     os.chdir(segment_path)
     segments = [f for f in os.listdir(segment_path) if f.endswith(".wav")]
     for audiof in tqdm(segments):
@@ -146,6 +156,9 @@ def transcription(segment_path:str) -> None:
         file_name, file_extension = os.path.splitext(audiof)
         with open(file_name + '.json', "w") as outfile:
             json.dump(result, outfile, indent=4)  
+    with open(os.path.join(BASE_DIR, "transcripted.txt"), "a") as outfile:
+        outfile.write(os.path.basename(segment_path) + "\n")
+    print("Transcription log saved")
     
 def to_html():
     Source = 'Youtube'
@@ -184,7 +197,7 @@ if __name__ == "__main__":
     print("Device: ", device)
     pipeline.to(device)
     # Load the whisper model
-    model = whisper.load_model("large-v3", device=device)
+    model = whisper.load_model("large", device=device)
     
     dir_lst = [d for d in os.listdir(BASE_DIR) if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith(".")]
     soundtracks = [os.path.join(BASE_DIR, d, "original_soundtrack") for d in dir_lst]
