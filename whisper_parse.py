@@ -182,10 +182,13 @@ def to_html():
     postS = '\t</body>\n</html>'
     
 def one_punch(audio_path:str) -> None:
-    res = diarization(audio_path)
-    segmented_path = group_segments(res)
-    print(segmented_path)
-    transcription(segmented_path)   
+    try:
+        res = diarization(audio_path)
+        segmented_path = group_segments(res)
+        print(segmented_path)
+        transcription(segmented_path)   
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
