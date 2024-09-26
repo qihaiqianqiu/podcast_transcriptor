@@ -1,0 +1,960 @@
+[00:00:000.03 --> 00:00:001.53] [Interviewer]  All right, are we ready to go?
+[00:00:002.07 --> 00:00:002.39] [Customer]  Very cool.
+[00:00:002.75 --> 00:00:003.07] [Customer]  Let's go.
+[00:00:003.54 --> 00:00:008.80] [Interviewer]  All right, three, two, one, let's dance.
+[00:00:012.18 --> 00:00:016.88] [Interviewer]  Hello and welcome everyone. I'm Corey Hofstein and this is Flirting with Models,
+[00:00:016.96 --> 00:00:022.56] [Interviewer]  the podcast that pulls back the curtain to discover the human factor behind the quantitative strategy.
+[00:00:024.68 --> 00:00:028.58] [Interviewer]  Corey Hofstein is the co-founder and chief investment officer of Newfound Research.
+[00:00:028.80 --> 00:00:033.28] [Interviewer]  Due to industry regulations, he will not discuss any of Newfound Research's funds on this podcast.
+[00:00:033.54 --> 00:00:037.82] [Interviewer]  All opinions expressed by podcast participants are solely their own opinion and do not reflect
+[00:00:037.82 --> 00:00:042.32] [Interviewer]  the opinion of Newfound Research. This podcast is for informational purposes only and should
+[00:00:042.32 --> 00:00:046.30] [Interviewer]  not be relied upon as a basis for investment decisions. Clients of Newfound Research may
+[00:00:046.30 --> 00:00:050.30] [Interviewer]  maintain positions and securities discussed in this podcast. For more information, visit
+[00:00:050.30 --> 00:01:001.72] [Interviewer]  thinknewfound.com. My guest is Artur Sepp, Director of Research at Quantica Capital AG in Zurich.
+[00:01:002.18 --> 00:01:003.50] [Interviewer]  In 2008, he was the first to launch a new research platform called Newfound Research.
+[00:01:003.50 --> 00:01:003.52] [Interviewer]  In 2008, he was the first to launch a new research platform called Newfound Research.
+[00:01:003.54 --> 00:01:006.92] [Interviewer]  In 2008, Artur was working on structured credit products for Merrill Lynch,
+[00:01:007.16 --> 00:01:013.52] [Interviewer]  giving him a front row seat to the ensuing credit crisis. We use this experience as a jumping off
+[00:01:013.52 --> 00:01:019.58] [Interviewer]  point for our conversation with Artur providing both pragmatic and philosophical lessons learned.
+[00:01:020.14 --> 00:01:026.72] [Interviewer]  One of those key lessons was the role of liquidity, which Artur argues is the key factor behind many
+[00:01:026.72 --> 00:01:032.88] [Interviewer]  premia we see in the market. Artur's focus on liquidity grew as he transitioned to London
+[00:01:032.88 --> 00:01:033.52] [Interviewer]  as a business leader. He was a business leader for a long time, but he was also a business leader
+[00:01:033.52 --> 00:01:033.66] [Interviewer]  for a long time, but he was also a business leader for a long time, but he was also a business leader
+[00:01:033.66 --> 00:01:038.26] [Interviewer]  as an equity derivatives quant, where he was responsible for building models to hedge options
+[00:01:038.26 --> 00:01:044.92] [Interviewer]  on illiquid underlying assets. Here we get into the nitty gritty, discussing a paper Artur wrote
+[00:01:044.92 --> 00:01:050.36] [Interviewer]  about the practical realities of delta hedging options under a framework of discrete hedging
+[00:01:050.36 --> 00:01:057.40] [Interviewer]  and transaction costs. In 2015, Artur moved to Julius Baer's advisory solutions group in
+[00:01:057.40 --> 00:02:003.10] [Interviewer]  Switzerland, where he served as a client facing advocate for alternative risk premia strategies.
+[00:02:003.52 --> 00:02:009.08] [Interviewer]  Here Artur had to learn how to translate his deep quantitative knowledge into client understanding.
+[00:02:009.58 --> 00:02:015.32] [Interviewer]  He shares with us some techniques and tricks he learned for effectively communicating what can be
+[00:02:015.32 --> 00:02:022.20] [Interviewer]  rather complex ideas. Today, Artur works at Quantica Capital, whose flagship product is a
+[00:02:022.20 --> 00:02:027.60] [Interviewer]  managed future strategy. I asked Artur for his opinion on recent struggles in the managed future
+[00:02:027.60 --> 00:02:033.28] [Interviewer]  space and what he thinks the future for trend following managers will look like. You definitely
+[00:02:033.28 --> 00:02:039.08] [Interviewer]  won't want to miss his answer. Artur is a fountain of quant knowledge and offers the unique perspective
+[00:02:039.08 --> 00:02:045.08] [Interviewer]  of someone who has both spent time deep in the weeds and time trying to explain the esoteric.
+[00:02:045.24 --> 00:02:047.90] [Interviewer]  There are lots of gems in this one, so stay tuned.
+[00:02:050.98 --> 00:02:053.80] [Interviewer]  Artur, thank you for joining me on the show today.
+[00:02:054.37 --> 00:02:055.67] [Customer]  Hi, Kory. You're welcome.
+[00:02:056.12 --> 00:02:057.32] [Interviewer]  Really excited to have you here.
+[00:02:057.38 --> 00:03:001.58] [Interviewer]  This is one of those times where I feel like this podcast could probably run four hours.
+[00:03:001.70 --> 00:03:003.64] [Interviewer]  There's so many interesting things to talk to you about.
+[00:03:004.12 --> 00:03:006.88] [Interviewer]  So many different ways in which we overlap in our research.
+[00:03:007.20 --> 00:03:010.70] [Interviewer]  Normally, I like to give guests a chance to sort of give some background, but I'm just
+[00:03:010.70 --> 00:03:016.00] [Interviewer]  going to dive right in to your story sort of midway, try to pick up the thread based
+[00:03:016.00 --> 00:03:019.62] [Interviewer]  on conversations that we've had in the past, because I think that's the best way to sort
+[00:03:019.62 --> 00:03:021.16] [Interviewer]  of kick off in this conversation.
+[00:03:021.16 --> 00:03:026.26] [Interviewer]  And so where I want to begin is talking to you about your 2008 experience.
+[00:03:026.90 --> 00:03:032.76] [Interviewer]  I know that in 2008, you were working at Merrill Lynch credit derivatives desk.
+[00:03:032.90 --> 00:03:039.00] [Interviewer]  You were doing structured credit work, and that gave you a real insider's view as to
+[00:03:039.00 --> 00:03:043.16] [Interviewer]  how the 2008 crisis manifested really within the bank.
+[00:03:043.40 --> 00:03:048.38] [Interviewer]  And so what I was hoping you could do is sort of start the conversation exploring some of
+[00:03:048.38 --> 00:03:049.94] [Interviewer]  the things that you saw at that time.
+[00:03:050.00 --> 00:03:051.14] [Interviewer]  How the crisis unfolded.
+[00:03:051.16 --> 00:03:053.80] [Interviewer]  And what you learned and what your experience was like.
+[00:03:054.34 --> 00:03:059.70] [Customer]  Yes, definitely. I think it was a great time to start a career.
+[00:04:000.24 --> 00:04:003.24] [Customer]  Enormous experience that you can only get in a lifetime.
+[00:04:004.22 --> 00:04:007.00] [Customer]  I think going pre-crisis, the reasons are known.
+[00:04:007.28 --> 00:04:009.18] [Customer]  You can read a few books.
+[00:04:010.34 --> 00:04:015.30] [Customer]  And from an insider point of view, I think what happened is greed, of course.
+[00:04:015.30 --> 00:04:028.16] [Customer]  I think going back to 2000, after the economic slowdown, investment banking was looking for new opportunities to enter the field.
+[00:04:028.34 --> 00:04:032.46] [Customer]  To start creating new products that were also demanded by investors.
+[00:04:032.76 --> 00:04:035.86] [Customer]  At that time, we also had a period of low interest rates.
+[00:04:036.16 --> 00:04:040.14] [Customer]  So everyone was looking for risk, to take risk.
+[00:04:041.06 --> 00:04:044.82] [Customer]  And of course, investment banking saw an opportunity.
+[00:04:045.30 --> 00:04:046.22] [Customer]  And the idea is simple.
+[00:04:046.40 --> 00:04:049.88] [Customer]  If you take what this portfolio theory tells us all about.
+[00:04:050.12 --> 00:04:057.60] [Customer]  If you take something that's uncorrelated, you can remove idiosyncratic risk.
+[00:04:057.94 --> 00:05:002.42] [Customer]  Idiosyncratic risk can be linearly reduced in a number of your instruments.
+[00:05:003.20 --> 00:05:010.80] [Customer]  That was all about creating credit default tranches or mortgage bonds.
+[00:05:011.08 --> 00:05:012.94] [Customer]  And then, of course, what happened?
+[00:05:013.42 --> 00:05:015.02] [Customer]  It was still not enough.
+[00:05:015.30 --> 00:05:027.44] [Customer]  So people, I mean, if you say, normally, credit defaults, the spread on corporate bonds is maybe 100 basis points.
+[00:05:027.60 --> 00:05:030.44] [Customer]  In normal times, it goes to 50 basis points.
+[00:05:030.56 --> 00:05:032.94] [Customer]  So at a certain point, it was not enough.
+[00:05:033.54 --> 00:05:037.58] [Customer]  People wanted to have, say, 2-3% of LIBOR.
+[00:05:038.30 --> 00:05:040.62] [Customer]  Investment banking came up with a solution.
+[00:05:040.90 --> 00:05:045.06] [Customer]  So effectively, you take, say, mortgages.
+[00:05:045.06 --> 00:05:051.42] [Customer]  It started with, say, triple-taught mortgages and then went to more subprime mortgages.
+[00:05:051.66 --> 00:05:052.88] [Customer]  But the idea is simple.
+[00:05:053.08 --> 00:05:054.72] [Customer]  So you take a few mortgages.
+[00:05:054.88 --> 00:05:058.14] [Customer]  You bond them into a special utility vehicle.
+[00:05:058.92 --> 00:06:007.24] [Customer]  And the top part will get like AAA rating because it's very rare that everything would default in your pool.
+[00:06:008.22 --> 00:06:009.36] [Customer]  So what happened?
+[00:06:009.56 --> 00:06:013.36] [Customer]  There was big demand from, say, institutionals.
+[00:06:013.36 --> 00:06:015.46] [Customer]  And the bank filled the niche.
+[00:06:015.66 --> 00:06:022.32] [Customer]  At certain point, though, you need to do origination of mortgages or facet-backed securities.
+[00:06:022.90 --> 00:06:026.90] [Customer]  And at a certain point, it was replaced just by synthetic securities.
+[00:06:027.30 --> 00:06:036.42] [Customer]  So instead of, say, giving someone a loan and structuring into a mortgage bond, you just reference.
+[00:06:036.76 --> 00:06:040.60] [Customer]  And with reference, the problem is that you can reference multiple securities.
+[00:06:040.60 --> 00:06:045.92] [Customer]  So one mortgage could be referenced by hundreds of synthetic bonds.
+[00:06:046.18 --> 00:06:052.36] [Customer]  And on banking side, then it became a machine that unfortunately you need an inventory.
+[00:06:052.66 --> 00:06:054.22] [Customer]  Bank ended up having inventory.
+[00:06:054.96 --> 00:07:002.16] [Customer]  And of course, when everything goes up and if you keep an inventory of risky stuff, it's okay.
+[00:07:002.34 --> 00:07:003.90] [Customer]  You can make extra money.
+[00:07:004.12 --> 00:07:006.14] [Customer]  But the problem started with liquidity.
+[00:07:006.38 --> 00:07:010.14] [Customer]  Once liquidity dries out, you cannot sell your inventory.
+[00:07:010.14 --> 00:07:013.92] [Customer]  It starts draining your balance sheet.
+[00:07:013.96 --> 00:07:015.70] [Customer]  It's what happens in 2007.
+[00:07:016.10 --> 00:07:020.84] [Customer]  And then in the end, you have too much inventory.
+[00:07:021.30 --> 00:07:033.06] [Customer]  On top of that, example was with several banks that their treasury department invested in the very same AAA securities that started to lose in value.
+[00:07:033.24 --> 00:07:038.02] [Customer]  It was both on liability and on asset side that you get double-heat.
+[00:07:038.52 --> 00:07:040.00] [Customer]  But going to specifics.
+[00:07:040.14 --> 00:07:046.70] [Customer]  So I'm going to go specifically to say modeling because my role was always structure strategist.
+[00:07:046.82 --> 00:07:047.96] [Customer]  I develop models.
+[00:07:048.14 --> 00:07:055.52] [Customer]  I was responsible for giving accurate prices for managing the risk and to give support.
+[00:07:056.00 --> 00:07:059.14] [Customer]  And what happened actually interesting was also oversight.
+[00:07:059.42 --> 00:08:007.12] [Customer]  So imagine simple credit derivatives index would refer a simple way to understand these securities.
+[00:08:007.24 --> 00:08:008.46] [Customer]  It's like ATF.
+[00:08:008.46 --> 00:08:010.24] [Customer]  You have ATF on cash bonds.
+[00:08:011.26 --> 00:08:015.02] [Customer]  So ATF will reference several underlying bonds.
+[00:08:016.00 --> 00:08:026.40] [Customer]  And for risk perspective, if you want to say compute some credit duration or some sensitivity to credit, you need to price individual securities.
+[00:08:026.88 --> 00:08:033.50] [Customer]  And of course, if they are defaultable securities, it can happen that one of the bonds defaults and it should not affect your pricing.
+[00:08:033.68 --> 00:08:035.74] [Customer]  It just is nothing.
+[00:08:035.74 --> 00:08:043.80] [Customer]  But actually, the whole derivatives at one of the biggest broker dealers was not able to account for defaulted names.
+[00:08:044.18 --> 00:08:049.14] [Customer]  So in fact, a company could default and you still have bonds.
+[00:08:049.58 --> 00:09:000.08] [Customer]  And you know that there must be some pre-recovery before the market participants settle the recovery, maybe a few months.
+[00:09:000.92 --> 00:09:004.08] [Customer]  Bonds are still there, but you cannot price it.
+[00:09:004.70 --> 00:09:005.72] [Customer]  That was all.
+[00:09:005.72 --> 00:09:006.06] [Customer]  So you have oversight.
+[00:09:006.84 --> 00:09:013.22] [Customer]  Effectively, you want to put, say, going back to our ATF example, you want to put value of zero.
+[00:09:013.38 --> 00:09:015.24] [Customer]  But you cannot because it's a contract.
+[00:09:016.10 --> 00:09:019.80] [Customer]  So another thing to try, you want to put duration to zero.
+[00:09:019.88 --> 00:09:021.96] [Customer]  Then you still can compute your risk.
+[00:09:022.78 --> 00:09:025.86] [Customer]  And to put duration to zero, there is one way.
+[00:09:025.92 --> 00:09:027.02] [Customer]  You just bump the spreads.
+[00:09:027.22 --> 00:09:030.96] [Customer]  You can put a spread, maybe two or three thousand.
+[00:09:031.08 --> 00:09:033.20] [Customer]  Then the bond will have zero value.
+[00:09:033.92 --> 00:09:034.92] [Customer]  It's what we did.
+[00:09:035.76 --> 00:09:037.56] [Customer]  So to tell you this.
+[00:09:037.76 --> 00:09:045.52] [Customer]  But in Shinsa, like, say, biggest learning experience is always be susceptible to models.
+[00:09:045.64 --> 00:09:050.48] [Customer]  The model is only as good as first the assumptions that you assume.
+[00:09:051.44 --> 00:09:054.84] [Customer]  And the second is market, say, market prices.
+[00:09:055.04 --> 00:10:000.18] [Customer]  If you assume that you can't say you can use.
+[00:10:000.32 --> 00:10:004.78] [Customer]  So model always applied for more liquid securities, like what we are talking.
+[00:10:004.78 --> 00:10:006.72] [Customer]  Say, cash bond is a liquid security.
+[00:10:007.50 --> 00:10:017.76] [Customer]  And if you say I can't interpret, if I use a liquid securities like credit default swap and treasury curve, in practice, I can replicate.
+[00:10:018.06 --> 00:10:021.02] [Customer]  I can replicate the fair value of this bond.
+[00:10:021.48 --> 00:10:025.30] [Customer]  But given that it's liquid, the market is liquid enough.
+[00:10:025.88 --> 00:10:033.24] [Customer]  And what actually another example of what happened in COO8, exactly this token convertible arbitrage.
+[00:10:033.32 --> 00:10:034.76] [Customer]  Or even cash arbitrage.
+[00:10:034.78 --> 00:10:040.86] [Customer]  If you say if I'm long bond and I buy protection, I'm neutralizing.
+[00:10:041.32 --> 00:10:043.86] [Customer]  So I can also hedge my treasury for.
+[00:10:045.78 --> 00:10:048.36] [Customer]  And what I am after is a spread.
+[00:10:048.54 --> 00:10:053.04] [Customer]  It's been yield that I get on cash bond, which has some several components.
+[00:10:053.30 --> 00:10:054.80] [Customer]  It may be callable bond.
+[00:10:055.00 --> 00:11:001.18] [Customer]  So OIS is typically higher than I would pay to protect it.
+[00:11:001.68 --> 00:11:003.92] [Customer]  But what actually happened in COO8.
+[00:11:004.52 --> 00:11:008.82] [Customer]  There was wide, wide spread, almost 5-6% of several bonds.
+[00:11:009.66 --> 00:11:013.10] [Customer]  Meaning that if you owe cash bond, you would be at disadvantage.
+[00:11:013.70 --> 00:11:016.46] [Customer]  Even though you would be hedged with CDS.
+[00:11:016.94 --> 00:11:025.20] [Customer]  But because CDS price swaps were more liquid than the underlying bonds, you could have negative P&L.
+[00:11:025.40 --> 00:11:026.62] [Customer]  Even though you would be hedged.
+[00:11:026.82 --> 00:11:027.64] [Customer]  So to summarize.
+[00:11:028.78 --> 00:11:030.92] [Customer]  Always be critical of model.
+[00:11:031.04 --> 00:11:033.90] [Customer]  And always be critical of what you fit into it.
+[00:11:033.92 --> 00:11:034.34] [Customer]  Your model.
+[00:11:034.78 --> 00:11:037.22] [Customer]  Is there a recovery plan?
+[00:11:037.42 --> 00:11:043.36] [Customer]  If say the market was frozen and I still need to price my securities.
+[00:11:044.12 --> 00:11:046.58] [Customer]  Is your model allows for that or not?
+[00:11:047.04 --> 00:11:050.34] [Interviewer]  So I want to pick up on that idea of what happens when the market's frozen, right?
+[00:11:050.42 --> 00:11:053.84] [Interviewer]  You mentioned this idea of price via replication.
+[00:11:054.38 --> 00:12:001.70] [Interviewer]  I know that in less liquid markets, there's often this sort of idea of price via interpolation,
+[00:12:001.72 --> 00:12:007.18] [Interviewer]  that you can look at similar enough securities and try to come up with a price for something
+[00:12:007.18 --> 00:12:008.60] [Interviewer]  that maybe hasn't traded for a while.
+[00:12:008.90 --> 00:12:013.74] [Interviewer]  But the fundamental assumption there is that liquidity exists somewhere in the market.
+[00:12:013.74 --> 00:12:017.82] [Interviewer]  And I know that in 2008, that assumption was really challenged, right?
+[00:12:017.88 --> 00:12:022.20] [Interviewer]  That if there's no liquidity anywhere in the market, or the securities that do have
+[00:12:022.20 --> 00:12:027.22] [Interviewer]  liquidity are not similar at all to what you're pricing, ultimately your model breaks for
+[00:12:027.22 --> 00:12:027.56] [Interviewer]  pricing.
+[00:12:027.76 --> 00:12:032.38] [Interviewer]  So what does the solution look like for a market environment like that when there is
+[00:12:032.38 --> 00:12:032.94] [Interviewer]  no liquidity?
+[00:12:033.08 --> 00:12:039.08] [Interviewer]  How do you handle an environment where you can't price necessarily via interpolation
+[00:12:039.08 --> 00:12:040.22] [Interviewer]  of other like securities?
+[00:12:040.38 --> 00:12:040.70] [Interviewer]  Yeah.
+[00:12:041.02 --> 00:12:047.38] [Customer]  I think to answer it shortly, if you say we have different agents, right?
+[00:12:047.50 --> 00:12:054.33] [Customer]  If you're an investor and you know that some of your liabilities you wouldn't be able to value correctly,
+[00:12:055.40 --> 00:13:001.99] [Customer]  you need to introduce this period of liquidity where your liabilities cannot be priced accurately.
+[00:13:003.07 --> 00:13:010.21] [Customer]  And the only way to say hedge it is to bring something liquid that can cover your risk.
+[00:13:010.21 --> 00:13:013.87] [Customer]  So, for example, say cash bonds.
+[00:13:014.14 --> 00:13:018.88] [Customer]  If you are a long cash bond, say you can overlay with credit default.
+[00:13:019.42 --> 00:13:023.04] [Customer]  Again, there is all this since as a basis.
+[00:13:023.49 --> 00:13:036.57] [Customer]  But usually in these situations, first of all, model the period of how under what conditions you can have this period of unfavorable pricing for you.
+[00:13:036.76 --> 00:13:040.11] [Customer]  And second overlay with something that is still.
+[00:13:040.21 --> 00:13:045.83] [Customer]  Liquid and where you can get at least some protection is on the investment side.
+[00:13:046.04 --> 00:13:047.47] [Customer]  I'll say on banking side.
+[00:13:048.37 --> 00:13:052.25] [Customer]  It's usually why all business was killed since 2008.
+[00:13:053.37 --> 00:13:055.61] [Customer]  Any business that would rely on a model.
+[00:13:056.18 --> 00:13:059.04] [Customer]  And this exactly is a model that can get it wrong.
+[00:13:059.18 --> 00:14:004.25] [Customer]  Model always assumes some continuity of price discovery between liquid instruments.
+[00:14:004.73 --> 00:14:010.00] [Customer]  And since market learned or regulators learned that it's actually impossible.
+[00:14:010.73 --> 00:14:013.11] [Customer]  Because we are not talking about theory.
+[00:14:013.30 --> 00:14:014.64] [Customer]  We are talking about practice.
+[00:14:014.80 --> 00:14:017.18] [Customer]  Say in practice in the sense.
+[00:14:018.02 --> 00:14:020.09] [Customer]  I think it's like a spread trade.
+[00:14:020.38 --> 00:14:023.40] [Customer]  Almost all this type of arbitrage trades.
+[00:14:023.52 --> 00:14:031.92] [Customer]  They're always a spread trade that you assume that deviations from fair value will mean reward at certain point.
+[00:14:032.28 --> 00:14:037.49] [Customer]  The problem is before they mean reward, they can diverse even more.
+[00:14:038.16 --> 00:14:039.28] [Customer]  And effectively.
+[00:14:040.21 --> 00:14:043.76] [Customer]  You can end up also the problem that you have long dated stuff.
+[00:14:043.97 --> 00:14:044.90] [Customer]  Say 10 year.
+[00:14:045.07 --> 00:14:050.16] [Customer]  Yes, in the end you can make money if you hold for this position 10 year.
+[00:14:051.26 --> 00:14:056.04] [Customer]  But if you're highly leveraged like Lehman Brothers or BM stones is impossible.
+[00:14:057.35 --> 00:15:001.76] [Customer]  So therefore, and I think why these businesses eventually died.
+[00:15:002.92 --> 00:15:003.76] [Customer]  And right now.
+[00:15:004.50 --> 00:15:007.90] [Customer]  Similar stuff is maybe like I think annuities.
+[00:15:007.99 --> 00:15:009.68] [Customer]  They all move to insurances.
+[00:15:010.21 --> 00:15:015.02] [Customer]  And these people, they relatively conservative in their capital requirements.
+[00:15:015.47 --> 00:15:023.04] [Customer]  So to answer for institutionals, if you want to do it, just make sure you have enough capital in your reserves to go.
+[00:15:023.87 --> 00:15:026.11] [Interviewer]  It's almost a little bit like pricing for model risk.
+[00:15:026.31 --> 00:15:029.01] [Interviewer]  You got to self-insure assuming the model's going to fail.
+[00:15:027.02 --> 00:15:027.59] [Customer]  self-insurance.
+[00:15:030.52 --> 00:15:036.24] [Interviewer]  I want to stay on this topic of liquidity. In a prior conversation that we had, you actually
+[00:15:036.24 --> 00:15:042.86] [Interviewer]  mentioned a little bit offhand that you thought that liquidity was really a driving factor of
+[00:15:042.86 --> 00:15:049.42] [Interviewer]  pricing in the market. And you even viewed things like the credit and volatility premiums as really
+[00:15:049.42 --> 00:15:056.36] [Interviewer]  being a function of liquidity. And that liquidity is sort of the key factor from your experience.
+[00:15:056.36 --> 00:16:001.48] [Interviewer]  Can you walk me through that line of thinking and how that sort of plays out in the market?
+[00:16:001.99 --> 00:16:009.15] [Customer]  Actually, I was in 2013-2014, I was asked to do a small project.
+[00:16:009.35 --> 00:16:015.23] [Customer]  I will not the name of the bank where I work, but at that time they wanted to start paying dividends.
+[00:16:015.51 --> 00:16:018.99] [Customer]  So it was already a recovery period after the financial crisis.
+[00:16:019.37 --> 00:16:024.37] [Customer]  So they actually wanted to say, and the money is a very practical topic, right?
+[00:16:025.13 --> 00:16:027.97] [Customer]  How much dividend the bank should pay?
+[00:16:027.97 --> 00:16:034.91] [Customer]  And they asked me to just present some more arguments, given my background.
+[00:16:035.35 --> 00:16:041.27] [Customer]  And actually, when I looked at it, I always thought credit is always, when you look at any company,
+[00:16:041.53 --> 00:16:047.07] [Customer]  leverage company, it's always trade-off between bondholders and equity holders.
+[00:16:047.83 --> 00:16:050.95] [Customer]  And each of them have contrary objectives.
+[00:16:051.35 --> 00:16:056.15] [Customer]  For credit holders, you want to conserve as much cash as possible.
+[00:16:056.57 --> 00:16:057.71] [Customer]  Equity holders,
+[00:16:057.71 --> 00:16:059.15] [Customer]  they want you to pay out cash.
+[00:17:000.35 --> 00:17:001.15] [Customer]  But now what happens?
+[00:17:001.57 --> 00:17:008.71] [Customer]  Liquidity means, if you know credit literature, there are two very interesting pricing models.
+[00:17:009.87 --> 00:17:013.15] [Customer]  One model is called Merton model of default.
+[00:17:013.37 --> 00:17:021.71] [Customer]  It effectively says that shareholder equity is residual value of company value minus obligations.
+[00:17:022.15 --> 00:17:025.65] [Customer]  So in fact, equity holders, they hold call options.
+[00:17:025.65 --> 00:17:029.47] [Customer]  Because your liabilities are capped at stock price.
+[00:17:029.79 --> 00:17:034.31] [Customer]  And a model is good, but what people found, the researcher found,
+[00:17:034.55 --> 00:17:037.41] [Customer]  what something that is called, I think, credit puzzle.
+[00:17:038.21 --> 00:17:041.41] [Customer]  That the model is not explained by fundamentals.
+[00:17:041.81 --> 00:17:044.27] [Customer]  You can only explain part of the credit spread.
+[00:17:044.61 --> 00:17:047.67] [Customer]  And the credit spread is consistently higher.
+[00:17:048.05 --> 00:17:051.15] [Customer]  That would be assumed by the model.
+[00:17:051.39 --> 00:17:055.63] [Customer]  So to paraphrase that also, if they empirically, even if they are, you know,
+[00:17:055.63 --> 00:17:055.63] [Customer] 
+[00:17:055.63 --> 00:18:003.23] [Customer]  if they say AAA securities and we say, we either look at realized default or
+[00:18:004.03 --> 00:18:009.23] [Customer]  losses due to rate in transition, it may be 1% annualized.
+[00:18:009.37 --> 00:18:014.41] [Customer]  A micro pays you, say, 1.5% annualized.
+[00:18:014.95 --> 00:18:019.71] [Customer]  So you have 50% basis point that you cannot explain by structural model.
+[00:18:019.95 --> 00:18:024.93] [Customer]  But since it doesn't mean it's a risk free, and the answer is cyclical risk, where?
+[00:18:025.63 --> 00:18:032.19] [Customer]  There is another layer, credit spreads, which come from systemic risk.
+[00:18:032.39 --> 00:18:034.95] [Customer]  And how it translates to a company.
+[00:18:035.17 --> 00:18:038.55] [Customer]  Because usually the company also, you don't really repay the debt.
+[00:18:038.93 --> 00:18:045.77] [Customer]  So now imagine in good year, say in 2003, a company raised five year debt.
+[00:18:046.83 --> 00:18:049.05] [Customer]  I'd say whatever, 1%.
+[00:18:049.71 --> 00:18:051.59] [Customer]  And in 2008, it needs to refinance.
+[00:18:053.15 --> 00:18:054.87] [Customer]  And because it's effective.
+[00:18:055.05 --> 00:18:055.61] [Customer]  It needs to refinance.
+[00:18:055.61 --> 00:18:055.61] [Customer] 
+[00:18:055.63 --> 00:18:059.65] [Customer]  It needs to ask again, it needs to ask its debt holders to give it cash.
+[00:19:000.65 --> 00:19:001.63] [Customer]  But it's hard.
+[00:19:001.81 --> 00:19:003.81] [Customer]  Everyone wants his money back in 2008.
+[00:19:004.07 --> 00:19:005.79] [Customer]  It's actually a good thing.
+[00:19:005.93 --> 00:19:013.17] [Customer]  I just recently heard in a crisis, you sell not what you want, you sell what you can.
+[00:19:014.25 --> 00:19:020.39] [Customer]  And it was true in 2008, any possibility to get your money back, you would embrace it.
+[00:19:020.51 --> 00:19:025.61] [Customer]  And therefore, so for a company, so there is a part of say, debt, risk, and loss.
+[00:19:025.63 --> 00:19:025.93] [Customer]  And it's not just about the debt.
+[00:19:025.93 --> 00:19:028.13] [Customer]  It's about the debt management that actually does not depend on you.
+[00:19:028.49 --> 00:19:034.65] [Customer]  No matter how good you are, how conservative, if you want to roll your debt in a favorable
+[00:19:034.65 --> 00:19:039.21] [Customer]  time, implicitly, you need to account for your higher borrow cost.
+[00:19:039.59 --> 00:19:043.55] [Customer]  And now, so going back to this project is what I did.
+[00:19:043.65 --> 00:19:048.29] [Customer]  I use some simple model of actually what I like about it.
+[00:19:048.33 --> 00:19:051.25] [Customer]  It was mixing, say Rio.
+[00:19:051.49 --> 00:19:055.61] [Customer]  So for fundamental model, you always need to know, say, how much you want to spend.
+[00:19:055.61 --> 00:19:055.61] [Customer] 
+[00:19:055.61 --> 00:19:055.61] [Customer] 
+[00:19:055.61 --> 00:19:055.61] [Customer] 
+[00:19:055.61 --> 00:19:056.59] [Customer]  How much cost you generate.
+[00:19:056.79 --> 00:20:000.09] [Customer]  And fundamental model tells you, okay, this is your equity.
+[00:20:000.39 --> 00:20:006.09] [Customer]  And the more equity you have, it's easier for you to raise the debt on one hand.
+[00:20:006.61 --> 00:20:011.91] [Customer]  So if you want to pay dividend, it's like a function that maybe you can put increase
+[00:20:011.91 --> 00:20:019.17] [Customer]  your reserves, but in when the crisis comes, there is a cyclical widening of spreads that
+[00:20:019.17 --> 00:20:021.35] [Customer]  you can maybe not raise it right now.
+[00:20:021.45 --> 00:20:022.39] [Customer]  You can wait for it.
+[00:20:022.49 --> 00:20:025.37] [Customer]  But the insight of this model was what exactly?
+[00:20:025.61 --> 00:20:025.87] [Customer]  The same.
+[00:20:025.99 --> 00:20:030.35] [Customer]  That it is say there is always cyclical risk premium.
+[00:20:031.21 --> 00:20:033.17] [Customer]  So part of our question is liquidity.
+[00:20:033.95 --> 00:20:038.69] [Customer]  Liquidity manifests in periods when money is very expensive.
+[00:20:038.91 --> 00:20:046.81] [Customer]  When to get money, either to say to finance your liabilities, it becomes very expensive.
+[00:20:047.60 --> 00:20:052.90] [Interviewer]  So there's this idea of cyclical liquidity that you're talking about that sounds like market
+[00:20:052.90 --> 00:20:058.20] [Interviewer]  participants will price in that there will be this extra part of the carry that they demand
+[00:20:058.20 --> 00:21:004.26] [Interviewer]  for that potential absence of liquidity. But there's also these assets out there that are just
+[00:21:005.00 --> 00:21:010.64] [Interviewer]  structurally less liquid. And I know you had a lot of experience with some of those more illiquid
+[00:21:010.64 --> 00:21:016.82] [Interviewer]  assets in your role after 2008. I think in 2009, you moved to London, where you were working on
+[00:21:016.82 --> 00:21:023.54] [Interviewer]  an equity derivatives desk, and you were building models for hedging options of assets that were
+[00:21:023.54 --> 00:21:029.50] [Interviewer]  just more illiquid in nature. I think you mentioned potentially emerging markets was one of those at
+[00:21:029.50 --> 00:21:035.74] [Interviewer]  that time that you were working on. As you look at more structurally illiquid assets and trying to
+[00:21:035.74 --> 00:21:041.66] [Interviewer]  build models for hedging derivatives and that sort of stuff, again, going back to this idea of
+[00:21:041.66 --> 00:21:046.76] [Interviewer]  less liquidity means that there's less market implied inflation.
+[00:21:046.82 --> 00:21:053.00] [Interviewer]  What are some of the challenges that you face in dealing with those types of assets and building
+[00:21:053.00 --> 00:21:058.82] [Interviewer]  derivatives and hedging models on top of them and how do you try to account for those problems?
+[00:21:059.34 --> 00:22:008.21] [Customer]  So imagine, for example, we sell an option on emerging market equities, say, some Chinese
+[00:22:008.21 --> 00:22:010.38] [Customer]  stock or say Alibaba.
+[00:22:010.52 --> 00:22:012.47] [Customer]  Alibaba probably trades in Hong Kong.
+[00:22:012.58 --> 00:22:014.52] [Customer]  It's trading in New York, but also in Hong Kong.
+[00:22:014.80 --> 00:22:022.41] [Customer]  So the problem is that if the size of your trade is very big, and if, let's say, imagine
+[00:22:022.41 --> 00:22:023.99] [Customer]  we just sold straddle.
+[00:22:024.10 --> 00:22:026.63] [Customer]  So we sold put and we sold call.
+[00:22:026.63 --> 00:22:029.76] [Customer]  So initially our delta is about zero.
+[00:22:029.93 --> 00:22:032.47] [Customer]  But then something happened.
+[00:22:033.21 --> 00:22:035.26] [Customer]  So just for example, it's ADR.
+[00:22:035.52 --> 00:22:037.10] [Customer]  It trades in New York.
+[00:22:037.34 --> 00:22:043.91] [Customer]  But imagine overnight there was some tweet from Trump that Hong Kong is deeply down.
+[00:22:044.15 --> 00:22:049.82] [Customer]  And given the size of your position, if you want to hedge, rebalance your delta, which
+[00:22:049.82 --> 00:22:055.67] [Customer]  say the stock tanked, you need to say buy whatever, 10 million shares.
+[00:22:055.67 --> 00:23:000.23] [Customer]  You know that if you put your order in the market, you are going to move it.
+[00:23:000.36 --> 00:23:001.88] [Customer]  It's already moved a lot.
+[00:23:002.02 --> 00:23:007.04] [Customer]  And then you are going to proportionally to your hedging needs, you are going to move
+[00:23:007.04 --> 00:23:007.43] [Customer]  a lot.
+[00:23:008.12 --> 00:23:012.54] [Customer]  And it creates this cyclical feedback loop.
+[00:23:012.99 --> 00:23:014.36] [Customer]  And it's a big problem.
+[00:23:014.47 --> 00:23:019.84] [Customer]  For less liquid markets where you trade in big notionals, it's a problem.
+[00:23:020.04 --> 00:23:024.28] [Customer]  And effectively it tells you that, say, originally the trade could be good.
+[00:23:024.41 --> 00:23:025.65] [Customer]  Say you sell.
+[00:23:025.65 --> 00:23:029.93] [Customer]  I think implied at 30 and you expect it realizes at 20.
+[00:23:030.19 --> 00:23:033.49] [Customer]  And in option trading is relatively good trade.
+[00:23:034.13 --> 00:23:043.80] [Customer]  But if during the hedging, you're say volatility cost is 20%, so you lost money.
+[00:23:044.04 --> 00:23:050.38] [Customer]  And you lost money not because the realized volatility can still realize at 20, but because
+[00:23:050.38 --> 00:23:053.95] [Customer]  you cost, it was you who created this volatility.
+[00:23:054.17 --> 00:23:055.63] [Customer]  It cost you a lot to sell.
+[00:23:055.63 --> 00:23:055.63] [Customer] 
+[00:23:055.63 --> 00:23:055.63] [Customer] 
+[00:23:055.65 --> 00:23:056.02] [Customer]  It cost you a lot to hedge.
+[00:23:056.17 --> 00:23:057.41] [Customer]  This is one example.
+[00:23:057.65 --> 00:23:059.76] [Customer]  Another example is gap risk.
+[00:24:000.02 --> 00:24:003.41] [Customer]  For example, let's say again, this ADR.
+[00:24:003.58 --> 00:24:009.34] [Customer]  Maybe this time you don't have big notionals, but imagine end of day, you are delta neutral.
+[00:24:010.04 --> 00:24:013.17] [Customer]  But every time there is something going on in China.
+[00:24:013.32 --> 00:24:020.80] [Customer]  And every night the stock gaps 4%, or say 2-3%, which you cannot hedge.
+[00:24:021.02 --> 00:24:025.12] [Customer]  So every time you will lose this 2-3% gap risk.
+[00:24:025.12 --> 00:24:032.39] [Customer]  So in the end, it's again close to close volatility can be relatively small and will not cause
+[00:24:032.39 --> 00:24:033.02] [Customer]  you a problem.
+[00:24:033.39 --> 00:24:036.95] [Customer]  But if you hedge every gap, you will bleed gamma.
+[00:24:037.39 --> 00:24:044.65] [Customer]  To say that, and therefore from beginning, it's not only enough to look at say, what is
+[00:24:044.65 --> 00:24:045.76] [Customer]  my expected spread?
+[00:24:046.63 --> 00:24:050.02] [Customer]  You need to look also, what was my contingency plan?
+[00:24:050.21 --> 00:24:054.60] [Customer]  If something goes wrong, or I need to hedge a big chunk of it.
+[00:24:055.12 --> 00:24:056.45] [Customer]  What is my expected cost?
+[00:24:056.80 --> 00:25:002.34] [Customer]  So therefore, what I like in this, say, hedging is must be quantitative.
+[00:25:002.80 --> 00:25:010.63] [Customer]  And the output of your model is not only the fair value in ideal conditions, but also adverse.
+[00:25:010.76 --> 00:25:012.63] [Customer]  You need to account for adverse conditions.
+[00:25:013.03 --> 00:25:037.17] [Interviewer]  You actually wrote a paper on this, right? I think I read it. It's on SSRN about sort of the idea of, okay, in theory, we have all these option pricing models and you can assume continuous delta hedging. You actually wrote a piece where you talk about what optimal hedging might look like. I think it was for maximizing sharp ratios, if I recall correctly.
+[00:25:037.17 --> 00:25:056.99] [Interviewer]  Can you talk us through some of the big muscle movements of what the paper was about and sort of what the big driving factors are for making those decisions around frequency of hedging option exposures and what ultimately are the big sort of cost benefit analyses you need to make?
+[00:25:057.20 --> 00:26:004.59] [Customer]  actually talking of this before to attain at the time when i was looking at it traditionally all
+[00:26:004.59 --> 00:26:012.51] [Customer]  hedging was done intuitively so the trader would say compute the price or delta of his book and
+[00:26:012.51 --> 00:26:017.88] [Customer]  he would have an intuition okay this one i know that i should not catch right now i should wait
+[00:26:017.88 --> 00:26:025.72] [Customer]  the end of day and so on so actually and i started working with one very smart guy he thought that
+[00:26:025.72 --> 00:26:032.61] [Customer]  there must be like a program that he had good ideas but in effect he said there is a bond so
+[00:26:032.61 --> 00:26:040.33] [Customer]  you cannot catch your residual risk and you need to model the viz of your bond so for example if
+[00:26:040.33 --> 00:26:046.81] [Customer]  it's expensive stock you cannot trade very often you need to increase your bonds or in opposite if
+[00:26:046.81 --> 00:26:053.74] [Customer]  stock has a lot of gaps then also your your band must be relatively wide what it means for you it
+[00:26:053.74 --> 00:26:054.94] [Customer]  means that you have more
+[00:26:055.72 --> 00:27:001.61] [Customer]  risk than your risk your position needs to be associated with delta risk and the only way is
+[00:27:002.20 --> 00:27:009.77] [Customer]  okay we are back into markovits framework you have say cost reward your reward will be always
+[00:27:009.77 --> 00:27:018.24] [Customer]  say spread between implied and realized now minus transaction costs which are say quadratic
+[00:27:018.24 --> 00:27:025.07] [Customer]  function of your hedging frequency and your risk and then you have risk which is volatility of your
+[00:27:025.98 --> 00:27:032.33] [Customer]  stock which you can reduce by hedging frequently but then if you hedge frequently you have more
+[00:27:032.33 --> 00:27:039.55] [Customer]  transaction costs so it's a perfect say risk reward balance and we can actually optimize so
+[00:27:039.55 --> 00:27:048.18] [Customer]  we have our sharp ratio we can optimize and we can solve explicitly given say estimated spread
+[00:27:049.33 --> 00:27:055.70] [Customer]  transaction cost and volatility of stock we can actually design a say optimal hedging frequency
+[00:27:055.72 --> 00:28:001.16] [Customer]  frequency so just to give you an example usually in option trading you you try to reduce all
+[00:28:001.96 --> 00:28:007.85] [Customer]  there is a spread this is a rope from say from weeks your expected spread will be role
+[00:28:008.61 --> 00:28:014.87] [Customer]  row you the difference between say one month's future contract in this pot that you would if
+[00:28:014.87 --> 00:28:020.72] [Customer]  nothing happens this is your row you that you would get if futures are in contaga so
+[00:28:021.64 --> 00:28:025.61] [Customer]  if you say thinking more relative value it will be your expected
+[00:28:025.72 --> 00:28:032.05] [Customer]  it implied say implied volatility that you get from selling the stock and realize that
+[00:28:032.05 --> 00:28:040.35] [Customer]  you accrue by delta hedging so this would be say five percent now if my say transaction
+[00:28:040.35 --> 00:28:050.29] [Customer]  cost it cost me say one percent for my delta i will lose say on spread say in one underline
+[00:28:050.29 --> 00:28:055.87] [Customer]  it will cost me one percent in another three percent so for three percent i should less
+[00:28:055.87 --> 00:29:000.94] [Customer]  frequently that's the goal that you need to have higher residual risk if the spread
+[00:29:000.94 --> 00:29:007.81] [Customer]  is high that's it and then of course if you say great scene also you can look at cross
+[00:29:007.81 --> 00:29:014.22] [Customer]  section now say i can compare different options i can compare different options and given
+[00:29:014.22 --> 00:29:019.81] [Customer]  my forecast i actually can see i can spot where is my optimal say sharp given all this
+[00:29:019.81 --> 00:29:020.27] [Customer]  you can see that i can see that i can see that i can see that i can see that i can see
+[00:29:020.27 --> 00:29:025.44] [Customer]  inputs so why i think it's a good in the end it's very intuitive and it's actually also
+[00:29:025.44 --> 00:29:032.12] [Customer]  intuitively what i like say for each option chain you can compute what is optimal say
+[00:29:032.77 --> 00:29:039.83] [Customer]  hedging frequency and what is my expected sharp actually what you can see is sort of
+[00:29:039.83 --> 00:29:048.88] [Customer]  equilibrium risk reward analysis that in terms of if you look into sale options it would
+[00:29:048.88 --> 00:29:050.24] [Customer]  be something between two and three percent so that's the goal that you can see and then
+[00:29:050.24 --> 00:29:055.11] [Customer]  the third point is it can run out first and not in the fourth or fifth and its margin
+[00:29:055.11 --> 00:29:055.35] [Customer]  below the absence of an side by folds
+[00:29:055.35 --> 00:30:001.62] [Customer]  is very high and it is always good to conclude from that options are seasonal is it actually
+[00:30:001.62 --> 00:30:002.48] [Customer]  like spread holidays options are jealous of Arizona because beginning of the summer is
+[00:30:002.48 --> 00:30:009.90] [Customer]  expected to see their peak in the下��다 up to what they can look at right now the
+[00:30:009.90 --> 00:30:020.22] [Customer]  review there is relatively little shortage it's coming with the market aberration we have
+[00:30:020.22 --> 00:30:026.59] [Customer]  volatility out of the money puts is higher than volatility at the money, the gap risk.
+[00:30:026.79 --> 00:30:032.98] [Customer]  So if you actually account for all these effects, not only you can derive your optimal frequency,
+[00:30:033.27 --> 00:30:040.01] [Customer]  but you can also derive what is, where I should look in terms of what change I should trade
+[00:30:040.01 --> 00:30:046.12] [Customer]  for, what maturities, what thinners. So in the end it's very good. And I know that some
+[00:30:046.12 --> 00:30:050.29] [Customer]  people apply this stuff and we use it a lot for relative value.
+[00:30:051.23 --> 00:30:059.39] [Interviewer]  When I read the paper, there's this, and I know you, we're going to jump way ahead now and go off track here, but I know you currently do a lot of work on trend following.
+[00:30:059.65 --> 00:31:016.88] [Interviewer]  And one of my comments to you when I read the paper was there's this natural connection between option theory and trend following where sort of the delta hedge of being short a put in a call replicates being sort of long a put in a call.
+[00:31:016.88 --> 00:31:024.06] [Interviewer]  And that delta hedging strategy is almost identical to a very naive trend following strategy.
+[00:31:024.39 --> 00:31:034.95] [Interviewer]  It strikes me that there's this interesting relationship potentially between this problem of delta hedging discreetly and adopting your trend following strategies discreetly.
+[00:31:035.04 --> 00:31:044.69] [Interviewer]  I wanted to get your thoughts on, is there a connection there? You're talking about the most profitable part of the curve for trading options was sort of your two to three months out.
+[00:31:044.80 --> 00:31:046.80] [Interviewer]  Is there any connection that can be made?
+[00:31:046.88 --> 00:32:000.34] [Interviewer]  To the trend following space and what that might imply around frequency of looking at trend following signals, which is in many ways, very similar to frequency of delta hedging your options position.
+[00:32:001.60 --> 00:32:003.70] [Customer]  It's indeed there is a deep connection.
+[00:32:003.96 --> 00:32:007.18] [Customer]  I was not the first one to discover it was CFM.
+[00:32:007.94 --> 00:32:011.38] [Customer]  I think there are a couple of good papers from CFM.
+[00:32:012.12 --> 00:32:013.88] [Customer]  But in fact, it's true.
+[00:32:014.72 --> 00:32:022.44] [Customer]  If you say on one hand, if you buy options, so in options pay, if you buy options, you
+[00:32:022.44 --> 00:32:023.32] [Customer]  pay implied volatility.
+[00:32:023.80 --> 00:32:028.16] [Customer]  If you delta hedge these options, you get realized volatility.
+[00:32:028.16 --> 00:32:032.74] [Customer]  Your net P&L is a spread between realized volatility and implied volatility.
+[00:32:033.14 --> 00:32:041.22] [Customer]  So in a sense, to make money, you need big volatility where, say, a lot of things happens.
+[00:32:041.52 --> 00:32:045.52] [Customer]  But interestingly, in volatility, it's always your link to the strike.
+[00:32:045.78 --> 00:32:052.18] [Customer]  So the only way to make in volatility, you need to delta hedge and you need to have big
+[00:32:052.18 --> 00:32:052.50] [Customer]  gamma.
+[00:32:052.84 --> 00:32:058.14] [Customer]  Otherwise, for example, if you bought at the money put and something bad happened, you
+[00:32:058.14 --> 00:33:000.22] [Customer]  went and it dropped suddenly.
+[00:33:000.42 --> 00:33:006.16] [Customer]  So even though you made money at the initial gap, then after that, you need to cover all
+[00:33:006.16 --> 00:33:007.84] [Customer]  your data because there is no gamma.
+[00:33:007.96 --> 00:33:010.08] [Customer]  Say it went deeply out of the money.
+[00:33:010.18 --> 00:33:016.60] [Customer]  So you are not making any money on what happens next if you are strictly delta hedged.
+[00:33:016.72 --> 00:33:019.34] [Customer]  And with option trading, it's the same.
+[00:33:019.44 --> 00:33:023.56] [Customer]  The option to understand the option trading.
+[00:33:023.92 --> 00:33:027.96] [Customer]  So imagine it's again, maybe it will be a little bit technical.
+[00:33:027.96 --> 00:33:035.90] [Customer]  But imagine we sold a call option or we bought a call option and we need to delta hedge it.
+[00:33:036.06 --> 00:33:040.16] [Customer]  And as the money delta hedge, I'd say option is as the money.
+[00:33:040.34 --> 00:33:042.48] [Customer]  So we need to sell underline.
+[00:33:042.92 --> 00:33:044.40] [Customer]  Underline goes up.
+[00:33:044.84 --> 00:33:052.58] [Customer]  The value of our call increases, which will be, say, which compensated by loss on our
+[00:33:052.58 --> 00:33:054.86] [Customer]  delta, our negative delta.
+[00:33:055.08 --> 00:33:057.26] [Customer]  But now, say, we are sure.
+[00:33:058.44 --> 00:34:006.54] [Customer]  That, say, stock goes up to say initial price was 100 and it goes 10% up to 110.
+[00:34:007.04 --> 00:34:008.70] [Customer]  The delta of call increases.
+[00:34:008.86 --> 00:34:010.48] [Customer]  So now it will be 60.
+[00:34:010.70 --> 00:34:013.94] [Customer]  So initially it was 50% that we needed to be short.
+[00:34:014.64 --> 00:34:016.82] [Customer]  And now it's 60%.
+[00:34:016.82 --> 00:34:019.20] [Customer]  So we need actually extra sell it again.
+[00:34:019.82 --> 00:34:021.16] [Customer]  But we let it run.
+[00:34:021.32 --> 00:34:027.44] [Customer]  So in the fact that we were letting our judgment to just.
+[00:34:027.46 --> 00:34:027.94] [Customer]  So we are letting our judgment to just.
+[00:34:027.94 --> 00:34:027.94] [Customer] 
+[00:34:027.94 --> 00:34:027.94] [Customer] 
+[00:34:027.96 --> 00:34:031.28] [Customer]  And every time so our delta will grow.
+[00:34:031.54 --> 00:34:033.18] [Customer]  So we won't be delta neutral.
+[00:34:033.46 --> 00:34:037.34] [Customer]  So in any subsequent rise, our P&L will increase.
+[00:34:037.60 --> 00:34:038.92] [Customer]  So it's like a ladder.
+[00:34:039.56 --> 00:34:042.12] [Customer]  Every time we get bigger and bigger exposure.
+[00:34:042.94 --> 00:34:046.72] [Customer]  Similarly, and then in the end, what we get is the final price.
+[00:34:046.96 --> 00:34:053.06] [Customer]  Say stock went to 200 and we hedge 50% at 100.
+[00:34:053.70 --> 00:34:055.70] [Customer]  So we made 150.
+[00:34:056.12 --> 00:34:057.94] [Customer]  That will be well compensated by loss.
+[00:34:057.94 --> 00:34:057.94] [Customer] 
+[00:34:057.94 --> 00:34:058.96] [Customer]  By our cost.
+[00:34:059.10 --> 00:35:001.22] [Customer]  Strictly speaking, we won't be trading volatility.
+[00:35:001.60 --> 00:35:002.84] [Customer]  We will trade underlying.
+[00:35:003.34 --> 00:35:005.76] [Customer]  And with strength falling, it's the same.
+[00:35:006.08 --> 00:35:007.84] [Customer]  So imagine at the beginning.
+[00:35:008.80 --> 00:35:010.58] [Customer]  We started with delta.
+[00:35:010.82 --> 00:35:012.84] [Customer]  We say our position is zero.
+[00:35:013.88 --> 00:35:016.18] [Customer]  Stock went 10% up to 110.
+[00:35:017.04 --> 00:35:019.06] [Customer]  We opened up, say, 10%.
+[00:35:019.06 --> 00:35:025.02] [Customer]  And now stock again is continued to go up, say, 10 bucks more to 120.
+[00:35:025.48 --> 00:35:027.82] [Customer]  We have a little bit of P&L accrued.
+[00:35:027.94 --> 00:35:028.92] [Customer]  On our 10%.
+[00:35:028.92 --> 00:35:031.02] [Customer]  So around, say, two bucks.
+[00:35:031.22 --> 00:35:032.38] [Customer]  But then we increase.
+[00:35:032.62 --> 00:35:035.08] [Customer]  So we think, ah, OK, it started to go up.
+[00:35:035.46 --> 00:35:039.08] [Customer]  Now we increase our trend signal, say, to 20%.
+[00:35:039.62 --> 00:35:040.46] [Customer]  And so on.
+[00:35:040.60 --> 00:35:043.62] [Customer]  So it's again, we are trying to build up a step function.
+[00:35:044.02 --> 00:35:046.50] [Customer]  The higher it goes, the more we accumulate.
+[00:35:046.98 --> 00:35:051.22] [Customer]  And each subsequent move will produce us the higher P&L.
+[00:35:052.14 --> 00:35:056.00] [Customer]  In other way, mathematically, we create a parabola.
+[00:35:056.52 --> 00:35:057.34] [Customer]  Every time.
+[00:35:057.94 --> 00:36:000.26] [Customer]  So we try to build up our position in the step function.
+[00:36:000.88 --> 00:36:009.42] [Customer]  And if everything goes right in our direction, each step will be multiplied by increment
+[00:36:009.42 --> 00:36:010.46] [Customer]  of x.
+[00:36:010.68 --> 00:36:013.30] [Customer]  So in the end, we get a squared return.
+[00:36:014.54 --> 00:36:017.42] [Customer]  So this is amazing.
+[00:36:017.70 --> 00:36:019.90] [Customer]  I find it is exactly as you said.
+[00:36:020.04 --> 00:36:027.32] [Customer]  In special conditions, when there is a strength of strength, it's exactly equivalent.
+[00:36:027.54 --> 00:36:027.92] [Customer]  B is equal to B. So we can do it.
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.92 --> 00:36:027.92] [Customer] 
+[00:36:027.94 --> 00:36:031.96] [Customer]  So it's a little bit of a delta.
+[00:36:033.12 --> 00:36:039.32] [Customer]  With keeping a little bit of delta and building a trend following where you are not trying
+[00:36:039.32 --> 00:36:041.42] [Customer]  to build binary system.
+[00:36:041.62 --> 00:36:043.00] [Customer]  You are trying to leverage.
+[00:36:043.30 --> 00:36:045.72] [Customer]  The more it goes up, the more you try to leverage.
+[00:36:046.10 --> 00:36:050.26] [Customer]  And then in these circumstances, you get exactly the same profiles.
+[00:36:050.96 --> 00:36:053.56] [Customer]  Nevertheless, what is interesting in options.
+[00:36:053.82 --> 00:36:056.42] [Customer]  So now, of course, nothing is ideal.
+[00:36:056.42 --> 00:37:002.94] [Customer]  In trend following there will be dips up and down, so we will be spending on rebalancing.
+[00:37:003.74 --> 00:37:007.96] [Customer]  In option space, your rebalancer costs are implied volatility.
+[00:37:008.90 --> 00:37:016.30] [Customer]  In trend following is this, like say, volatility of this small term dips that you need to rebalance.
+[00:37:017.08 --> 00:37:024.40] [Customer]  And what typically occurs, what empirical evidence is that implied volatility is typically
+[00:37:024.40 --> 00:37:027.00] [Customer]  is more expensive than the cost of rebalancing.
+[00:37:027.02 --> 00:37:027.02] [Interviewer] 
+[00:37:027.05 --> 00:37:027.16] [Customer]  you
+[00:37:027.24 --> 00:37:033.12] [Interviewer]  short-term trending for CTA. I want to make a bit of a conversational jump here because I know your
+[00:37:033.12 --> 00:37:041.32] [Interviewer]  career took a big switch in 2015, moving from the banks to you moved over to Julius Baer's
+[00:37:041.32 --> 00:37:048.20] [Interviewer]  advisory solutions group in Switzerland, really to serve as an advocate for alternative risk
+[00:37:048.20 --> 00:37:054.82] [Interviewer]  premia. And this was unlike a lot of your desk work where you had been working on models and
+[00:37:054.82 --> 00:38:001.64] [Interviewer]  pricing structures. This was a largely outward facing role for you where you had to communicate
+[00:38:001.64 --> 00:38:009.40] [Interviewer]  a lot of these somewhat difficult quantitative concepts. And I was hoping you could spend some
+[00:38:009.40 --> 00:38:014.24] [Interviewer]  time talking about some of the lessons you learned and some of the tools you put in your toolkit to
+[00:38:014.24 --> 00:38:021.20] [Interviewer]  help better describe these quant topics and topics of alternative risk premia to some of the advisory
+[00:38:021.20 --> 00:38:023.24] [Interviewer]  solutions clients you were working with.
+[00:38:023.43 --> 00:38:026.41] [Customer]  So yeah, in 2015, I think I left Merlin.
+[00:38:026.57 --> 00:38:029.45] [Customer]  I think it was one of the, it was great environment.
+[00:38:029.73 --> 00:38:033.59] [Customer]  One of the best people that I met through professional career.
+[00:38:034.19 --> 00:38:039.35] [Customer]  But in the end, as we discussed already, regulation killed all investment bankers.
+[00:38:039.47 --> 00:38:042.79] [Customer]  So it's just people started to move out.
+[00:38:043.25 --> 00:38:050.09] [Customer]  And natural areas, if say you have money and you have connections, you open up a hedge fund.
+[00:38:050.09 --> 00:38:057.15] [Customer]  But if you don't have deep pocket, you don't have connections, you try to go to asset management.
+[00:38:057.69 --> 00:39:003.93] [Customer]  So for me, it was when I learned opportunity at Wurlisberg, I thought it was good.
+[00:39:004.23 --> 00:39:006.51] [Customer]  It's say opportunities are there.
+[00:39:007.31 --> 00:39:010.91] [Customer]  Of course, culturally speaking, it's different cultures.
+[00:39:010.99 --> 00:39:013.01] [Customer]  I say it's more conservative.
+[00:39:013.31 --> 00:39:014.89] [Customer]  First, people are very conservative.
+[00:39:015.19 --> 00:39:017.05] [Customer]  They don't trust once at all.
+[00:39:017.33 --> 00:39:019.89] [Customer]  It was actually, I discovered it was
+[00:39:020.09 --> 00:39:025.05] [Customer]  a mistake to talk about modeling or tell that you are quant or quant strategies.
+[00:39:025.31 --> 00:39:028.91] [Customer]  So I try to reduce it as little as possible.
+[00:39:029.15 --> 00:39:031.75] [Customer]  On the other hand, there's definitely demands.
+[00:39:031.95 --> 00:39:039.39] [Customer]  Say they're trying to, they hear what is alternative risk premium factor investing, like volatility.
+[00:39:040.55 --> 00:39:042.99] [Customer]  I think they use a lot of feelings.
+[00:39:043.25 --> 00:39:046.63] [Customer]  It's a good example with short volatility.
+[00:39:047.05 --> 00:39:050.05] [Customer]  A lot of our clients started to ask it.
+[00:39:050.05 --> 00:39:054.75] [Customer]  And it was a lot of demand, actually a lot of questions.
+[00:39:055.73 --> 00:39:059.33] [Customer]  So in a sense, people are more say performance chasing.
+[00:40:000.03 --> 00:40:001.95] [Customer]  They don't like technical details.
+[00:40:002.17 --> 00:40:009.59] [Customer]  If you start talking about like say kind of freeze budgeting, it's too difficult.
+[00:40:010.37 --> 00:40:016.17] [Customer]  So I think for me, the top experience that I learned never shows them any equation.
+[00:40:016.65 --> 00:40:018.79] [Customer]  Always illustrate with.
+[00:40:020.05 --> 00:40:020.77] [Customer]  Provide them intuition.
+[00:40:021.09 --> 00:40:024.57] [Customer]  So an intuition would be more like say visual.
+[00:40:024.91 --> 00:40:029.13] [Customer]  Have a good visual sense that makes sense.
+[00:40:029.49 --> 00:40:035.71] [Customer]  So say a lot of what we talk and a lot of these conditional betas, all this stuff, it
+[00:40:036.29 --> 00:40:041.57] [Customer]  was actually through those years that it's a relatively simple to explain in one figure
+[00:40:042.29 --> 00:40:048.73] [Customer]  what happens in bear market with your portfolio, what happens in bull market and what happens
+[00:40:048.73 --> 00:40:049.21] [Customer]  in normal.
+[00:40:050.13 --> 00:40:055.73] [Customer]  In this sense, you can communicate and you can communicate quite complicated stuff.
+[00:40:056.01 --> 00:41:005.11] [Customer]  You can say for short volatility, because a lot of the stuff is so cyclical that they
+[00:41:005.11 --> 00:41:011.65] [Customer]  see that short volatility return in 2017 return was 100%.
+[00:41:012.21 --> 00:41:019.13] [Customer]  But then if you show that if there is, it would be another regime, you can lose a lot
+[00:41:019.13 --> 00:41:019.57] [Customer]  of money.
+[00:41:020.05 --> 00:41:020.05] [Customer] 
+[00:41:020.05 --> 00:41:021.87] [Customer]  But now it's like, oh, it's a very cold, and then, then in this way, it's appealing.
+[00:41:023.45 --> 00:41:028.81] [Customer]  Some people look at time series, which is time series will hide the compounding effect
+[00:41:028.81 --> 00:41:030.39] [Customer]  to understand time series.
+[00:41:030.43 --> 00:41:038.15] [Customer]  Well, of course, if you have a drawdown, in the end it recovers the time series will look
+[00:41:038.15 --> 00:41:038.51] [Customer]  okay.
+[00:41:038.63 --> 00:41:044.57] [Customer]  Somehow it will hide the compounding effect that you state.
+[00:41:044.73 --> 00:41:048.61] [Customer]  Also a lot of people, what I'm always trying to tell them.
+[00:41:048.65 --> 00:41:048.99] [Customer]  Okay.
+[00:41:048.99 --> 00:41:049.35] [Customer]  So they say, well, this is the one-time rate.
+[00:41:049.35 --> 00:41:049.65] [Customer]  Well, this is the one-time rate.
+[00:41:049.65 --> 00:41:049.65] [Customer] 
+[00:41:049.65 --> 00:41:049.65] [Customer] 
+[00:41:049.65 --> 00:41:049.65] [Customer] 
+[00:41:049.65 --> 00:41:058.35] [Customer]  In a risky product you get your say long term expected rate of return only if you stay in it.
+[00:41:058.97 --> 00:42:005.39] [Customer]  Only. If you think of market timing, forget. It's not for you. Never try to say do market timing.
+[00:42:006.09 --> 00:42:012.87] [Customer]  And why is again what we started with in liquid stuff, therefore it's important on portfolio level.
+[00:42:012.87 --> 00:42:019.33] [Customer]  If you want to do a risky trade, make sure that your portfolio is well suited.
+[00:42:019.67 --> 00:42:025.77] [Customer]  If say, for example, if you are long stocks or mutual funds, don't sell volatility.
+[00:42:026.03 --> 00:42:029.71] [Customer]  It will create nothing to your portfolio, nothing.
+[00:42:029.99 --> 00:42:035.31] [Customer]  And usually when people say get hit, they always close the thing.
+[00:42:035.65 --> 00:42:040.09] [Customer]  It's either the most recent stuff or the things they don't understand.
+[00:42:040.53 --> 00:42:042.61] [Customer]  And most of the time they do.
+[00:42:042.61 --> 00:42:044.17] [Customer]  Exactly at the wrong time.
+[00:42:044.27 --> 00:42:048.59] [Customer]  And I saw like many examples people know just stick to it.
+[00:42:048.65 --> 00:42:052.65] [Customer]  Just sell Delta on structure products or this type of strategies.
+[00:42:052.97 --> 00:42:056.01] [Customer]  You lose much more if you liquidate at the wrong time.
+[00:42:056.25 --> 00:42:057.75] [Customer]  With Delta one products.
+[00:42:057.93 --> 00:42:059.69] [Customer]  Okay, you can sell it.
+[00:42:059.97 --> 00:43:002.49] [Customer]  You can buy it say in one month.
+[00:43:002.61 --> 00:43:003.45] [Customer]  You won't lose much.
+[00:43:003.71 --> 00:43:011.09] [Customer]  But then you need to communicate and then you need to have clear say visual tools explaining all this risk premier.
+[00:43:011.29 --> 00:43:012.51] [Customer]  And I think for me.
+[00:43:012.51 --> 00:43:013.75] [Customer]  The bottom line.
+[00:43:014.89 --> 00:43:018.75] [Customer]  Communication aspect is important in communication aspect.
+[00:43:018.93 --> 00:43:019.87] [Customer]  Not using formulas.
+[00:43:019.97 --> 00:43:021.61] [Customer]  You are not allowed to use formula.
+[00:43:021.97 --> 00:43:028.69] [Customer]  Otherwise, they think that you're either don't understand or you are trying to hide something.
+[00:43:028.91 --> 00:43:031.19] [Customer]  You need to create a story that is opinion.
+[00:43:031.66 --> 00:43:035.08] [Interviewer]  It's sort of a twofold problem from a conversational aspect.
+[00:43:035.22 --> 00:43:036.66] [Interviewer]  And you hinted at both of them, right?
+[00:43:036.72 --> 00:43:041.72] [Interviewer]  There's the conversational problem of what does this strategy do and how do I develop
+[00:43:041.72 --> 00:43:043.16] [Interviewer]  intuition about this strategy?
+[00:43:043.50 --> 00:43:049.90] [Interviewer]  And then there's the conversational problem of not only how the strategy behaves, but
+[00:43:049.90 --> 00:43:054.34] [Interviewer]  how it behaves relative to an existing portfolio a client might have.
+[00:43:054.54 --> 00:43:056.58] [Interviewer]  That these things don't exist in isolation.
+[00:43:056.66 --> 00:44:000.20] [Interviewer]  They exist relative to what the client's already allocated to.
+[00:44:000.20 --> 00:44:002.64] [Interviewer]  And you need to get an understanding of how it's going to fit.
+[00:44:003.00 --> 00:44:009.56] [Interviewer]  In a lot of your writing and recent presentations, you reference this conditional beta model.
+[00:44:009.72 --> 00:44:013.12] [Interviewer]  And you started to hint at it a little where you're talking about how do things do in
+[00:44:013.12 --> 00:44:015.40] [Interviewer]  different regimes, bull markets, bear markets.
+[00:44:015.64 --> 00:44:020.86] [Interviewer]  And I know that you found that to be a very effective way to communicate these concepts.
+[00:44:021.54 --> 00:44:026.60] [Interviewer]  Can you talk a little bit about how that model works and why you like it both from an
+[00:44:026.60 --> 00:44:029.20] [Interviewer]  analytical as well as a conversational perspective?
+[00:44:029.50 --> 00:44:029.90] [Interviewer]  Sure.
+[00:44:029.99 --> 00:44:030.47] [Customer]  Well, so
+[00:44:031.21 --> 00:44:034.31] [Customer]  So first, history. As I said, I went through the cycle.
+[00:44:034.45 --> 00:44:039.01] [Customer]  In the cycle, you always think the world becomes two-dimensional.
+[00:44:039.47 --> 00:44:042.19] [Customer]  You either survive or not.
+[00:44:042.71 --> 00:44:048.31] [Customer]  So these kind of binary outcomes, I think, more or less, they're important to think of this.
+[00:44:048.57 --> 00:44:054.77] [Customer]  And then, of course, you have, if you model, if you think in this way, that there will be periods
+[00:44:054.77 --> 00:44:058.53] [Customer]  when risk aversion is high and periods when it's moderate.
+[00:44:058.53 --> 00:45:002.87] [Customer]  And of course, there are, like, I worked on more complicated models,
+[00:45:002.99 --> 00:45:005.83] [Customer]  like how to say implicitly model this.
+[00:45:006.83 --> 00:45:010.47] [Customer]  But in the end, what we want to do is some kind of classification.
+[00:45:010.85 --> 00:45:016.73] [Customer]  If you look at in sample analysis, I want to tell that, okay, statistically,
+[00:45:017.67 --> 00:45:021.53] [Customer]  these periods correspond to what I call bear regime.
+[00:45:022.39 --> 00:45:025.71] [Customer]  This period is normal regime and there is bull regime.
+[00:45:026.45 --> 00:45:028.25] [Customer]  And what happens with this?
+[00:45:028.25 --> 00:45:028.51] [Customer]  Bull.
+[00:45:028.53 --> 00:45:029.39] [Customer]  So, you need more models.
+[00:45:029.59 --> 00:45:033.01] [Customer]  There are more, as I said, there are more complicated, more advanced models,
+[00:45:033.61 --> 00:45:037.95] [Customer]  statistical models to do it, to identify these regimes.
+[00:45:038.51 --> 00:45:043.17] [Customer]  But then it's, again, you don't want to, people may think that you're, like,
+[00:45:043.97 --> 00:45:048.51] [Customer]  inventing something or you're doing, like, data mining.
+[00:45:048.75 --> 00:45:050.01] [Customer]  Here is a simple example.
+[00:45:050.25 --> 00:45:052.63] [Customer]  You just look at standard deviation quantiles.
+[00:45:052.81 --> 00:45:058.21] [Customer]  So statistically, you know that, say, standard deviation quantile is bottom,
+[00:45:058.21 --> 00:46:005.77] [Customer]  bottom 16% observations below the 16% quantile corresponds to realizations,
+[00:46:005.81 --> 00:46:009.57] [Customer]  say, returns that are below one standard deviation.
+[00:46:010.27 --> 00:46:017.27] [Customer]  And in opposite, say, bull regime is 84% quantile corresponds to realizations
+[00:46:017.27 --> 00:46:018.99] [Customer]  that above one standard deviation.
+[00:46:019.39 --> 00:46:023.59] [Customer]  Advantage of this framework also, I said about one standard deviation,
+[00:46:023.93 --> 00:46:026.23] [Customer]  I didn't specify what period.
+[00:46:026.39 --> 00:46:026.75] [Customer]  So,
+[00:46:026.75 --> 00:46:030.37] [Customer]  effectively, we can apply this model for any periods.
+[00:46:030.61 --> 00:46:034.07] [Customer]  We can look at weekly, monthly, quarterly, annual returns.
+[00:46:034.43 --> 00:46:037.07] [Customer]  So we have very simple and simple realization.
+[00:46:037.53 --> 00:46:040.21] [Customer]  And as I said, a lot of stuff is conditional.
+[00:46:040.71 --> 00:46:047.61] [Customer]  Conditional on these regimes, say, the simplest example, say, it's selling puts.
+[00:46:047.89 --> 00:46:053.59] [Customer]  Of course, in bad regimes, CBOE has a very simple strategy, put index,
+[00:46:053.79 --> 00:46:055.65] [Customer]  which sales as the money index puts.
+[00:46:055.87 --> 00:46:056.19] [Customer]  So,
+[00:46:056.75 --> 00:46:058.45] [Customer]  initially they are 50 delta.
+[00:46:059.21 --> 00:47:003.65] [Customer]  Of course, say, during the bad quarter, when S&P goes down, say,
+[00:47:005.19 --> 00:47:011.21] [Customer]  average, probably10%, your put will be in the money, so initially it was 50% delta,
+[00:47:011.81 --> 00:47:016.67] [Customer]  beta was 0.5, in the end beta was 1.
+[00:47:016.87 --> 00:47:018.25] [Customer]  So, you increased it.
+[00:47:018.67 --> 00:47:023.33] [Customer]  Conditionally, that the event to bear market, you have a lot of exposure in
+[00:47:023.33 --> 00:47:024.73] [Customer]  your short put.
+[00:47:025.05 --> 00:47:026.73] [Customer]  And in a way, this Malcolm economy, you see China,比較 a lot by a tweet.
+[00:47:026.73 --> 00:47:026.73] [Customer] 
+[00:47:024.97 --> 00:47:024.99] [Customer] 겠어요
+[00:47:026.75 --> 00:47:033.25] [Customer]  Now it's appealing, you can say, look, this is a quarter, it corresponds to say not outlier,
+[00:47:033.33 --> 00:47:040.79] [Customer]  but it corresponds to regime that is outside of the normal range that we expected 16% annually.
+[00:47:041.13 --> 00:47:048.23] [Customer]  Sorry, over say longer term horizon, we expect 16% of observation to become to be a regime,
+[00:47:048.85 --> 00:47:054.45] [Customer]  which also corresponds to more or less what we observed say empirically, if you use maybe
+[00:47:054.45 --> 00:48:002.31] [Customer]  more say intuitive like economic regimes or different, maybe some moving averages of stuff like that.
+[00:48:002.47 --> 00:48:010.01] [Customer]  So in the end I found this model is intuitive in a fact it's again, it's simply explanatory model.
+[00:48:010.31 --> 00:48:018.93] [Customer]  So of course the great advantage, what is also the great advantage that stationarity conditional on these betas,
+[00:48:019.53 --> 00:48:023.93] [Customer]  say the strategy that sells at the money puts will more or less have
+[00:48:023.93 --> 00:48:024.43] [Customer]  always been the same.
+[00:48:024.43 --> 00:48:026.33] [Customer]  Always be the one in any bad regime.
+[00:48:026.49 --> 00:48:033.87] [Customer]  Of course, we then did not know maybe S&P goes down 10%, maybe it's 20, maybe it's 30%, but in which one,
+[00:48:034.95 --> 00:48:040.57] [Customer]  if we have this model, we can't project, we can't project what would be the actual P&L.
+[00:48:041.28 --> 00:48:046.28] [Interviewer]  I find the model very appealing having looked at it a couple of times, both visually, it develops a
+[00:48:046.28 --> 00:48:050.76] [Interviewer]  lot of intuition and it makes a good deal of sense for most people who have operated in markets.
+[00:48:050.84 --> 00:48:057.04] [Interviewer]  Not only when you're talking about exposures that have nonlinear payoffs, you can very clearly map
+[00:48:057.04 --> 00:49:002.10] [Interviewer]  those nonlinear payoffs, but a lot of market portfolios have changing correlation profiles
+[00:49:002.10 --> 00:49:006.84] [Interviewer]  in different market regimes. And there's been plenty of ink spilled about how you can get
+[00:49:006.84 --> 00:49:013.34] [Interviewer]  crashing correlations when equity markets start to decline or to the opposite side, you can get
+[00:49:013.34 --> 00:49:017.28] [Interviewer]  flight to safety characteristics in different asset classes, depending on what's happening
+[00:49:017.28 --> 00:49:024.36] [Interviewer]  with equity markets. So I find it a very intuitive and appealing visualization of some of these
+[00:49:024.36 --> 00:49:031.44] [Interviewer]  ideas. One critique might be, it does inherently rely on the realization of past information.
+[00:49:031.60 --> 00:49:036.62] [Interviewer]  And when you're talking about both bull and bear regimes, almost by definition,
+[00:49:036.84 --> 00:49:044.22] [Interviewer]  when you're looking at a rare event, you have less data to work with. How do you respond to the
+[00:49:044.22 --> 00:49:049.10] [Interviewer]  potential critique that while you're looking at an environment where there's perhaps not enough data
+[00:49:049.10 --> 00:49:055.54] [Interviewer]  for you to develop an intuition or a model, or we haven't seen a realization that's as bad as it
+[00:49:055.54 --> 00:50:000.42] [Interviewer]  could be. And therefore the model understates the potential risk associated with that regime.
+[00:50:000.96 --> 00:50:006.10] [Customer]  So I think when people talk tail risk, there are a lot of different things going on.
+[00:50:006.96 --> 00:50:008.86] [Customer]  So first is tail realization.
+[00:50:009.32 --> 00:50:017.38] [Customer]  So for example, crash of 1987 in October, I believe, went down minus 23%.
+[00:50:018.66 --> 00:50:021.02] [Customer]  This realization is obviously from tail review.
+[00:50:022.16 --> 00:50:026.06] [Customer]  Is it forecastable? No, the answer is no.
+[00:50:026.24 --> 00:50:030.36] [Customer]  It gives you a point in a distribution of returns.
+[00:50:030.36 --> 00:50:031.74] [Customer]  It gives you one point.
+[00:50:031.92 --> 00:50:039.62] [Customer]  Now if we talk of regimes, actually what I would say is more a period.
+[00:50:040.32 --> 00:50:045.76] [Customer]  If we look into time series and we look into periods,
+[00:50:046.00 --> 00:50:051.78] [Customer]  there are obviously periods of high volatility and strongly negative returns.
+[00:50:052.40 --> 00:50:059.08] [Customer]  So my goal is not actually to model what can happen,
+[00:51:000.38 --> 00:51:003.90] [Customer]  so within this period, of course, within this period,
+[00:51:003.98 --> 00:51:008.02] [Customer]  you can have very large positive, negative returns.
+[00:51:008.40 --> 00:51:011.68] [Customer]  What I'm after is to describe both things.
+[00:51:011.86 --> 00:51:015.62] [Customer]  I want to describe the frequency of these regimes
+[00:51:016.98 --> 00:51:021.22] [Customer]  and average distributions within this regime.
+[00:51:022.26 --> 00:51:029.06] [Customer]  So in a fact, what I'm after is not really to describe the whole potential outcomes
+[00:51:029.06 --> 00:51:030.34] [Customer]  that can happen.
+[00:51:030.36 --> 00:51:031.96] [Customer]  It can be events like crash.
+[00:51:033.16 --> 00:51:037.98] [Customer]  There's inherent uncertainty over realizations that potentially can happen.
+[00:51:039.06 --> 00:51:046.52] [Customer]  I'm more after identification of periods when, say, large in absolute value
+[00:51:046.52 --> 00:51:048.30] [Customer]  are more likely to occur.
+[00:51:049.32 --> 00:51:055.38] [Customer]  That in, and importantly, if I can identify these regimes and I can forecast,
+[00:51:056.26 --> 00:51:058.44] [Customer]  then it has implication for my portfolio meaning.
+[00:51:058.66 --> 00:52:000.34] [Customer]  Probably, if I believe in it, then I can predict.
+[00:52:000.34 --> 00:52:004.16] [Customer]  If I believe that we are due to go into a period of high volatility regime,
+[00:52:004.40 --> 00:52:006.80] [Customer]  I would cut my beta exposure.
+[00:52:007.08 --> 00:52:008.84] [Customer]  I would cut my volatility exposure.
+[00:52:009.28 --> 00:52:017.56] [Customer]  I would build a risk management around things that are, say, identifiable.
+[00:52:017.88 --> 00:52:023.18] [Customer]  That at least I'm not making goal to describe all the possible tail events.
+[00:52:023.52 --> 00:52:030.16] [Customer]  What we can do is to describe, say, frequency of these periods of large,
+[00:52:030.16 --> 00:52:034.36] [Customer]  larger statistical returns and then plan accordingly.
+[00:52:035.60 --> 00:52:040.68] [Customer]  We need to have some history, but we are not saying that this is exclusive analysis,
+[00:52:040.86 --> 00:52:045.64] [Customer]  that it gives you all the potential ranges of what things can happen.
+[00:52:046.03 --> 00:52:052.05] [Interviewer]  And I think one of the appealing things about a lot of the alternative risk premia that people
+[00:52:052.05 --> 00:52:058.53] [Interviewer]  are evaluating is the idea that they potentially can be hopefully uncorrelated in those negative
+[00:52:058.53 --> 00:53:004.67] [Interviewer]  equity regimes. I know that's one of the reasons a lot of people initially adopted a lot of trend
+[00:53:004.67 --> 00:53:010.85] [Interviewer]  following strategies was the empirical evidence in a market environment like 2008 that it could
+[00:53:010.85 --> 00:53:017.33] [Interviewer]  potentially not only be uncorrelated, but even negatively correlated and create profit in those
+[00:53:017.33 --> 00:53:025.09] [Interviewer]  types of environments. You have since left Julius Baer. You work at Quantica Capital now, which
+[00:53:025.09 --> 00:53:033.07] [Interviewer]  offers trend following mandates. As you look at trend following as a space, maybe let's start off
+[00:53:033.07 --> 00:53:039.83] [Interviewer]  with, is trend following, does it fall under the category of alternative risk premia as you look
+[00:53:039.83 --> 00:53:040.83] [Interviewer]  at it? Or do you think it's sort of a, you know, it's sort of a, you know, it's sort of a, you know,
+[00:53:041.85 --> 00:53:047.57] [Interviewer]  categorically unique in what it is and the type of strategy and P&L that it creates.
+[00:53:048.20 --> 00:53:054.86] [Customer]  Well, we published an article in the Journal of Hedge Funds, which is actually trying to answer
+[00:53:054.86 --> 00:54:003.24] [Customer]  the same question. In my opinion, alternative risk premium, it always has to do with liquidity. So
+[00:54:003.24 --> 00:54:009.98] [Customer]  there are different categories, but say the most basic one is risk seeking strategies where you
+[00:54:009.98 --> 00:54:020.08] [Customer]  can sell say puts, you can delta hedge them, you can say buy cash bonds, you can sell credit
+[00:54:020.08 --> 00:54:027.10] [Customer]  protection in a sense that you are swapping that most of the time you will be making money.
+[00:54:027.90 --> 00:54:034.60] [Customer]  Most of say traditional risk premium may be a part of say factor investment, right? But
+[00:54:035.58 --> 00:54:039.30] [Customer]  the most typical say carry, volatility, credit,
+[00:54:040.32 --> 00:54:048.68] [Customer]  all these styles, they make you money 80% of time. And then 20%, you can lose a lot.
+[00:54:049.36 --> 00:54:056.16] [Customer]  So and then it derives the best way to classify say from statistical perspective
+[00:54:057.02 --> 00:55:003.22] [Customer]  is then actually to see again, talking of our regime model, so we are not trying to model
+[00:55:003.22 --> 00:55:009.82] [Customer]  say worst possible outcomes of this risk premium. We just look at how they behave in bearish,
+[00:55:009.98 --> 00:55:018.72] [Customer]  And it's exactly what we see. They have zero correlation to stock market in normal or in bullish regime.
+[00:55:018.90 --> 00:55:028.02] [Customer]  They also benefit because of compression, spread compression. In bear regime they suffer because of spread widening.
+[00:55:028.04 --> 00:55:035.04] [Customer]  Spread widening and delta widening. So in a way, given my experience, I always thought that
+[00:55:036.42 --> 00:55:041.72] [Customer]  for me risk premium is something that you swap, say, it's like selling insurances.
+[00:55:041.92 --> 00:55:051.92] [Customer]  You swap a stream of cash flow for sudden gaps. And in a sense, then from this perspective, CTA is different.
+[00:55:052.54 --> 00:55:059.56] [Customer]  Say, traditional CTAs that only try to capture trends, in fact, is an opposite.
+[00:55:059.74 --> 00:56:003.56] [Customer]  The strategy that it doesn't perform well most of the time.
+[00:56:003.92 --> 00:56:005.02] [Customer]  But what we are seeing is that the CTAs that are not performing well most of the time,
+[00:56:005.04 --> 00:56:009.56] [Customer]  what we are after is we are trying to capture big changes.
+[00:56:009.80 --> 00:56:015.58] [Customer]  And therefore, it's an opposite. So we need things to happen in market.
+[00:56:015.78 --> 00:56:021.18] [Customer]  And when things don't happen, we are not making money, but we are not losing that much.
+[00:56:021.74 --> 00:56:027.52] [Customer]  And actually, if things happen, and one also what we discussed before,
+[00:56:028.28 --> 00:56:033.74] [Customer]  trend following benefits greatly from autocorrelated market.
+[00:56:033.74 --> 00:56:043.86] [Customer]  When imagine there is a market went down so much that there is a feedback effect that people face margin calls,
+[00:56:044.16 --> 00:56:048.40] [Customer]  leverage players face margin calls, they need to sell, sell, sell.
+[00:56:048.82 --> 00:56:052.96] [Customer]  And this type of environment, it creates conditional predictability.
+[00:56:054.00 --> 00:57:000.42] [Customer]  Where trend following keeps increasing the exposure into the falling market.
+[00:57:000.84 --> 00:57:003.72] [Customer]  And therefore, it gets this kind of flow.
+[00:57:003.72 --> 00:57:006.00] [Customer]  And therefore, it's a kind of quadratic leverage return.
+[00:57:006.48 --> 00:57:012.10] [Customer]  And when we look at, say, how trend following performs in bearish regime,
+[00:57:012.34 --> 00:57:016.00] [Customer]  we actually see negative correlation to the stock market.
+[00:57:017.40 --> 00:57:020.80] [Customer]  Same negative beta. So it's a defensive strategy.
+[00:57:021.64 --> 00:57:027.92] [Customer]  And in this, say, classification, for me, it is not alternative risk premium.
+[00:57:028.72 --> 00:57:031.54] [Customer]  Although if we look at cross-section of funds,
+[00:57:031.54 --> 00:57:033.58] [Customer]  trend following is different.
+[00:57:033.90 --> 00:57:037.18] [Customer]  It's very difficult, say, to stay always in the game.
+[00:57:037.34 --> 00:57:043.42] [Customer]  And my feeling is that a lot of peers, they mix it somehow with carry trade.
+[00:57:043.64 --> 00:57:046.66] [Customer]  With carry, either through options or through curves.
+[00:57:047.06 --> 00:57:049.72] [Customer]  And then you lose on this defensive.
+[00:57:050.54 --> 00:57:054.54] [Customer]  You perform better, but you become a mix between alternative risk premium.
+[00:57:054.58 --> 00:57:055.80] [Interviewer]  Please bring me in trend follower.
+[00:57:056.04 --> 00:58:002.88] [Interviewer]  The introduction of carry signals into trend is certainly something I've seen in looking at the trend space over the last couple of years.
+[00:58:003.18 --> 00:58:013.66] [Interviewer]  It strikes me as potentially something folks are doing as a way to help protect their portfolios better from some of the negative performance that trend has seen.
+[00:58:013.76 --> 00:58:017.44] [Interviewer]  I think when you look at trend strategies, they did incredibly well in 2008.
+[00:58:017.68 --> 00:58:023.18] [Interviewer]  They struggled for a little while when oil prices sold off and there was a bit of a commodity crash.
+[00:58:023.18 --> 00:58:028.52] [Interviewer]  Crash trend strategies seem to do really well again and then since have been sort of bleeding a little bit of money.
+[00:58:029.02 --> 00:58:035.28] [Interviewer]  I think there's been a lot of people trying to explain maybe why trend hasn't done as well in the last decade.
+[00:58:035.58 --> 00:58:041.18] [Interviewer]  I've seen some people saying that the inflow of capital has caused sort of the broad index.
+[00:58:041.24 --> 00:58:044.94] [Interviewer]  When you look at trend followers as an index, it has to slow down their signals.
+[00:58:045.10 --> 00:58:049.18] [Interviewer]  So prior to 2008, trend followers tended to be a lot faster in their signals.
+[00:58:049.26 --> 00:58:052.30] [Interviewer]  Now post with the influx of capital, they've had to slow down.
+[00:58:052.30 --> 00:58:054.48] [Interviewer]  To prevent higher trading costs.
+[00:58:054.88 --> 00:59:001.52] [Interviewer]  AQR actually recently published a piece talking about that it's really just been that magnitude, the absolute size of trends.
+[00:59:001.78 --> 00:59:006.98] [Interviewer]  And the post-crisis period has largely been subdued compared to the pre-crisis period.
+[00:59:007.44 --> 00:59:009.52] [Interviewer]  I wanted to get your perspective.
+[00:59:010.04 --> 00:59:012.44] [Interviewer]  Obviously you work at a trend following firm now.
+[00:59:012.56 --> 00:59:015.32] [Interviewer]  My guess is you don't think trend following is inherently broken.
+[00:59:015.76 --> 00:59:022.28] [Interviewer]  But do you think that there have been significant changes in the market environment that have caused trend following to slow down?
+[00:59:022.28 --> 00:59:022.28] [Interviewer] 
+[00:59:022.30 --> 00:59:030.80] [Interviewer]  Or do you think that there's a risk that there has been an inherent shift in market dynamics that will prevent trend following from working in the future?
+[00:59:031.39 --> 00:59:036.15] [Customer]  So since it's a quantitative strategy, we need to always understand the conditions.
+[00:59:036.43 --> 00:59:039.49] [Customer]  Under what conditions trend following will work.
+[00:59:039.79 --> 00:59:044.45] [Customer]  And the condition is simple, as I said, simple or say advanced trend following,
+[00:59:044.61 --> 00:59:048.99] [Customer]  you always, we are trying to leverage continuous trends.
+[00:59:049.21 --> 00:59:053.05] [Customer]  So since it goes down, we leverage it.
+[00:59:053.15 --> 00:59:055.03] [Customer]  We are just not sticking to the positions.
+[00:59:055.29 --> 00:59:057.79] [Customer]  Even if we were to use binary signals,
+[00:59:057.79 --> 01:00:003.51] [Customer]  imagine that if things start to go down, more and more assets, say,
+[01:00:003.65 --> 01:00:007.95] [Customer]  treasures start going up, dollar up, commodities down.
+[01:00:008.19 --> 01:00:012.25] [Customer]  So even we use some kind of crossover, binary crossovers,
+[01:00:012.43 --> 01:00:015.07] [Customer]  we start accumulating the short exposure.
+[01:00:015.51 --> 01:00:019.09] [Customer]  And in this sense, what conditions do we need to perform?
+[01:00:019.75 --> 01:00:021.41] [Customer]  We need trends to continue.
+[01:00:022.03 --> 01:00:025.31] [Customer]  In other words, we need positive autocorrelation.
+[01:00:026.07 --> 01:00:027.53] [Customer]  If things go down,
+[01:00:027.79 --> 01:00:031.07] [Customer]  down today, it means probabilistically,
+[01:00:031.95 --> 01:00:035.23] [Customer]  they are more likely to go down tomorrow or on the way up.
+[01:00:036.05 --> 01:00:039.09] [Customer]  It is not enough for things to go up.
+[01:00:039.21 --> 01:00:044.03] [Customer]  Like in my recent presentation, I offered a simple market dynamic.
+[01:00:044.37 --> 01:00:049.31] [Customer]  One is dynamics where you say you toss a faulty coin,
+[01:00:049.95 --> 01:00:053.43] [Customer]  where probability of heads is, say, two thirds.
+[01:00:053.95 --> 01:00:056.69] [Customer]  And for each head, you get one dollar.
+[01:00:056.81 --> 01:00:057.05] [Customer]  So
+[01:00:057.79 --> 01:00:059.27] [Customer]  you are biased to go up.
+[01:00:059.33 --> 01:01:004.97] [Customer]  If you are a long-only investor and you say, you play this game,
+[01:01:005.17 --> 01:01:007.57] [Customer]  you're expected to go up your P&L.
+[01:01:008.13 --> 01:01:010.73] [Customer]  Trend followers also in this environment, of course,
+[01:01:011.31 --> 01:01:016.53] [Customer]  if trend followers are the ones who look at the most recent outcome.
+[01:01:017.09 --> 01:01:022.75] [Customer]  If, say, today was a tail, I bet on the tail on the next round.
+[01:01:022.87 --> 01:01:027.61] [Customer]  In the sense that we are trying to follow the most recent.
+[01:01:027.79 --> 01:01:033.29] [Customer]  And of course, if coin is biased, we also we are capturing it a little bit,
+[01:01:033.37 --> 01:01:036.85] [Customer]  not strongly, not as good as long-only investor.
+[01:01:037.29 --> 01:01:044.53] [Customer]  What matters for us is if the coin is biased in a way that if it shows head to now,
+[01:01:046.03 --> 01:01:053.49] [Customer]  on the next round, it conditionally will say two thirds probability of the head again.
+[01:01:054.51 --> 01:01:057.77] [Customer]  If it shows tail now, then conditionally,
+[01:01:057.79 --> 01:01:059.59] [Customer]  two thirds will be tail tomorrow.
+[01:02:000.79 --> 01:02:005.43] [Customer]  a trend follower that bets on the tail, so conditionally,
+[01:02:005.43 --> 01:02:009.17] [Customer]  still realizing effect can be negative for us,
+[01:02:009.27 --> 01:02:013.25] [Customer]  but in this way, for long-only investor, in this game,
+[01:02:013.31 --> 01:02:014.27] [Customer]  you get zero.
+[01:02:014.53 --> 01:02:026.77] [Customer]  So, to paraphrase, the trend following conditions,
+[01:02:026.77 --> 01:02:035.37] [Customer]  Conditions for trend following to perform is when market are autocorrelated in positive way, that trends are continuous.
+[01:02:036.69 --> 01:02:041.51] [Customer]  It is not enough just to see it to go up. It should be conditionally that they go up.
+[01:02:041.69 --> 01:02:047.31] [Customer]  And what happens during last decade, since go up, but for a different reason.
+[01:02:047.47 --> 01:02:052.05] [Customer]  It's just a drift. It's a drift that is not say conditionally not predictable.
+[01:02:052.05 --> 01:03:002.45] [Customer]  And moreover, we have gaps. So information disseminates very fast that we have gaps over very short periods of times.
+[01:03:002.63 --> 01:03:006.27] [Customer]  That no trend system is able to capture.
+[01:03:008.07 --> 01:03:017.31] [Customer]  And we have recovery. In a normal environment where trend following will benefit if these gaps continue to go down.
+[01:03:018.03 --> 01:03:021.91] [Customer]  Now we have the opposite. Every dip is bought.
+[01:03:022.05 --> 01:03:025.27] [Customer]  And when dip is bought, it means there is a mean reversion.
+[01:03:025.93 --> 01:03:030.71] [Customer]  And mean reversion is an environment where trend following, mathematically we can show.
+[01:03:030.99 --> 01:03:044.49] [Customer]  Of course, the answer is not such as it's satisfactory for a quant, for a person, maybe for a QR or for a person who understands the game, is not satisfactory for investors.
+[01:03:045.37 --> 01:03:050.09] [Customer]  So now what causes? Then we need to look into what causes this mean reversion.
+[01:03:050.93 --> 01:03:052.03] [Customer]  Of course, people will say, well, it's not a good idea.
+[01:03:052.05 --> 01:04:001.59] [Customer]  People refer to central bank policy, which is somewhat true that I think there's some way complacency that any dip needs to be bought.
+[01:04:002.19 --> 01:04:010.55] [Customer]  Then on the other hand, say in commodities market, I think also there's more many arbitrageurs now.
+[01:04:010.85 --> 01:04:018.73] [Customer]  A lot of commodity producers have their own trading desks that are trying to eliminate any kind of trade opportunity
+[01:04:018.73 --> 01:04:025.63] [Customer]  or any type of mismatch between different contracts.
+[01:04:026.15 --> 01:04:035.05] [Customer]  Traditionally, maybe trend following was much more diversified towards having some alphas in many markets.
+[01:04:035.13 --> 01:04:044.83] [Customer]  Across many markets, alphas that were, say, uncorrelated, it's either part of positive autocorrelation or part of carrying.
+[01:04:045.75 --> 01:04:047.69] [Customer]  And nowadays they don't exist.
+[01:04:048.73 --> 01:05:002.43] [Customer]  So to answer what's next, and I think the industry, as you rightly mentioned, I think most of the guys, they just try to increase the window.
+[01:05:002.49 --> 01:05:004.95] [Customer]  So less trade, less frequently.
+[01:05:005.43 --> 01:05:006.87] [Customer]  And trading less.
+[01:05:007.03 --> 01:05:013.45] [Customer]  And then question comes, how am I able to adapt to a fast changing environment?
+[01:05:013.73 --> 01:05:016.03] [Customer]  If things start changing again.
+[01:05:016.03 --> 01:05:020.85] [Customer]  Am I able to go transition to fast trend forward?
+[01:05:021.09 --> 01:05:023.27] [Customer]  So that's a question that investors have.
+[01:05:024.03 --> 01:05:052.36] [Interviewer]  What I think is really interesting about the whole moving more slowly is if you take it to the extreme, if you take a managed future strategy and you say, let me use really, really, really slow signals. In fact, they're so slow, they're always long. You've effectively created risk parity. So on one end, you have risk parity. And in that case, you would say, well, it doesn't necessarily always make sense for me to be long all these commodity contracts. I would want to look into the carry.
+[01:05:052.36 --> 01:06:012.74] [Interviewer]  It might make sense to be long equities and long rates, but it might not make sense to be long commodities all the time. So in that sense, carry might make sense. But as you start to come down the curve a little in the speed sense, as you start to have trends that are actually going to make trades, that whole carry aspect can create potentially conflicting signals.
+[01:06:012.82 --> 01:06:022.26] [Interviewer]  So it's this interesting aspect of where you fall sort of creates this barbell of how much you start to approach this risk parity type extreme.
+[01:06:022.36 --> 01:06:037.97] [Interviewer]  But you are seeing folks like Winton, for example, I think is a perfect example, who are saying, look, we're throwing in the towel a little bit on trend. We're looking for new signals, new strategies. They still are going to have trend as a core component, but reduce its allocations and some of their core funds.
+[01:06:038.45 --> 01:06:052.34] [Interviewer]  As you look towards the future, where do you think it lies for trend following managers? Is it simply that they need to start looking for other signals? Is it should they be looking to introduce things like carry to make a trend following strategy?
+[01:06:052.36 --> 01:06:059.76] [Interviewer]  more robust? Or is there still benefit in the purity of a trend only mandate?
+[01:07:000.47 --> 01:07:005.57] [Customer]  I think in terms of the point of view of the manager, you can do two ways.
+[01:07:006.05 --> 01:07:013.28] [Customer]  I think more or less this crisis alpha is already people don't believe, so it's better not to use it anyway.
+[01:07:013.59 --> 01:07:017.51] [Customer]  So what Vinton is doing, they are trying to become just multi-risk premium.
+[01:07:018.32 --> 01:07:021.28] [Customer]  And of course you can do like long-short.
+[01:07:022.26 --> 01:07:029.61] [Customer]  And still what is great thing about trend following will protect you in certain circumstances.
+[01:07:030.32 --> 01:07:035.89] [Customer]  The verification benefits of trend following are very big, especially on portfolio of alternatives.
+[01:07:036.16 --> 01:07:037.91] [Customer]  So just to step out, why?
+[01:07:038.49 --> 01:07:044.01] [Customer]  So if you can think your way, you probably know what principal component analysis is.
+[01:07:044.47 --> 01:07:048.32] [Customer]  Say in market we have thousands of instruments.
+[01:07:048.82 --> 01:07:050.70] [Customer]  What PCA tells you that,
+[01:07:051.28 --> 01:07:056.84] [Customer]  effectively out of these thousand factors, you can use some statistical analogies.
+[01:07:057.24 --> 01:08:008.76] [Customer]  And at certain periods of time, one or two first principal components will explain variability of all your thousands of instruments.
+[01:08:009.32 --> 01:08:011.61] [Customer]  And these will be periods like two-way.
+[01:08:012.26 --> 01:08:020.05] [Customer]  And trend following works perfectly fine in those conditions because there is no need to diversify.
+[01:08:020.27 --> 01:08:021.27] [Customer]  You just need to know what the conditions are.
+[01:08:021.28 --> 01:08:023.59] [Customer]  And it does go long risk of instruments.
+[01:08:024.19 --> 01:08:030.89] [Customer]  Well, over past decade, in more normal markets, secondary components dominate.
+[01:08:031.24 --> 01:08:040.62] [Customer]  And secondary components, they have more predictable statistical dynamics like mean reversion and maybe some trending.
+[01:08:040.90 --> 01:08:048.32] [Customer]  And what is long-short or cross-sectional time series is just trying to capture these extra effects.
+[01:08:048.32 --> 01:08:053.02] [Customer]  So in effect, you are becoming more closer to risk premium.
+[01:08:053.65 --> 01:09:000.27] [Customer]  You still say in example of Vinton, they just try to, they know that most likely.
+[01:09:000.35 --> 01:09:001.73] [Customer]  So you cannot say rely.
+[01:09:002.05 --> 01:09:009.10] [Customer]  The trend following makes you, brings performance that you need from a manager point of view.
+[01:09:009.23 --> 01:09:011.19] [Customer]  So you go more into risk premium.
+[01:09:011.27 --> 01:09:016.10] [Customer]  You diversify, even keeping your trend signal alive.
+[01:09:016.10 --> 01:09:026.06] [Customer]  So on the other hand, your question was if pure trend following can exist or you become more like a risk parity.
+[01:09:027.44 --> 01:09:034.55] [Customer]  I think the longer you make your window, the closer you become to risk parity.
+[01:09:035.23 --> 01:09:038.59] [Customer]  In effect, you are trying to be learn everything.
+[01:09:038.89 --> 01:09:040.93] [Customer]  You just try to balance the weight.
+[01:09:041.19 --> 01:09:045.01] [Customer]  In this way, it's risk parity.
+[01:09:045.01 --> 01:09:046.77] [Customer]  Risk parity is again, it's a bad concept.
+[01:09:046.94 --> 01:09:049.28] [Customer]  Probably people also don't like it right now.
+[01:09:049.69 --> 01:09:051.01] [Customer]  Pure trend following.
+[01:09:052.16 --> 01:09:059.62] [Customer]  I think the case for models in my perspective, one of the problems, talking of this PCA and analysis.
+[01:09:059.94 --> 01:10:002.16] [Customer]  In trend following, signals are very correlated.
+[01:10:002.70 --> 01:10:007.69] [Customer]  If you make money, you make money across all instruments, almost everything.
+[01:10:007.94 --> 01:10:009.86] [Customer]  If you lose, you lose across all instruments.
+[01:10:010.15 --> 01:10:011.98] [Customer]  There is no signal diversification.
+[01:10:012.65 --> 01:10:014.90] [Customer]  So I think the next step would be.
+[01:10:015.01 --> 01:10:026.56] [Customer]  Most people are trying to do is to try to diversify signals in a way to maybe to work with signals that on their own.
+[01:10:026.66 --> 01:10:028.31] [Customer]  They are not say exploitable.
+[01:10:028.62 --> 01:10:035.32] [Customer]  They can have sharp of say maybe 0.2 or 0.3 that you cannot do them standalone basis.
+[01:10:036.12 --> 01:10:043.24] [Customer]  But if these signals are uncorrelated and especially they are uncorrelated by building a portfolio of signals.
+[01:10:043.24 --> 01:10:045.43] [Customer]  You can get much better sharp.
+[01:10:045.97 --> 01:10:053.05] [Customer]  So the goal is more say the risk equation of signal, which brings us to systematic macro.
+[01:10:053.65 --> 01:10:058.85] [Customer]  That to diversify signals, you need to use more data, not only price data.
+[01:10:059.10 --> 01:11:002.23] [Customer]  And what else drives the markets apart from prices?
+[01:11:003.24 --> 01:11:004.02] [Customer]  It's economy, right?
+[01:11:004.20 --> 01:11:011.32] [Customer]  It's economic data is one of the factors that determine the policy.
+[01:11:011.32 --> 01:11:013.31] [Customer]  Market reaction.
+[01:11:013.81 --> 01:11:017.66] [Customer]  And therefore, I believe there will be evolution of trend following.
+[01:11:017.73 --> 01:11:019.73] [Customer]  It's more say market driven.
+[01:11:020.40 --> 01:11:025.12] [Customer]  Where you try to build, create independent signals.
+[01:11:026.66 --> 01:11:028.05] [Customer]  That in a sense.
+[01:11:029.43 --> 01:11:034.97] [Customer]  And I know some good systematic macro funds that had very good year to await.
+[01:11:035.74 --> 01:11:041.20] [Customer]  Because in the end, if you have big trends, all your macro trends, they will converge.
+[01:11:041.20 --> 01:11:044.15] [Customer]  Into one into the same as trend following.
+[01:11:044.23 --> 01:11:050.36] [Customer]  You either want to be short equities or long dollar or long treasuries or short commodities.
+[01:11:050.43 --> 01:11:054.52] [Customer]  In say in tales of your signal, which I think is quite exciting.
+[01:11:054.60 --> 01:11:055.94] [Customer]  I think going forward.
+[01:11:056.39 --> 01:12:005.81] [Customer]  I think that there is still the industry will evolve and there's a lot of say interesting work to be done on quantitative side.
+[01:12:006.81 --> 01:12:011.03] [Interviewer]  Last question for you here, Artur, and it's one I'm asking everyone in this season.
+[01:12:011.11 --> 01:12:011.79] [Interviewer]  Last question.
+[01:12:012.57 --> 01:12:014.23] [Interviewer]  And the question is this.
+[01:12:014.43 --> 01:12:020.85] [Interviewer]  If you had to sell all of your investable assets today, so you had to liquidate all
+[01:12:020.85 --> 01:12:025.91] [Interviewer]  your investable holdings and could only buy one thing for the rest of your life,
+[01:12:026.03 --> 01:12:030.07] [Interviewer]  whether it's an investment strategy or individual asset class is up to you.
+[01:12:030.63 --> 01:12:032.91] [Interviewer]  What would you buy and why?
+[01:12:033.61 --> 01:12:033.93] [Interviewer]  Ha ha ha.
+[01:12:034.40 --> 01:12:034.48] [Customer]  Yeah.
+[01:12:034.52 --> 01:12:034.82] [Interviewer]  That's a,
+[01:12:034.96 --> 01:12:039.04] [Customer]  I would buy a piece of land with a house.
+[01:12:039.24 --> 01:12:045.82] [Customer]  I would house and a piece of land somewhere in mountains, either in Switzerland or actually
+[01:12:045.82 --> 01:12:047.00] [Customer]  in Catalonia.
+[01:12:047.16 --> 01:12:048.22] [Customer]  My wife is Catalan.
+[01:12:048.48 --> 01:12:049.86] [Customer]  And the answer is simple.
+[01:12:050.06 --> 01:12:053.32] [Customer]  I mean, the world can collapse, right?
+[01:12:053.50 --> 01:12:058.04] [Customer]  If I have my piece of land, my house, I can always go there.
+[01:12:058.82 --> 01:13:000.38] [Customer]  I can retire.
+[01:13:000.38 --> 01:13:004.68] [Customer]  I can lose my job or I can get fed up of the things.
+[01:13:004.94 --> 01:13:011.66] [Customer]  If it has a nice environment, like mountains, river, whatever lake, I can spend the rest
+[01:13:011.66 --> 01:13:013.42] [Customer]  of my life and find it there.
+[01:13:014.84 --> 01:13:016.08] [Interviewer]  Sounds like a good choice to me.
+[01:13:016.14 --> 01:13:017.94] [Interviewer]  Well, Archer, this has been a lot of fun,
+[01:13:018.04 --> 01:13:021.64] [Interviewer]  deep dive on a lot of topics, very fascinating stuff.
+[01:13:021.80 --> 01:13:023.94] [Interviewer]  If people want to find more of your research,
+[01:13:023.98 --> 01:13:025.38] [Interviewer]  I know you've started publishing more,
+[01:13:025.40 --> 01:13:027.26] [Interviewer]  a couple of your papers are on SSRN,
+[01:13:027.26 --> 01:13:029.02] [Interviewer]  you're getting a little bit more active on Twitter,
+[01:13:029.10 --> 01:13:030.16] [Interviewer]  but where can people find you?
+[01:13:030.53 --> 01:13:031.55] [Customer]  ArthurSepp.com
+[01:13:031.55 --> 01:13:033.99] [Customer]  I try to keep a regular blog
+[01:13:033.99 --> 01:13:038.15] [Customer]  and also people can find all my research and my presentations
+[01:13:038.87 --> 01:13:040.03] [Interviewer]  That is wonderful.
+[01:13:040.29 --> 01:13:041.77] [Interviewer]  Well, thank you for joining me today.
+[01:13:042.14 --> 01:13:042.80] [Customer]  Thank you, Kolya.
+[01:13:043.46 --> 01:13:045.54] [Customer]  Thank you a lot for your good questions.
+[01:13:045.78 --> 01:13:047.04] [Customer]  Was nice talking to you.

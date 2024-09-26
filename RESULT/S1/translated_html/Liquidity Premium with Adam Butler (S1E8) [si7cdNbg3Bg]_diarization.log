@@ -1,0 +1,1259 @@
+[00:00:003.19 --> 00:00:008.29] [Interviewer]  Hello and welcome everyone. I'm Corey Hofstein and this is Flirting with Models, the podcast
+[00:00:008.29 --> 00:00:013.13] [Interviewer]  that pulls back the curtain to discover the human factor behind the quantitative strategy.
+[00:00:015.21 --> 00:00:019.77] [Interviewer]  Corey Hofstein is the co-founder and chief investment officer of Newfound Research. Due
+[00:00:019.77 --> 00:00:023.83] [Interviewer]  to industry regulations, he will not discuss any of Newfound Research's funds on this podcast.
+[00:00:024.11 --> 00:00:028.39] [Interviewer]  All opinions expressed by podcast participants are solely their own opinion and do not reflect
+[00:00:028.39 --> 00:00:032.89] [Interviewer]  the opinion of Newfound Research. This podcast is for informational purposes only and should
+[00:00:032.89 --> 00:00:036.87] [Interviewer]  not be relied upon as a basis for investment decisions. Clients of Newfound Research may
+[00:00:036.87 --> 00:00:040.87] [Interviewer]  maintain positions and securities discussed in this podcast. For more information, visit
+[00:00:040.87 --> 00:00:050.95] [Interviewer]  thinknewfound.com. In this episode, I sit down with good friend Adam Butler, chief investment
+[00:00:050.95 --> 00:00:056.75] [Interviewer]  officer of Resolve Asset Management. Rather than take the usual interview style, we thought it'd
+[00:00:056.75 --> 00:01:001.77] [Interviewer]  be fun to just sit down at a bar without an agenda and just record the stuff we would have been
+[00:01:001.77 --> 00:01:002.67] [Interviewer]  talking about anyway.
+[00:01:002.89 --> 00:01:008.65] [Interviewer]  With drinks in hand, we dive into a conversation that covers topics ranging from machine learning
+[00:01:008.65 --> 00:01:014.57] [Interviewer]  to analytical derivations of the correlation between trend following signals to the role
+[00:01:014.57 --> 00:01:018.39] [Interviewer]  of defensive strategies in a portfolio. We hope you enjoy.
+[00:01:023.80 --> 00:01:023.88] [Customer]  you
+[00:01:023.90 --> 00:01:023.90] [Interviewer] 
+[00:01:023.98 --> 00:01:024.26] [Customer]  Here we are.
+[00:01:024.00 --> 00:01:024.34] [Interviewer]  Here we are.
+[00:01:024.79 --> 00:01:024.79] [Interviewer] 
+[00:01:024.86 --> 00:01:024.86] [Customer] 
+[00:01:024.96 --> 00:01:036.34] [Customer]  Yeah, we could just riff. So we're just trying to figure out what we're going to talk about. And Corey suggested that we maybe just riff on some of the areas of current research.
+[00:01:036.34 --> 00:01:055.80] [Customer]  So just talking about different signals versus different ways of constructing portfolios, trying to maximize diversification by using certain machine learning oriented techniques like clustering and boosting and bagging.
+[00:01:055.90 --> 00:01:059.92] [Customer]  So I think the listener is up to date since we started recording.
+[00:02:000.02 --> 00:02:000.86] [Customer]  I think we should also.
+[00:01:060.00 --> 00:02:001.45] [Interviewer]  I think we should also probably.
+[00:02:001.72 --> 00:02:002.08] [Interviewer]  Well, cheers.
+[00:02:002.30 --> 00:02:002.52] [Interviewer]  Cheers.
+[00:02:001.80 --> 00:02:002.04] [Customer]  Well, cheers.
+[00:02:003.87 --> 00:02:004.77] [Customer]  This is bar talk.
+[00:02:004.26 --> 00:02:004.72] [Interviewer]  This is bar talk.
+[00:02:005.17 --> 00:02:015.07] [Customer]  a crystal clear cold lager i'm having a double lagavulin neat and we have just come off what
+[00:02:015.07 --> 00:02:024.44] [Customer]  ended up being a a really really promising conference held by the guys at smart b who are
+[00:02:024.44 --> 00:02:030.74] [Customer]  doing their darndest to try to get advisors in canada educated on the opportunity and factors
+[00:02:030.74 --> 00:02:038.62] [Customer]  and so-called smart beta where canada is a little behind the united states in adoption of
+[00:02:038.62 --> 00:02:047.25] [Customer]  for example etf technology factors and smart beta and so the folks at smart b rod and art
+[00:02:047.25 --> 00:02:051.74] [Customer]  receive a real edge for advisors and their ability to adopt these types of
+[00:02:052.50 --> 00:02:058.46] [Customer]  approaches and differentiate while the rest of canadian advisors kind of catch up on this stuff
+[00:02:059.38 --> 00:03:003.88] [Interviewer]  I told you I've been coming to Canada for five years now and five years ago, they
+[00:03:003.88 --> 00:03:005.76] [Interviewer]  were saying they're five years behind the States.
+[00:03:005.92 --> 00:03:007.56] [Interviewer]  I don't know if the ball's moved at all.
+[00:03:007.62 --> 00:03:008.76] [Interviewer]  I was having some interesting discussions.
+[00:03:009.32 --> 00:03:013.92] [Interviewer]  It's hard to pinpoint, even with the benefit of like hindsight, what caused
+[00:03:013.92 --> 00:03:015.42] [Interviewer]  ETFs to take off in the States.
+[00:03:016.30 --> 00:03:020.16] [Interviewer]  Some of it I think is that the tax efficiency, some of it was cost
+[00:03:020.16 --> 00:03:024.46] [Interviewer]  compression, a lot of the ETFs were able to circumvent platform costs that
+[00:03:024.74 --> 00:03:027.16] [Customer]  democratization of access for sure.
+[00:03:024.96 --> 00:03:026.10] [Interviewer]  democratization of
+[00:03:027.41 --> 00:03:031.41] [Interviewer]  Couldn't, but it doesn't seem like either of those are true up here, right?
+[00:03:031.47 --> 00:03:041.67] [Interviewer]  You don't get the same tax benefits and ETFs in Canada, and there are really no structural platform costs that ETFs are avoiding that mutual funds have to pay.
+[00:03:041.77 --> 00:03:048.69] [Interviewer]  So you sort of sit there and go, okay, what is the structural advantage to the ETF versus the mutual fund?
+[00:03:048.69 --> 00:03:058.89] [Interviewer]  Is there going to be a catalyst other than just ETFs coming to market seem to be far, far cheaper than the mutual funds here in Canada, which is the second most expensive market?
+[00:03:057.18 --> 00:03:057.22] [Customer]  There you go.
+[00:03:059.62 --> 00:03:059.96] [Interviewer]  in the world.
+[00:04:000.21 --> 00:04:001.75] [Customer]  Yeah, we definitely have higher margins.
+[00:04:002.05 --> 00:04:005.39] [Customer]  Some of that is just embedded in the higher cost of setup.
+[00:04:005.53 --> 00:04:008.43] [Customer]  I mean, we reviewed a little bit of that during the conference.
+[00:04:008.69 --> 00:04:014.43] [Customer]  And, I mean, having been registered under Ontario Security Commission
+[00:04:014.43 --> 00:04:019.57] [Customer]  and then subsequently becoming registered under the SEC,
+[00:04:019.87 --> 00:04:023.99] [Customer]  I mean, you can get registered under the SEC as an RIA.
+[00:04:024.15 --> 00:04:027.41] [Customer]  If you can fog a mirror in Canada, you need to have a CFA.
+[00:04:027.41 --> 00:04:031.35] [Customer]  You've got to have somebody who's got the directors and officers course,
+[00:04:031.49 --> 00:04:034.07] [Customer]  who's got two or three years of compliance training,
+[00:04:034.31 --> 00:04:037.69] [Customer]  the principal portfolio manager's got to be a CFA,
+[00:04:037.99 --> 00:04:041.97] [Customer]  who's got five years of experience managing a minimum amount of assets,
+[00:04:042.21 --> 00:04:044.45] [Customer]  that have $100,000 or so in escrow.
+[00:04:044.79 --> 00:04:047.29] [Customer]  So just there's a much higher cost of setup.
+[00:04:047.69 --> 00:04:054.85] [Customer]  I suspect part of that's due to the fact that it's such a concentrated financial services structure in Canada
+[00:04:054.85 --> 00:04:057.31] [Customer]  and the banks have absolutely no incentive to make it,
+[00:04:057.41 --> 00:04:057.43] [Customer]  and it's not easy.
+[00:04:058.25 --> 00:05:001.27] [Customer]  So that's different from the SEC, which is obviously funded by the government
+[00:05:001.27 --> 00:05:003.37] [Customer]  and is independent of the banks.
+[00:05:003.55 --> 00:05:005.39] [Customer]  So it's a different regulatory regime.
+[00:05:006.55 --> 00:05:007.77] [Customer]  Makes a pretty big difference.
+[00:05:008.33 --> 00:05:008.73] [Customer]  Cool.
+[00:05:009.39 --> 00:05:010.51] [Customer]  So with that background...
+[00:05:010.51 --> 00:05:011.89] [Customer]  Also, as a point of clarification,
+[00:05:010.67 --> 00:05:011.19] [Interviewer]  Background.
+[00:05:013.60 --> 00:05:024.92] [Customer]  Canadian investors who buy US ETFs can benefit from some of that tax deferral that Americans get to benefit from as well.
+[00:05:025.10 --> 00:05:032.08] [Customer]  So depending on the type of ETF structure for non-Canadian exposure, there may be some pretty substantial tax advantage.
+[00:05:029.18 --> 00:05:029.54] [Interviewer]  Canadian.
+[00:05:032.42 --> 00:05:034.62] [Interviewer]  You have to custody all those assets in the States though, right?
+[00:05:035.05 --> 00:05:038.63] [Customer]  know you custody in Canada and then you've got a Canadian ETF, for example,
+[00:05:038.63 --> 00:05:039.83] [Customer]  that invested in us ETF.
+[00:05:040.94 --> 00:05:042.58] [Interviewer]  Oh, so just like a pure wrapper.
+[00:05:042.82 --> 00:05:043.10] [Interviewer]  Correct.
+[00:05:043.20 --> 00:05:044.18] [Interviewer]  Around the US ATL.
+[00:05:044.26 --> 00:05:044.54] [Interviewer]  Correct.
+[00:05:044.58 --> 00:05:045.16] [Interviewer]  Oh, I didn't know that.
+[00:05:042.86 --> 00:05:043.20] [Customer]  Correct me.
+[00:05:044.25 --> 00:05:044.47] [Customer]  Correct.
+[00:05:044.99 --> 00:05:052.33] [Customer]  Yeah, so that's some structural alpha that some advisors that know the ETF landscape in Canada can add, and it's going to be pretty substantial.
+[00:05:052.71 --> 00:05:053.45] [Customer]  That's interesting.
+[00:05:054.46 --> 00:05:055.42] [Interviewer]  That's a unique idea.
+[00:05:055.62 --> 00:05:056.32] [Interviewer]  A little tax.
+[00:05:054.47 --> 00:05:054.67] [Customer]  Yeah.
+[00:05:055.81 --> 00:05:056.01] [Customer]  Yeah.
+[00:05:057.44 --> 00:06:011.16] [Interviewer]  Alpha there. So yeah, so before we started recording, you and I were starting to go down the machine learning path. One of the presentations, Jin Choi had talked about a paper that John Allberg had written with a peer.
+[00:06:011.34 --> 00:06:027.32] [Interviewer]  John, who had come on my podcast a little while ago, was all about forecasting fundamentals, trying to come up with a better value signal. So instead of just looking at current enterprise value to current EBIT, I think it was, or EBITDA, he was trying to forecast out future EBIT, saying, hey, prices are technical.
+[00:06:027.44 --> 00:06:052.06] [Interviewer]  Basically, future forecasts of discounted cash flows. Wouldn't we want to use an actual forecast of future EBIT? And so you and I started going down the rabbit hole of machine learning with just the simple question of, are you using it? Are you researching it? It seems to be one of those areas that people are getting more and more involved in. It almost feels like you have to. I mean, just I'll candidly say as a quant, if you're not looking at machine learning, you sort of feel like you're behind the curve.
+[00:06:052.88 --> 00:06:054.98] [Customer]  or at least you're behind the curve from a marketing standpoint.
+[00:06:055.24 --> 00:06:055.62] [Interviewer]  Yes.
+[00:06:055.62 --> 00:06:055.86] [Interviewer]  Right.
+[00:06:055.96 --> 00:06:057.04] [Interviewer]  I mean, yes, absolutely.
+[00:06:055.80 --> 00:06:055.94] [Customer]  Right?
+[00:06:057.43 --> 00:06:058.15] [Customer]  If you don't.
+[00:06:057.45 --> 00:06:057.69] [Interviewer]  If you.
+[00:06:058.46 --> 00:07:004.78] [Customer]  get out in front of your prospective client community with some kind of discussion about
+[00:07:004.78 --> 00:07:008.30] [Customer]  machine learning, then you are missing the sizzle, right?
+[00:07:008.46 --> 00:07:008.76] [Customer]  Right.
+[00:07:009.34 --> 00:07:014.90] [Customer]  But it's been a gentleman who's just come and delivered some water for us.
+[00:07:014.92 --> 00:07:015.40] [Customer]  Thanks a lot.
+[00:07:015.90 --> 00:07:020.34] [Customer]  But I think you and I both have approached machine learning with a healthy degree of
+[00:07:020.34 --> 00:07:020.82] [Customer]  skepticism.
+[00:07:021.16 --> 00:07:027.74] [Customer]  And I mean, obviously, you've got a very deep background in those principles from an academic
+[00:07:028.06 --> 00:07:029.80] [Customer]  standpoint, and yet you've shied away.
+[00:07:029.97 --> 00:07:030.37] [Interviewer]  What's
+[00:07:030.48 --> 00:07:030.71] [Customer]  I'm not.
+[00:07:031.39 --> 00:07:032.93] [Interviewer]  I wouldn't say I've got a super deep background.
+[00:07:032.99 --> 00:07:034.53] [Interviewer]  My undergrad was in computer science.
+[00:07:034.65 --> 00:07:035.93] [Interviewer]  I took machine learning courses.
+[00:07:036.29 --> 00:07:043.65] [Interviewer]  I guess for me, I've always just had a preference towards simplicity in the sense of when I
+[00:07:043.65 --> 00:07:049.03] [Interviewer]  think of a machine learning model that might introduce some opacity into my process.
+[00:07:049.19 --> 00:07:053.47] [Interviewer]  I always think there is a associated model risk.
+[00:07:053.75 --> 00:07:059.53] [Interviewer]  And when I think of all the risks associated in investing, model risk is one of those less
+[00:07:059.53 --> 00:08:002.65] [Interviewer]  tangible, harder to quantify type risks, but it's there.
+[00:08:002.79 --> 00:08:008.71] [Interviewer]  And I just haven't really found the need to go down the machine learning rabbit hole.
+[00:08:008.89 --> 00:08:012.87] [Interviewer]  Now, that said, what I think is interesting for me is as machine learning gets more popular,
+[00:08:012.93 --> 00:08:014.55] [Interviewer]  some of the techniques are bubbling out.
+[00:08:015.17 --> 00:08:019.65] [Interviewer]  And a lot of this, my conversation with John was very enlightening on my podcast.
+[00:08:020.65 --> 00:08:025.53] [Interviewer]  Some of those techniques, I think, can lead to better hypothetical simulations, better
+[00:08:025.53 --> 00:08:027.67] [Interviewer]  backtesting, just better research techniques.
+[00:08:027.77 --> 00:08:028.11] [Interviewer]  Yes.
+[00:08:028.19 --> 00:08:029.19] [Interviewer]  But it doesn't mean you're necessarily.
+[00:08:029.53 --> 00:08:031.31] [Interviewer]  You're not putting anything into practice.
+[00:08:031.79 --> 00:08:037.19] [Interviewer]  Your process doesn't have to use machine learning, but you can use machine learning concepts in
+[00:08:037.19 --> 00:08:037.95] [Interviewer]  your research.
+[00:08:038.37 --> 00:08:043.13] [Interviewer]  And I think that's where I've been leaning more lately is different ways of thinking
+[00:08:043.13 --> 00:08:048.17] [Interviewer]  about combining signals, using decision trees, different ways of thinking about constructing
+[00:08:048.17 --> 00:08:053.33] [Interviewer]  portfolios, which I know you have gone down that rabbit hole pretty deep on the machine
+[00:08:053.33 --> 00:08:053.85] [Interviewer]  learning side.
+[00:08:053.95 --> 00:08:057.17] [Interviewer]  But there's some really interesting concepts there of saying, how can I use machine learning
+[00:08:057.17 --> 00:08:059.45] [Interviewer]  not to necessarily give me an edge?
+[00:08:059.53 --> 00:09:005.99] [Interviewer]  In discovering alpha, but to give me an edge in building a more robust process, almost
+[00:09:005.99 --> 00:09:010.05] [Interviewer]  not the alpha side of the coin, but the risk side, if that makes any sense.
+[00:09:010.58 --> 00:09:015.28] [Customer]  No, I think it makes sense, but really, I think everybody thinks of machine learning.
+[00:09:015.40 --> 00:09:022.02] [Customer]  Many people think of machine learning as this magic wand that you can kind of wave at a data set.
+[00:09:022.90 --> 00:09:033.14] [Customer]  And if you do it properly, then these patterns or these signals emerge that are highly reliable or at least easily testable.
+[00:09:033.14 --> 00:09:045.86] [Customer]  And that there are well-documented and established rules about how to engineer those signals and how to determine the optimal tradeoff between bias and variance.
+[00:09:046.06 --> 00:09:059.40] [Customer]  And the reality is when you dig into that field, you realize that you just introduce a whole other layer of parameters that you can use to fit the problem.
+[00:09:059.50 --> 00:09:059.78] [Customer]  Right.
+[00:09:059.84 --> 00:10:002.90] [Customer]  So it actually is far easier.
+[00:10:003.14 --> 00:10:005.84] [Customer]  To overfit with machine learning processes.
+[00:10:006.28 --> 00:10:019.30] [Customer]  But the whole science of machine learning is learning about more robust ways to derive signals that are more likely to be persistent and meaningful out of sample.
+[00:10:019.48 --> 00:10:019.74] [Customer]  Right.
+[00:10:019.82 --> 00:10:021.00] [Customer]  So it's like any tool set.
+[00:10:021.46 --> 00:10:030.82] [Customer]  If you give somebody a tool, if you give a person who doesn't know how to use a chainsaw a chainsaw, then clearly they are a dangerous weapon.
+[00:10:031.06 --> 00:10:033.12] [Customer]  But if you give somebody with experience.
+[00:10:033.14 --> 00:10:037.04] [Customer]  A chainsaw, he's obviously going to be much more efficient at cutting down trees.
+[00:10:037.26 --> 00:10:037.48] [Customer]  So.
+[00:10:038.06 --> 00:10:038.08] [Interviewer]  you
+[00:10:038.12 --> 00:10:038.47] [Customer]  when you look
+[00:10:038.56 --> 00:10:044.44] [Interviewer]  at some of the stuff you guys are working on what is something like the low-hanging fruit
+[00:10:045.12 --> 00:10:051.64] [Interviewer]  from a machine learning perspective that you think almost any quant i don't want to say bolt on and
+[00:10:051.64 --> 00:10:055.84] [Interviewer]  improve the process but i do think there are certain things that are just sort of
+[00:10:056.46 --> 00:11:003.48] [Interviewer]  okay that is very simple to introduce and will very likely have some sort of robustness benefit
+[00:11:003.48 --> 00:11:007.78] [Interviewer]  to your portfolio i mean you and i were saying before things like subset resampling
+[00:11:008.56 --> 00:11:014.78] [Interviewer]  are just one of those like very trivial to implement concepts in portfolio optimization
+[00:11:015.36 --> 00:11:022.62] [Interviewer]  that just seems out of sample to do an incredibly good job at managing estimation risks
+[00:11:023.74 --> 00:11:031.02] [Customer]  It's just the concept of ensembles, of boosting and bagging, of resampling.
+[00:11:031.98 --> 00:11:038.32] [Customer]  These are technically ideas that are derived from machine learning literature.
+[00:11:038.48 --> 00:11:047.04] [Customer]  But once you have moved through the process of strategy design for long enough, they actually become second nature.
+[00:11:047.04 --> 00:11:053.70] [Customer]  It's not something that you... you don't sort of go to the machine learning literature and learn that there's a name for it and then you use it.
+[00:11:053.84 --> 00:11:055.22] [Customer]  We've been using it for years.
+[00:11:055.44 --> 00:12:001.52] [Customer]  And then once you begin to dig into the literature in information science and machine learning,
+[00:12:001.72 --> 00:12:009.34] [Customer]  then you discover that there's a name for it and that there are mathematically rigorous ways to apply it
+[00:12:009.34 --> 00:12:014.08] [Customer]  and to measure ex ante what the expected benefits should be from these approaches.
+[00:12:014.90 --> 00:12:017.02] [Customer]  We've been leaning pretty heavily on this.
+[00:12:017.04 --> 00:12:021.48] [Customer]  We've been leaning pretty heavily on concepts like bagging unsupervised learning,
+[00:12:021.80 --> 00:12:027.00] [Customer]  where you're creating clusters of similar assets,
+[00:12:027.30 --> 00:12:032.72] [Customer]  and then you use those clusters to create a structured resampling process.
+[00:12:033.16 --> 00:12:036.56] [Customer]  I mean, the whole idea, we focus a lot on portfolio optimization.
+[00:12:037.14 --> 00:12:042.52] [Customer]  And the challenge with portfolio optimization is you've got this covariance matrix
+[00:12:043.04 --> 00:12:046.04] [Customer]  that each individual element in it actually...
+[00:12:046.58 --> 00:12:047.02] [Customer]  actually...
+[00:12:047.04 --> 00:12:049.30] [Customer]  has fairly high reliability.
+[00:12:049.80 --> 00:12:052.92] [Customer]  But the matrix itself is sparse.
+[00:12:053.10 --> 00:12:056.16] [Customer]  And so there's this idea of shrinkage,
+[00:12:057.04 --> 00:13:005.44] [Customer]  where you want to shrink the correlations towards some sort of unbiased estimator or unbiased prior.
+[00:13:005.96 --> 00:13:009.16] [Customer]  And then the question is, what sort of shrinkage method?
+[00:13:010.04 --> 00:13:012.30] [Customer]  How much do you shrink the estimates?
+[00:13:012.58 --> 00:13:016.00] [Customer]  So some of these questions can be answered
+[00:13:016.00 --> 00:13:021.42] [Customer]  very intuitively by using things like cross-validation.
+[00:13:021.70 --> 00:13:027.60] [Customer]  And it's funny because the idea of shrinkage is linked to resampling,
+[00:13:027.78 --> 00:13:033.76] [Customer]  is linked to regularization and an optimization process itself.
+[00:13:034.06 --> 00:13:035.84] [Customer]  It's linked to constraints.
+[00:13:036.20 --> 00:13:038.46] [Customer]  So the long-only constraint, for example,
+[00:13:038.60 --> 00:13:045.50] [Customer]  does a miraculous job of producing much more stable portfolios.
+[00:13:045.50 --> 00:13:047.42] [Customer]  So much of the literature on optimization
+[00:13:048.72 --> 00:13:052.14] [Customer]  that illustrates challenges with optimization
+[00:13:052.14 --> 00:13:056.04] [Customer]  doesn't include these really natural constraints
+[00:13:056.04 --> 00:13:059.18] [Customer]  that go a very long way to solving the problem
+[00:13:059.18 --> 00:14:001.02] [Customer]  and making it very practical.
+[00:14:001.35 --> 00:14:007.75] [Interviewer]  Right. You know, I think at least when I started buying the machine learning space, a lot of the sizzle is around.
+[00:14:008.95 --> 00:14:013.93] [Interviewer]  You can avoid all this feature engineering. You can extract all these nonlinear relationships.
+[00:14:015.37 --> 00:14:020.27] [Interviewer]  I don't want to say you can just throw everything in a blender and get a five star dinner out of it.
+[00:14:020.31 --> 00:14:024.17] [Interviewer]  But it sort of felt like that was the sell on machine learning.
+[00:14:024.17 --> 00:14:033.85] [Interviewer]  And as I dig more into the machine learning space, I guess the way I've been thinking about it is all these estimates we use in portfolio construction,
+[00:14:034.15 --> 00:14:042.21] [Interviewer]  whether it's something to do with an alpha signal or something to do with portfolio construction, they're all misleadingly precise.
+[00:14:042.59 --> 00:14:050.19] [Interviewer]  You look at a covariance matrix and you got decimal precision out to as many infinite as you want it to be.
+[00:14:050.31 --> 00:14:053.99] [Interviewer]  But it doesn't mean it's more accurate. The whole thing is shrouded in a distribution.
+[00:14:054.17 --> 00:15:001.67] [Interviewer]  And when you start putting a portfolio together, that is typically a number of steps that are nonlinear functions of prior step.
+[00:15:001.83 --> 00:15:007.17] [Interviewer]  Yep. That estimation error can dramatically spike.
+[00:15:007.27 --> 00:15:012.93] [Interviewer]  And so it's so interesting to me about the machine learning literature is all the techniques around controlling that.
+[00:15:012.99 --> 00:15:017.95] [Interviewer]  You know, a lot of the things you just mentioned that have nothing to do with, oh, hey, we're looking at.
+[00:15:018.65 --> 00:15:019.55] [Customer]  classification or prediction,
+[00:15:019.72 --> 00:15:021.43] [Customer]  which is what everybody thinks about
+[00:15:021.43 --> 00:15:022.60] [Customer]  when they think about machine learning.
+[00:15:023.06 --> 00:15:023.06] [Interviewer] 
+[00:15:023.19 --> 00:15:027.19] [Interviewer]  Yeah. And so I think that's it's the unsexy side of machine learning. Right.
+[00:15:027.77 --> 00:15:036.33] [Interviewer]  What's also sort of interesting to me is to your point, a lot of this stuff we were doing anyway, we didn't even know it was machine learning technically.
+[00:15:036.63 --> 00:15:041.13] [Interviewer]  And then when you get into the machine learning literature, you go, OK, I was maybe 90 percent of the way there.
+[00:15:041.27 --> 00:15:044.93] [Interviewer]  There's some other interesting things that I can add on that would make this more robust.
+[00:15:045.07 --> 00:15:052.51] [Interviewer]  But I think when you get into this space and you're working on portfolio construction, you tend to start playing with these ideas anyway.
+[00:15:052.51 --> 00:16:000.19] [Interviewer]  Otherwise, you're going to run into these nonlinear explosions of estimation error and you need a way to control that.
+[00:16:000.73 --> 00:16:005.09] [Interviewer]  So you've been doing anything on the I don't want to call the alpha side, but on the signal generation side.
+[00:16:005.19 --> 00:16:008.43] [Interviewer]  So I know you guys like do a lot of stuff in trend. Yeah, a lot of stuff with trend.
+[00:16:007.49 --> 00:16:007.69] [Customer]  Yeah.
+[00:16:008.86 --> 00:16:009.00] [Customer]  Yep.
+[00:16:010.12 --> 00:16:013.44] [Interviewer]  What are you doing? I mean, are you doing anything with machine learning on the trend side?
+[00:16:013.89 --> 00:16:017.21] [Customer]  Yeah, so we had a summer student come in who's got a background in machine learning.
+[00:16:017.51 --> 00:16:033.77] [Customer]  And really, the objective was to come in and get us set up with some clusters on AWS so that we could, I mean, we've got a general framework for how we would like to begin to think about machine learning from a classification and prediction standpoint.
+[00:16:033.79 --> 00:16:039.03] [Customer]  We haven't really put any of it into practice in a production ready way.
+[00:16:039.03 --> 00:16:044.67] [Customer]  But our summer student was very clever. He's very motivated and very ambitious.
+[00:16:044.79 --> 00:17:000.87] [Customer]  He did get us set up in the cloud, but he also worked on a couple of interesting projects, one of which was, can we examine the returns, the daily or monthly returns, some common trend following indexes?
+[00:17:001.35 --> 00:17:009.01] [Customer]  And from those returns, determine what the signals that these major trend following funds.
+[00:17:009.03 --> 00:17:029.05] [Customer]  Are using to trade all of the big individual futures markets with the idea that if we can identify where most futures traders are positioned from a market cap or asset AUM weighted basis, then you've got a couple of different options.
+[00:17:029.15 --> 00:17:038.65] [Customer]  One option is we can create a managed future strategy that is structurally uncorrelated to most other managed future strategies.
+[00:17:039.03 --> 00:17:042.95] [Customer]  And we've made some pretty interesting progress in that space.
+[00:17:043.03 --> 00:17:052.45] [Customer]  We've got a toy example of a managed future strategy that has a very low correlation to managed futures index by design.
+[00:17:052.50 --> 00:17:054.20] [Interviewer]  So can I interrupt and ask a question?
+[00:17:053.95 --> 00:17:054.06] [Customer]  Yeah.
+[00:17:055.46 --> 00:17:059.42] [Interviewer]  the very naive thought that comes to mind for me is, okay,
+[00:17:059.48 --> 00:18:002.18] [Interviewer]  if most of these big firms are doing some form of trend following,
+[00:18:002.80 --> 00:18:008.14] [Interviewer]  the very obvious opposite would be some form of mean reversion, right?
+[00:18:008.24 --> 00:18:012.04] [Interviewer]  Have you found with that, that it did fall into that simple framework?
+[00:18:012.06 --> 00:18:015.84] [Interviewer]  Are you still able to do a decorrelated trend process?
+[00:18:015.98 --> 00:18:018.30] [Interviewer]  Are you still able to do quote unquote trend following,
+[00:18:018.88 --> 00:18:024.06] [Interviewer]  but still have a strategy that still exhibits the sort of zero to negative
+[00:18:024.06 --> 00:18:027.24] [Interviewer]  correlation to what the large players are doing?
+[00:18:027.70 --> 00:18:032.79] [Customer]  Absolutely. I mean, one of the major innovations, and I should give our head of quant research,
+[00:18:033.14 --> 00:18:038.57] [Customer]  Andrew Butler, full credit here because he's been instrumental in deriving a lot of this thinking.
+[00:18:039.27 --> 00:18:048.68] [Customer]  But one of our big innovations is the ability to derive analytically what the correlation is
+[00:18:048.68 --> 00:18:056.77] [Customer]  between different weighting mechanisms or combinations of lookback horizons are for trend signals.
+[00:18:056.77 --> 00:19:003.66] [Customer]  And so you can imagine if we're able to determine that on average,
+[00:19:003.66 --> 00:19:012.07] [Customer]  this market cap weighted group of trend following funds are using a weighted average shape
+[00:19:012.07 --> 00:19:018.14] [Customer]  to derive the trend signal for a certain market, then we can examine that shape
+[00:19:018.14 --> 00:19:025.94] [Customer]  and actually analytically derive a shape that is maximally uncorrelated with the shape that they are using.
+[00:19:025.96 --> 00:19:026.27] [Customer]  Right.
+[00:19:026.77 --> 00:19:030.07] [Customer]  That is still definitionally a trend-related shape.
+[00:19:029.86 --> 00:19:035.26] [Interviewer]  So when you say shape, I think the closest paper I've probably seen when I'm thinking of this in my head is
+[00:19:033.21 --> 00:19:033.47] [Customer]  I'm sorry.
+[00:19:035.90 --> 00:19:036.52] [Interviewer]  Is it the Zaka Mulin?
+[00:19:036.64 --> 00:19:037.28] [Interviewer]  Yeah, right.
+[00:19:037.38 --> 00:19:039.00] [Interviewer]  Where he basically breaks down,
+[00:19:039.06 --> 00:19:040.04] [Interviewer]  okay, let's assume,
+[00:19:040.08 --> 00:19:042.28] [Interviewer]  I think he assumed everything was done on log returns.
+[00:19:042.60 --> 00:19:044.02] [Interviewer]  And based on whether you're doing
+[00:19:044.02 --> 00:19:047.00] [Interviewer]  a moving average crossover or an EWMA or,
+[00:19:036.61 --> 00:19:037.31] [Customer]  Yeah, right.
+[00:19:047.56 --> 00:19:050.82] [Interviewer]  just complete 12 minus one or something like that, you can say what
+[00:19:050.82 --> 00:19:054.10] [Interviewer]  your exact weightings are of the prior
+[00:19:055.10 --> 00:19:056.90] [Interviewer]  days that are included in your look back.
+[00:19:056.98 --> 00:19:059.66] [Interviewer]  And that creates a you say shape, you're saying like
+[00:19:059.66 --> 00:20:002.98] [Interviewer]  if I were to graph my weights on prior days
+[00:20:002.98 --> 00:20:006.64] [Interviewer]  or how influential they are to my signal, you're then able to say, OK,
+[00:20:006.72 --> 00:20:010.00] [Interviewer]  based on that look back, that strategy creates this sort of shape.
+[00:20:010.38 --> 00:20:014.62] [Interviewer]  I'm going to create a shape that is the antithesis or the anti shape.
+[00:20:015.16 --> 00:20:017.77] [Customer]  Yeah, we want to preserve that trend following.
+[00:20:018.69 --> 00:20:019.03] [Customer]  property
+[00:20:019.45 --> 00:20:019.61] [Interviewer]  Yeah.
+[00:20:019.87 --> 00:20:023.75] [Customer]  but do it in a way that is as different from in correlation space
+[00:20:024.41 --> 00:20:028.79] [Customer]  what the majority of AUM is doing as possible, right?
+[00:20:029.04 --> 00:20:033.40] [Interviewer]  So does it actually end up looking like a mirror image?
+[00:20:033.70 --> 00:20:034.98] [Interviewer]  No, absolutely not.
+[00:20:034.05 --> 00:20:035.01] [Customer]  No, absolutely not.
+[00:20:035.21 --> 00:20:035.41] [Customer]  Right.
+[00:20:035.53 --> 00:20:039.49] [Customer]  Because otherwise, I mean, the mirror image is really a, a meter version, like a long
+[00:20:039.49 --> 00:20:043.19] [Customer]  term or like an intermediate term, you know, version type, type signal.
+[00:20:043.35 --> 00:20:044.25] [Customer]  So not, not.
+[00:20:042.99 --> 00:20:043.47] [Interviewer]  Signal light.
+[00:20:044.41 --> 00:20:045.21] [Interviewer]  Maybe I should specify.
+[00:20:045.33 --> 00:20:048.65] [Interviewer]  So when I say mirror image, I don't mean around the x-axis,
+[00:20:048.75 --> 00:20:049.41] [Interviewer]  right, which would be-
+[00:20:049.41 --> 00:20:050.13] [Interviewer]  Oh, I see what you mean.
+[00:20:050.23 --> 00:20:052.35] [Interviewer]  Around the y-axis, I got it.
+[00:20:052.37 --> 00:20:055.15] [Interviewer]  Is the opposite going from short to long,
+[00:20:055.29 --> 00:20:056.95] [Interviewer]  or is it more complicated?
+[00:20:049.39 --> 00:20:050.19] [Customer]  Oh, I see what you mean.
+[00:20:050.25 --> 00:20:051.87] [Customer]  Around the Y axis.
+[00:20:057.39 --> 00:21:014.39] [Customer]  No, and actually that ends up being, it's funny because actually when you go back and you reverse engineer what the optimal window shape has been for, and if you want to use the same window shape for every market and you just sort of go back and reverse engineer what that optimal window shape.
+[00:21:014.39 --> 00:21:038.67] [Customer]  Well, a typical trend follower that uses multiple definitions of trends, so let's call it to say one, three, six, nine and 12 month trend. Well, you have a lot of weight on the first few returns that are closest to today's return and very little weight on the returns that are a little further away around like a year from now, right?
+[00:21:038.83 --> 00:21:044.13] [Customer]  It turns out that if you reverse engineer it, it's a much closer.
+[00:21:044.39 --> 00:21:053.41] [Customer]  To the reverse of that, where the near term returns get very little weight and the further out returns get some positive weight.
+[00:21:053.59 --> 00:22:005.27] [Customer]  And in fact, if you examine it empirically, you might say the near term return should have a negative weight and which is consistent with what we observe in the momentum literature.
+[00:22:001.11 --> 00:22:001.29] [Interviewer]  Right.
+[00:22:006.56 --> 00:22:007.98] [Customer]  with this sort of short-term version of
+[00:22:008.39 --> 00:22:014.59] [Interviewer]  Can you actually get to a meaningfully de-correlated signal?
+[00:22:014.77 --> 00:22:022.27] [Interviewer]  Is it just a matter of, hey, if we had done combined 12, 6, 3, 1 and added another six
+[00:22:022.27 --> 00:22:025.81] [Interviewer]  month signal, all right, they're both correlated 0.9.
+[00:22:026.39 --> 00:22:030.27] [Interviewer]  By doing all this extra work, you can get another signal that's 0.5.
+[00:22:030.74 --> 00:22:031.06] [Customer]  One three.
+[00:22:031.45 --> 00:22:033.53] [Interviewer]  0.3 or is it, can you really, I mean,
+[00:22:033.55 --> 00:22:036.51] [Interviewer]  I find it hard to believe you could go negative without it becoming a mean
+[00:22:036.51 --> 00:22:037.41] [Interviewer]  reversal. Exactly.
+[00:22:031.97 --> 00:22:032.37] [Customer]  or is it
+[00:22:038.05 --> 00:22:038.67] [Customer]  That really is the trend.
+[00:22:038.84 --> 00:22:038.96] [Interviewer]  Rick.
+[00:22:039.04 --> 00:22:045.78] [Customer]  How far away from the typical trend system can you go without it becoming something totally different?
+[00:22:045.80 --> 00:22:046.48] [Customer]  Right, that's not trend.
+[00:22:046.72 --> 00:22:046.90] [Customer]  Yeah.
+[00:22:047.10 --> 00:22:057.18] [Customer]  So the idea being that we want to still maintain a positive weighted average exposure to the direction of trend, but with a very different weighting shape.
+[00:22:057.34 --> 00:22:059.04] [Customer]  That has very interesting properties.
+[00:22:057.87 --> 00:22:058.15] [Interviewer]  That has very.
+[00:22:059.41 --> 00:23:009.81] [Interviewer]  So sort of interesting about that to me, taking off my investment hat for a moment, putting on my business hat, right, is you are very, a strategy like that would very purposefully look unlike its peers, right?
+[00:23:009.87 --> 00:23:014.87] [Interviewer]  So you would be pitching purposeful tracking error to a certain degree, right?
+[00:23:014.95 --> 00:23:022.79] [Interviewer]  Which is, hey, most people own a few big names of the trend followers, and I'm sure anyone listening can name them, who the big trend followers are.
+[00:23:022.79 --> 00:23:034.57] [Interviewer]  And then you are going to create something that purposefully looks different for the benefits of diversification, which means you're sort of as a business bearing a lot of tracking error risk to the well-known players.
+[00:23:034.67 --> 00:23:044.89] [Interviewer]  Like when they're doing well, it doesn't mean you're not going to do well at the same time necessarily, but you're purposefully trying to become decorrelated, which is an interesting product proposal.
+[00:23:045.36 --> 00:23:048.72] [Customer]  Well, I mean, it's really been our business model from the start, right?
+[00:23:048.98 --> 00:23:049.62] [Customer]  Which is...
+[00:23:049.62 --> 00:23:050.42] [Customer]  You got to do something different.
+[00:23:050.54 --> 00:23:051.60] [Customer]  We're going to do something different.
+[00:23:051.76 --> 00:23:053.30] [Customer]  It's going to be benchmark agnostic.
+[00:23:053.32 --> 00:23:059.38] [Customer]  In this case, it is deliberately benchmark, like uncorrelated to the benchmark.
+[00:23:059.68 --> 00:24:001.78] [Customer]  And keep in mind, we haven't launched a product on this yet.
+[00:24:001.86 --> 00:24:003.24] [Customer]  It's still sort of a toy model.
+[00:24:003.54 --> 00:24:008.04] [Customer]  But I fundamentally believe there's something there and that would be really complimentary.
+[00:24:008.44 --> 00:24:008.64] [Interviewer]  Oh, my God.
+[00:24:009.63 --> 00:24:009.99] [Customer]  to many
+[00:24:010.22 --> 00:24:010.30] [Interviewer]  you
+[00:24:010.65 --> 00:24:010.65] [Interviewer] 
+[00:24:010.81 --> 00:24:010.87] [Customer]  Thank you.
+[00:24:010.96 --> 00:24:010.96] [Interviewer] 
+[00:24:011.13 --> 00:24:012.21] [Customer]  Institutional portfolios.
+[00:24:012.73 --> 00:24:014.23] [Interviewer]  So does it, in doing
+[00:24:013.86 --> 00:24:014.14] [Customer]  in doing
+[00:24:016.16 --> 00:24:018.18] [Interviewer]  doing this, right? So a lot of these, these trend followers are
+[00:24:018.18 --> 00:24:024.10] [Interviewer]  able to solve this crisis alpha, right? In doing, getting as
+[00:24:024.84 --> 00:24:031.64] [Interviewer]  uncorrelated as possible. Do you lose or dilute the crisis alpha
+[00:24:031.64 --> 00:24:032.00] [Interviewer]  potential?
+[00:24:032.47 --> 00:24:035.88] [Customer]  I mean, that is a great question and a really great direction to go.
+[00:24:036.08 --> 00:24:050.56] [Customer]  And it allows me to put it back on you because you've done so much great work on how trend following is translatable into some long exposure or some beta exposure coupled with some option exposure.
+[00:24:050.99 --> 00:24:051.43] [Customer]  Yeah.
+[00:24:051.43 --> 00:25:015.86] [Customer]  And so, and I want to talk about how different types of trend strategies for short term versus long term, things that are more related to vol expansion in the short term, for example, how closely they track option strategies in terms of the out of the money versus in the money or the premiums.
+[00:25:015.86 --> 00:25:017.76] [Customer]  Like there's so much to discuss there.
+[00:25:017.78 --> 00:25:017.99] [Customer]  Yeah.
+[00:25:017.75 --> 00:25:018.11] [Interviewer]  Yeah.
+[00:25:018.55 --> 00:25:022.59] [Interviewer]  You know, what's really fascinating to me is I remember 10 years ago when I got
+[00:25:022.59 --> 00:25:026.51] [Interviewer]  started, our bread and butter was trend equity strategies.
+[00:25:027.13 --> 00:25:030.19] [Interviewer]  Mentioning that you were momentum or trend was
+[00:25:031.39 --> 00:25:033.81] [Interviewer]  like those were dirty words.
+[00:25:034.35 --> 00:25:038.19] [Interviewer]  I'll give credit to folks at AQR
+[00:25:039.01 --> 00:25:042.67] [Interviewer]  who have done, you know, publishing a paper in 2012 about trend
+[00:25:043.23 --> 00:25:046.13] [Interviewer]  suddenly made trend a positive thing.
+[00:25:046.34 --> 00:25:055.82] [Customer]  I know after half of the people on the list of top wealth builders over history came out of trend following back in the 60s and 70s.
+[00:25:056.14 --> 00:26:004.88] [Interviewer]  It's sort of funny, but it was always sort of the, well, I look at it and say like, it's the, I don't want to say un-American, we're in Canada.
+[00:26:005.20 --> 00:26:010.06] [Interviewer]  But like, it's not, it's not Warren Buffett eating apple pie investing.
+[00:26:010.36 --> 00:26:015.64] [Interviewer]  It's not when you have something, a book called The Intelligent Investor that everyone considers the Bible of investing.
+[00:26:016.04 --> 00:26:020.28] [Interviewer]  By the way, the title implying if you don't do what's in the book, you are unintelligent, right?
+[00:26:019.12 --> 00:26:019.94] [Customer]  You're unintelligent.
+[00:26:021.07 --> 00:26:021.97] [Interviewer]  Brilliant marketing there.
+[00:26:022.09 --> 00:26:026.01] [Interviewer]  But it is this sort of like, well, you're not doing security analysis.
+[00:26:026.23 --> 00:26:028.37] [Interviewer]  It feels a little dirty.
+[00:26:028.43 --> 00:26:034.51] [Interviewer]  But what's been very fascinating to me is as more academic literature has come out of it,
+[00:26:034.59 --> 00:26:041.33] [Interviewer]  there is a clear link with trend following when isolated as a dynamic trading strategy
+[00:26:041.33 --> 00:26:046.35] [Interviewer]  as a replication of either sort of a look back straddle.
+[00:26:047.35 --> 00:26:051.43] [Interviewer]  Or if you're looking at something like a trend equity, like a long flat,
+[00:26:051.65 --> 00:26:053.09] [Interviewer]  it looks like a put option.
+[00:26:054.97 --> 00:26:056.77] [Customer]  Or long equities with a put on.
+[00:26:056.77 --> 00:26:057.11] [Customer]  Right, right.
+[00:26:056.71 --> 00:26:059.81] [Interviewer]  Right, exactly. Long equities with the put option, which is pretty fascinating.
+[00:27:000.01 --> 00:27:005.01] [Interviewer]  And then it really becomes a question of, okay, what trend length are you looking at?
+[00:27:005.13 --> 00:27:008.73] [Interviewer]  Which will tell you something about the maturity of the put option you're looking at.
+[00:27:008.83 --> 00:27:014.55] [Interviewer]  The speed of the trend is going to tell you something about how in the money, out of the money.
+[00:27:015.21 --> 00:27:023.47] [Interviewer]  And all of a sudden there is not just like this wishful connection, but there is a true theoretical connection.
+[00:27:023.47 --> 00:27:036.21] [Interviewer]  You can actually derive from the math, if you build a trend signal in a certain way, it is the equivalent of the Black-Scholes equation for put options.
+[00:27:036.53 --> 00:27:037.97] [Customer]  And you know what? The proof is in the pudding, too.
+[00:27:038.09 --> 00:27:043.01] [Customer]  I absolutely love this because what we've observed over the last pick or horizon,
+[00:27:043.25 --> 00:27:051.43] [Customer]  but over a very meaningful horizon, is that the trend strategies that look like crisis alpha strategies,
+[00:27:051.53 --> 00:28:001.25] [Customer]  that look most like long vol or long puts, have been paying a premium for that type of exposure.
+[00:28:001.25 --> 00:28:007.35] [Customer]  Short-term trend has been a negative carry strategy for as far as the eye can see.
+[00:28:007.61 --> 00:28:010.03] [Customer]  And it looks just like long vol.
+[00:28:012.91 --> 00:28:018.65] [Customer]  And then as you move out the trend length into longer-term trend horizons,
+[00:28:018.69 --> 00:28:025.55] [Customer]  it becomes much less like a very near-term, very close-to-the-money put option,
+[00:28:025.69 --> 00:28:030.91] [Customer]  and much more like a long beta, far-out-of-the-money put option,
+[00:28:031.25 --> 00:28:037.43] [Customer]  where you're willing to give up a very substantial amount of early drawdown or acute drawdown
+[00:28:037.43 --> 00:28:040.79] [Customer]  in order to preserve a higher long-term premium.
+[00:28:041.21 --> 00:28:045.09] [Customer]  And so it really ends up being, do you want to buy a put option?
+[00:28:045.35 --> 00:28:048.75] [Customer]  Do you want to buy short-term breakout-style trend?
+[00:28:049.15 --> 00:28:054.65] [Customer]  They're the same thing, and you end up paying precisely the same premium to own that.
+[00:28:054.46 --> 00:28:054.72] [Interviewer]  I'm not.
+[00:28:054.85 --> 00:28:056.07] [Interviewer]  Which is a little concerning to me.
+[00:28:056.31 --> 00:28:058.73] [Interviewer]  And let me just like, as an asset manager,
+[00:28:058.83 --> 00:29:000.63] [Interviewer]  someone who's long believed in trend,
+[00:29:000.77 --> 00:29:003.75] [Interviewer]  both the empirical evidence and sort of the academic connection.
+[00:29:004.69 --> 00:29:008.35] [Interviewer]  When someone like, I'm sure I'm going to reference AQR 800 times
+[00:29:008.35 --> 00:29:008.97] [Interviewer]  during this conversation.
+[00:29:009.17 --> 00:29:010.89] [Interviewer]  Someone like AQR publishes a paper called
+[00:29:010.89 --> 00:29:012.41] [Interviewer]  The Pathetic Protection of Puts.
+[00:29:013.27 --> 00:29:017.79] [Interviewer]  You go, all right, if I'm theoretically linked
+[00:29:017.79 --> 00:29:019.69] [Interviewer]  to the payoff structure of a put option,
+[00:29:020.61 --> 00:29:023.69] [Interviewer]  and here's all this evidence that buying put options
+[00:29:023.69 --> 00:29:028.79] [Interviewer]  despite what Nassim Taleb says is a horrible trade
+[00:29:028.79 --> 00:29:031.75] [Interviewer]  because you were so incredibly kind.
+[00:29:031.77 --> 00:29:032.39] [Interviewer]  Hello.
+[00:29:032.99 --> 00:29:033.39] [Interviewer]  Hey.
+[00:29:033.36 --> 00:29:035.04] [Customer]  Hey, ladies down.
+[00:29:035.04 --> 00:29:038.24] [Customer]  We got Jen Choi here and his lovely wife and family.
+[00:29:038.34 --> 00:29:039.44] [Customer]  This is Madeline.
+[00:29:039.54 --> 00:29:040.70] [Customer]  Hey, Madeline.
+[00:29:040.84 --> 00:29:041.56] [Customer]  This is Eleanor.
+[00:29:041.80 --> 00:29:042.48] [Customer]  Hi there.
+[00:29:043.72 --> 00:29:044.24] [Customer]  Awesome.
+[00:29:044.50 --> 00:29:047.42] [Customer]  Yeah, I heard your cute noises from across the restaurant.
+[00:29:047.82 --> 00:29:048.02] [Interviewer]  Yeah.
+[00:29:048.61 --> 00:29:050.55] [Customer]  Jin, say hi. We're recording here.
+[00:29:050.67 --> 00:29:051.57] [Customer]  I'm sorry, guys.
+[00:29:051.69 --> 00:29:052.71] [Customer]  No, no, this is great.
+[00:29:053.13 --> 00:29:054.05] [Interviewer]  exactly how it's supposed to be.
+[00:29:054.09 --> 00:29:054.73] [Interviewer]  Exactly, yeah.
+[00:29:054.03 --> 00:29:054.65] [Customer]  Exactly, yeah.
+[00:29:054.75 --> 00:29:058.05] [Customer]  You don't record in a restaurant unless you expect to have it.
+[00:29:058.28 --> 00:29:058.36] [Interviewer]  Okay, okay.
+[00:29:059.46 --> 00:29:059.62] [Customer]  Yeah.
+[00:29:059.84 --> 00:30:000.28] [Customer]  All right.
+[00:30:000.42 --> 00:30:000.78] [Customer]  Okay.
+[00:30:001.04 --> 00:30:001.76] [Customer]  This is great.
+[00:30:002.50 --> 00:30:003.36] [Customer]  Okay, we'll take off.
+[00:30:003.36 --> 00:30:004.16] [Customer]  No, no, no worries.
+[00:30:004.28 --> 00:30:006.18] [Customer]  We'll catch up a little later anyway, right?
+[00:30:006.28 --> 00:30:007.06] [Customer]  Okay, see you guys later.
+[00:30:007.14 --> 00:30:007.48] [Customer]  All right.
+[00:30:007.21 --> 00:30:008.23] [Interviewer]  All right. See you in a bit.
+[00:30:009.35 --> 00:30:011.11] [Interviewer]  So you were saying it was disconcerting.
+[00:30:011.11 --> 00:30:012.79] [Interviewer]  Right. Right. So you sit there and you go, okay.
+[00:30:013.17 --> 00:30:017.83] [Interviewer]  And what was interesting to me was there was nothing new in that paper for me.
+[00:30:018.43 --> 00:30:023.03] [Interviewer]  It was evidence that I had seen prior, which is when you were buying put options,
+[00:30:023.19 --> 00:30:025.29] [Interviewer]  there was an incredible amount of timing luck in the roll.
+[00:30:025.49 --> 00:30:025.87] [Interviewer]  Right.
+[00:30:025.97 --> 00:30:031.97] [Interviewer]  Right. Did you happen to buy the put at a point when ball was cheap and then the vent happens?
+[00:30:025.57 --> 00:30:025.75] [Customer]  Right.
+[00:30:033.03 --> 00:30:035.41] [Interviewer]  But then what happens when you need to roll your put?
+[00:30:035.53 --> 00:30:039.19] [Interviewer]  So what's the maturity of the put option is going to be incredibly dependent.
+[00:30:039.37 --> 00:30:044.79] [Interviewer]  Let's say you're using leaps and then all of a sudden, right mid-crisis, you need to roll your leaps.
+[00:30:045.09 --> 00:30:046.63] [Interviewer]  It's going to be an expensive hedge.
+[00:30:046.83 --> 00:30:047.15] [Interviewer]  Absolutely.
+[00:30:047.43 --> 00:31:000.13] [Interviewer]  Right. So you see this evidence that despite the contractual guarantee, the empirical ability for put options to actually protect you is very dependent on timing lock.
+[00:31:001.36 --> 00:31:002.46] [Customer]  Now relate that back to trend.
+[00:31:003.47 --> 00:31:008.67] [Interviewer]  So you sit there with trend and you say, okay, it's got the identical payoff structure theoretically.
+[00:31:008.67 --> 00:31:009.95] [Interviewer]  In continuous time.
+[00:31:010.07 --> 00:31:015.69] [Interviewer]  But it's in continuous time, so you don't necessarily have to roll forward that protection.
+[00:31:015.95 --> 00:31:020.25] [Interviewer]  But it's still, you sit there and go, okay, I've got my theoretical connection to options theory.
+[00:31:020.51 --> 00:31:027.45] [Interviewer]  But the goal is ultimately to dynamically replicate the strategy, avoiding all that potential.
+[00:31:025.91 --> 00:31:026.13] [Customer]  Void.
+[00:31:027.92 --> 00:31:032.22] [Customer]  But what if the crisis occurs between rebalance signals?
+[00:31:032.34 --> 00:31:035.38] [Customer]  What if you've got a monthly rebalance program
+[00:31:035.38 --> 00:31:039.22] [Customer]  and the crisis occurs on day three of the month,
+[00:31:039.82 --> 00:31:040.66] [Customer]  you just rebalanced,
+[00:31:040.80 --> 00:31:044.12] [Customer]  you're not gonna rebalance for another 23 days.
+[00:31:045.02 --> 00:31:047.54] [Customer]  Is that not a close analog to that
+[00:31:048.08 --> 00:31:050.16] [Customer]  just bad timing lock in terms of
+[00:31:050.43 --> 00:31:050.61] [Interviewer]  Yeah.
+[00:31:050.61 --> 00:31:051.33] [Interviewer]  Option rules?
+[00:31:051.55 --> 00:31:052.51] [Interviewer]  Yeah, absolutely.
+[00:31:050.47 --> 00:31:050.59] [Customer]  Yeah.
+[00:31:053.69 --> 00:31:056.53] [Interviewer]  I think we've seen that with a lot of tactical strategies.
+[00:31:056.69 --> 00:32:008.77] [Interviewer]  I wish I could pour one out for some of my peers that have gone out of business for that exact reason where they happen to rebalance at a point where the market just moved a certain way.
+[00:32:008.97 --> 00:32:013.57] [Interviewer]  And if they had rebalanced two weeks earlier, two weeks later, they would still be in business.
+[00:32:014.09 --> 00:32:017.59] [Customer]  But does it not make an argument for sort of continuous time rebalancing?
+[00:32:017.82 --> 00:32:021.84] [Interviewer]  Oh, absolutely. Absolutely. So, I mean, this is like a pure obsession of mine. You know
+[00:32:021.84 --> 00:32:030.72] [Interviewer]  this. Timing luck. For me, I have written far too much about it, much to no one's happiness.
+[00:32:031.02 --> 00:32:032.80] [Interviewer]  I keep publishing articles about it.
+[00:32:032.84 --> 00:32:033.84] [Interviewer]  I appreciate it. I love it.
+[00:32:034.02 --> 00:32:038.02] [Interviewer]  And I keep trying to theoretically derive, and the evidence is there, right? So I think
+[00:32:038.02 --> 00:32:042.90] [Interviewer]  the simplest evidence for me is you don't even have to talk about truly active strategies. I think
+[00:32:033.97 --> 00:32:033.99] [Customer]  Thank you.
+[00:32:043.44 --> 00:32:045.80] [Interviewer]  You look at something like a 60-40 portfolio, right?
+[00:32:046.40 --> 00:32:047.76] [Interviewer]  As simple as it gets.
+[00:32:048.22 --> 00:32:050.98] [Interviewer]  60% stocks, 40% Barclays aggregate.
+[00:32:051.12 --> 00:32:052.22] [Interviewer]  Let's assume the S&P 500.
+[00:32:052.36 --> 00:32:053.36] [Interviewer]  And it's 2008.
+[00:32:054.10 --> 00:32:057.78] [Interviewer]  If you happen to rebalance June to June, right?
+[00:32:057.84 --> 00:33:001.84] [Interviewer]  Every June you rebalance back to 60-40 versus December to December.
+[00:33:002.50 --> 00:33:007.22] [Interviewer]  The performance differential in 2008 would have been something like 700 basis points.
+[00:33:007.42 --> 00:33:007.56] [Interviewer]  Yeah.
+[00:33:007.58 --> 00:33:008.80] [Interviewer]  No, just monstrous.
+[00:33:008.88 --> 00:33:009.66] [Interviewer]  Just monstrous.
+[00:33:009.66 --> 00:33:012.52] [Interviewer]  And it's just because you happen to get lucky when you rebalance.
+[00:33:012.68 --> 00:33:012.88] [Interviewer]  Yep.
+[00:33:009.64 --> 00:33:009.84] [Customer]  Yeah.
+[00:33:013.63 --> 00:33:024.79] [Interviewer]  So the point I always try to make, especially when I talk to advisors, is imagine running an identical strategy to the guy down the street, but he's 700 basis points ahead of you just because he got lucky about when he rebalanced.
+[00:33:025.23 --> 00:33:035.01] [Interviewer]  This sort of goes back to a lot of stuff you and I talk about, which is people have an aversion to complexity or perceived complication.
+[00:33:035.01 --> 00:33:043.93] [Interviewer]  But I think sometimes there's ways to introduce complication or complexity into your portfolio that is truly to mitigate risk.
+[00:33:044.39 --> 00:33:046.61] [Interviewer]  So we do the continuous rebalancing.
+[00:33:046.63 --> 00:33:058.25] [Interviewer]  We call it tranching, where if we're going to have a holding period of one month, 21 days, in some of our portfolios, we're going to every day roll to 120% of our portfolio.
+[00:33:058.87 --> 00:34:004.99] [Interviewer]  And in trying to do that, we are trying to avoid the timing lock that would be associated with just happening.
+[00:34:006.05 --> 00:34:008.97] [Interviewer]  And it's operationally, there's more you have to do.
+[00:34:009.99 --> 00:34:016.13] [Interviewer]  But my, I won't call it back of a napkin math because it took me quite some time to derive of my math shows.
+[00:34:016.47 --> 00:34:023.45] [Interviewer]  If you sort of quantify this timing lock for every tranche that you add, you divide the timing lock by the number of tranches.
+[00:34:023.67 --> 00:34:025.27] [Interviewer]  So if you have...
+[00:34:023.64 --> 00:34:023.78] [Customer]  Right.
+[00:34:024.45 --> 00:34:024.77] [Customer]  if you
+[00:34:026.14 --> 00:34:028.62] [Interviewer]  Timing lock and you have 21 tranches.
+[00:34:028.62 --> 00:34:030.88] [Interviewer]  You've cut your timing lock in one 21st.
+[00:34:031.52 --> 00:34:033.36] [Customer]  It's just the central limit theorem, right?
+[00:34:033.60 --> 00:34:036.44] [Customer]  It literally is, let's just increase our sample size
+[00:34:036.44 --> 00:34:037.28] [Customer]  to reduce,
+[00:34:036.67 --> 00:34:036.75] [Interviewer]  Right.
+[00:34:037.97 --> 00:34:041.93] [Customer]  the amount of outcome that is dominated by randomness
+[00:34:042.47 --> 00:34:047.89] [Customer]  and increase the amount of outcome that is the true mean skill
+[00:34:048.55 --> 00:34:048.59] [Interviewer]  Thank you.
+[00:34:048.65 --> 00:34:048.67] [Customer]  you
+[00:34:048.70 --> 00:34:049.58] [Interviewer]  of the underlying approach.
+[00:34:049.78 --> 00:34:054.48] [Interviewer]  So, you know, I love my little picture of my 3D axis diversifying the what,
+[00:34:054.62 --> 00:34:058.70] [Interviewer]  the asset classes, the how, the process, the when, timing lock.
+[00:34:058.96 --> 00:35:001.64] [Interviewer]  I know you, I mean, we're starting to get into this.
+[00:35:002.06 --> 00:35:004.92] [Interviewer]  You focus a lot on diversifying the how, right?
+[00:35:004.98 --> 00:35:008.84] [Interviewer]  That process of how you actually optimize a portfolio,
+[00:35:008.94 --> 00:35:010.68] [Interviewer]  but even just some of the signals you generate.
+[00:35:011.24 --> 00:35:013.56] [Interviewer]  Bring this back to machine learning, right?
+[00:35:013.68 --> 00:35:014.80] [Interviewer]  Some of the stuff we were talking about earlier.
+[00:35:014.94 --> 00:35:017.02] [Interviewer]  I mean, you've been looking into machine learning techniques
+[00:35:017.02 --> 00:35:020.44] [Interviewer]  to help enhance that diversification, right?
+[00:35:020.50 --> 00:35:024.60] [Interviewer]  So it's not just one trend signal driving your rate exposure,
+[00:35:024.74 --> 00:35:028.50] [Interviewer]  your equity exposure, whatever it is in your multi-asset trend strategy.
+[00:35:028.82 --> 00:35:033.24] [Interviewer]  It's multiple trends, multiple look back periods,
+[00:35:033.32 --> 00:35:036.64] [Interviewer]  multiple holding lengths in effort to say,
+[00:35:036.78 --> 00:35:040.36] [Interviewer]  hey, there's a systematic trend element,
+[00:35:041.02 --> 00:35:045.30] [Interviewer]  but I don't know which of these right now is the right one.
+[00:35:045.68 --> 00:35:047.00] [Interviewer]  So I'm going to try.
+[00:35:047.02 --> 00:35:047.84] [Interviewer]  I'm going to try to diversify.
+[00:35:047.98 --> 00:35:050.90] [Interviewer]  And I did a little bit of research on trying to quantify that,
+[00:35:050.98 --> 00:35:054.46] [Interviewer]  but maybe you could sort of chat about some of the stuff you've been looking into
+[00:35:054.46 --> 00:35:057.84] [Interviewer]  and some of the quantification of the diversification benefit.
+[00:35:058.41 --> 00:36:000.03] [Customer]  Yeah, it's a lot of fun.
+[00:36:000.17 --> 00:36:003.89] [Customer]  And the article you wrote in July, I think, gets a long way there.
+[00:36:004.69 --> 00:36:010.79] [Customer]  And we just sort of took it to the next level, which is, so there's whatever,
+[00:36:011.05 --> 00:36:014.65] [Customer]  a handful of different ways that you can define trend following
+[00:36:014.65 --> 00:36:018.47] [Customer]  and that has been defined as trend following over the years, right?
+[00:36:018.53 --> 00:36:024.49] [Customer]  You've got the sort of turtle style by Decane, the sort of breakout strategies,
+[00:36:024.67 --> 00:36:026.87] [Customer]  the Bollinger breakout, the ATR breakout.
+[00:36:026.87 --> 00:36:030.99] [Customer]  You've got the single, double, and triple moving average cross.
+[00:36:031.15 --> 00:36:032.87] [Customer]  You've got the sort of time series momentum.
+[00:36:033.41 --> 00:36:040.71] [Customer]  You apply all of those different trend approaches to a diverse basket of futures.
+[00:36:041.01 --> 00:36:042.59] [Customer]  So go back to your original point there.
+[00:36:042.71 --> 00:36:044.49] [Interviewer]  all mathematically linked, right?
+[00:36:044.99 --> 00:36:046.28] [Customer]  There are some of the breakout stuff,
+[00:36:045.02 --> 00:36:046.06] [Interviewer]  There are some of the breakouts.
+[00:36:047.26 --> 00:36:048.76] [Customer]  is a little less...
+[00:36:048.76 --> 00:36:049.58] [Customer]  Like ball breakups?
+[00:36:049.58 --> 00:36:050.02] [Customer]  Yeah.
+[00:36:050.62 --> 00:36:052.00] [Customer]  It's a little less...
+[00:36:050.35 --> 00:36:050.79] [Interviewer]  Yeah, that's all.
+[00:36:052.55 --> 00:36:052.99] [Customer]  That's a third cousin.
+[00:36:053.11 --> 00:36:053.59] [Customer]  Linearly mapped.
+[00:36:053.74 --> 00:36:054.24] [Customer]  Second cousin.
+[00:36:054.30 --> 00:36:054.97] [Customer]  Yeah, exactly.
+[00:36:055.51 --> 00:36:056.41] [Customer]  But yeah, absolutely.
+[00:36:056.57 --> 00:36:057.16] [Customer]  They're all...
+[00:36:052.84 --> 00:36:052.97] [Interviewer]  a third customer.
+[00:36:054.33 --> 00:36:054.79] [Interviewer]  Yeah, exactly.
+[00:36:057.89 --> 00:37:000.34] [Customer]  all the sort of moving average and times three stuff
+[00:37:000.34 --> 00:37:002.84] [Customer]  are all linear combinations of one another, right?
+[00:36:059.84 --> 00:37:000.14] [Interviewer]  Time's free.
+[00:37:002.72 --> 00:37:002.80] [Interviewer]  Right.
+[00:37:003.75 --> 00:37:011.69] [Customer]  But if you just so empirically, you want a long-term simulation of using each of these definitions of trend,
+[00:37:012.55 --> 00:37:017.23] [Customer]  just real simple portfolio destruction, inverse fall weight, the longs and the shorts.
+[00:37:018.17 --> 00:37:021.11] [Customer]  And you look at the daily returns.
+[00:37:021.51 --> 00:37:025.09] [Customer]  So you've got, say, seven different ways of measuring trend.
+[00:37:025.43 --> 00:37:031.17] [Customer]  You're going to use 10 different look-back horizons between 10 days and one year.
+[00:37:031.17 --> 00:37:035.13] [Customer]  And so now you've got 70 different return series.
+[00:37:035.37 --> 00:37:045.63] [Customer]  And then you determine how many independent sources of signal are in those 70 different return series.
+[00:37:046.03 --> 00:37:053.67] [Customer]  Well, if you equal weight all those different return series, you see about 1.5 independent bets.
+[00:37:053.89 --> 00:38:000.39] [Customer]  Hopefully, we'll have a chance to sort of link that whole idea of independent bets to X-ante expected performance.
+[00:38:001.17 --> 00:38:002.89] [Customer]  We should do that because otherwise it'll be lost.
+[00:38:003.29 --> 00:38:005.11] [Customer]  But just take it equal weight.
+[00:38:005.51 --> 00:38:008.45] [Customer]  Then I'll have one more of those, but just a single.
+[00:38:008.77 --> 00:38:009.05] [Interviewer]  Thank you.
+[00:38:009.22 --> 00:38:009.59] [Customer]  Thank you.
+[00:38:010.88 --> 00:38:011.54] [Interviewer]  Yeah, why not?
+[00:38:014.03 --> 00:38:021.47] [Customer]  If you ERC weight, just acknowledging that those different signals have different levels of correlation with one another,
+[00:38:021.70 --> 00:38:027.43] [Customer]  so you equal risk contribution weight then, you get up into sort of 1.7 independent bets.
+[00:38:027.82 --> 00:38:034.20] [Customer]  But if you actually find through optimization the maximally diversified exposure to those signals,
+[00:38:034.41 --> 00:38:036.86] [Customer]  you get up to sort of two independent bets, right?
+[00:38:037.05 --> 00:38:040.38] [Customer]  And so just going back to Grinnell's fundamental law of active management,
+[00:38:040.38 --> 00:38:049.55] [Customer]  then what it says is your expected risk-adjusted performance is a function of skill in the square root of breadth, right?
+[00:38:049.70 --> 00:38:055.38] [Customer]  So if you've got a breadth of 2 versus breadth of 1.5,
+[00:38:055.53 --> 00:39:001.86] [Customer]  then your sort of force multiplier on expected performance is the square root of 2 over 1.5,
+[00:39:001.86 --> 00:39:006.78] [Customer]  which is somewhere in the neighborhood of about 17% excess expected performance
+[00:39:006.78 --> 00:39:009.91] [Customer]  just by taking an analytical look.
+[00:39:009.99 --> 00:39:010.36] [Customer]  Yeah.
+[00:39:010.38 --> 00:39:013.24] [Customer]  So that's an opportunity for diversification among the different trend signals.
+[00:39:013.45 --> 00:39:020.01] [Customer]  And that is an edge that we don't ever hear about in the trend following space,
+[00:39:020.26 --> 00:39:021.74] [Customer]  which I think is really, really powerful.
+[00:39:022.46 --> 00:39:027.78] [Interviewer]  I agree. It is this interesting trade off though, of like the
+[00:39:028.70 --> 00:39:032.16] [Interviewer]  specificity risk, right? Okay, you're going to use that one
+[00:39:032.16 --> 00:39:036.36] [Interviewer]  signal you believe in that one magical look back, the evidence
+[00:39:036.36 --> 00:39:039.64] [Interviewer]  that you should hold everything despite your look back until it
+[00:39:039.64 --> 00:39:044.28] [Interviewer]  all reaches a 12 month forward horizon. Thank you very much.
+[00:39:044.42 --> 00:39:046.62] [Interviewer]  This wrong thing care of what's on over there in the way a
+[00:39:046.62 --> 00:39:047.50] [Interviewer]  little baby over there.
+[00:39:048.01 --> 00:39:048.81] [Customer]  Oh, awesome.
+[00:39:050.25 --> 00:39:050.85] [Customer]  Tom.
+[00:39:051.13 --> 00:39:051.95] [Customer]  To Tom.
+[00:39:052.50 --> 00:39:052.64] [Interviewer]  song.
+[00:39:053.06 --> 00:39:053.40] [Customer]  Cheers.
+[00:39:054.10 --> 00:39:054.58] [Customer]  Thank you.
+[00:39:055.15 --> 00:39:055.17] [Customer]  you
+[00:39:055.20 --> 00:39:055.30] [Interviewer]  Cheers.
+[00:39:055.77 --> 00:39:055.83] [Customer]  Of course.
+[00:39:057.83 --> 00:40:006.03] [Interviewer]  right that specificity risk where you're saying okay is there a reason for me to truly believe
+[00:40:006.03 --> 00:40:012.37] [Interviewer]  in this one particular model over others and i think for me my the real eye-opening evidence
+[00:40:012.37 --> 00:40:016.19] [Interviewer]  was when you start to realize they were all related right that's you can do
+[00:40:015.89 --> 00:40:017.67] [Customer]  You can derive the correlations analytically.
+[00:40:017.67 --> 00:40:019.73] [Customer]  You don't need to use whatever the
+[00:40:019.73 --> 00:40:021.99] [Customer]  sample correlation is in order to
+[00:40:021.99 --> 00:40:024.05] [Customer]  figure out what that weighting mechanism should
+[00:40:024.21 --> 00:40:030.47] [Interviewer]  And it's very hard, at least for me, to have any confidence that one particular model is the holy grail model.
+[00:40:030.67 --> 00:40:033.37] [Interviewer]  And these are all highly related concepts.
+[00:40:033.95 --> 00:40:046.39] [Interviewer]  And when you then particularly look at lower horizon periods of performance and you say, I'm going to try to talk to someone about one-year returns, three-year returns, there's so much variance in performance.
+[00:40:046.57 --> 00:40:051.25] [Interviewer]  You go, that specificity risk really is hard to justify.
+[00:40:051.25 --> 00:40:056.33] [Interviewer]  And what it always means, it's sort of like, you know, to quote Brian Portnoy, who you talked about today.
+[00:40:056.93 --> 00:40:057.69] [Interviewer]  What's up, Brian?
+[00:40:059.03 --> 00:41:004.77] [Interviewer]  This idea of diversification will always disappoint or diversification means you're always having to say you're sorry.
+[00:41:005.49 --> 00:41:013.25] [Interviewer]  What's going to be interesting about avoiding specificity risk is you probably every year are going to have a competitor that outperforms you due to their specificity.
+[00:41:013.83 --> 00:41:016.99] [Interviewer]  But it's not that they chose correctly.
+[00:41:017.19 --> 00:41:018.31] [Interviewer]  It's that they got lucky.
+[00:41:018.55 --> 00:41:020.67] [Interviewer]  And trying to educate people around.
+[00:41:021.31 --> 00:41:023.65] [Interviewer]  Hey, I'm purposely trying to avoid luck.
+[00:41:024.39 --> 00:41:031.89] [Interviewer]  And therefore, that implies all my competitors who are subject to luck, both good and bad luck, are going to oscillate around me.
+[00:41:033.21 --> 00:41:036.55] [Interviewer]  I'm always going to have to say I'm sorry I didn't keep up with at least one.
+[00:41:036.61 --> 00:41:038.43] [Interviewer]  It's this interesting dynamic, right?
+[00:41:038.47 --> 00:41:039.09] [Interviewer]  It is for sure.
+[00:41:039.23 --> 00:41:039.75] [Interviewer]  It is.
+[00:41:038.36 --> 00:41:038.52] [Customer]  Right.
+[00:41:038.52 --> 00:41:039.08] [Customer]  It is for sure.
+[00:41:040.30 --> 00:41:045.58] [Interviewer]  empirically and objectively the correct thing to do to diversify away
+[00:41:047.00 --> 00:41:048.26] [Interviewer]  uncompensated bets, right?
+[00:41:048.30 --> 00:41:050.70] [Interviewer]  These are uncompensated bets.
+[00:41:048.26 --> 00:41:048.62] [Customer]  Right. These are.
+[00:41:051.10 --> 00:41:054.44] [Customer]  Unless you have some sort of deterministic reason why
+[00:41:052.09 --> 00:41:052.33] [Interviewer]  Must be.
+[00:41:055.38 --> 00:41:059.10] [Customer]  one specification should be meaningfully better than another.
+[00:41:059.42 --> 00:42:001.22] [Customer]  I don't come across that very often.
+[00:42:001.48 --> 00:42:007.24] [Interviewer]  And this was the pushback the guys at Elf Architect had on me on my tranching methodology, right?
+[00:42:007.32 --> 00:42:013.48] [Interviewer]  So at their conference earlier this year that I presented there, you got snowed out, I think.
+[00:42:013.50 --> 00:42:014.30] [Interviewer]  You're supposed to be there.
+[00:42:014.34 --> 00:42:015.04] [Interviewer]  You got snowed out.
+[00:42:015.38 --> 00:42:016.00] [Interviewer]  I did.
+[00:42:016.08 --> 00:42:021.88] [Interviewer]  I presented that, and Jack came up to me and said, hey, love the presentation, love the concept.
+[00:42:022.72 --> 00:42:024.66] [Interviewer]  How does seasonality play into this?
+[00:42:024.66 --> 00:42:033.38] [Interviewer]  All the empirical evidence around you actually, there is a potential edge around investing at certain points.
+[00:42:034.52 --> 00:42:036.84] [Interviewer]  And I said, you're right, there is.
+[00:42:036.98 --> 00:42:051.22] [Interviewer]  But to me, it's such a low Sharpe ratio bolt-on that I can increase my Sharpe ratio more by reducing this timing lock, this uncompensated bet, than I can increase my Sharpe ratio from trying to add another tiny edge.
+[00:42:051.54 --> 00:42:052.02] [Interviewer]  Exactly.
+[00:42:052.12 --> 00:42:053.20] [Interviewer]  And it's always a trade-off.
+[00:42:053.20 --> 00:42:054.26] [Interviewer]  And you want to know what?
+[00:42:054.66 --> 00:43:000.78] [Interviewer]  I could do this, and it could be the completely wrong thing in realized returns for the next decade.
+[00:43:000.92 --> 00:43:005.78] [Interviewer]  And that's the frustrating thing about craftsmanship is I put it in my presentation.
+[00:43:005.82 --> 00:43:008.16] [Interviewer]  You can do something that's 0.5 Sharpe ratio.
+[00:43:007.81 --> 00:43:008.13] [Customer]  Sharp ratio.
+[00:43:009.06 --> 00:43:011.00] [Interviewer]  and in 10 years still be underwater.
+[00:43:011.40 --> 00:43:011.98] [Interviewer]  Exactly.
+[00:43:012.00 --> 00:43:012.94] [Interviewer]  10% odds.
+[00:43:011.79 --> 00:43:012.09] [Customer]  Exactly.
+[00:43:012.09 --> 00:43:012.93] [Customer]  10% odds.
+[00:43:013.17 --> 00:43:013.37] [Customer]  Yeah.
+[00:43:013.37 --> 00:43:013.65] [Customer]  So.
+[00:43:013.67 --> 00:43:015.33] [Customer]  Or a 0.5 information ratio.
+[00:43:015.53 --> 00:43:015.75] [Customer]  Right.
+[00:43:015.75 --> 00:43:017.03] [Customer]  And still be underperforming.
+[00:43:017.03 --> 00:43:017.31] [Customer]  Right.
+[00:43:017.35 --> 00:43:017.61] [Customer]  Exactly.
+[00:43:017.63 --> 00:43:018.43] [Customer]  Which is way more.
+[00:43:017.21 --> 00:43:017.39] [Interviewer]  Right?
+[00:43:019.39 --> 00:43:020.89] [Customer]  way more complicated, right?
+[00:43:021.21 --> 00:43:022.85] [Customer]  From an explanation standpoint.
+[00:43:020.76 --> 00:43:020.93] [Interviewer]  Right.
+[00:43:020.95 --> 00:43:021.24] [Interviewer]  Right?
+[00:43:021.28 --> 00:43:021.57] [Interviewer]  From an
+[00:43:022.75 --> 00:43:022.85] [Interviewer]  Yeah.
+[00:43:023.22 --> 00:43:025.06] [Interviewer]  Yeah, say, hey, this is actually correct.
+[00:43:025.26 --> 00:43:026.86] [Interviewer]  I just hit a string of bad luck.
+[00:43:027.56 --> 00:43:029.76] [Interviewer]  Well, at a certain point, people don't believe in 10 years
+[00:43:029.76 --> 00:43:030.36] [Interviewer]  of bad luck.
+[00:43:030.88 --> 00:43:034.54] [Interviewer]  But the information ratio, 0.5, if it truly
+[00:43:034.54 --> 00:43:036.58] [Interviewer]  is that information ratio, you're
+[00:43:036.58 --> 00:43:038.00] [Interviewer]  going to have a 10% chance of bad luck.
+[00:43:038.59 --> 00:43:038.93] [Customer]  I agree.
+[00:43:039.07 --> 00:43:046.95] [Customer]  But just circling back just to touch on the tranching versus seasonality or I don't know what you call that.
+[00:43:047.05 --> 00:43:049.65] [Customer]  I guess it's kind of, you know, in a month effect type stuff.
+[00:43:049.83 --> 00:43:050.09] [Customer]  Right.
+[00:43:050.23 --> 00:43:052.43] [Customer]  So you've got, here you have competing things.
+[00:43:052.75 --> 00:44:007.31] [Customer]  You've got empirical evidence that there is seasonality or these sort of in a month effects or what have you that are competing against analytical evidence.
+[00:44:007.41 --> 00:44:007.79] [Customer]  Right.
+[00:44:007.79 --> 00:44:021.31] [Customer]  That says that I know analytically I should get a 17% boost by diversifying across whatever, time horizon, trend, definition, what have you.
+[00:44:021.37 --> 00:44:026.63] [Customer]  I know that that is true over the long term without having to do any back testing.
+[00:44:026.85 --> 00:44:027.39] [Interviewer]  Right, exactly.
+[00:44:028.15 --> 00:44:033.25] [Customer]  Whereas the end of month effect or the seasonality effects,
+[00:44:033.49 --> 00:44:035.29] [Customer]  we can look at the evidence and say,
+[00:44:035.95 --> 00:44:039.43] [Customer]  there's maybe a marginally statistically significant effect,
+[00:44:040.37 --> 00:44:045.33] [Customer]  but I have to give up a known analytical force multiplier
+[00:44:045.85 --> 00:44:049.59] [Customer]  in order to take advantage of what I observe empirically
+[00:44:049.59 --> 00:44:050.97] [Customer]  and all things equal.
+[00:44:051.67 --> 00:44:053.65] [Customer]  I take the analytical force multiplier
+[00:44:054.31 --> 00:44:057.15] [Customer]  over the empirical edge nine days of the week.
+[00:44:057.06 --> 00:45:006.18] [Interviewer]  Especially an empirical edge that's very hard to tie to a risk premia, a behavioral anomaly, some sort of economic intuition, right?
+[00:45:006.32 --> 00:45:010.06] [Interviewer]  I mean, so after I spoke with Jack, he sent me some papers.
+[00:45:010.42 --> 00:45:013.68] [Interviewer]  As the Alpha Architect guys know, every paper in the world.
+[00:45:013.74 --> 00:45:014.28] [Interviewer]  Definitely, yeah.
+[00:45:014.42 --> 00:45:016.16] [Interviewer]  Sent me a couple of papers and I read them.
+[00:45:013.70 --> 00:45:014.02] [Customer]  Definitely.
+[00:45:016.50 --> 00:45:026.30] [Interviewer]  And I said, all right, I'm going to try to replicate one of these effects, which was, I forget what the author had used for the original instruments, but it was basically, we're going to look at prior 30 years on a rolling basis.
+[00:45:027.06 --> 00:45:032.52] [Interviewer]  And for whatever month I'm in, I'm going to look at the average returns over the prior 30 years, so 30 sample points.
+[00:45:032.66 --> 00:45:033.26] [Interviewer]  Rolling 30.
+[00:45:033.38 --> 00:45:034.12] [Interviewer]  Rolling 30, yep.
+[00:45:034.18 --> 00:45:035.16] [Interviewer]  And I'm going to pick the asset.
+[00:45:032.67 --> 00:45:033.21] [Customer]  Rolling 30.
+[00:45:035.82 --> 00:45:038.82] [Interviewer]  multiple assets that had performed best over those rolling 30.
+[00:45:039.22 --> 00:45:039.92] [Interviewer]  I said, cool.
+[00:45:040.22 --> 00:45:041.94] [Interviewer]  I love working in the world of sectors.
+[00:45:042.42 --> 00:45:046.28] [Interviewer]  I'm going to go to some French data and I'm going to use industry groups
+[00:45:046.28 --> 00:45:050.12] [Interviewer]  and I'm going to do this from 1927 to the present.
+[00:45:050.74 --> 00:45:053.94] [Interviewer]  And it was incredibly powerful and incredibly robust.
+[00:45:054.87 --> 00:45:057.85] [Customer]  What's the sample size on rolling 30 years?
+[00:45:057.57 --> 00:45:057.99] [Interviewer]  Not huge.
+[00:45:058.37 --> 00:45:058.91] [Interviewer]  Not huge.
+[00:45:059.19 --> 00:46:000.53] [Interviewer]  But is it free?
+[00:46:000.59 --> 00:46:000.69] [Interviewer]  Is it free?
+[00:45:059.57 --> 00:46:000.16] [Customer]  No, no, but is it
+[00:46:001.62 --> 00:46:004.60] [Interviewer]  Well, but what's interesting is you are looking at every month.
+[00:46:005.74 --> 00:46:008.60] [Customer]  but your signal overlaps to the tune of
+[00:46:005.78 --> 00:46:006.01] [Interviewer]  Sign.
+[00:46:009.13 --> 00:46:013.63] [Interviewer]  Well, but you're saying, no, I don't think it is because, right, because I'm looking at 30 Januaries.
+[00:46:009.44 --> 00:46:010.48] [Customer]  29 out of 30 years.
+[00:46:014.58 --> 00:46:022.22] [Interviewer]  And then I'm going to look at 30 February's right where it doesn't include that January information. I'm just looking at the prior 30 February's. So I do think you
+[00:46:023.72 --> 00:46:029.70] [Interviewer]  Ignoring auto correlation effects potentially month to month. I do think there is more sample size there than it appears.
+[00:46:030.38 --> 00:46:031.42] [Customer]  So tie that to the cape analysis.
+[00:46:033.99 --> 00:46:034.49] [Interviewer]  Highlights of the game.
+[00:46:034.56 --> 00:46:038.72] [Customer]  Oh yeah, because you're using these rolling 10-year or 15-year smoothed
+[00:46:038.93 --> 00:46:040.34] [Interviewer]  So I think that's different, right?
+[00:46:040.38 --> 00:46:042.11] [Interviewer]  Because that's smoothing over the full period.
+[00:46:042.38 --> 00:46:046.11] [Interviewer]  What I'm saying is if I'm looking at this January,
+[00:46:046.51 --> 00:46:048.76] [Interviewer]  I'm looking at the prior 30 Januaries,
+[00:46:048.76 --> 00:46:054.34] [Interviewer]  that ignores everything else that happened the rest of those 11 months, right?
+[00:46:054.53 --> 00:46:058.47] [Interviewer]  If I move forward one month and I look at the prior 30 Februaries,
+[00:46:059.18 --> 00:47:004.20] [Interviewer]  if I make the assumption that returns are by ID, which they're not.
+[00:47:004.49 --> 00:47:006.20] [Interviewer]  No, no, but we can absolutely make that assumption.
+[00:47:006.20 --> 00:47:012.84] [Interviewer]  Those 30 returns represent an independent data set from the last month I looked at.
+[00:47:014.71 --> 00:47:016.99] [Customer]  Well, so 30 times 12 is 360.
+[00:47:017.45 --> 00:47:021.25] [Customer]  So 350 of those 360 data points are exactly the same as the previous one.
+[00:47:023.67 --> 00:47:024.61] [Interviewer]  I'm not going to do that.
+[00:47:024.67 --> 00:47:024.91] [Interviewer]  My fault.
+[00:47:026.00 --> 00:47:027.30] [Customer]  Maybe I'm not following, that's more likely.
+[00:47:028.02 --> 00:47:030.40] [Customer]  So I'm assuming that you're sort of rolling forward
+[00:47:030.40 --> 00:47:036.62] [Customer]  one 30th of your sample by using a rolling 30 year period.
+[00:47:037.00 --> 00:47:038.38] [Customer]  Okay, so think of it this way, ready?
+[00:47:039.03 --> 00:47:039.21] [Interviewer]  2018.
+[00:47:039.51 --> 00:47:039.51] [Customer] 
+[00:47:039.95 --> 00:47:040.14] [Interviewer]  Yes.
+[00:47:040.47 --> 00:47:041.99] [Interviewer]  Let's go back 30 years.
+[00:47:042.09 --> 00:47:042.34] [Interviewer]  Right.
+[00:47:043.64 --> 00:47:047.80] [Interviewer]  January this year, I would have looked at the prior 30 Januarys.
+[00:47:049.66 --> 00:47:049.84] [Customer]  Thank you.
+[00:47:049.86 --> 00:47:050.16] [Interviewer]  That's it.
+[00:47:050.76 --> 00:47:050.88] [Customer]  Okay.
+[00:47:051.43 --> 00:47:054.99] [Interviewer]  So the prior 30 January is going back to, was it 88?
+[00:47:055.99 --> 00:47:056.01] [Customer]  Thank you.
+[00:47:056.04 --> 00:47:056.10] [Interviewer]  Okay.
+[00:47:056.17 --> 00:47:056.19] [Customer]  you
+[00:47:057.04 --> 00:48:001.12] [Interviewer]  And then in February this year, I'd look at the prior 30 Februaries.
+[00:48:001.90 --> 00:48:006.46] [Interviewer]  So February 1988, February 1989, February 1990.
+[00:48:006.78 --> 00:48:009.50] [Interviewer]  And then in March, March 1988.
+[00:48:010.55 --> 00:48:011.43] [Customer]  always present, right?
+[00:48:011.76 --> 00:48:011.80] [Interviewer]  Right?
+[00:48:011.92 --> 00:48:013.82] [Customer]  to quote Wes, but by the time you get to next
+[00:48:013.82 --> 00:48:015.88] [Customer]  January, 29 of the
+[00:48:015.88 --> 00:48:017.36] [Customer]  30. Yes, okay, I'm with you.
+[00:48:017.66 --> 00:48:018.82] [Customer]  I'm with you. Yes, yes, yes.
+[00:48:019.06 --> 00:48:021.26] [Customer]  So it's 1-30th.
+[00:48:021.41 --> 00:48:021.43] [Interviewer]  you
+[00:48:021.47 --> 00:48:021.99] [Customer]  It's not,
+[00:48:022.24 --> 00:48:022.24] [Interviewer] 
+[00:48:022.80 --> 00:48:022.90] [Customer]  one
+[00:48:023.04 --> 00:48:026.14] [Interviewer]  Right, right. Every time you move forward a year, you're losing.
+[00:48:026.32 --> 00:48:026.68] [Interviewer]  Correct.
+[00:48:027.08 --> 00:48:030.10] [Interviewer]  Okay, I'm with you. Totally. Cool. We'll edit all that out of the podcast.
+[00:48:031.34 --> 00:48:037.54] [Interviewer]  So yeah, I do think there is probably a sample size issue, right? As with most of these things, like when you use a large rolling period.
+[00:48:024.96 --> 00:48:025.08] [Customer]  Cheers.
+[00:48:038.29 --> 00:48:044.17] [Interviewer]  So I would say on the one hand, you're rolling forward, you're retaining 29 data points.
+[00:48:044.29 --> 00:48:044.65] [Interviewer]  Up 30, yeah.
+[00:48:044.73 --> 00:48:047.23] [Interviewer]  But for every year, you're also getting 12 data points.
+[00:48:047.53 --> 00:48:047.81] [Interviewer]  Okay.
+[00:48:043.91 --> 00:48:044.63] [Customer]  Up 30, yeah.
+[00:48:047.91 --> 00:48:050.05] [Customer]  one extra because you're only looking at the January's.
+[00:48:050.95 --> 00:48:051.55] [Interviewer]  You're looking every month.
+[00:48:052.60 --> 00:48:055.04] [Customer]  For January, you're only looking at what the total January's are.
+[00:48:055.18 --> 00:48:055.54] [Customer]  Right, exactly.
+[00:48:055.54 --> 00:48:057.34] [Customer]  So you get one extra data point of 30.
+[00:48:053.93 --> 00:48:054.97] [Interviewer]  Or important source of those are,
+[00:48:059.00 --> 00:48:059.02] [Customer]  you
+[00:48:059.05 --> 00:49:000.45] [Interviewer]  So I'd have to sort of work that out backwards.
+[00:49:000.71 --> 00:49:003.31] [Interviewer]  Anyway, whether it's significant or not
+[00:49:003.31 --> 00:49:006.43] [Interviewer]  from a how many independent sort of truly independent
+[00:49:005.92 --> 00:49:006.28] [Customer]  truly independent.
+[00:49:007.15 --> 00:49:010.83] [Customer]  That's what makes the difference from a statistical significance standpoint is the number of independent
+[00:49:011.76 --> 00:49:014.88] [Interviewer]  So let's say, let's really look at independent 30 year period.
+[00:49:014.99 --> 00:49:016.74] [Interviewer]  So there's three independent 30 year periods.
+[00:49:012.40 --> 00:49:013.12] [Customer]  So let's say, let's say
+[00:49:016.66 --> 00:49:016.78] [Customer]  Right.
+[00:49:017.71 --> 00:49:022.23] [Interviewer]  And in each of those periods, I looked at 12 independent months.
+[00:49:022.95 --> 00:49:023.39] [Interviewer]  Right?
+[00:49:023.49 --> 00:49:026.37] [Interviewer]  So let's call it 36 data points.
+[00:49:026.79 --> 00:49:027.23] [Interviewer]  Okay.
+[00:49:027.33 --> 00:49:028.97] [Interviewer]  I don't think that's a whole lot.
+[00:49:028.97 --> 00:49:029.23] [Interviewer]  No, this is fair.
+[00:49:029.41 --> 00:49:032.31] [Interviewer]  So we're getting near potentially statistically significant.
+[00:49:028.51 --> 00:49:029.29] [Customer]  No, this is fair.
+[00:49:029.45 --> 00:49:029.93] [Customer]  This is fair.
+[00:49:032.43 --> 00:49:032.55] [Customer]  Yep.
+[00:49:033.17 --> 00:49:033.19] [Interviewer]  you
+[00:49:033.30 --> 00:49:033.36] [Customer]  No, I didn't.
+[00:49:033.39 --> 00:49:033.39] [Interviewer] 
+[00:49:033.42 --> 00:49:035.36] [Customer]  I just, I wanna raise this because,
+[00:49:034.20 --> 00:49:034.98] [Interviewer]  I'm going to raise this.
+[00:49:036.34 --> 00:49:040.06] [Customer]  I know that most of the academic literature is sort of like they're all done on monthly returns.
+[00:49:040.28 --> 00:49:043.50] [Customer]  Some of the value stuff is like rebalanced annually, so that's fine.
+[00:49:043.78 --> 00:49:050.16] [Customer]  But you've got the assumption that there's, whatever, 15,000 independent months.
+[00:49:050.20 --> 00:49:052.80] [Customer]  So that's your sample size, and that's what you're going to measure your T-score on.
+[00:49:053.02 --> 00:49:056.00] [Customer]  But really, it's very regime-dependent, right?
+[00:49:056.04 --> 00:50:000.66] [Customer]  So how many independent macroeconomic regimes do we have to measure our sample size?
+[00:50:000.78 --> 00:50:003.44] [Customer]  I think everybody's very overconfident in terms of T-scores.
+[00:50:003.44 --> 00:50:009.40] [Customer]  We underestimate the degree to which many of these factors are a function of the macroeconomic environment,
+[00:50:009.60 --> 00:50:013.02] [Customer]  and there's really only been a handful of macroeconomic environments that we can choose from.
+[00:50:013.24 --> 00:50:018.52] [Customer]  So we should really be adjusting down our T-scores pretty substantially for most of the academic literature.
+[00:50:018.38 --> 00:50:023.44] [Interviewer]  I want to come back to this because that's a really great point that I, that's like one of my big pet peeves.
+[00:50:023.52 --> 00:50:025.42] [Interviewer]  You know, Cliff wrote his like 12 pet peeves.
+[00:50:025.44 --> 00:50:029.06] [Interviewer]  One of my big pet peeves would be like, you have way less independent data points than you think.
+[00:50:029.18 --> 00:50:029.32] [Interviewer]  Yeah.
+[00:50:029.44 --> 00:50:033.38] [Interviewer]  And I know that's key to some of the stuff you guys do in building portfolios.
+[00:50:033.44 --> 00:50:037.42] [Interviewer]  But to sort of round out my seasonality discussion, so I wrote this paper and I actually looked at,
+[00:50:037.54 --> 00:50:040.80] [Interviewer]  it wasn't just 30-year look back, so I looked at shorter and longer.
+[00:50:041.34 --> 00:50:042.38] [Interviewer]  I remember that, you're right.
+[00:50:042.42 --> 00:50:043.44] [Interviewer]  It was surprisingly robust.
+[00:50:044.75 --> 00:50:046.27] [Interviewer]  And it was one of these situations I said,
+[00:50:047.17 --> 00:50:049.77] [Interviewer]  yeah, there was, if you had done this,
+[00:50:049.81 --> 00:50:050.67] [Interviewer]  you would have generated alpha.
+[00:50:050.85 --> 00:50:051.25] [Interviewer]  Right.
+[00:50:051.31 --> 00:50:052.45] [Interviewer]  But I have no idea why.
+[00:50:052.95 --> 00:50:057.75] [Interviewer]  And no one can tell me why I can look at January, February,
+[00:50:057.79 --> 00:50:059.99] [Interviewer]  and it didn't seem specific to any individual month.
+[00:51:000.25 --> 00:51:002.63] [Interviewer]  It wasn't subsumed by any other factors.
+[00:51:002.77 --> 00:51:004.93] [Interviewer]  It truly appeared to be somewhat independent.
+[00:51:005.31 --> 00:51:007.69] [Interviewer]  And I looked at using just the Fama French factors
+[00:51:007.69 --> 00:51:010.17] [Interviewer]  and I recreated the factors using sectors.
+[00:51:010.35 --> 00:51:010.75] [Interviewer]  Right.
+[00:51:010.89 --> 00:51:013.11] [Interviewer]  To say, okay, let's really do this in a sector world.
+[00:51:010.59 --> 00:51:010.75] [Customer]  Right.
+[00:51:013.98 --> 00:51:015.42] [Interviewer]  Nope. It's still a...
+[00:51:014.93 --> 00:51:015.36] [Customer]  Still play independent.
+[00:51:016.46 --> 00:51:019.02] [Interviewer]  It wasn't completely independent, but it's still persistent.
+[00:51:019.22 --> 00:51:020.74] [Interviewer]  There was an independent aspect to it.
+[00:51:021.22 --> 00:51:026.84] [Interviewer]  And I remember thinking at the end, okay, this is a signal, but I have no economic intuition.
+[00:51:027.52 --> 00:51:035.20] [Interviewer]  So to go back to your point, am I going to rely on something that I have empirical evidence for with zero economic intuition?
+[00:51:035.50 --> 00:51:040.52] [Interviewer]  And to me, that is a truly faith-based leap to introduce into a portfolio.
+[00:51:040.52 --> 00:51:054.90] [Interviewer]  Or am I going to do something that has analytical basis that I can derive the math for and say, okay, I am diversifying what is likely an uncompensated bet and creating that force model.
+[00:51:055.10 --> 00:51:055.66] [Interviewer]  Exactly.
+[00:51:056.06 --> 00:51:056.76] [Interviewer]  All right.
+[00:51:056.94 --> 00:52:004.50] [Interviewer]  Let's go back because you made an awesome point, which was this idea of how many truly independent regimes have we seen?
+[00:52:004.07 --> 00:52:012.32] [Customer]  I only came to this after I was humbled by guys like Jesse Livermore and other guys who came after my Kate model, which I did in 2010.
+[00:52:012.78 --> 00:52:014.84] [Customer]  And it made me realize that.
+[00:52:010.98 --> 00:52:011.18] [Interviewer]  Yeah.
+[00:52:015.37 --> 00:52:020.03] [Customer]  My R squareds, my T stats were just absurdly overstated.
+[00:52:017.80 --> 00:52:018.00] [Interviewer]  You're just
+[00:52:018.81 --> 00:52:020.39] [Interviewer]  He was totally overstating, right?
+[00:52:020.45 --> 00:52:020.81] [Interviewer]  Yeah.
+[00:52:020.95 --> 00:52:022.11] [Interviewer]  He really did.
+[00:52:022.35 --> 00:52:023.27] [Interviewer]  And he took...
+[00:52:021.23 --> 00:52:021.51] [Customer]  Yeah, yeah.
+[00:52:024.86 --> 00:52:025.82] [Interviewer]  husband and a task owner.
+[00:52:026.14 --> 00:52:026.70] [Customer]  Definitely, yes.
+[00:52:026.82 --> 00:52:029.90] [Customer]  The husband is the most egregious perpetrator of this.
+[00:52:027.10 --> 00:52:027.24] [Interviewer]  You're right.
+[00:52:028.97 --> 00:52:029.13] [Interviewer]  All right.
+[00:52:030.37 --> 00:52:031.53] [Customer]  same type of error.
+[00:52:031.69 --> 00:52:032.35] [Customer]  I like John
+[00:52:032.35 --> 00:52:034.03] [Customer]  and I think he's got
+[00:52:034.03 --> 00:52:034.91] [Customer]  his heart to the right place.
+[00:52:035.01 --> 00:52:035.59] [Customer]  He's a very educated,
+[00:52:035.69 --> 00:52:036.15] [Customer]  smart guy.
+[00:52:036.73 --> 00:52:037.85] [Customer]  Don't mean to take him to task
+[00:52:037.85 --> 00:52:039.21] [Customer]  but perpetrates
+[00:52:039.21 --> 00:52:039.91] [Customer]  a similar type of error.
+[00:52:039.91 --> 00:52:040.17] [Customer]  I think it's a good point.
+[00:52:039.86 --> 00:52:041.28] [Interviewer]  I think it's a very easy error to make.
+[00:52:041.42 --> 00:52:041.62] [Interviewer]  Yeah.
+[00:52:041.74 --> 00:52:042.14] [Interviewer]  You know?
+[00:52:042.56 --> 00:52:049.32] [Interviewer]  But I think it's one of those situations, again, where you look at the United States and you say,
+[00:52:049.38 --> 00:52:054.22] [Interviewer]  you've been in a low inflation regime for decades now.
+[00:52:054.30 --> 00:52:056.32] [Interviewer]  You've had declining interest rates for decades.
+[00:52:056.46 --> 00:53:000.32] [Interviewer]  And I'm not saying any of this saying, oh, the bond bull market's over or whatever.
+[00:53:000.42 --> 00:53:002.68] [Interviewer]  But there really has been one regime.
+[00:53:003.10 --> 00:53:003.36] [Interviewer]  Yeah.
+[00:53:004.00 --> 00:53:007.88] [Interviewer]  So it's really hard to say, okay, if I look at this from a regime perspective,
+[00:53:007.88 --> 00:53:014.74] [Interviewer]  if I look at my factor performance and I stop looking at it from monthly returns,
+[00:53:015.06 --> 00:53:018.64] [Interviewer]  I look at it from a regime perspective, you know, a sample size of two.
+[00:53:018.74 --> 00:53:019.14] [Interviewer]  Yes.
+[00:53:019.22 --> 00:53:019.50] [Interviewer]  Three.
+[00:53:019.68 --> 00:53:019.96] [Interviewer]  Yeah.
+[00:53:020.08 --> 00:53:026.68] [Interviewer]  And I see that error made all the time from a tactical perspective,
+[00:53:026.92 --> 00:53:029.04] [Interviewer]  like people trying to create these tactical calls.
+[00:53:029.24 --> 00:53:036.10] [Interviewer]  And they say, hey, here's a signal that the last five times it happened, it was Armageddon.
+[00:53:036.14 --> 00:53:037.70] [Interviewer]  And you're like, that's not.
+[00:53:037.88 --> 00:53:038.86] [Interviewer]  That's meaningless.
+[00:53:039.04 --> 00:53:039.26] [Interviewer]  Yeah.
+[00:53:039.40 --> 00:53:039.72] [Interviewer]  You know?
+[00:53:039.74 --> 00:53:043.32] [Interviewer]  And they try to, especially when they try to tie it to economic data points.
+[00:53:043.34 --> 00:53:047.54] [Interviewer]  They're like, the last four times these economic data points all lined up, it was a crisis.
+[00:53:047.90 --> 00:53:049.76] [Interviewer]  You're like, four is meaningless.
+[00:53:050.86 --> 00:53:051.44] [Interviewer]  You know?
+[00:53:051.50 --> 00:53:053.94] [Interviewer]  Like, just because you have 20 data points that all lined up.
+[00:53:053.97 --> 00:53:054.05] [Customer]  Thank you.
+[00:53:054.16 --> 00:53:054.34] [Customer]  That's a good one.
+[00:53:054.36 --> 00:53:054.56] [Interviewer]  even worse.
+[00:53:054.92 --> 00:53:055.60] [Customer]  Exactly, yeah.
+[00:53:055.86 --> 00:53:057.56] [Customer]  Especially given that we can data mine
+[00:53:057.56 --> 00:53:058.86] [Customer]  whatever relationships we want.
+[00:53:058.86 --> 00:53:059.22] [Customer]  Right?
+[00:53:059.28 --> 00:54:000.68] [Customer]  So you gotta account for all that.
+[00:53:055.02 --> 00:53:055.30] [Interviewer]  Right?
+[00:53:056.16 --> 00:53:056.86] [Interviewer]  Especially given that we can't
+[00:53:058.75 --> 00:53:058.95] [Interviewer]  Right.
+[00:53:059.62 --> 00:53:059.62] [Interviewer] 
+[00:54:002.04 --> 00:54:006.46] [Interviewer]  convincing because you're like wait all these are the perfect signals how is it possible that
+[00:54:006.46 --> 00:54:008.04] [Interviewer]  these all lined up perfectly
+[00:54:008.74 --> 00:54:009.22] [Customer]  Well, hold on though.
+[00:54:009.26 --> 00:54:012.74] [Customer]  It's only really convincing when it aligns with your own personal narrative.
+[00:54:012.92 --> 00:54:013.12] [Customer]  Right.
+[00:54:013.18 --> 00:54:013.70] [Customer]  Well, of course.
+[00:54:014.40 --> 00:54:017.96] [Customer]  So if you're naturally bearish right now and you see a bunch of publications,
+[00:54:018.22 --> 00:54:020.78] [Customer]  some guy's got the last four times this happened,
+[00:54:020.86 --> 00:54:023.70] [Customer]  every time it's been started with Barry Marbley,
+[00:54:023.72 --> 00:54:024.98] [Customer]  well, you're going to pay attention.
+[00:54:025.61 --> 00:54:028.93] [Interviewer]  Right. But when you think about, this actually is,
+[00:54:028.99 --> 00:54:031.23] [Interviewer]  it'd be interesting to sort of do this as an economic exercise,
+[00:54:032.03 --> 00:54:033.31] [Interviewer]  an analytical exercise.
+[00:54:033.57 --> 00:54:036.19] [Interviewer]  How many data signals are published by thread?
+[00:54:037.17 --> 00:54:038.07] [Interviewer]  10,000?
+[00:54:038.07 --> 00:54:039.31] [Interviewer]  Oh God, I couldn't even.
+[00:54:039.71 --> 00:54:041.31] [Interviewer]  All right. So it'd be interesting to say, okay,
+[00:54:041.45 --> 00:54:045.45] [Interviewer]  if the last four times these 20 signals lined up,
+[00:54:045.45 --> 00:54:047.33] [Interviewer]  but really think about, okay,
+[00:54:047.39 --> 00:54:048.89] [Interviewer]  I've data mined 20 signals.
+[00:54:048.95 --> 00:54:049.97] [Interviewer]  Out of all the permutations.
+[00:54:049.97 --> 00:54:050.97] [Interviewer]  All the permutations.
+[00:54:040.60 --> 00:54:040.90] [Customer]  Interesting.
+[00:54:049.47 --> 00:54:049.63] [Customer]  Amen.
+[00:54:050.96 --> 00:54:050.98] [Customer]  Thank you.
+[00:54:051.23 --> 00:54:051.33] [Customer]  you
+[00:54:051.68 --> 00:54:054.82] [Interviewer]  Okay, I really lose statistical significance really quickly.
+[00:54:055.76 --> 00:55:001.78] [Interviewer]  But people don't think of it that way, especially when these things start to make some, they align with your economic intuition.
+[00:55:001.95 --> 00:55:008.76] [Interviewer]  And then it becomes really hard to disentangle the analytical and your narrative, for sure.
+[00:55:009.67 --> 00:55:011.27] [Customer]  We're just naturally wired that way.
+[00:55:011.33 --> 00:55:013.01] [Customer]  We've got this natural confirmation bias.
+[00:55:013.71 --> 00:55:020.45] [Customer]  We're all sort of naturally inclined psychologically to optimism or pessimism at different points in the cycle.
+[00:55:020.83 --> 00:55:026.71] [Customer]  And we are constantly seeking out information that confirms the way we're already leaning.
+[00:55:026.99 --> 00:55:027.33] [Customer]  Right.
+[00:55:028.03 --> 00:55:029.89] [Customer]  Which is really hard even for systematic investors.
+[00:55:030.35 --> 00:55:031.43] [Customer]  Because it's even hard.
+[00:55:031.55 --> 00:55:034.29] [Customer]  I mean, I don't deliberately do not read the news.
+[00:55:034.71 --> 00:55:036.05] [Customer]  I don't read the newspaper.
+[00:55:036.39 --> 00:55:037.45] [Customer]  I don't watch the news.
+[00:55:037.45 --> 00:55:047.41] [Customer]  I used to, and I found it was really hard to maintain the level of cognitive dissonance and lack of bias to follow the model.
+[00:55:047.57 --> 00:55:047.73] [Customer]  Right.
+[00:55:047.87 --> 00:56:000.37] [Customer]  If I'm constantly bombarded by a series of narratives and just my emotional state or my past experience has caused me to be naturally aligned with a certain worldview, it gets really complicated.
+[00:56:000.63 --> 00:56:000.71] [Customer]  Yeah.
+[00:56:000.79 --> 00:56:001.89] [Customer]  You've got to tune all that out.
+[00:56:002.01 --> 00:56:004.55] [Customer]  But it's an especially interesting challenge.
+[00:56:005.11 --> 00:56:007.43] [Customer]  Because even as clients, we are listening.
+[00:56:007.45 --> 00:56:010.57] [Customer]  We're responsible for creating market commentaries on a regular basis.
+[00:56:010.61 --> 00:56:018.07] [Customer]  Why did your strategies perform well or poorly in the last one month, three months, six months?
+[00:56:018.25 --> 00:56:025.37] [Customer]  It's quarants we're inclined to say, well, because the trend periodicity didn't align with the way that we measure trends.
+[00:56:025.37 --> 00:56:025.83] [Customer]  Right.
+[00:56:026.03 --> 00:56:026.59] [Customer]  Or…
+[00:56:025.51 --> 00:56:025.73] [Interviewer]  Right.
+[00:56:027.57 --> 00:56:030.83] [Customer]  We need to get a good grasp of correlations or some other sort of quantitative explanation.
+[00:56:031.05 --> 00:56:033.51] [Customer]  But people need a narrative.
+[00:56:033.51 --> 00:56:035.85] [Customer]  They need to feel like somebody's in control.
+[00:56:036.23 --> 00:56:037.93] [Customer]  There's cause-effect relationships.
+[00:56:038.29 --> 00:56:045.93] [Customer]  And that sort of emergent phenomenon viewpoint that we have as clients is so unsatisfying to most investors.
+[00:56:043.74 --> 00:56:043.89] [Interviewer]  it's a
+[00:56:046.97 --> 00:56:048.39] [Interviewer]  I'm going to take this a totally different direction.
+[00:56:049.64 --> 00:56:050.03] [Interviewer]  Take it.
+[00:56:050.24 --> 00:56:050.55] [Interviewer]  You know?
+[00:56:049.79 --> 00:56:049.85] [Customer]  to
+[00:56:051.30 --> 00:57:001.49] [Interviewer]  So I'm thinking, well, the question I wanted to ask you is sort of around the, I'm going to continue to use my 3D axis example of the what you invest in.
+[00:57:001.82 --> 00:57:004.70] [Interviewer]  The 3D axis sees a diversification.
+[00:57:004.88 --> 00:57:006.38] [Interviewer]  What, how, and when?
+[00:57:006.47 --> 00:57:008.84] [Interviewer]  And I know you sort of combine the how and when in your own practice.
+[00:57:008.84 --> 00:57:025.76] [Interviewer]  And I was going to ask you around the sort of low hanging fruit, like which axis someone should focus on first in terms of maximizing the uncorrelated bets in their portfolio.
+[00:57:027.01 --> 00:57:038.38] [Interviewer]  Do you think it's possible that there are processes out there that can introduce, whether it's a trading strategy or some sort of signal,
+[00:57:038.43 --> 00:57:038.82] [Interviewer]  that can introduce a lot of the unparalleled bets in your portfolio?
+[00:57:038.84 --> 00:57:041.20] [Interviewer]  I think it's possible that there are processes out there that can introduce more diversification than...
+[00:57:040.23 --> 00:57:040.35] [Customer]  Cheers.
+[00:57:040.92 --> 00:57:041.20] [Customer]  then
+[00:57:041.97 --> 00:57:043.11] [Interviewer]  That's a classic exposure.
+[00:57:044.20 --> 00:57:045.24] [Customer]  Absolutely no doubt.
+[00:57:045.40 --> 00:57:056.74] [Customer]  So in order of priority, if you can take a simple momentum strategy and a simple value strategy and combine them, I would seek to develop.
+[00:57:057.24 --> 00:57:058.24] [Customer]  Let me back it up.
+[00:57:058.42 --> 00:58:002.36] [Customer]  Let's say I've got a value strategy, a simple value strategy, and I've got two choices.
+[00:58:003.18 --> 00:58:012.80] [Customer]  I can spend a pile of time trying to improve my value strategy, or I can spend an equal amount of time creating a simple momentum strategy.
+[00:58:012.80 --> 00:58:015.18] [Customer]  It's an absolute no-brainer.
+[00:58:016.66 --> 00:58:020.28] [Interviewer]  your phrase though. All right. So what, cause I guess what I want to specifically focus on,
+[00:58:020.28 --> 00:58:024.57] [Interviewer]  I'll use an example. You have a portfolio that is currently strategically stocks and bonds.
+[00:58:025.41 --> 00:58:032.47] [Interviewer]  Let's, let's assume it's risk parity just to make life easier. Is there more diversification
+[00:58:032.47 --> 00:58:038.05] [Interviewer]  benefit from including something, another asset class, let's say commodities or something,
+[00:58:038.16 --> 00:58:042.07] [Interviewer]  I don't know, whatever asset class you want to talk about, or is there potentially more
+[00:58:042.07 --> 00:58:048.12] [Interviewer]  diversification benefit in including value momentum trend?
+[00:58:048.85 --> 00:58:057.01] [Customer]  Yeah, well, you and I both want the answer to this, and it has to do with how economically linked is that extra signal to the other signals in the portfolio, right?
+[00:58:057.45 --> 00:59:009.27] [Customer]  I would argue that trend is uncorrelated to virtually every traditional data, whether it be rates, inflation, equity, whatever.
+[00:59:009.27 --> 00:59:019.77] [Customer]  It is negatively correlated or uncorrelated, but conditionally negatively correlated because of the concavity, convexity relationship, right?
+[00:59:019.91 --> 00:59:026.17] [Customer]  So, I mean, I think trend should be a prominent feature in every portfolio.
+[00:59:027.21 --> 00:59:036.91] [Customer]  We have differing perspectives on how one should or what is most feasible for most people to introduce that trend signal into portfolios, which is fine.
+[00:59:037.19 --> 00:59:039.25] [Customer]  But that really is a no-brainer.
+[00:59:039.27 --> 00:59:045.73] [Customer]  Because it's really the only convex data that you can introduce to the portfolio.
+[00:59:046.05 --> 00:59:053.95] [Customer]  And as we talked about today, virtually everything else other than put buying is a concave data.
+[00:59:054.25 --> 00:59:055.77] [Interviewer]  Do you think you could make a list?
+[00:59:056.03 --> 00:59:057.33] [Interviewer]  This is an interesting hypothetical.
+[00:59:057.53 --> 01:00:002.75] [Interviewer]  If I said to you, starting with equities, you can add one thing to the portfolio.
+[01:00:003.45 --> 01:00:007.21] [Interviewer]  And I truly mean like, when I say one thing, I mean, you're going to introduce trend.
+[01:00:007.49 --> 01:00:008.93] [Interviewer]  It's trend on equities.
+[01:00:008.95 --> 01:00:011.09] [Interviewer]  It's not a multi-asset trend strategy.
+[01:00:011.79 --> 01:00:014.39] [Interviewer]  Or you could include bonds, right?
+[01:00:014.85 --> 01:00:016.55] [Interviewer]  And then we'll go with bond.
+[01:00:016.69 --> 01:00:017.89] [Interviewer]  You have a stock bond portfolio.
+[01:00:018.53 --> 01:00:020.19] [Interviewer]  What is the next thing you would include?
+[01:00:020.19 --> 01:00:023.09] [Customer]  See, I wish we could do this anonymously.
+[01:00:023.11 --> 01:00:024.45] [Customer]  I wish we could write this down.
+[01:00:024.47 --> 01:00:025.11] [Customer]  All right, all right, all right.
+[01:00:023.77 --> 01:00:025.31] [Interviewer]  Like this down, you know?
+[01:00:025.49 --> 01:00:025.69] [Interviewer]  because I would
+[01:00:025.81 --> 01:00:026.59] [Customer]  I've been pretty interested in how
+[01:00:027.46 --> 01:00:028.88] [Customer]  you would respond independent of my
+[01:00:029.03 --> 01:00:029.47] [Interviewer]  responses?
+[01:00:029.53 --> 01:00:030.95] [Interviewer]  Well, I think and I think it's also an
+[01:00:030.95 --> 01:00:032.11] [Interviewer]  interesting question of like if I said
+[01:00:032.11 --> 01:00:034.05] [Interviewer]  stocks and I think of adding
+[01:00:034.05 --> 01:00:035.99] [Interviewer]  bonds, well, is it a risk parity
+[01:00:035.99 --> 01:00:036.55] [Interviewer]  implementation?
+[01:00:037.01 --> 01:00:037.33] [Interviewer]  Absolutely.
+[01:00:037.32 --> 01:00:037.84] [Customer]  Four or six.
+[01:00:038.48 --> 01:00:039.72] [Interviewer]  are you constrained without leverage?
+[01:00:039.86 --> 01:00:040.74] [Interviewer]  I mean, those are different.
+[01:00:041.34 --> 01:00:041.62] [Interviewer]  Definitely.
+[01:00:041.59 --> 01:00:046.69] [Customer]  It's like Jack Bogle, who's like the nicest guy imaginable and unbelievably smart.
+[01:00:047.67 --> 01:00:051.55] [Customer]  He asked me during a conversation last week before the march,
+[01:00:053.23 --> 01:00:058.03] [Customer]  hey, gun to your head, you had to choose one market and one signal.
+[01:00:058.45 --> 01:00:059.01] [Customer]  Yeah.
+[01:00:059.13 --> 01:01:000.15] [Customer]  What would you do?
+[01:00:059.59 --> 01:01:000.07] [Interviewer]  What would you do?
+[01:01:000.94 --> 01:01:002.76] [Customer]  Right? Literally my head exploded.
+[01:01:002.84 --> 01:01:004.50] [Customer]  I did not know what to say.
+[01:01:002.93 --> 01:01:003.09] [Interviewer]  Right.
+[01:01:004.69 --> 01:01:004.81] [Interviewer]  Yeah.
+[01:01:004.93 --> 01:01:005.13] [Interviewer]  Right?
+[01:01:005.45 --> 01:01:006.69] [Interviewer]  Because it's hard to be constrained.
+[01:01:006.87 --> 01:01:008.03] [Interviewer]  It's hard to, like, because you're not.
+[01:01:008.37 --> 01:01:009.57] [Interviewer]  You can do whatever you want.
+[01:01:009.61 --> 01:01:010.11] [Interviewer]  Why are we?
+[01:01:010.23 --> 01:01:010.45] [Interviewer]  Right?
+[01:01:010.67 --> 01:01:020.01] [Interviewer]  But I guess the purpose of the exercise I'm sort of thinking of is, like, assuming you start with equities, which I think most people start with, right?
+[01:01:020.63 --> 01:01:023.13] [Interviewer]  I mean, maybe you could argue most people start with stocks and bonds.
+[01:01:023.29 --> 01:01:027.53] [Interviewer]  But I really feel like the core of almost everyone's portfolio I've ever met is equity exposure.
+[01:01:027.77 --> 01:01:027.93] [Interviewer]  Yeah.
+[01:01:028.61 --> 01:01:034.37] [Interviewer]  The goal then, at least for me, is saying, all right, you have a great growth engine.
+[01:01:034.37 --> 01:01:037.21] [Interviewer]  You're tied to the economic growth of the public markets.
+[01:01:037.25 --> 01:01:037.47] [Interviewer]  Yeah.
+[01:01:037.59 --> 01:01:038.03] [Interviewer]  Wonderful.
+[01:01:038.71 --> 01:01:045.49] [Interviewer]  Now it's all about diversifying, managing your risks, managing your risk of failing fast.
+[01:01:046.55 --> 01:01:048.35] [Interviewer]  What is the best way to do it?
+[01:01:048.41 --> 01:01:053.81] [Interviewer]  And then once I introduce that second asset, well, my decisions on what to introduce after that are conditional on that.
+[01:01:048.50 --> 01:01:048.92] [Customer]  And then once I'm done,
+[01:01:054.30 --> 01:01:057.38] [Interviewer]  Second, exactly. Right. I mean, it's conditional all the way down.
+[01:01:054.88 --> 01:01:055.30] [Customer]  Exactly.
+[01:01:057.66 --> 01:01:058.06] [Customer]  Definitely.
+[01:01:058.72 --> 01:02:002.36] [Interviewer]  And I sit there and I go, do I, and I waffle.
+[01:02:001.95 --> 01:02:002.31] [Customer]  And I walked.
+[01:02:002.69 --> 01:02:002.75] [Customer]  Bye.
+[01:02:003.48 --> 01:02:006.98] [Interviewer]  Is it better to introduce bonds or is it better to introduce trends?
+[01:02:008.76 --> 01:02:014.60] [Interviewer]  I would probably say it might depend on where you are in your life cycle, honestly, but
+[01:02:014.59 --> 01:02:016.81] [Customer]  But also, why are we fucking arguing about this?
+[01:02:017.10 --> 01:02:017.56] [Interviewer]  or who's arguing.
+[01:02:017.81 --> 01:02:021.43] [Customer]  No, but like, why are we constrained to this decision in the first place?
+[01:02:021.49 --> 01:02:023.33] [Customer]  I thought it was an interesting exercise.
+[01:02:023.79 --> 01:02:029.31] [Customer]  Okay, so if I had to choose, I would go stocks, long treasuries, trend, then commodities,
+[01:02:029.69 --> 01:02:030.09] [Customer]  then stocks.
+[01:02:028.81 --> 01:02:028.97] [Interviewer]  Yeah.
+[01:02:030.60 --> 01:02:031.70] [Interviewer]  All right, so talk to me about commodities.
+[01:02:032.16 --> 01:02:034.28] [Interviewer]  This is one that I find...
+[01:02:030.62 --> 01:02:030.90] [Customer]  All right.
+[01:02:032.30 --> 01:02:032.51] [Customer]  Okay.
+[01:02:035.09 --> 01:02:038.93] [Interviewer]  is probably the most controversial asset class.
+[01:02:040.25 --> 01:02:042.83] [Interviewer]  And then what becomes very interesting is there are people who say
+[01:02:044.03 --> 01:02:048.29] [Interviewer]  commodities and commodity carry are totally different.
+[01:02:049.01 --> 01:02:050.25] [Interviewer]  One is viable, one's not.
+[01:02:050.39 --> 01:02:053.75] [Interviewer]  Do commodities have a risk premium,
+[01:02:054.47 --> 01:02:059.57] [Interviewer]  or should you expect there to be zero risk premium associated with them?
+[01:02:059.77 --> 01:03:002.97] [Interviewer]  And the literature is very mixed on all this.
+[01:03:002.97 --> 01:03:003.21] [Interviewer]  Yes.
+[01:03:003.47 --> 01:03:006.81] [Interviewer]  Even on the commodity carry side, there's some people who say,
+[01:03:006.91 --> 01:03:008.99] [Interviewer]  yep, there's a great premium to be harvested there
+[01:03:008.99 --> 01:03:010.73] [Interviewer]  because there's people who want to hedge.
+[01:03:011.33 --> 01:03:014.17] [Interviewer]  And there's other people who say, nope, it doesn't exist.
+[01:03:014.25 --> 01:03:014.59] [Interviewer]  Well, I don't know.
+[01:03:014.29 --> 01:03:016.63] [Customer]  Well, listen, the data is pretty clear.
+[01:03:017.21 --> 01:03:019.51] [Customer]  Spot commodity has no risk premium.
+[01:03:019.71 --> 01:03:022.09] [Customer]  It delivers returns commensurate with inflation.
+[01:03:023.99 --> 01:03:029.47] [Customer]  Futures, long-only futures allocation commodities, does produce a Sharpe ratio over the long term.
+[01:03:029.53 --> 01:03:031.23] [Customer]  It's about half the Sharpe ratio of stocks and bonds.
+[01:03:031.95 --> 01:03:032.65] [Customer]  And why?
+[01:03:032.97 --> 01:03:034.89] [Customer]  For, I think, pretty intuitive reasons.
+[01:03:034.89 --> 01:03:043.37] [Customer]  Because producers, commercial producers of commodities want to be able to manage their exposure to price risk.
+[01:03:043.49 --> 01:03:050.35] [Customer]  And speculators take on that risk and then harvest a premium for taking on that risk.
+[01:03:050.63 --> 01:03:058.53] [Customer]  So for me, there's a real economic intuition for why commodity futures should produce a long-term risk premium.
+[01:03:058.71 --> 01:04:003.21] [Customer]  But also, that premium is time-marrying.
+[01:04:003.47 --> 01:04:004.87] [Customer]  And so the whole idea of...
+[01:04:004.89 --> 01:04:013.97] [Customer]  Carry is that sometimes the premium is negative for certain commodities and for currencies and for rates.
+[01:04:014.43 --> 01:04:016.43] [Customer]  And sometimes it's positive.
+[01:04:016.67 --> 01:04:022.87] [Customer]  If there's no reason for commodities, why you shouldn't just be allocating toward commodities that produce...
+[01:04:023.59 --> 01:04:027.05] [Customer]  That currently have a positive premium if the price doesn't change.
+[01:04:027.27 --> 01:04:031.47] [Customer]  And be shorting commodities that have a negative premium if the price doesn't change.
+[01:04:031.75 --> 01:04:033.57] [Customer]  And of course, that's the carry strategy.
+[01:04:033.61 --> 01:04:034.39] [Customer]  It has the...
+[01:04:034.89 --> 01:04:039.43] [Customer]  A Sharpe ratio that's equivalent to the Sharpe ratio on trend over the very long term.
+[01:04:039.46 --> 01:04:041.14] [Interviewer]  So why does no one have that strategy?
+[01:04:041.20 --> 01:04:043.80] [Interviewer]  Like no one owns that strategy.
+[01:04:044.35 --> 01:04:046.99] [Customer]  Not independently. Everybody seems to own it if they own it at all.
+[01:04:047.73 --> 01:04:048.95] [Interviewer]  in a compliment to trend.
+[01:04:047.89 --> 01:04:048.93] [Customer]  As a compliment to Trent.
+[01:04:049.40 --> 01:04:051.48] [Interviewer]  Yeah, it's always packaged within the trend.
+[01:04:051.54 --> 01:04:055.00] [Interviewer]  But carry just I don't know why it's a very compelling signal.
+[01:04:055.08 --> 01:04:055.56] [Interviewer]  Agreed.
+[01:04:055.56 --> 01:04:058.26] [Interviewer]  I don't know why it doesn't exist as its own standalone.
+[01:04:058.70 --> 01:05:002.36] [Interviewer]  Maybe it's because there's enough firms now introducing it into their trend
+[01:05:002.94 --> 01:05:005.24] [Interviewer]  strategy that just doesn't need to exist as a standalone.
+[01:05:005.32 --> 01:05:007.92] [Interviewer]  But it does seem like there's enough pure trend folks
+[01:05:007.92 --> 01:05:012.66] [Interviewer]  that you could have a pure carry strategy as accomplished.
+[01:05:013.16 --> 01:05:023.12] [Customer]  I agree. I mean, it's my thesis that if you're going to go into a firm, an institution that already has an allocation to trend and they don't know about carry,
+[01:05:023.98 --> 01:05:028.20] [Customer]  which really from a rational standpoint is the only reason why they would only have an allocation to trend,
+[01:05:029.58 --> 01:05:040.54] [Customer]  then they would be better off and they would choose to allocate to a strategy that incorporates and manages the combination of the signals of carry and trend
+[01:05:040.54 --> 01:05:045.16] [Customer]  rather than just independently allocating to a carry strategy.
+[01:05:046.10 --> 01:05:047.14] [Customer]  So here's a pushback on that.
+[01:05:048.37 --> 01:05:053.87] [Interviewer]  I would argue that Carrie would be a concave payoff.
+[01:05:054.97 --> 01:05:055.51] [Customer]  It totally is.
+[01:05:055.77 --> 01:05:057.51] [Interviewer]  Right, so if you're buying trend,
+[01:05:058.23 --> 01:05:058.91] [Customer]  It's prototypical.
+[01:05:059.16 --> 01:06:002.06] [Interviewer]  to introduce a convex payoff to your portfolio
+[01:06:002.06 --> 01:06:005.56] [Interviewer]  by introducing a carry strategy to your trend strategy,
+[01:06:005.96 --> 01:06:008.88] [Interviewer]  you are diluting the convexity.
+[01:06:009.50 --> 01:06:011.06] [Customer]  Well, it depends on how you implement it.
+[01:06:011.48 --> 01:06:013.78] [Customer]  So imagine it's just sort of 50-50 trend and carry.
+[01:06:013.96 --> 01:06:014.10] [Customer]  Yep.
+[01:06:014.65 --> 01:06:014.67] [Interviewer]  you
+[01:06:014.70 --> 01:06:020.68] [Customer]  And your carry signal at the moment says that you should be short stocks.
+[01:06:021.24 --> 01:06:024.14] [Customer]  And your trend signal says you should be long stocks.
+[01:06:024.36 --> 01:06:028.22] [Customer]  That actually is the current signal for U.S. equities.
+[01:06:028.36 --> 01:06:033.34] [Customer]  It has actually negative carry relative to short-term rates, but positive trend, obviously.
+[01:06:033.58 --> 01:06:039.22] [Customer]  And for those who are just listening, the date is October 5th.
+[01:06:039.76 --> 01:06:040.32] [Interviewer]  around there.
+[01:06:043.22 --> 01:06:048.34] [Customer]  So now you've got sort of a neutral position, but if the two of them line up,
+[01:06:048.34 --> 01:06:051.72] [Customer]  now you've got sort of a double position, right?
+[01:06:051.90 --> 01:06:054.58] [Customer]  So that's looking at them independently, but then you can also look at them
+[01:06:054.58 --> 01:07:001.90] [Customer]  conditionally. You can only go long trend signals where the market also exhibits
+[01:07:001.90 --> 01:07:006.68] [Customer]  positive carry, which totally makes sense because if the two signals have the same strength,
+[01:07:004.47 --> 01:07:004.59] [Interviewer]  Yeah.
+[01:07:007.70 --> 01:07:009.01] [Customer]  then you get a point.
+[01:07:008.57 --> 01:07:010.26] [Interviewer]  But do you do it on the other side as well?
+[01:07:010.42 --> 01:07:010.92] [Customer]  Absolutely, yes.
+[01:07:011.70 --> 01:07:014.38] [Interviewer]  So you'll only go short something that has negative parents.
+[01:07:014.42 --> 01:07:014.62] [Customer]  Correct.
+[01:07:014.96 --> 01:07:015.88] [Interviewer]  Okay.
+[01:07:016.61 --> 01:07:021.30] [Customer]  Correct. And the interesting thing is, of course, equity markets rarely have negative carry.
+[01:07:021.45 --> 01:07:021.61] [Customer]  Right.
+[01:07:021.82 --> 01:07:024.07] [Customer]  Fixed income markets rarely have negative carry.
+[01:07:024.20 --> 01:07:031.22] [Customer]  And when they do have negative carry, those are actually economically the time when you are most likely to be profitable in the short term.
+[01:07:031.57 --> 01:07:032.65] [Interviewer]  Right. Interesting.
+[01:07:033.05 --> 01:07:035.95] [Customer]  So I think the way you slice it, you kind of want to integrate the signals rather than
+[01:07:033.24 --> 01:07:034.20] [Interviewer]  So I think the way you slice it,
+[01:07:036.48 --> 01:07:036.88] [Customer]  using them
+[01:07:037.45 --> 01:07:039.86] [Interviewer]  Right, so yeah, using it in a composite fashion,
+[01:07:039.99 --> 01:07:042.18] [Interviewer]  sleeve based diluted potentially,
+[01:07:042.47 --> 01:07:043.78] [Interviewer]  integrating them conditionally,
+[01:07:037.49 --> 01:07:037.97] [Customer]  Right, so yeah.
+[01:07:040.00 --> 01:07:040.18] [Customer]  Correct.
+[01:07:044.31 --> 01:07:046.33] [Interviewer]  you could actually potentially enhance
+[01:07:047.39 --> 01:07:047.61] [Customer]  Correct.
+[01:07:048.53 --> 01:07:049.59] [Interviewer]  at a potential risk, right?
+[01:07:049.64 --> 01:07:053.18] [Interviewer]  Because you have that extra risk of an extra signal
+[01:07:053.18 --> 01:07:053.82] [Interviewer]  you're measuring.
+[01:07:053.95 --> 01:07:055.16] [Interviewer]  And if that's wrong, you're going
+[01:07:055.16 --> 01:07:056.12] [Interviewer]  to miss your second signal.
+[01:07:056.15 --> 01:07:058.89] [Customer]  But to your point, which I never really addressed,
+[01:07:059.21 --> 01:08:004.01] [Customer]  I do think you do lose some portion of that convexity
+[01:08:004.01 --> 01:08:007.15] [Customer]  from including carry either as a conditional signal
+[01:08:007.15 --> 01:08:009.27] [Customer]  or as a complimentary signal.
+[01:08:009.41 --> 01:08:010.57] [Customer]  So yes, it's a trade off.
+[01:08:011.43 --> 01:08:012.36] [Interviewer]  It's interesting because there's,
+[01:08:012.36 --> 01:08:015.07] [Interviewer]  when you look at what I would call
+[01:08:015.07 --> 01:08:020.44] [Interviewer]  the systematic risk premia or the style risk premia,
+[01:08:020.44 --> 01:08:022.27] [Interviewer]  the alternative risk premia, whatever,
+[01:08:022.39 --> 01:08:024.93] [Interviewer]  the manufactured risk premia,
+[01:08:025.85 --> 01:08:027.01] [Interviewer]  there's very few that are convex.
+[01:08:027.36 --> 01:08:028.93] [Interviewer]  I mean, I struggle.
+[01:08:028.89 --> 01:08:029.75] [Customer]  Name one of the trends.
+[01:08:030.21 --> 01:08:031.33] [Interviewer]  Well, I sort of think defensive.
+[01:08:033.18 --> 01:08:036.74] [Customer]  Capital, neutral, long short, low beta.
+[01:08:037.19 --> 01:08:037.81] [Interviewer]  Oh, it's going to kill you.
+[01:08:038.54 --> 01:08:039.26] [Customer]  Oh yeah, I know it will.
+[01:08:039.42 --> 01:08:040.24] [Customer]  It's got negative care.
+[01:08:040.43 --> 01:08:040.71] [Interviewer]  Yeah.
+[01:08:041.48 --> 01:08:044.90] [Customer]  But it's like a game similar to a Pulling a Props.
+[01:08:045.41 --> 01:08:051.31] [Interviewer]  Right. So I sort of look there and say, okay, maybe defensive, maybe trend, but there isn't a whole lot.
+[01:08:051.45 --> 01:09:003.23] [Interviewer]  So when you start adding all these alpha signals, so to speak, value momentum carry onto an existing strategic portfolio, whether it's risk parity or traditional strategic, you are introducing more bets.
+[01:09:003.41 --> 01:09:008.03] [Interviewer]  I think you used a great analogy earlier today on the panel, which was you're running a casino.
+[01:09:008.35 --> 01:09:010.63] [Interviewer]  You want as many different tables as possible.
+[01:09:010.63 --> 01:09:019.77] [Interviewer]  But if one of those tables, if you only have four tables and one of those tables is having a horrible evening, it's got that big left tail risk.
+[01:09:020.73 --> 01:09:022.43] [Interviewer]  The other tables aren't going to make up for it.
+[01:09:022.45 --> 01:09:023.53] [Interviewer]  Over time, they might.
+[01:09:023.65 --> 01:09:028.39] [Interviewer]  But in that year, in 2008, man, you're just.
+[01:09:028.51 --> 01:09:031.97] [Customer]  Well, see, this is, and so this leads off into a whole other topic that we could really,
+[01:09:032.01 --> 01:09:036.15] [Customer]  we could dive into, but we don't have time, which is the whole idea of ensemble average
+[01:09:036.15 --> 01:09:037.95] [Customer]  versus time average.
+[01:09:038.13 --> 01:09:038.45] [Customer]  Oh, yeah.
+[01:09:038.55 --> 01:09:038.85] [Customer]  Right?
+[01:09:038.93 --> 01:09:045.25] [Customer]  And so what's so interesting about the ensemble methods that we both espouse, you on the tranching
+[01:09:045.25 --> 01:09:050.21] [Customer]  side and me on sort of the resampling side, is that you introduce some of that ensemble
+[01:09:050.21 --> 01:09:057.61] [Customer]  based averaging to an individual who otherwise would only be able to rely on that time based
+[01:09:057.61 --> 01:09:057.99] [Customer]  averaging.
+[01:09:058.33 --> 01:09:058.41] [Interviewer]  Right.
+[01:09:058.55 --> 01:10:001.05] [Customer]  that can be killer over finite time horizons.
+[01:10:002.48 --> 01:10:004.80] [Interviewer]  With that said, we both need to leave.
+[01:10:005.96 --> 01:10:006.66] [Interviewer]  It's been great.
+[01:10:006.78 --> 01:10:007.54] [Interviewer]  Cheers on Bar Talk.
+[01:10:006.19 --> 01:10:006.57] [Customer]  It's been great.
+[01:10:007.76 --> 01:10:009.30] [Customer]  Cheers, man. Love it. Let's do this again.
+[01:10:011.32 --> 01:10:016.16] [Interviewer]  Thank you for listening to my conversation with Adam Butler, and I hope you enjoyed the new show format.
+[01:10:016.38 --> 01:10:023.04] [Interviewer]  You can find more of Adam on his blog, guestaltu.com, and on Twitter under the handle guestaltu.
+[01:10:023.40 --> 01:10:030.86] [Interviewer]  If you enjoyed this episode, I'd urge you to share it with others, whether by email or social media, and leave us a review on iTunes.

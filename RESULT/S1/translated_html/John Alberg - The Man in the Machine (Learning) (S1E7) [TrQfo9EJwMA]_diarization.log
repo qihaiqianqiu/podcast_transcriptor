@@ -1,0 +1,546 @@
+[00:00:003.19 --> 00:00:008.29] [Interviewer]  Hello and welcome everyone. I'm Corey Hofstein and this is Flirting with Models, the podcast
+[00:00:008.29 --> 00:00:013.15] [Interviewer]  that pulls back the curtain to discover the human factor behind the quantitative strategy.
+[00:00:015.21 --> 00:00:019.77] [Interviewer]  Corey Hofstein is the co-founder and chief investment officer of Newfound Research. Due
+[00:00:019.77 --> 00:00:023.85] [Interviewer]  to industry regulations, he will not discuss any of Newfound Research's funds on this podcast.
+[00:00:024.11 --> 00:00:028.39] [Interviewer]  All opinions expressed by podcast participants are solely their own opinion and do not reflect
+[00:00:028.39 --> 00:00:032.89] [Interviewer]  the opinion of Newfound Research. This podcast is for informational purposes only and should
+[00:00:032.89 --> 00:00:036.87] [Interviewer]  not be relied upon as a basis for investment decisions. Clients of Newfound Research may
+[00:00:036.87 --> 00:00:040.87] [Interviewer]  maintain positions and securities discussed in this podcast. For more information, visit
+[00:00:040.87 --> 00:00:051.25] [Interviewer]  thinknewfound.com. How do you come to a rational conclusion as to what a company is worth?
+[00:00:051.61 --> 00:00:058.19] [Interviewer]  A seemingly simple question with little to no clear answer. For John Allberg, a background
+[00:00:058.19 --> 00:01:002.41] [Interviewer]  in computer science and a passion for machine learning, let him to view the
+[00:01:002.41 --> 00:01:002.87] [Interviewer]  problem as a rational conclusion.
+[00:01:002.89 --> 00:01:010.51] [Interviewer]  If it is true that you can use publicly available information to buy companies for less than their
+[00:01:010.51 --> 00:01:016.55] [Interviewer]  economic worth, he thought, then you should be able to see it in the data. And thus was born
+[00:01:016.55 --> 00:01:021.67] [Interviewer]  Euclidean, an investment firm that marries machine learning with deep value mentality.
+[00:01:022.95 --> 00:01:028.73] [Interviewer]  Our conversation spanned more than two and a half hours and covered everything from the basics of
+[00:01:028.73 --> 00:01:032.87] [Interviewer]  machine learning to the evolution of Euclidean's process over the years.
+[00:01:032.89 --> 00:01:033.05] [Interviewer]  The conversation has been a long and difficult one. It has been a long and difficult one.
+[00:01:033.05 --> 00:01:036.23] [Interviewer]  We have been working on the most important topic for the last decade to the implications of adversarial
+[00:01:036.23 --> 00:01:041.93] [Interviewer]  examples in neural networks. This podcast, an abridged version of our conversation,
+[00:01:042.21 --> 00:01:048.23] [Interviewer]  picks up the thread midway through where I have asked John to expand upon his experience with his
+[00:01:048.23 --> 00:01:054.89] [Interviewer]  startup, Employees, and how it influenced his value-based thinking at Euclidean. I hope you enjoy.
+[00:01:055.03 --> 00:01:055.21] [Interviewer]  Euclidean.
+[00:01:055.22 --> 00:01:055.23] [Customer]  you
+[00:01:055.27 --> 00:01:055.27] [Interviewer] 
+[00:01:055.35 --> 00:01:055.43] [Customer]  you
+[00:01:057.65 --> 00:02:003.79] [Customer]  Yeah. So in 2008, Michael Seckler, my longtime business partner, and I founded Euclidean
+[00:02:003.79 --> 00:02:008.55] [Customer]  specifically on this idea of applying machine learning to long-term equity investing.
+[00:02:008.91 --> 00:02:013.75] [Customer]  Mike and I had built a software as a service business over the prior decade that we sold to
+[00:02:013.75 --> 00:02:020.41] [Customer]  ADP, Automatic Data Processing, in 2006. And we had made a little money off that sale and so
+[00:02:020.41 --> 00:02:024.17] [Customer]  started to think about how to grow that wealth over the remainder of our lives.
+[00:02:024.89 --> 00:02:029.91] [Customer]  And I sought out wisdom on this subject in the writings of people who had been great
+[00:02:029.91 --> 00:02:034.89] [Customer]  long-term investors, people that achieved high returns over very, very long periods of time,
+[00:02:034.99 --> 00:02:040.27] [Customer]  not folks that achieved a great result from a couple of trades. And if you ask this question,
+[00:02:040.41 --> 00:02:046.01] [Customer]  you inevitably end up learning a lot about Ben Graham, Walter Schloss, John Templeton,
+[00:02:046.31 --> 00:02:049.03] [Customer]  and of course, Buffett. And the thing that I observed
+[00:02:049.03 --> 00:02:050.39] [Customer]  is that most of the time, I've been doing a lot of research on the market. And I've been
+[00:02:050.39 --> 00:02:056.65] [Customer]  most of these folks are very open about how they invest and essentially describe it in this way,
+[00:02:056.79 --> 00:03:001.59] [Customer]  that they look at the historical financials, the publicly available information on companies,
+[00:03:001.75 --> 00:03:007.21] [Customer]  perhaps going back decades, and try to get a sense of what the economic character or intrinsic value
+[00:03:007.21 --> 00:03:014.09] [Customer]  of the business is. And if that value is attractive relative to what you might be able to buy the
+[00:03:014.09 --> 00:03:020.19] [Customer]  company for, then it's considered a good investment. And in thinking through this, again, that there are
+[00:03:020.39 --> 00:03:020.81] [Customer]  a lot of people who are very open about the historical financials, but they're not very open
+[00:03:020.81 --> 00:03:020.81] [Customer] 
+[00:03:020.81 --> 00:03:026.83] [Customer]  publicly available information and price and that I had a deep background in machine learning going
+[00:03:026.83 --> 00:03:032.83] [Customer]  back to the early 90s, that I might be able to imitate this success using machine learning.
+[00:03:032.99 --> 00:03:038.49] [Customer]  Note that I'm not saying that our goal was to directly imitate what specific long-term
+[00:03:038.49 --> 00:03:046.33] [Customer]  fundamental investors do. I wasn't, for example, trying to make a Graham model, so to speak.
+[00:03:046.65 --> 00:03:050.37] [Customer]  Rather, if you give a machine learning algorithm all his money, you're going to get a lot of money.
+[00:03:050.39 --> 00:03:054.07] [Customer]  If you ask it to distinguish between historical fundamentals and price, and ask it to distinguish
+[00:03:054.07 --> 00:03:059.59] [Customer]  between winners and losers in that data, then it will be successful if it is possible to succeed
+[00:03:059.59 --> 00:04:004.35] [Customer]  on that data alone. The machine learning algorithm should be able to find in the data this
+[00:04:004.35 --> 00:04:011.73] [Customer]  relationship between long-term fundamentals of companies, their prices, and success as future
+[00:04:011.73 --> 00:04:020.21] [Customer]  success as an investment, so long as that relationship actually does exist. So this is what we said
+[00:04:020.39 --> 00:04:026.29] [Customer]  about to do. Now, this may seem unusual, applying machine learning to long-term investing. It seems
+[00:04:026.29 --> 00:04:031.47] [Customer]  like most people apply it to short-term investing. I'd like to point out that if you look around at
+[00:04:031.47 --> 00:04:036.41] [Customer]  other fields where machine learning has had a lot of success in achieving good results, it's in areas
+[00:04:036.41 --> 00:04:040.43] [Customer]  where we're trying to improve upon human decision-making. So take, for example, self-driving
+[00:04:040.43 --> 00:04:046.67] [Customer]  cars. In that case, you may build a perceptual system, a neural network, that is trained to do
+[00:04:046.67 --> 00:04:049.77] [Customer]  a better job at perceiving the environment that a human would,
+[00:04:050.39 --> 00:04:056.59] [Customer]  in a car. In medicine, what they're doing is they're taking medical images and attempting
+[00:04:056.59 --> 00:05:001.49] [Customer]  to identify whether there's a malignant tumor in it, trying to improve upon the radiologist's
+[00:05:001.49 --> 00:05:007.61] [Customer]  ability to identify whether there's a malignancy or not. And in the stunning example, of course,
+[00:05:007.63 --> 00:05:012.69] [Customer]  it's a game, but in the stunning example of AlphaGo, where neural networks were trained
+[00:05:012.69 --> 00:05:018.09] [Customer]  to beat the world masters at the game of Go, obviously what they're doing there is they're
+[00:05:018.09 --> 00:05:020.37] [Customer]  building a machine, an algorithm, that's going to be able to do that. And so, you know,
+[00:05:020.37 --> 00:05:025.43] [Customer]  it's a machine-based algorithm that does a better job than a human at that task. Well, in the world of
+[00:05:025.43 --> 00:05:029.95] [Customer]  capital markets, we have all these people who go around and evaluate companies based on their
+[00:05:029.95 --> 00:05:035.35] [Customer]  fundamentals and try to understand if they're going to be a good long-term investor. Essentially,
+[00:05:035.47 --> 00:05:040.39] [Customer]  what Euclidean set out to do is improve upon that process with machine learning.
+[00:05:040.93 --> 00:05:045.33] [Customer]  So I think it's important to point out also that most big machine learning successes are in the
+[00:05:045.33 --> 00:05:050.29] [Customer]  form of what's called a classification problem and not a regression problem. Regression is
+[00:05:050.37 --> 00:05:055.71] [Customer]  where you build a model to predict numeric values, like predicting the percent return of a stock.
+[00:05:056.13 --> 00:06:002.43] [Customer]  Classification is where you predict categorical values. So if listeners remember the Silicon
+[00:06:002.43 --> 00:06:008.95] [Customer]  Valley episode where Jin Yang built the hot dog, not hot dog image classification app to, I think,
+[00:06:008.95 --> 00:06:014.79] [Customer]  get him out of indentured servitude, that's a good example of a classification app. You know,
+[00:06:014.79 --> 00:06:018.55] [Customer]  even language translation is a form of classification where you are predicting
+[00:06:018.55 --> 00:06:020.35] [Customer]  one of a number of numbers. And so, you know, if you're going to build a model to predict
+[00:06:020.37 --> 00:06:023.95] [Customer]  numbers, you're going to have to have a lot of words in a language that should be translated to.
+[00:06:024.25 --> 00:06:029.69] [Customer]  Typically, when people look at equity forecasting, they are doing regression. So instead, we
+[00:06:029.69 --> 00:06:034.93] [Customer]  structured the problem as a classification problem. You know, that is, we're predicting whether
+[00:06:034.93 --> 00:06:040.83] [Customer]  something is going to be a good investment or a bad investment. We did this because, you know,
+[00:06:040.83 --> 00:06:047.83] [Customer]  it's our view that this is an easier, less noisy problem than trying to forecast, say, excess return.
+[00:06:048.83 --> 00:06:054.63] [Interviewer]  Maybe before we dive deep down the rabbit hole, which I think we're going to get to very quickly,
+[00:06:055.35 --> 00:07:002.53] [Interviewer]  maybe we can start with the way you see the landscape of machine learning.
+[00:07:002.69 --> 00:07:009.37] [Interviewer]  Because there's a number not only of techniques, which I know we're going to talk about, but the purpose of those techniques.
+[00:07:009.51 --> 00:07:012.87] [Interviewer]  So you've already, for example, mentioned regression versus classification.
+[00:07:012.87 --> 00:07:020.89] [Interviewer]  But we know that there's been an evolution from things like support vector machines to deep neural networks over the last decade.
+[00:07:021.15 --> 00:07:032.07] [Interviewer]  Maybe we can start with discussing that landscape a little and where you draw the line between machine learning and more advanced statistical techniques.
+[00:07:033.53 --> 00:07:040.11] [Customer]  So the question on the relationship between machine learning and statistics is an interesting one, and I think the answer is somewhat nuanced.
+[00:07:040.27 --> 00:07:051.73] [Customer]  For some forms of machine learning, it's clearly a subset of statistics, or at least intimately related to statistics, whereas other forms of machine learning take on a very different character.
+[00:07:051.87 --> 00:08:001.15] [Customer]  For example, in supervised learning, which is the most popular and successful form, you're trying to map a set of inputs to a set of outputs through a model.
+[00:08:001.15 --> 00:08:014.25] [Customer]  And this process is very similar to what you're doing in statistical linear regression, where you have, if you remember, an independent variable x and a dependent variable y, and you're trying to relate them through a linear model.
+[00:08:014.63 --> 00:08:025.57] [Customer]  The difference being that in supervised learning, it tends to be a more complicated model with many more parameters, and you're employing techniques to prevent overfitting.
+[00:08:025.73 --> 00:08:030.27] [Customer]  But because both linear regression and supervised learning are essentially attempting to do the same thing,
+[00:08:031.15 --> 00:08:037.21] [Customer]  I think it would be hard to argue that supervised machine learning is not a form or extension of statistics.
+[00:08:037.91 --> 00:08:045.07] [Customer]  On the other hand, if you look at something like reinforcement learning, where the model is an agent in an environment, and the model can take actions,
+[00:08:045.09 --> 00:08:052.59] [Customer]  and those actions have outcomes that are then fed back to the model and used to reinforce its behavior,
+[00:08:052.91 --> 00:08:058.93] [Customer]  I think in that case, it's taking on a very different character than traditional statistics,
+[00:08:059.17 --> 00:09:001.13] [Customer]  and therefore is different.
+[00:09:001.15 --> 00:09:006.77] [Customer]  With respect to the landscape of machine learning, ensemble learning techniques have had a lot of success.
+[00:09:007.13 --> 00:09:023.55] [Customer]  There's this result that shows that the average decision made by a group of models that have been trained to make uncorrelated decisions has a better chance of success than the best individual model within the group.
+[00:09:023.75 --> 00:09:027.83] [Customer]  So it's sort of like saying that some of the parts is greater than the whole,
+[00:09:027.97 --> 00:09:031.03] [Customer]  or that there's this wisdom.
+[00:09:031.05 --> 00:09:031.13] [Customer]  So it's sort of like saying that some of the parts is greater than the whole, or that there's this wisdom.
+[00:09:031.15 --> 00:09:041.51] [Customer]  At any rate, this result led to a vigorous effort to develop algorithms that train many models to make uncorrelated decisions.
+[00:09:042.27 --> 00:09:047.81] [Customer]  And it has been shown that these ensembles perform very well.
+[00:09:047.93 --> 00:09:056.33] [Customer]  If you look at the CAGLE competition, which is a worldwide competition where data sets are put out there and researchers can submit their best models,
+[00:09:056.49 --> 00:10:000.09] [Customer]  and they're ranked according to their accuracy on out-of-sample data,
+[00:10:000.19 --> 00:10:001.13] [Customer]  if you look at the top-down data, you can see that the data sets are ranked according to their accuracy on out-of-sample data.
+[00:10:001.13 --> 00:10:001.91] [Customer]  If you look at the top-down data, you can see that the data sets are ranked according to their accuracy on out-of-sample data.
+[00:10:001.91 --> 00:10:001.91] [Customer] 
+[00:10:001.91 --> 00:10:001.91] [Customer] 
+[00:10:001.91 --> 00:10:004.23] [Customer]  They tend to be dominated by these ensemble techniques,
+[00:10:004.59 --> 00:10:008.97] [Customer]  and so even though ensembles don't get the headlines, like deep learning,
+[00:10:009.09 --> 00:10:009.23] [Customer]  and so even though ensembles don't get the headlines, like deep learning,
+[00:10:009.23 --> 00:10:011.29] [Customer]  which I'll talk about here in a second,
+[00:10:011.39 --> 00:10:011.39] [Customer] 
+[00:10:011.39 --> 00:10:015.97] [Customer]  I would argue that if you have an application where you're interested in employing machine learning,
+[00:10:016.11 --> 00:10:029.81] [Customer]  I would argue that if you have an application where you're interested in employing machine learning,
+[00:10:029.81 --> 00:10:034.85] [Customer]  So you can find out if you're going to be successful with it pretty quickly.
+[00:10:035.71 --> 00:10:040.73] [Customer]  But the other maybe more sexy technique that does get a lot of the headlines is deep learning.
+[00:10:040.91 --> 00:10:042.87] [Customer]  So what is deep learning?
+[00:10:042.95 --> 00:10:054.25] [Customer]  Deep learning is learning in an artificial neural network where input is transformed to output through many processing units and parameters that are typically organized into these successive layers.
+[00:10:054.25 --> 00:10:059.71] [Customer]  Hence the deep, deep in terms of layers in the term deep learning.
+[00:11:000.21 --> 00:11:006.03] [Customer]  The transformation of input to output through all these nodes and connections can be very complex.
+[00:11:006.13 --> 00:11:011.49] [Customer]  There can be millions of connections slash parameters in these models.
+[00:11:011.59 --> 00:11:015.69] [Customer]  And hence deep learning can model these very challenging problems.
+[00:11:015.99 --> 00:11:023.91] [Customer]  Most of the problems that it's really good at are things that historically have been very hard to solve with a computer.
+[00:11:024.25 --> 00:11:025.53] [Customer]  Or traditional computing techniques.
+[00:11:026.35 --> 00:11:029.93] [Customer]  Things like computer vision, language translation, and voice recognition.
+[00:11:030.95 --> 00:11:034.21] [Customer]  Again though I'd say ensemble learning is best for most problems.
+[00:11:035.21 --> 00:11:038.85] [Customer]  But deep learning seems to be best at the most challenging.
+[00:11:039.37 --> 00:11:044.39] [Customer]  In finance, forecasting is of course of great interest.
+[00:11:044.67 --> 00:11:051.11] [Customer]  And it's interesting that a lot of these companies that are investing heavily in machine learning for their products.
+[00:11:051.37 --> 00:11:054.17] [Customer]  Such as Google and Facebook and Amazon.
+[00:11:054.25 --> 00:11:058.57] [Customer]  Are also very interested in the challenge of forecasting.
+[00:11:058.73 --> 00:12:001.89] [Customer]  As I think they believe it's relevant to their business.
+[00:12:002.33 --> 00:12:007.33] [Customer]  Like right, Amazon is well served to be able to forecast product to fit man.
+[00:12:007.51 --> 00:12:010.43] [Customer]  So it can effectively manage its inventory.
+[00:12:010.57 --> 00:12:014.59] [Customer]  And you can see this in academic papers that are coming out.
+[00:12:014.75 --> 00:12:021.25] [Customer]  Where these folks have started to leverage their expertise in machine learning into challenging forecasting problems.
+[00:12:021.41 --> 00:12:023.75] [Customer]  For example, there's a group again at Amazon.
+[00:12:023.75 --> 00:12:030.71] [Customer]  That published a series of paper on using deep learning to improve forecasting under uncertainty.
+[00:12:031.21 --> 00:12:038.55] [Customer]  And they showed that it does meaningfully better than traditional forecasting techniques.
+[00:12:038.77 --> 00:12:039.89] [Customer]  And what do I mean by uncertainty?
+[00:12:040.27 --> 00:12:042.33] [Customer]  Well this again is very related to finance.
+[00:12:042.37 --> 00:12:047.23] [Customer]  Where it's very hard to forecast an exact number in the future.
+[00:12:047.29 --> 00:12:049.65] [Customer]  You know that a stock is going to go up 10%.
+[00:12:049.65 --> 00:12:053.73] [Customer]  Or that we're going to sell 35,000 toothbrushes.
+[00:12:053.75 --> 00:12:054.73] [Customer]  Next month.
+[00:12:054.95 --> 00:13:000.01] [Customer]  But maybe you can get a sense of what the distribution of outcomes are going to be.
+[00:13:000.15 --> 00:13:003.43] [Customer]  And so Amazon built this tool.
+[00:13:003.53 --> 00:13:006.29] [Customer]  Which is now available in the Amazon cloud.
+[00:13:006.65 --> 00:13:008.25] [Customer]  I think it's called DeepAR.
+[00:13:008.45 --> 00:13:011.11] [Customer]  For deep auto regressive neural network.
+[00:13:011.21 --> 00:13:012.71] [Customer]  Where they have this recurrent neural network.
+[00:13:012.77 --> 00:13:018.27] [Customer]  That you can use to build these forecasting models.
+[00:13:018.49 --> 00:13:019.97] [Customer]  Where you're not trying to forecast a value.
+[00:13:020.19 --> 00:13:022.73] [Customer]  But forecast a distribution of outcomes.
+[00:13:023.09 --> 00:13:023.73] [Customer]  And so Amazon has a tool.
+[00:13:023.73 --> 00:13:026.83] [Customer]  At any rate it seems like there is a very direct crossover potential.
+[00:13:027.49 --> 00:13:030.55] [Customer]  Of this technology to finance applications.
+[00:13:031.68 --> 00:13:036.96] [Interviewer]  The literature for machine learning goes back a really, really long way, as we mentioned.
+[00:13:037.00 --> 00:13:043.60] [Interviewer]  Some of the earliest papers written on perceptrons, for example, I think go back to the 50s, 60s.
+[00:13:044.22 --> 00:13:051.72] [Interviewer]  But as we've been sort of talking about, there's been a massive acceleration in the last decade for many of the reasons you discussed,
+[00:13:051.72 --> 00:14:004.34] [Interviewer]  both from the hardware perspective, the use of GPUs, as well as some of the algorithms that have been discovered to solve some of the problems that were facing things like deep neural networks,
+[00:14:005.00 --> 00:14:013.20] [Interviewer]  has allowed for a massive acceleration of the techniques and therefore the application of deep neural networks and the success of deep neural networks in the last decade.
+[00:14:013.80 --> 00:14:021.70] [Interviewer]  From a practitioner standpoint, someone who's using machine learning, who started a decade ago where things like support vector machines,
+[00:14:021.72 --> 00:14:028.04] [Interviewer]  machines were state of the art, and then suddenly it became ensemble methods, and now today it's deep neural networks.
+[00:14:028.18 --> 00:14:037.98] [Interviewer]  How do you think about adapting your process as the field of machine learning is changing so quickly?
+[00:14:039.15 --> 00:14:043.63] [Customer]  So as you mentioned, there's been quite an amazing evolution of machine learning techniques over the last decade.
+[00:14:044.15 --> 00:14:055.91] [Customer]  And so we feel pretty lucky to have started Euclidean when we did in 2008 because of the fact that companies like Google, Facebook, Amazon, and others have decided that machine learning is going to play a critical role in their product development.
+[00:14:056.23 --> 00:14:059.35] [Customer]  They have invested heavily in these areas.
+[00:14:059.35 --> 00:15:015.71] [Customer]  And this investment is both in the form of innovations that are published in peer-reviewed journals but also in the form of open-source projects where very complex pieces of software like Google's TensorFlow are written and put out there for anybody to download and use.
+[00:15:015.89 --> 00:15:023.81] [Customer]  And since our inception, it has sort of behooved us to take advantage of the fact that we're living in this pretty incredible time.
+[00:15:018.69 --> 00:15:018.79] [Interviewer]  have
+[00:15:024.75 --> 00:15:032.81] [Customer]  In 2008, we started with support vector machines as the model we used for investing as those were state-of-the-art at the time.
+[00:15:032.97 --> 00:15:040.53] [Customer]  And then in 2014-15, we migrated our technology to ensemble models for some of the reasons I described earlier.
+[00:15:040.83 --> 00:15:047.71] [Customer]  But besides just their accuracy, there's another aspect of ensemble learning that makes it compelling for an investment advisor.
+[00:15:048.03 --> 00:15:052.87] [Customer]  And that's that ensembles tend to be built up out of decision trees as their base model.
+[00:15:052.87 --> 00:16:010.87] [Customer]  And this is appealing because decision trees are more transparent than, say, a support vector machine or a deep neural network in the sense that you can follow the logic down the decision tree of how it's deciding why a company, for example, is going to outperform the market over the subsequent year or not.
+[00:16:011.35 --> 00:16:014.11] [Customer]  And you can do this at quite a granular level.
+[00:16:014.99 --> 00:16:022.85] [Customer]  Now, more recently, deep neural networks and deep learning have gotten a lot of attention because of the spectacular successes in areas such as language.
+[00:16:022.87 --> 00:16:027.03] [Customer]  There's translation, computer vision, and beating the world champion at the game of Go.
+[00:16:027.89 --> 00:16:033.49] [Customer]  And so we, of course, became interested in the idea of seeing how deep learning might benefit our processes.
+[00:16:033.87 --> 00:16:037.59] [Customer]  And there are really three reasons why deep learning interests us.
+[00:16:037.95 --> 00:16:052.85] [Customer]  First, deep learning has created the opportunity to do less factor engineering work that is so involved in typical quantitative investing and instead rely on raw financial data to tell the story of a story.
+[00:16:052.85 --> 00:16:052.85] [Customer] 
+[00:16:052.87 --> 00:16:054.21] [Customer]  Second, deep learning has created the opportunity to do less factor engineering work that is so involved in typical quantitative investing and instead rely on raw financial data to tell the story of a story.
+[00:16:054.21 --> 00:16:054.21] [Customer] 
+[00:16:054.21 --> 00:17:009.85] [Customer]  And as we discussed, the deepness in deep learning means that successive layers of a model are able to untangle important relationships in a hierarchical way from the data as it is found in the wild, like what's in a balance sheet or an income statement.
+[00:17:010.85 --> 00:17:017.31] [Customer]  And therefore, there's much less preprocessing than we've had to do in the past, potentially.
+[00:17:017.63 --> 00:17:022.69] [Customer]  So, you know, really the way to think about it is there is potential.
+[00:17:022.87 --> 00:17:028.51] [Customer]  To find measures or factors that are more meaningful than what we rely on today.
+[00:17:028.83 --> 00:17:036.03] [Customer]  And the process of finding them is less biased than it is if you construct them on your own.
+[00:17:036.79 --> 00:17:044.71] [Customer]  Second, you know, with respect to deep learning, recurrent neural networks, which is a form of deep learning, have an inherent time dimensionality to them.
+[00:17:045.17 --> 00:17:052.85] [Customer]  And with respect to stocks, the future value of a company depends on the evolving state of a company's cash flows as they return.
+[00:17:052.87 --> 00:17:054.37] [Customer]  And so, you know, we're going to have to report them from quarter to quarter.
+[00:17:055.73 --> 00:18:002.37] [Customer]  It is in this sort of area of modeling sequences of data through time that deep learning is of interest to us.
+[00:18:003.67 --> 00:18:012.07] [Customer]  And last is that some of the greatest progress in machine learning has been in this area, or of deep learning, really, has been in this area of text processing.
+[00:18:012.19 --> 00:18:018.35] [Customer]  Whether it be language translation or sentence completion or voice recognition or voice synthesis.
+[00:18:019.07 --> 00:18:022.47] [Customer]  Clearly, there's a lot of textual data out there on stocks.
+[00:18:022.87 --> 00:18:026.29] [Customer]  That is not reflected in income statements or balance sheets.
+[00:18:026.47 --> 00:18:034.45] [Customer]  And it would be great to be able to use that information in the decision-making process insofar as it's of value.
+[00:18:034.73 --> 00:18:042.29] [Customer]  As a cautionary note, however, there are some less appealing aspects of moving to deep learning.
+[00:18:042.41 --> 00:18:044.51] [Customer]  First and foremost is the issue of transparency.
+[00:18:044.93 --> 00:18:051.29] [Customer]  As I described before, an ensemble of decision trees is much more transparent than a deep neural network.
+[00:18:051.33 --> 00:18:052.85] [Customer]  Because the logic of what it is.
+[00:18:052.87 --> 00:18:059.81] [Customer]  What it does is embedded, of a deep neural network, is embedded into all the connections that it's made up of.
+[00:19:000.13 --> 00:19:006.17] [Customer]  And second, from a more practical perspective, is that training deep neural networks takes a very long time.
+[00:19:006.23 --> 00:19:014.39] [Customer]  And therefore, it's hard to quickly iterate through a lot of ideas as it is with support vector machines or ensembles of decision trees.
+[00:19:014.97 --> 00:19:020.11] [Customer]  But also in the context of deep neural networks, there is still this important issue of how you frame the question.
+[00:19:020.35 --> 00:19:022.41] [Customer]  Whether you're using support vector machines.
+[00:19:022.87 --> 00:19:024.87] [Customer]  Ensembles of decision trees or deep neural networks.
+[00:19:025.01 --> 00:19:031.23] [Customer]  You still need to decide whether you're going to frame the question as a classification problem or as a regression problem.
+[00:19:031.45 --> 00:19:041.03] [Customer]  As I mentioned earlier, most of our success has been in framing it as classification problem because, well, it turns out that that is an easier problem to solve.
+[00:19:041.37 --> 00:19:046.35] [Customer]  But maybe deep neural networks provide an opportunity to succeed at something harder.
+[00:19:047.24 --> 00:19:054.36] [Interviewer]  When you think of the degrees of difficulty of the problem as well, when you say, I'm going to predict a specific return, right?
+[00:19:054.54 --> 00:19:055.82] [Interviewer]  Well, let's take it another way.
+[00:19:055.90 --> 00:20:015.04] [Interviewer]  I think stock A is going to outperform stock B is orders of magnitude less complex than I think stock A is going to outperform stock B by 5%, which is orders of magnitude less complex than I think stock A is going to return 22% and stock B is going to return 17%.
+[00:20:015.04 --> 00:20:019.60] [Interviewer]  And your confidence in the former can be incredibly high.
+[00:20:019.70 --> 00:20:027.18] [Interviewer]  And while they all might technically say the same thing, they all agree, you know, they'll all be true at the same time.
+[00:20:027.20 --> 00:20:034.22] [Interviewer]  One of those is far, far easier ultimately to model or you would expect it to be far, far easier to model.
+[00:20:034.32 --> 00:20:040.86] [Interviewer]  And your confidence in that model would be much higher than the latter due to the accuracy required.
+[00:20:042.01 --> 00:20:046.81] [Customer]  So as I mentioned, we formulated the challenge of applying machine learning to long-term investing
+[00:20:046.81 --> 00:20:052.93] [Customer]  as a classification problem as opposed to a regression problem, meaning that we said we
+[00:20:052.93 --> 00:20:058.15] [Customer]  want the model to tell us, hey, this looks like a good long-term investment instead of the model
+[00:20:058.15 --> 00:21:005.69] [Customer]  saying, you know, this stock will return 20% above the market over the next year. And the reason we
+[00:21:005.69 --> 00:21:009.95] [Customer]  took this approach is for the same reasons that you're mentioning, that it just seems like a more
+[00:21:009.95 --> 00:21:015.79] [Customer]  tractable problem. And as it turns out, empirically, this is the case. You can do quite well
+[00:21:015.79 --> 00:21:023.95] [Customer]  if you pose problem of long-term investing in this way. Now, that being said, with the advent
+[00:21:023.95 --> 00:21:029.13] [Customer]  of deep learning and observing that it has been successful on some very challenging problems where
+[00:21:029.13 --> 00:21:036.03] [Customer]  there's lots of noise and the signal needs to be kind of teased out of it, we started to
+[00:21:036.03 --> 00:21:039.83] [Customer]  reinvestigate whether deep learning could be successfully used to forecast
+[00:21:039.83 --> 00:21:045.75] [Customer]  excess returns. And what we found was that deep neural networks were essentially no better than
+[00:21:045.75 --> 00:21:051.51] [Customer]  linear regression at this problem. Now, that doesn't mean that they can't forecast excess
+[00:21:051.51 --> 00:21:057.81] [Customer]  returns as linear regression actually does have some predictive power in forecasting. That is
+[00:21:057.81 --> 00:22:002.55] [Customer]  essentially why something like the value effect or the momentum effect exists. There is a
+[00:22:002.55 --> 00:22:009.39] [Customer]  relationship between those factors and the excess return of a stock. It's just that
+[00:22:009.83 --> 00:22:013.75] [Customer]  relationship is best modeled with a linear model. There's
+[00:22:013.75 --> 00:22:018.35] [Customer]  Occam's razor. Don't use a model that's any more complex than it needs to be.
+[00:22:018.91 --> 00:22:024.93] [Customer]  But in this process, we also started to ask the question, well, if we can't forecast prices with
+[00:22:024.93 --> 00:22:031.03] [Customer]  a deep neural network, maybe we can forecast something else. And borrowing on the idea of
+[00:22:031.03 --> 00:22:036.59] [Customer]  sequence learning and language translation and other uses of recurrent neural networks,
+[00:22:036.75 --> 00:22:039.81] [Customer]  we explored whether you could use a sequence learning model to predict the rate of return of a stock.
+[00:22:039.83 --> 00:22:052.51] [Customer]  And that's a very important thing. So, we found that it's really important to have a sequence of historical financial statements to forecast future financials or future fundamentals. And it is in this area that we've had a good degree of success with deep neural networks.
+[00:22:053.50 --> 00:22:059.14] [Interviewer]  So I read a paper this morning, and I'm forgetting the exact title, but it was something to the effect of deep alpha.
+[00:22:059.40 --> 00:23:009.84] [Interviewer]  And it was this idea of using a deep neural network for the very reasons you mentioned, which is there doesn't need to be any preemptive feature engineering.
+[00:23:009.98 --> 00:23:011.64] [Interviewer]  You can feed it this raw data.
+[00:23:011.64 --> 00:23:024.14] [Interviewer]  And one of the added benefits of using this deep neural network is the opportunity to identify nonlinear features that very often a lot of the features we pre-engineer are very linear in nature.
+[00:23:024.18 --> 00:23:037.72] [Interviewer]  Identifying nonlinear relationships in the data and allowing that to flow through the deep neural network in the classification problem was their way of trying to identify unique sources of alpha.
+[00:23:038.12 --> 00:23:040.86] [Interviewer]  But to a layperson like me.
+[00:23:041.64 --> 00:23:046.36] [Interviewer]  Who is not incredibly sophisticated in the realm of machine learning.
+[00:23:046.64 --> 00:23:051.56] [Interviewer]  This sounds a whole lot like it's just overfitting the data.
+[00:23:051.68 --> 00:24:004.32] [Interviewer]  That there is a massive risk of just passing all of this information in and letting the model identify that information, which was most predictive in the past.
+[00:24:004.50 --> 00:24:009.14] [Interviewer]  But perhaps it is just identifying nothingness and noise.
+[00:24:009.38 --> 00:24:011.36] [Interviewer]  That there's a lot of spurious relationships.
+[00:24:011.64 --> 00:24:013.48] [Interviewer]  That it's uncovering.
+[00:24:013.80 --> 00:24:020.56] [Interviewer]  Talk me through, particularly with something like a deep neural network where they are entirely opaque.
+[00:24:020.76 --> 00:24:025.48] [Interviewer]  And a lot of the reason within the model is hidden deep in the layers.
+[00:24:026.28 --> 00:24:029.04] [Interviewer]  How do you gain confidence that you're not overfitting?
+[00:24:029.62 --> 00:24:035.34] [Interviewer]  And I want to say I almost find it ironic because you didn't start using deep neural networks until the last couple of years.
+[00:24:035.42 --> 00:24:041.40] [Interviewer]  But you actually wrote a piece very early on at Euclidean about how you gain confidence.
+[00:24:042.06 --> 00:24:043.76] [Interviewer]  In a machine learning approach.
+[00:24:043.82 --> 00:24:046.92] [Interviewer]  And so maybe that you can tie that in sort of the criteria you outlined.
+[00:24:047.28 --> 00:24:055.34] [Interviewer]  But how do you think about gaining confidence in an approach in which by definition there's an extreme lack of transparency?
+[00:24:056.49 --> 00:24:058.79] [Customer]  It may sound like overfitting, but in this case, it's not.
+[00:24:059.05 --> 00:25:003.49] [Customer]  I think it's worthwhile to clarify the relationship between machine learning and overfitting.
+[00:25:003.77 --> 00:25:008.91] [Customer]  The fitting of data is, in fact, a spectrum going from underfit to overfit.
+[00:25:009.03 --> 00:25:015.65] [Customer]  And somewhere in the middle there is a point that is like this Goldilocks point where you're not too underfit and you're not too overfit.
+[00:25:016.03 --> 00:25:022.87] [Customer]  This is the point where a model is said to optimally generalize the relationship in the training data to the out-of-sample data.
+[00:25:022.87 --> 00:25:034.07] [Customer]  The tools of machine learning like regularization, cross-validation, and holdout testing are designed to allow you to navigate the spectrum so that you can find this Goldilocks point of generalization.
+[00:25:034.47 --> 00:25:039.25] [Customer]  So take computer vision as an example where there's been a lot of success with deep neural networks.
+[00:25:039.55 --> 00:25:042.09] [Customer]  There's a tremendous amount of noise in images.
+[00:25:042.23 --> 00:25:050.09] [Customer]  We don't notice how extreme it is because our brains are so good at converting a field of pixels into recognizable objects.
+[00:25:050.39 --> 00:25:052.49] [Customer]  But just imagine the diversity of pixels.
+[00:25:052.87 --> 00:25:057.55] [Customer]  And pixel combinations that exist in a photo of something like an Arabian bazaar.
+[00:25:058.15 --> 00:26:002.83] [Customer]  Then imagine how those combinations multiplies lighting changes throughout the day.
+[00:26:003.39 --> 00:26:011.07] [Customer]  So how is it possible that we are able to build perceptual systems that are able to visually navigate a self-driving car?
+[00:26:011.25 --> 00:26:015.81] [Customer]  Wouldn't those perceptual systems just overfit the noise in all that video?
+[00:26:016.23 --> 00:26:018.49] [Customer]  The answer is regularization.
+[00:26:018.67 --> 00:26:022.39] [Customer]  Without it, we would have none of the successes we see.
+[00:26:022.39 --> 00:26:022.55] [Customer]  It's not about being able to do that.
+[00:26:022.55 --> 00:26:022.55] [Customer] 
+[00:26:022.55 --> 00:26:022.55] [Customer] 
+[00:26:022.55 --> 00:26:022.55] [Customer] 
+[00:26:022.55 --> 00:26:022.55] [Customer] 
+[00:26:022.55 --> 00:26:024.09] [Customer]  we're not going to be able to do that without the complexity that we see with neural networks today.
+[00:26:024.35 --> 00:26:030.53] [Customer]  Now there is this relationship between the complexity of a model, and again deep neural networks are very complex,
+[00:26:030.59 --> 00:26:034.25] [Customer]  and how much data we have for a given problem.
+[00:26:034.69 --> 00:26:038.33] [Customer]  The more complex the model, the more data you need.
+[00:26:038.47 --> 00:26:046.43] [Customer]  And I've heard this argument that in finance there just isn't enough data to support the complexity of a deep neural network as there is with computer vision.
+[00:26:046.91 --> 00:26:052.37] [Customer]  But in this particular problem, forecasting future fundamentals from, you know,
+[00:26:052.37 --> 00:26:058.27] [Customer]  historic fundamentals, there's actually plenty of data. So we can do the math. If we're interested
+[00:26:058.27 --> 00:27:006.83] [Customer]  in five-year time series, then that's a data point, then how many five-year time series on
+[00:27:006.83 --> 00:27:014.01] [Customer]  company fundamentals are there? If we use a sample historic period to learn from of 35 years,
+[00:27:014.27 --> 00:27:019.81] [Customer]  and assume we have approximately 2,500 companies at each given time, and that we were looking at
+[00:27:019.81 --> 00:27:023.77] [Customer]  monthly data, if you multiply those three numbers together, we have close to a million unique
+[00:27:023.77 --> 00:27:029.09] [Customer]  time series to learn from, which is plenty for the purpose of deep learning.
+[00:27:029.57 --> 00:27:034.59] [Customer]  Now, there are aspects of financial data that can make learning, in any kind of inference for that
+[00:27:034.59 --> 00:27:041.53] [Customer]  matter, challenging. So like any problem, we have this issue when learning of trying to infer a
+[00:27:041.53 --> 00:27:049.33] [Customer]  distribution from only a sample of data. And we're successful if we're able to infer that
+[00:27:049.33 --> 00:27:049.79] [Customer]  really well.
+[00:27:049.81 --> 00:27:054.47] [Customer]  relationship from the data on out-of-sample data. But because the time dimensionality of
+[00:27:054.47 --> 00:28:000.81] [Customer]  financial data, the underlying true distribution that we're trying to learn can change. That is,
+[00:28:000.85 --> 00:28:005.07] [Customer]  this distribution can be what's called non-stationary, so that whatever you learn
+[00:28:005.07 --> 00:28:007.53] [Customer]  in one time period may not be true in the next time period.
+[00:28:008.46 --> 00:28:011.56] [Interviewer]  You absolutely read my mind because this is exactly where I wanted to go next.
+[00:28:011.72 --> 00:28:020.84] [Interviewer]  This discussion of machine learning seems incredibly well suited for data sets that are implicitly stationary, as you mentioned.
+[00:28:021.14 --> 00:28:030.62] [Interviewer]  And it seems to have made huge advancements in areas where there are well-defined rules or games where there's ultimately defined boundaries.
+[00:28:030.94 --> 00:28:036.72] [Interviewer]  So Go is an incredibly complex game, but there are ultimately governing rules.
+[00:28:036.72 --> 00:28:050.50] [Interviewer]  If you ascribe to someone like Andrew Lowe's adaptive market hypothesis, the degree of competition within the market is ultimately in some way changing the rules.
+[00:28:050.86 --> 00:28:053.64] [Interviewer]  And in many ways, the rules have changed over time.
+[00:28:053.80 --> 00:28:058.82] [Interviewer]  The way, for example, that CFOs may report financials has changed over time.
+[00:28:059.14 --> 00:29:003.74] [Interviewer]  How do you tackle this issue of non-stationarity in the data?
+[00:29:003.84 --> 00:29:005.70] [Interviewer]  And maybe just more generally.
+[00:29:005.70 --> 00:29:011.04] [Interviewer]  Is machine learning applicable in finance at all?
+[00:29:011.82 --> 00:29:018.92] [Customer]  Sure, but this is not so much an issue with machine learning, but rather a question of when and where inference can be done at all.
+[00:29:019.06 --> 00:29:031.24] [Customer]  If you have extremely non-stationary data where the distribution is constantly changing from one period to the next, then any statistical description of the data in prior time periods is of no real value in the next.
+[00:29:032.02 --> 00:29:039.78] [Customer]  Now, there are tools that can be employed if you have non-stationary data that is slowly changing through time.
+[00:29:039.78 --> 00:29:051.02] [Customer]  And that is to iteratively build models, be it a linear regression or a neural network, that use data from a fixed trailing window of time to forecast into the current or next time period.
+[00:29:051.36 --> 00:29:055.56] [Customer]  So let's say you believe that your distribution is relatively stable over a four month period.
+[00:29:055.84 --> 00:30:004.88] [Customer]  Then if you want to make forecasts for April, you build a model on data from January through March and use that model to make your April forecasts.
+[00:30:005.28 --> 00:30:009.76] [Customer]  And then you repeat this process for forecasts in May by building a model.
+[00:30:009.78 --> 00:30:013.74] [Customer]  And then you build a model on data from the period February through April.
+[00:30:013.88 --> 00:30:018.70] [Customer]  And you can see how you can just iterate this approach out on forever.
+[00:30:018.90 --> 00:30:028.00] [Customer]  We do a form of this at Euclidean when we're forecasting fundamentals, but our time window is closer to 20 years than four months.
+[00:30:028.78 --> 00:30:037.70] [Customer]  And this gets to the point of why at Euclidean we focus on long-term value investing or fundamental investing.
+[00:30:037.70 --> 00:30:041.46] [Customer]  Because it's a more stationary problem than other types of investing.
+[00:30:041.90 --> 00:30:049.68] [Customer]  I mean, it's pretty well understood that the value of an asset is its future cash flows discounted to present value.
+[00:30:049.86 --> 00:31:000.14] [Customer]  And that's true, was true in 1925, it was also true in 2007, it's true in 2018, and it will be true in 2050.
+[00:31:000.62 --> 00:31:007.68] [Customer]  Therefore, if we can forecast cash flows in the future with any degree of accuracy,
+[00:31:007.68 --> 00:31:013.48] [Customer]  you should have an investment approach that would work well over the long run.
+[00:31:013.60 --> 00:31:019.78] [Customer]  Whatever forecasting model that is, it should be valuable regardless of what decade it's being used in.
+[00:31:020.55 --> 00:31:025.87] [Interviewer]  So one of the things we've touched upon here, one of the benefits potentially of a deep
+[00:31:025.87 --> 00:31:029.83] [Interviewer]  neural network is that you don't have to pre-engineer your factors.
+[00:31:030.73 --> 00:31:037.89] [Interviewer]  But in many ways, it strikes me that what makes someone a quant value investor is that
+[00:31:037.89 --> 00:31:043.01] [Interviewer]  pre-engineering in a certain way, that the factors that they are by definition looking
+[00:31:043.01 --> 00:31:044.83] [Interviewer]  at have to do with valuation.
+[00:31:045.11 --> 00:31:047.01] [Interviewer]  So they might be looking at price to book.
+[00:31:047.13 --> 00:31:048.87] [Interviewer]  They might be looking at enterprise value to EBITDA.
+[00:31:048.87 --> 00:31:055.55] [Interviewer]  It strikes me that when you just provide all the raw input to the deep neural network,
+[00:31:055.81 --> 00:32:000.77] [Interviewer]  maybe it's how you ask the question of the deep neural network that ultimately makes
+[00:32:000.77 --> 00:32:002.29] [Interviewer]  you a value investor.
+[00:32:002.59 --> 00:32:007.01] [Interviewer]  So I guess the question I would pose to you is if you're passing in all this raw data,
+[00:32:007.99 --> 00:32:014.11] [Interviewer]  what is it necessarily that connects you to the history of value investing that would
+[00:32:014.11 --> 00:32:018.03] [Interviewer]  make you say that you're applying machine learning to value investing?
+[00:32:018.03 --> 00:32:018.31] [Interviewer]  Yeah.
+[00:32:019.05 --> 00:32:024.17] [Customer]  Well, what we really are is long-term fundamental investors, meaning that at any point in time,
+[00:32:024.31 --> 00:32:028.89] [Customer]  all I want to know is all of the publicly available information about a company that
+[00:32:028.89 --> 00:32:033.91] [Customer]  can be found in its historical financials or other documents that are filed with the SEC
+[00:32:033.91 --> 00:32:039.65] [Customer]  or published online. And all I want to assess is whether this company is going to be a good
+[00:32:039.65 --> 00:32:045.35] [Customer]  long-term investment or not. Now, the reality is that when you train any kind of model with that
+[00:32:045.35 --> 00:32:049.87] [Customer]  setup, it'll inevitably come up with a model that is characteristically value in nature.
+[00:32:050.11 --> 00:32:055.07] [Customer]  And that is just because of the strength of the value effect in the data. It's embedded in the
+[00:32:055.07 --> 00:33:001.31] [Customer]  combination of base economic principles of mean reversion and human behavioral biases,
+[00:33:001.33 --> 00:33:005.57] [Customer]  which create the effect. And therefore, it's existed for a very, very long time
+[00:33:005.57 --> 00:33:012.01] [Customer]  and will continue to exist. Now, with a value model, there is, of course, value investments,
+[00:33:012.17 --> 00:33:014.91] [Customer]  good value investments, and there are also value traps.
+[00:33:015.35 --> 00:33:020.73] [Customer]  And I think that is where machine learning really shows its power and its ability to use
+[00:33:020.73 --> 00:33:026.91] [Customer]  non-linearity to discriminate within the universe of value between companies that are
+[00:33:026.91 --> 00:33:031.69] [Customer]  true value opportunities and those companies that are just deservedly cheap.
+[00:33:032.51 --> 00:33:038.73] [Interviewer]  So last year, you wrote this paper titled Improving Factor-Based Quantitative Investing
+[00:33:038.73 --> 00:33:044.51] [Interviewer]  by Forecasting Company Fundamentals, which took, I think, a pretty different approach
+[00:33:044.51 --> 00:33:049.51] [Interviewer]  to applying machine learning to the investment landscape than a lot of other approaches I'd
+[00:33:049.51 --> 00:33:055.33] [Interviewer]  tried before, where instead of trying to forecast returns, you took this approach of trying
+[00:33:055.33 --> 00:34:002.27] [Interviewer]  to forecast company fundamentals and then use that information in what I believe was
+[00:34:002.27 --> 00:34:004.25] [Interviewer]  sort of your classification algorithm.
+[00:34:005.09 --> 00:34:010.09] [Interviewer]  Can you talk me through that paper a bit and some of the results that you came upon?
+[00:34:010.23 --> 00:34:010.39] [Interviewer]  Sure.
+[00:34:010.98 --> 00:34:015.48] [Customer]  This is the result where we found that using a deep recurrent neural network, we could not
+[00:34:015.48 --> 00:34:021.60] [Customer]  forecast prices or excess returns any better than we could with a linear model. But we could forecast
+[00:34:021.60 --> 00:34:026.74] [Customer]  future fundamentals from historical fundamentals much better than we could with a linear model
+[00:34:026.74 --> 00:34:032.98] [Customer]  or with a random walk. Now, you need to ask, is there any value to forecasting future fundamentals?
+[00:34:033.28 --> 00:34:038.94] [Customer]  Don't we really want to know how an investment's going to do, not how the fundamentals are going
+[00:34:038.94 --> 00:34:045.46] [Customer]  to unfold? So to empirically answer this question, what we did was imagine that at each point in time
+[00:34:045.46 --> 00:34:053.84] [Customer]  we had clairvoyant access to future fundamentals, i.e. we could see the future. So say it's December
+[00:34:053.84 --> 00:35:002.78] [Customer]  1983, and we give our hypothetical selves access to 1984 year-end earnings for all companies. And
+[00:35:002.78 --> 00:35:008.88] [Customer]  then we take these future earnings and construct a factor by dividing the earnings, the future
+[00:35:008.88 --> 00:35:016.20] [Customer]  earnings by the current December 1983 enterprise value, and construct portfolios of stocks by this
+[00:35:016.20 --> 00:35:022.84] [Customer]  factor. And so through simulation, we show that using this hypothetical clairvoyant factor,
+[00:35:023.16 --> 00:35:030.64] [Customer]  you would have generated just fantastic returns in excess of 40%. And so in our minds, this result
+[00:35:030.64 --> 00:35:038.06] [Customer]  motivates a desire to forecast fundamentals in as accurate a way as possible. And I think that
+[00:35:038.06 --> 00:35:038.86] [Customer]  this is just a very important factor. And I think that this is just a very important factor. And I
+[00:35:038.88 --> 00:35:039.06] [Customer]  think that this is just a very important factor. And I think that this is just a very important factor.
+[00:35:039.06 --> 00:35:044.12] [Customer]  So I think that's the tip of the iceberg on this idea of forecasting fundamentals. There are a lot
+[00:35:044.12 --> 00:35:049.84] [Customer]  of interesting directions we can take this research, and that includes using unstructured
+[00:35:049.84 --> 00:35:055.90] [Customer]  data, since we're using deep neural networks to help improve the forecast. And then there's this
+[00:35:055.90 --> 00:36:002.18] [Customer]  idea of forecasting under uncertainty. For example, in the real world, two investments that
+[00:36:002.18 --> 00:36:008.62] [Customer]  look extremely similar can have different outcomes, both in price, but also in how they're
+[00:36:008.62 --> 00:36:015.88] [Customer]  fundamentals evolve. And this is just a product of the natural uncertainty involved in companies
+[00:36:015.88 --> 00:36:023.88] [Customer]  and investing. Earlier, I mentioned these guys at Amazon that have been doing a lot of work on this
+[00:36:023.88 --> 00:36:031.94] [Customer]  problem of forecasting not just a value in the future, but forecasting not the expected value
+[00:36:031.94 --> 00:36:038.08] [Customer]  of something in the future, but in forecasting the entire distribution of outcomes.
+[00:36:038.62 --> 00:36:044.38] [Customer]  And if you knew what the distribution of outcomes and not just what the expected value was,
+[00:36:044.56 --> 00:36:052.14] [Customer]  you could construct portfolios in a much more rigorous and interesting way. And so I think
+[00:36:052.14 --> 00:36:058.28] [Customer]  using techniques like deep autoregressive recurrent neural networks, I think it's a very
+[00:36:058.28 --> 00:37:000.02] [Customer]  interesting and promising area.
+[00:37:000.90 --> 00:37:007.00] [Interviewer]  this ties into a topic I want to get into a little bit, which is that today, most researchers and
+[00:37:007.00 --> 00:37:015.94] [Interviewer]  practitioners would agree that we probably have a P hacking problem in the industry and a lot of
+[00:37:015.94 --> 00:37:021.12] [Interviewer]  other industries as well, where just when you have so many people evaluating the same data,
+[00:37:021.26 --> 00:37:027.06] [Interviewer]  you're bound to end up with a lot of false positives. So we've discussed this fact that
+[00:37:027.06 --> 00:37:034.26] [Interviewer]  deep neural networks, by definition, we don't have to pre-engineer the factors, and we can just
+[00:37:034.26 --> 00:37:043.12] [Interviewer]  sort of allow the machine to programmatically search for methods of selection, weight the
+[00:37:043.12 --> 00:37:050.40] [Interviewer]  importance, transform the data, which to a very naive ear, mine included, sounds a lot like data
+[00:37:050.40 --> 00:37:057.04] [Interviewer]  mining. But you have made the argument in the past that, and I've read a lot of the papers,
+[00:37:057.04 --> 00:37:057.04] [Interviewer] 
+[00:37:057.06 --> 00:38:002.20] [Interviewer]  I've read this on your blog, that machine learning can actually be, when done correctly,
+[00:38:003.30 --> 00:38:009.88] [Interviewer]  many of the techniques of machine learning can be more robust to the problems found in
+[00:38:009.88 --> 00:38:014.72] [Interviewer]  traditional factor research. And I was hoping you could expand on that for me a little bit,
+[00:38:014.74 --> 00:38:022.48] [Interviewer]  and maybe some of the lessons that machine learning can offer to traditional factor research.
+[00:38:023.67 --> 00:38:028.85] [Customer]  So I think it's worthwhile to explain a little bit what p-hacking is. In the social sciences
+[00:38:028.85 --> 00:38:033.73] [Customer]  and natural sciences, the way that you show statistical significance for a number, let's say
+[00:38:033.73 --> 00:38:041.05] [Customer]  the alpha in a back test, is you construct a 99 or 95 percent confidence interval around that number.
+[00:38:041.23 --> 00:38:046.47] [Customer]  And the way that you interpret that interval is that if you were to run the experiment a hundred
+[00:38:046.47 --> 00:38:052.37] [Customer]  times, constructing a hundred confidence intervals on each try, you should expect the true value,
+[00:38:052.37 --> 00:38:058.61] [Customer]  that is the true alpha in the back test example, to be in 95 percent of those confidence intervals.
+[00:38:058.81 --> 00:39:004.43] [Customer]  And in five of those experiments, the true value will not be in the interval you construct. Now
+[00:39:004.43 --> 00:39:009.15] [Customer]  notice the nature of this. The more times you repeat the experiment, the more likely the chances
+[00:39:009.15 --> 00:39:015.81] [Customer]  are that the true value, the true alpha, is not in the constructed interval. And so if you think
+[00:39:015.81 --> 00:39:021.13] [Customer]  about this in the context of repeatedly testing for new factors, the more times you attempt to make
+[00:39:021.13 --> 00:39:022.35] [Customer]  the higher confidence interval, the more likely the chances are that the true value is not in the
+[00:39:022.35 --> 00:39:026.85] [Customer]  example. So you can't predict the likelihood that you will get a spurious result. Now in machine
+[00:39:026.85 --> 00:39:031.39] [Customer]  learning, there's a long history of using techniques like out-of-sample testing and
+[00:39:031.39 --> 00:39:038.97] [Customer]  cross-validation to help avoid being misled in this way by the data. And instead, when you build
+[00:39:038.97 --> 00:39:043.07] [Customer]  a model, you don't validate whether you're confident in the model on the same data that
+[00:39:043.07 --> 00:39:048.51] [Customer]  you built it on. You validate its success on out-of-sample data. So to be fair, I think there's
+[00:39:048.51 --> 00:39:052.33] [Customer]  been, you know, some complaints from the finance community about the fact that the true value is not in the
+[00:39:052.35 --> 00:39:057.15] [Customer]  community that out-of-sample testing and cross-validation are not well suited for time
+[00:39:057.15 --> 00:40:003.41] [Customer]  series data. But that has really changed a lot in the last several years. And there are now fairly
+[00:40:003.41 --> 00:40:009.81] [Customer]  powerful techniques that have been adapted to time series and finance in general. In particular,
+[00:40:009.91 --> 00:40:016.05] [Customer]  there's a paper called The Probability of Backtest Overfit, which introduces this tool that you can
+[00:40:016.05 --> 00:40:021.91] [Customer]  download freely to run your backtest through. And this algorithm, The Probability of Backtest
+[00:40:022.35 --> 00:40:029.07] [Customer]  Overfit, which was inspired by the machine learning technique called cross-validation, allows you to
+[00:40:029.07 --> 00:40:035.67] [Customer]  validate whether your series of backtests is likely to be overfit or not. My point is, is there is a
+[00:40:035.67 --> 00:40:041.01] [Customer]  wealth of research in the machine learning community on how to prevent getting fooled by your data and
+[00:40:041.01 --> 00:40:046.21] [Customer]  analysis. And I think the finance community could benefit from better understanding this work.
+[00:40:046.92 --> 00:40:054.92] [Interviewer]  One of the interesting rabbit holes I went down in preparation for talking with you today was this idea of adversarial examples.
+[00:40:056.04 --> 00:41:004.88] [Interviewer]  And it seems to come up a lot in image classification where a neural network is trained to classify an image as an object.
+[00:41:005.12 --> 00:41:016.00] [Interviewer]  And by changing one little tiny detail about the image, often imperceptible to the human eye, the neural network is completely confident.
+[00:41:016.00 --> 00:41:020.36] [Interviewer]  It is not what the image is or the opposite direction.
+[00:41:020.80 --> 00:41:029.32] [Interviewer]  An image that to the human eye looks like complete noise is classified with 100% confidence as being the image.
+[00:41:029.46 --> 00:41:039.16] [Interviewer]  And this idea that by exploiting, I guess they're called almost activation pathways of these neural networks, these heavily used activation pathways,
+[00:41:039.20 --> 00:41:044.26] [Interviewer]  by exploiting the structure after the neural network has been put in place,
+[00:41:044.42 --> 00:41:045.88] [Interviewer]  you can come up with these examples.
+[00:41:046.00 --> 00:41:050.14] [Interviewer]  That show really how fragile the neural network may be.
+[00:41:050.32 --> 00:41:056.50] [Interviewer]  And obviously maybe there isn't a direct correlation to investing necessarily.
+[00:41:057.34 --> 00:42:010.28] [Interviewer]  But it strikes me again that this balance of the threat of opaqueness and fragility of a neural network would almost require a higher degree of confidence to use it.
+[00:42:010.70 --> 00:42:015.98] [Interviewer]  That for me, something like a price to book, price to earnings is a very transitive.
+[00:42:016.00 --> 00:42:018.12] [Interviewer]  And I think that's something that we should be looking at.
+[00:42:018.12 --> 00:42:018.12] [Interviewer] 
+[00:42:018.12 --> 00:42:018.30] [Interviewer]  And I think that's something that I think is a very important piece of the approach that we're looking at.
+[00:42:018.30 --> 00:42:025.42] [Interviewer]  I want to go back to this idea of developing confidence in this thought of in applying a very, very new concept,
+[00:42:025.48 --> 00:42:033.08] [Interviewer]  something that's really only gotten very popular in the last couple of years and maybe isn't incredibly well understood yet.
+[00:42:033.28 --> 00:42:039.26] [Interviewer]  Talk to me again about how you go about developing your confidence in applying that approach.
+[00:42:040.39 --> 00:42:045.51] [Customer]  Yeah. So the adversarial example is really a kind of creepy thing. And it's related to this
+[00:42:045.51 --> 00:42:050.17] [Customer]  whole issue of transparency and model explainability. As I said before, it's very
+[00:42:050.17 --> 00:42:055.55] [Customer]  comforting to use an ensemble of decision trees because you can follow the logic of how a model
+[00:42:055.55 --> 00:43:001.45] [Customer]  is making a decision about a particular investment. Whereas with a deep neural network, it's not so
+[00:43:001.45 --> 00:43:006.91] [Customer]  straightforward. But I would caution here that these issues, adversarial examples and model
+[00:43:006.91 --> 00:43:012.03] [Customer]  explainability are insurmountable problems. I mean, going back again to self-driving cars,
+[00:43:012.27 --> 00:43:016.65] [Customer]  we're not going to accept a car that crashes more just because we can explain why it made
+[00:43:016.65 --> 00:43:021.43] [Customer]  the decision it made. We're going to use the best models there are. And these models are
+[00:43:021.43 --> 00:43:026.21] [Customer]  going to be held to a higher standard than even a human in terms of explainability.
+[00:43:026.59 --> 00:43:031.51] [Customer]  And that's because it's just not acceptable for a car also to kill someone and not be able to
+[00:43:031.51 --> 00:43:036.89] [Customer]  explain why. And so essentially, the incentives are so big and the people who are working,
+[00:43:036.89 --> 00:43:042.57] [Customer]  super smart. So this is going to get figured out. And not surprisingly, there's a lot of great
+[00:43:042.57 --> 00:43:048.85] [Customer]  research going on in this area, basically, in how to take actions of deep neural networks and
+[00:43:048.85 --> 00:43:055.07] [Customer]  convert any specific action into an explanation. And further, how to make a deep neural network
+[00:43:055.07 --> 00:43:057.23] [Customer]  safe from adversarial type examples.
+[00:43:058.32 --> 00:44:002.48] [Interviewer]  There are sort of three big categories that people point to when it comes to opportunities
+[00:44:002.48 --> 00:44:003.60] [Interviewer]  to outperform the market.
+[00:44:003.76 --> 00:44:006.68] [Interviewer]  The first is three big edges, so to speak.
+[00:44:006.80 --> 00:44:011.90] [Interviewer]  First is an informational edge, that you've got better information than the rest of the
+[00:44:011.90 --> 00:44:012.18] [Interviewer]  market.
+[00:44:012.82 --> 00:44:018.48] [Interviewer]  The second is what I would call an analytical edge, that everyone has the same information,
+[00:44:018.56 --> 00:44:020.80] [Interviewer]  but you're able to interpret it with more accuracy.
+[00:44:021.42 --> 00:44:025.84] [Interviewer]  And then the final one that I would argue is an emotional edge, that everyone's got
+[00:44:025.84 --> 00:44:026.56] [Interviewer]  the same information.
+[00:44:026.56 --> 00:44:030.98] [Interviewer]  They can all interpret it with the same accuracy, but you've got better fortitude to hold
+[00:44:030.98 --> 00:44:034.42] [Interviewer]  through pain when other investors fold and pass you the alpha.
+[00:44:034.86 --> 00:44:039.34] [Interviewer]  Machine learning has been this really interesting space that's really been driven by an open
+[00:44:039.34 --> 00:44:045.04] [Interviewer]  source endeavor, that a lot of companies like Facebook and Google are publishing all of
+[00:44:045.04 --> 00:44:050.08] [Interviewer]  these tools that lower the barrier to entry for people who want to start exploring data
+[00:44:050.08 --> 00:44:051.32] [Interviewer]  sets with machine learning.
+[00:44:051.52 --> 00:44:056.12] [Interviewer]  And it strikes me that if machine learning is really an analytical edge,
+[00:44:056.56 --> 00:45:005.00] [Interviewer]  in that second category, that there's going to be to a large degree, an arms race that leads to
+[00:45:005.00 --> 00:45:010.86] [Interviewer]  diminishing returns in the applicability of machine learning as an investment edge.
+[00:45:011.38 --> 00:45:018.64] [Interviewer]  Do you think that the edge in applying machine learning is analytical and that over time that
+[00:45:018.64 --> 00:45:019.74] [Interviewer]  edge may degrade?
+[00:45:019.80 --> 00:45:024.68] [Interviewer]  Or do you think there's a sustainable edge here for the application of machine learning
+[00:45:024.68 --> 00:45:026.12] [Interviewer]  in the investment landscape?
+[00:45:027.32 --> 00:45:030.34] [Customer]  So again, this is not something that's unique to machine learning.
+[00:45:030.54 --> 00:45:035.40] [Customer]  I mean, any strategy that's out there is simple, makes money, and especially one that makes
+[00:45:035.40 --> 00:45:036.60] [Customer]  money in a short amount of time.
+[00:45:036.92 --> 00:45:040.30] [Customer]  If it's known, it's going to be susceptible to being arbitraged away.
+[00:45:040.84 --> 00:45:044.70] [Customer]  This is obviously maybe more true with higher frequency trading.
+[00:45:044.86 --> 00:45:050.06] [Customer]  But even in factor models, you're starting to see people wondering, wow, does book-to-market
+[00:45:050.06 --> 00:45:050.84] [Customer]  really work anymore?
+[00:45:051.12 --> 00:45:055.46] [Customer]  And some argue that it doesn't work because maybe the balance sheet doesn't reflect true
+[00:45:055.46 --> 00:45:058.02] [Customer]  value of assets anymore, especially intangibles.
+[00:45:058.16 --> 00:46:001.12] [Customer]  But others make the argument that it's just an overcrowded factor.
+[00:46:001.32 --> 00:46:003.26] [Customer]  I think the verdict is still out on that.
+[00:46:003.40 --> 00:46:009.34] [Customer]  It is interesting that with machine learning, there is a sort of flip side of the lack of
+[00:46:009.34 --> 00:46:014.22] [Customer]  transparency when we don't engage in factor engineering and instead use raw financial
+[00:46:014.22 --> 00:46:017.30] [Customer]  information as input to, say, a deep neural network.
+[00:46:017.70 --> 00:46:024.24] [Customer]  I mean, that is the model remains a sort of secret sauce embedded within this deep neural
+[00:46:024.24 --> 00:46:024.70] [Customer]  network.
+[00:46:024.70 --> 00:46:031.14] [Customer]  And the model cannot really become well known like a factor that someone can know, replicate,
+[00:46:031.38 --> 00:46:032.36] [Customer]  and arbitrage away.
+[00:46:033.42 --> 00:46:037.12] [Interviewer]  Machine learning is an area of really rapid growth right now.
+[00:46:037.68 --> 00:46:041.76] [Interviewer]  Lots of acceleration in developments in access to software.
+[00:46:042.56 --> 00:46:047.48] [Interviewer]  If someone wants to enter this field, what's the best way, what's sort of the
+[00:46:047.48 --> 00:46:050.10] [Interviewer]  foundational knowledge they need to develop?
+[00:46:050.36 --> 00:46:053.76] [Interviewer]  Let's say someone's in college, for example, what are sort of the core
+[00:46:053.76 --> 00:46:057.52] [Interviewer]  curriculum they need to think about taking and what's the best way for
+[00:46:057.52 --> 00:47:000.26] [Interviewer]  someone to say abreast of the developments that are happening?
+[00:47:001.46 --> 00:47:005.90] [Customer]  So I think it's really an amazing time to be learning machine learning.
+[00:47:006.18 --> 00:47:010.34] [Customer]  And I think what I would recommend to anybody who's interested in it, make sure you have
+[00:47:010.34 --> 00:47:017.84] [Customer]  a solid foundation in math, statistics, linear algebra, and then jump in and take Andrew
+[00:47:017.84 --> 00:47:022.56] [Customer]  Ng's course, his Stanford MOOC on introduction to machine learning.
+[00:47:022.74 --> 00:47:023.88] [Customer]  It's just amazing.
+[00:47:024.02 --> 00:47:027.68] [Customer]  And then, as I mentioned earlier, there's all these companies that are investing heavily
+[00:47:027.68 --> 00:47:032.56] [Customer]  in tools and putting them out there so people can use Google's TensorFlow.
+[00:47:033.16 --> 00:47:034.48] [Customer]  Facebook has tools.
+[00:47:035.18 --> 00:47:038.34] [Customer]  Amazon has a huge number of tools within AWS.
+[00:47:038.94 --> 00:47:043.52] [Customer]  So there are great resources out there for people if they want to learn machine learning.
+[00:47:044.21 --> 00:47:045.59] [Interviewer]  John, last question for you.
+[00:47:045.63 --> 00:47:048.81] [Interviewer]  And this is the question I have been asking everyone at the end of the podcast.
+[00:47:049.53 --> 00:47:057.73] [Interviewer]  And it is, if you were to describe yourself as an investment strategy, what strategy would that be?
+[00:47:057.83 --> 00:48:002.89] [Interviewer]  So what is the investment strategy that best encapsulates your personality?
+[00:48:003.05 --> 00:48:012.55] [Interviewer]  It can be anything from vanilla market beta to complex option strategies and everything in between.
+[00:48:012.63 --> 00:48:013.41] [Interviewer]  What would it be?
+[00:48:014.09 --> 00:48:020.31] [Customer]  I would describe my investment approach as machine learning applied to long-term fundamental
+[00:48:020.31 --> 00:48:021.03] [Customer]  investing.
+[00:48:022.36 --> 00:48:026.24] [Interviewer]  why do you feel that that investment approach describes your personality?
+[00:48:027.17 --> 00:48:033.09] [Customer]  Well, I think it's largely to do with the fact that I built a business over more than a decade.
+[00:48:033.43 --> 00:48:042.21] [Customer]  And that experience really embedded in me a sense that value is created in companies, not in markets.
+[00:48:042.21 --> 00:48:057.53] [Customer]  And combined with my long expertise and enthusiasm for machine learning, I think those two things really drove my desire to approach investing in this way.
+[00:48:058.00 --> 00:49:001.18] [Interviewer]  John, it's been a real pleasure chatting today. Thank you for taking the time.
+[00:49:003.30 --> 00:49:008.86] [Interviewer]  I hope you enjoyed my conversation with John Allberg. You can find more of John on Twitter
+[00:49:008.86 --> 00:49:015.30] [Interviewer]  under the handle John Allberg and learn more about Euclidean on their website, Euclidean.com.
+[00:49:015.60 --> 00:49:023.60] [Interviewer]  For show notes, please see www.flirtingwithmodels.com slash podcast. And as always,
+[00:49:023.60 --> 00:49:027.72] [Interviewer]  if you enjoyed the show, we'd urge you to share it with others via email,
+[00:49:027.86 --> 00:49:031.62] [Interviewer]  social media, and don't forget to leave us a review on iTunes.
