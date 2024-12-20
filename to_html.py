@@ -4,7 +4,7 @@ import os
 import json
 from tqdm import tqdm
 
-deepseek_api = "sk-e8224e2c0d194e91a2830bb8893cf3c3"
+deepseek_api = "***"
 client = OpenAI(api_key=deepseek_api, base_url="https://api.deepseek.com")
 def_boxclr = 'white'
 def_spkrclr = 'orange'
